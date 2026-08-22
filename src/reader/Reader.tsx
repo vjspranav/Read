@@ -1,7 +1,8 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { getStory, lineText, spanText } from '../content.js';
 import { SIZES, useSettings } from '../settings/useSettings.js';
+import { markFor, useTrackProgress } from '../settings/useProgress.js';
 import { useSelection } from './useSelection.js';
 import { Line } from './Line.js';
 import { SelectionBar } from './SelectionBar.js';
@@ -19,6 +20,9 @@ export function Reader() {
   const [why, setWhy] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [tapped, setTapped] = useState<Set<number>>(new Set());
+  const [reached, setReached] = useState(0);
+  const bodyRef = useRef<HTMLDivElement>(null);
+  const report = useTrackProgress(id, story?.lines.length ?? 0);
 
   // Which token indices carry a note, per line — for the dotted underline.
   const annotated = useMemo(() => {
@@ -31,11 +35,48 @@ export function Reader() {
     return map;
   }, [story]);
 
+  // Which line is the reader looking at? Whichever is nearest the top of the
+  // viewport but still on screen.
+  useEffect(() => {
+    if (!story || !bodyRef.current) return;
+    // Progress tracking is a nicety; without it the story must still read.
+    if (typeof IntersectionObserver === 'undefined') return;
+    const lines = [...bodyRef.current.querySelectorAll('.line')];
+    if (!lines.length) return;
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        let furthest = -1;
+        for (const e of entries) {
+          if (!e.isIntersecting) continue;
+          const i = Number((e.target as HTMLElement).dataset.line);
+          if (Number.isFinite(i)) furthest = Math.max(furthest, i);
+        }
+        if (furthest >= 0) {
+          setReached((r) => Math.max(r, furthest));
+          report(furthest);
+        }
+      },
+      { rootMargin: '0px 0px -55% 0px' },
+    );
+    lines.forEach((l) => io.observe(l));
+    return () => io.disconnect();
+  }, [story, report]);
+
+  // Pick up where they left off.
+  useEffect(() => {
+    if (!story || !id) return;
+    const mark = markFor(id);
+    if (!mark || mark.line < 2 || mark.done) return;
+    const el = document.querySelector(`.line[data-line="${mark.line}"]`);
+    el?.scrollIntoView({ block: 'center' });
+  }, [story, id]);
+
   if (!story) {
     return (
       <div className="shell"><div className="page">
         <p className="storyhead" style={{ paddingTop: 60 }}>
-          That story is not here. <Link to="/stories" style={{ color: 'var(--accent)' }}>See all stories →</Link>
+          That story is not here. <Link to="/" style={{ color: 'var(--accent)' }}>See all stories →</Link>
         </p>
       </div></div>
     );
@@ -58,7 +99,7 @@ export function Reader() {
   return (
     <div className={`shell${why ? ' panel-open' : ''}`} onClick={() => { clear(); }}>
       <div className="topbar">
-        <Link className="ic" to="/stories" aria-label="All stories">
+        <Link className="ic" to="/" aria-label="All stories">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.4">
             <path d="M9.5 3.5 5 8l4.5 4.5" />
           </svg>
@@ -77,9 +118,13 @@ export function Reader() {
             <SettingsPopover settings={settings} set={set} onClose={() => setShowSettings(false)} />
           )}
         </span>
+        <span
+          className="progress"
+          style={{ width: `${Math.round(((reached + 1) / story.lines.length) * 100)}%` }}
+        />
       </div>
 
-      <div className="page">
+      <div className="page" ref={bodyRef}>
         <div className="storyhead">
           <span className="eyebrow">{story.length.replace('-', ' ')}</span>
           <h1>{story.title}</h1>

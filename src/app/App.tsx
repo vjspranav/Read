@@ -13,12 +13,12 @@ export default function App() {
   return (
     <HashRouter>
       <Routes>
-        <Route path="/" element={<Navigate to="/stories" replace />} />
-        <Route path="/stories" element={<Library />} />
+        <Route path="/" element={<Library />} />
+        <Route path="/stories" element={<Navigate to="/" replace />} />
         <Route path="/story/:id" element={<Reader />} />
         <Route path="/rules" element={<RulesIndex />} />
         <Route path="/rules/:ruleId" element={<RuleDetail />} />
-        <Route path="*" element={<Navigate to="/stories" replace />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </HashRouter>
   );

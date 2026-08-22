@@ -26,6 +26,23 @@ if (typeof window !== 'undefined') {
     Object.defineProperty(globalThis, 'localStorage', { value: storage, writable: true });
   }
 
+  // jsdom has no IntersectionObserver. This stub reports every observed line
+  // as visible once, which is what the progress tracker reads.
+  if (typeof window.IntersectionObserver === 'undefined') {
+    class IO {
+      constructor(private cb: IntersectionObserverCallback) {}
+      observe(el: Element) {
+        this.cb([{ target: el, isIntersecting: true } as IntersectionObserverEntry], this as never);
+      }
+      unobserve() {}
+      disconnect() {}
+      takeRecords() { return []; }
+      root = null; rootMargin = ''; thresholds = [];
+    }
+    Object.defineProperty(window, 'IntersectionObserver', { writable: true, value: IO });
+    Object.defineProperty(globalThis, 'IntersectionObserver', { writable: true, value: IO });
+  }
+
   // jsdom has no speech synthesis; the reader must not crash without it.
   Object.defineProperty(window, 'speechSynthesis', {
     writable: true,

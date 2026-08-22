@@ -18,9 +18,10 @@ for (const [name, viewport] of [['phone', { width: 390, height: 844 }], ['deskto
   page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
   page.on('pageerror', (e) => errors.push(String(e)));
 
-  // ── library ──
-  await page.goto(`${BASE}/#/stories`, { waitUntil: 'networkidle' });
+  // ── home / library ──
+  await page.goto(`${BASE}/#/`, { waitUntil: 'networkidle' });
   await page.waitForTimeout(400);
+  (await page.locator('.masthead h1').count()) ? ok('home page has its masthead') : note('no masthead on the home page');
   const books = await page.locator('.book').count();
   books >= 2 ? ok(`library lists ${books} stories`) : note(`library shows ${books} stories`);
   await page.screenshot({ path: `shots/${name}-1-library.png`, fullPage: true });
@@ -95,6 +96,21 @@ for (const [name, viewport] of [['phone', { width: 390, height: 844 }], ['deskto
   // ── horizontal overflow, the classic mobile failure ──
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
   overflow <= 0 ? ok('no horizontal scroll') : note(`page scrolls horizontally by ${overflow}px`);
+
+  // ── reading progress ──
+  await page.goto(`${BASE}/#/story/le-train-de-7h12`, { waitUntil: 'networkidle' });
+  await page.waitForTimeout(300);
+  await page.mouse.wheel(0, 2600);
+  await page.waitForTimeout(1200);
+  const barWidth = await page.locator('.progress').evaluate((e) => e.style.width);
+  parseInt(barWidth) > 0 ? ok(`progress bar fills to ${barWidth}`) : note('progress bar stayed empty after scrolling');
+  await page.goto(`${BASE}/#/`, { waitUntil: 'networkidle' });
+  await page.waitForTimeout(500);
+  const state = await page.locator('.state').first().count();
+  state ? ok('the shelf remembers how far you got') : note('no progress shown on the shelf after reading');
+  const resume = await page.locator('.resume').count();
+  resume ? ok('a Continue link appears') : note('no Continue link after leaving a story part-read');
+  await page.screenshot({ path: `shots/${name}-9-progress.png`, fullPage: true });
 
   // ── grammar pages ──
   await page.goto(`${BASE}/#/rules`, { waitUntil: 'networkidle' });

@@ -5,7 +5,7 @@ import './rules.css';
 function Bar() {
   return (
     <div className="topbar">
-      <Link className="ic" to="/stories" aria-label="All stories">
+      <Link className="ic" to="/" aria-label="All stories">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.4">
           <path d="M9.5 3.5 5 8l4.5 4.5" />
         </svg>
