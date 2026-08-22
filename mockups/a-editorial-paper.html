@@ -1,0 +1,924 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Read — Editorial Paper</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@400;450;500;600&display=swap" rel="stylesheet">
+<style>
+/* ─────────────────────────────────────────────────────────────
+   PALETTE — light is the primary expression.
+   Dark is the same paper, dimmed and kept warm.
+   ───────────────────────────────────────────────────────────── */
+:root{
+  --ground:#EFE7D8;
+  --paper:#FBF7EF;
+  --paper-2:#F6F0E3;
+  --paper-3:#F1EAD9;
+  --ink:#221F1A;
+  --ink-2:#57514A;
+  --ink-3:#8B8377;
+  --ink-4:#B5AC9E;
+  --rule:rgba(34,31,26,.13);
+  --rule-soft:rgba(34,31,26,.055);
+  --accent:#A2432A;
+  --accent-soft:rgba(162,67,42,.09);
+  --sel:#EEDCD2;
+  --en-dim:rgba(34,31,26,.15);
+  --float-bg:#2A2620;
+  --float-fg:#F6F0E3;
+  --float-rule:rgba(246,240,227,.18);
+  --shadow:0 1px 1px rgba(34,31,26,.04), 0 14px 38px -14px rgba(34,31,26,.24);
+  --shadow-sm:0 1px 1px rgba(34,31,26,.04), 0 6px 18px -8px rgba(34,31,26,.22);
+  --shadow-float:0 2px 6px rgba(20,16,10,.16), 0 16px 34px -12px rgba(20,16,10,.34);
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --ground:#100E0A;
+    --paper:#191610;
+    --paper-2:#201C15;
+    --paper-3:#26221A;
+    --ink:#EDE5D6;
+    --ink-2:#B4AA98;
+    --ink-3:#877E6F;
+    --ink-4:#665E52;
+    --rule:rgba(237,229,214,.14);
+    --rule-soft:rgba(237,229,214,.06);
+    --accent:#DA8B64;
+    --accent-soft:rgba(218,139,100,.12);
+    --sel:#3C2B1F;
+    --en-dim:rgba(237,229,214,.13);
+    --float-bg:#EDE5D6;
+    --float-fg:#191610;
+    --float-rule:rgba(25,22,16,.18);
+    --shadow:0 1px 1px rgba(0,0,0,.3), 0 16px 40px -14px rgba(0,0,0,.6);
+    --shadow-sm:0 1px 1px rgba(0,0,0,.3), 0 8px 20px -8px rgba(0,0,0,.5);
+    --shadow-float:0 2px 6px rgba(0,0,0,.4), 0 16px 34px -12px rgba(0,0,0,.6);
+  }
+}
+
+*{box-sizing:border-box}
+html,body{max-width:100%;overflow-x:hidden}
+body{
+  margin:0;
+  background:var(--ground);
+  background-image:radial-gradient(120% 80% at 50% 0%, rgba(255,255,255,.55), transparent 60%);
+  color:var(--ink);
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+@media (prefers-color-scheme: dark){
+  body{background-image:radial-gradient(120% 80% at 50% 0%, rgba(255,240,214,.05), transparent 60%)}
+}
+button{font:inherit;color:inherit;background:none;border:none;padding:0;cursor:pointer}
+h1,h2,h3,p{margin:0}
+
+/* ── page scaffolding ─────────────────────────────────────── */
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px 140px}
+@media (max-width:560px){.wrap{padding:0 16px 90px}}
+
+.masthead{padding:96px 0 76px;max-width:640px}
+.masthead .mark{width:26px;height:26px;border-radius:50%;border:1px solid var(--accent);position:relative;margin-bottom:30px}
+.masthead .mark::after{content:"";position:absolute;inset:7px;border-radius:50%;background:var(--accent)}
+.eyebrow{font-size:10.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
+.masthead h1{font-family:Spectral,Georgia,serif;font-weight:400;font-size:clamp(40px,7vw,62px);line-height:1.02;letter-spacing:-.02em;margin:16px 0 22px}
+.masthead .lede{font-size:16px;line-height:1.62;color:var(--ink-2);max-width:50ch}
+.masthead .lede em{font-family:Spectral,Georgia,serif;font-style:italic;color:var(--ink)}
+
+.sec{padding:52px 0 0;border-top:1px solid var(--rule);margin-top:64px}
+.cap{max-width:60ch;margin-bottom:34px}
+.cap .n{font-family:Spectral,Georgia,serif;font-size:12px;letter-spacing:.1em;color:var(--accent);display:block;margin-bottom:12px}
+.cap h2{font-family:Spectral,Georgia,serif;font-weight:500;font-size:25px;letter-spacing:-.012em;line-height:1.2}
+.cap p{margin-top:9px;font-size:14px;line-height:1.6;color:var(--ink-3)}
+.frames{display:flex;flex-wrap:wrap;gap:30px;align-items:flex-start}
+.fcap{font-size:10.5px;font-weight:500;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-4);margin-bottom:12px}
+
+/* ── device frames ────────────────────────────────────────── */
+.phone{flex:0 0 390px;width:390px;max-width:100%}
+.phone .screen{
+  border-radius:32px;background:var(--paper);border:1px solid var(--rule);
+  box-shadow:var(--shadow);overflow:hidden;position:relative;height:756px;
+}
+.desk{flex:1 1 480px;min-width:0}
+.desk .screen{
+  border-radius:12px;background:var(--paper);border:1px solid var(--rule);
+  box-shadow:var(--shadow);overflow:hidden;position:relative;height:600px;
+}
+.chrome{height:34px;border-bottom:1px solid var(--rule-soft);display:flex;align-items:center;padding:0 14px;gap:6px;background:var(--paper-2)}
+.chrome i{width:8px;height:8px;border-radius:50%;background:var(--ink-4);opacity:.45;display:block}
+.chrome span{margin-left:auto;margin-right:auto;font-size:10.5px;color:var(--ink-4);letter-spacing:.04em;transform:translateX(-16px)}
+.fade::after{content:"";position:absolute;left:0;right:0;bottom:0;height:78px;background:linear-gradient(to top,var(--paper) 22%,rgba(0,0,0,0));pointer-events:none;z-index:2}
+
+/* ── reader chrome ────────────────────────────────────────── */
+.topbar{height:48px;display:flex;align-items:center;padding:0 18px;gap:12px;position:relative;border-bottom:1px solid var(--rule-soft);background:var(--paper);z-index:3}
+.topbar .t{font-family:Spectral,Georgia,serif;font-size:13.5px;color:var(--ink-2);margin:0 auto;letter-spacing:.01em}
+.topbar .ic{color:var(--ink-3);display:flex}
+.topbar .aa{font-size:12.5px;font-weight:600;letter-spacing:.02em;color:var(--ink-3)}
+.progress{position:absolute;left:0;bottom:-1px;height:1px;background:var(--accent);opacity:.55}
+
+/* ── the page body ────────────────────────────────────────── */
+.pagebody{padding:26px 30px 40px;height:calc(100% - 48px);overflow:hidden}
+.desk .pagebody{padding:46px 0 0;height:calc(100% - 34px)}
+.desk .measure{max-width:35rem;margin:0 auto;padding:0 28px}
+
+.storyhead{margin-bottom:26px}
+.storyhead .kicker{font-size:10px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-4)}
+.storyhead h1{font-family:Spectral,Georgia,serif;font-weight:500;font-size:29px;line-height:1.14;letter-spacing:-.016em;margin:12px 0 7px}
+.desk .storyhead h1{font-size:34px}
+.storyhead .sub{font-family:Spectral,Georgia,serif;font-style:italic;font-weight:300;font-size:15.5px;color:var(--ink-3)}
+.storyhead hr{border:0;border-top:1px solid var(--rule);margin:24px 0 0}
+
+/* ── the nudge ────────────────────────────────────────────── */
+.nudge{
+  margin:22px 0 6px;padding:15px 16px 13px;border:1px solid var(--rule);
+  border-radius:6px;background:var(--paper-2);position:relative;
+}
+.nudge::before{content:"";position:absolute;left:-1px;top:14px;bottom:14px;width:2px;background:var(--accent);opacity:.75;border-radius:2px}
+.nudge p{font-size:13px;line-height:1.55;color:var(--ink-2);max-width:34ch}
+.desk .nudge p{max-width:52ch}
+.nudge .btns{display:flex;gap:8px;margin-top:12px}
+.btn{font-size:12px;font-weight:500;letter-spacing:.01em;padding:6px 13px;border-radius:999px;border:1px solid var(--rule);color:var(--ink-2);background:var(--paper);transition:.18s}
+.btn:hover{border-color:var(--ink-4)}
+.btn-acc{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+
+/* ─────────────────────────────────────────────────────────────
+   THE THREE LAYERS
+   ───────────────────────────────────────────────────────────── */
+.story{--fr:20.5px;--gl:9.5px;--en:13.5px}
+.desk .story{--fr:22px;--gl:10px;--en:14px}
+
+.line{padding:7px 10px 9px;margin:0 -10px;border-radius:5px;transition:background .2s}
+.story.live .line{cursor:pointer}
+.story.live .line:hover{background:var(--rule-soft)}
+.line + .line{margin-top:7px}
+
+/* layer 1 — the French */
+.fr{
+  font-family:Spectral,Georgia,serif;font-weight:400;font-size:var(--fr);
+  line-height:1.52;letter-spacing:-.002em;color:var(--ink);
+  -webkit-user-select:none;user-select:none;
+}
+.w{display:inline}
+.f{position:relative;border-radius:2px}
+.story.live .f{cursor:pointer}
+.f.ann{text-decoration:underline;text-decoration-style:dotted;text-decoration-thickness:1px;text-decoration-color:var(--ink-4);text-underline-offset:.28em}
+.hints-off .f.ann{text-decoration-color:transparent}
+.f.sel{background:var(--sel);box-shadow:0 0 0 3px var(--sel);text-decoration-color:transparent}
+
+/* layer 2 — the gloss (opt in) */
+.g{display:none}
+.hy{opacity:.42}
+
+.story.gloss-on .fr{line-height:1.2}
+.story.gloss-on .w{
+  display:inline-block;vertical-align:top;text-align:center;
+  margin:0 .11em .86em;
+}
+.story.gloss-on .g{
+  display:block;white-space:nowrap;
+  font-family:Inter,sans-serif;font-size:var(--gl);font-weight:500;
+  letter-spacing:.032em;line-height:1.3;color:var(--ink-3);
+  margin-top:.42em;
+  font-variant-numeric:tabular-nums;
+}
+.story.gloss-on .line{padding-top:10px;padding-bottom:6px}
+.story.gloss-on .line + .line{margin-top:14px}
+.story.gloss-on .en{margin-top:.55em}
+
+/* layer 3 — the translation */
+.en{
+  font-family:Inter,sans-serif;font-size:var(--en);line-height:1.5;
+  font-weight:400;letter-spacing:.004em;color:var(--en-dim);
+  margin-top:.62em;padding-left:13px;
+  border-left:1px solid transparent;
+  transition:color .4s ease, border-color .4s ease;
+}
+.line.on .en{color:var(--ink-2);border-left-color:var(--accent)}
+@media (prefers-color-scheme: dark){.line.on .en{border-left-color:var(--accent);opacity:.95}}
+
+/* ── the action bar ───────────────────────────────────────── */
+.actionbar{
+  position:absolute;z-index:20;transform:translateX(-50%);
+  display:flex;align-items:stretch;background:var(--float-bg);color:var(--float-fg);
+  border-radius:9px;box-shadow:var(--shadow-float);
+  animation:pop .16s ease-out;
+}
+@keyframes pop{from{opacity:0;transform:translateX(-50%) translateY(3px)}}
+.actionbar button{display:flex;align-items:center;gap:6px;padding:9px 15px;font-size:12.5px;font-weight:500;letter-spacing:.01em;white-space:nowrap}
+.actionbar button:first-of-type{border-radius:9px 0 0 9px}
+.actionbar button:last-of-type{border-radius:0 9px 9px 0}
+.actionbar button:hover{background:rgba(128,128,128,.16)}
+.actionbar .div{width:1px;background:var(--float-rule)}
+.actionbar svg{width:13px;height:13px;flex:none}
+.actionbar::after{
+  content:"";position:absolute;left:50%;bottom:-3px;width:8px;height:8px;z-index:-1;
+  background:var(--float-bg);transform:translateX(-50%) rotate(45deg);border-radius:1px;
+}
+
+/* ── the Why panel ────────────────────────────────────────── */
+.sheet{
+  position:absolute;left:0;right:0;bottom:0;z-index:12;
+  background:var(--paper);border-top:1px solid var(--rule);
+  border-radius:16px 16px 0 0;box-shadow:0 -14px 40px -18px rgba(20,16,10,.4);
+  padding:10px 24px 26px;
+}
+.grab{width:34px;height:3px;border-radius:2px;background:var(--ink-4);opacity:.5;margin:0 auto 16px}
+.side{flex:0 0 336px;max-width:100%;border-left:1px solid var(--rule);background:var(--paper-2);padding:34px 26px;overflow:hidden}
+
+.label{font-size:9.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-4);margin-bottom:11px}
+.selstrip{
+  padding:2px 0 4px;border-bottom:1px solid var(--rule);margin-bottom:20px;
+}
+.selstrip .story{--fr:19px;--gl:10px}
+.selstrip .fr .f{background:var(--sel);box-shadow:0 0 0 3px var(--sel)}
+.selstrip .story.gloss-on .g{color:var(--ink-2)}
+.note{font-size:13.5px;line-height:1.68;color:var(--ink);}
+.note .fq{font-family:Spectral,Georgia,serif;font-size:1.06em;font-style:italic}
+.disc{margin-top:9px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.disc summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:10px;padding:15px 0}
+.disc summary::-webkit-details-marker{display:none}
+.disc .rname{font-family:Spectral,Georgia,serif;font-size:15px;font-weight:500;letter-spacing:-.005em;flex:1}
+.disc .chev{color:var(--ink-4);transition:transform .2s}
+.disc[open] .chev{transform:rotate(90deg)}
+.disc .rbody{font-size:13px;line-height:1.7;color:var(--ink-2);padding:0 0 18px;max-width:46ch}
+.disc .rbody .fq{font-family:Spectral,Georgia,serif;font-size:1.06em;font-style:italic;color:var(--ink)}
+.occ{display:flex;align-items:center;gap:8px;margin-top:18px;font-size:12.5px;color:var(--accent);font-weight:500}
+.occ .arrow{transition:transform .18s}
+.occ:hover .arrow{transform:translateX(3px)}
+
+/* ── the shelf ────────────────────────────────────────────── */
+.shelfhead{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;padding:0 0 22px}
+.shelfhead h2{font-family:Spectral,Georgia,serif;font-weight:500;font-size:26px;letter-spacing:-.014em}
+.filters{display:flex;gap:5px;margin-left:auto;flex-wrap:wrap}
+.chip{font-size:11.5px;font-weight:450;padding:5px 11px;border-radius:999px;color:var(--ink-3);border:1px solid transparent}
+.chip.on{color:var(--ink);border-color:var(--rule);background:var(--paper-2)}
+.shelf{display:flex;flex-wrap:wrap;gap:0;position:relative;padding-bottom:16px;margin-bottom:26px}
+.shelf::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--rule);
+  box-shadow:0 5px 12px -7px rgba(34,31,26,.5);
+}
+@media (prefers-color-scheme: dark){.shelf::after{box-shadow:0 5px 14px -7px rgba(0,0,0,.9)}}
+.card{
+  flex:1 1 190px;min-width:0;padding:22px 24px 24px;border-left:1px solid var(--rule);
+  transition:background .2s;cursor:pointer;
+}
+.card:first-child{border-left:0;padding-left:0}
+.card:hover{background:var(--paper-2)}
+.card .no{font-family:Spectral,Georgia,serif;font-size:11.5px;letter-spacing:.09em;color:var(--ink-4)}
+.card h3{font-family:Spectral,Georgia,serif;font-weight:500;font-size:20px;line-height:1.22;letter-spacing:-.014em;margin:11px 0 5px}
+.card .sub{font-family:Spectral,Georgia,serif;font-style:italic;font-weight:300;font-size:13.5px;color:var(--ink-3)}
+.card .sum{font-size:13px;line-height:1.58;color:var(--ink-2);margin-top:13px;max-width:34ch}
+.card .len{display:inline-block;margin-top:16px;font-size:10px;font-weight:500;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-4);border:1px solid var(--rule);border-radius:999px;padding:4px 10px}
+@media (max-width:640px){
+  .card{flex:1 1 100%;border-left:0;padding-left:0;padding-right:0;border-top:1px solid var(--rule)}
+  .card:first-child{border-top:0}
+}
+.phoneshelf .card{flex:1 1 100%;border-left:0;padding:20px 0;border-top:1px solid var(--rule)}
+.phoneshelf .card:first-child{border-top:0;padding-top:6px}
+.phoneshelf .shelf{padding-bottom:0;margin-bottom:0}
+.phoneshelf .shelf::after{display:none}
+
+/* ── settings ─────────────────────────────────────────────── */
+.settings{width:100%}
+.popover{
+  width:306px;max-width:100%;background:var(--paper);border:1px solid var(--rule);
+  border-radius:12px;box-shadow:var(--shadow);padding:18px 20px 16px;
+}
+.srow{padding:14px 0;border-top:1px solid var(--rule-soft)}
+.srow:first-of-type{border-top:0;padding-top:4px}
+.srow .h{display:flex;align-items:center;gap:12px}
+.srow .name{font-size:13.5px;font-weight:450;color:var(--ink);flex:1}
+.srow .hint{font-size:11.5px;line-height:1.5;color:var(--ink-3);margin-top:5px;max-width:38ch}
+.seg{display:flex;border:1px solid var(--rule);border-radius:7px;overflow:hidden;margin-top:11px;background:var(--paper-2)}
+.seg button{flex:1;padding:7px 4px;font-size:12px;font-weight:450;color:var(--ink-3);border-left:1px solid var(--rule)}
+.seg button:first-child{border-left:0}
+.seg button.on{background:var(--paper);color:var(--ink);font-weight:500;box-shadow:inset 0 0 0 1px var(--rule)}
+.sw{width:36px;height:21px;border-radius:999px;background:var(--ink-4);opacity:.5;position:relative;flex:none;transition:.2s}
+.sw::after{content:"";position:absolute;top:2px;left:2px;width:17px;height:17px;border-radius:50%;background:var(--paper);transition:.2s}
+.sw.on{background:var(--accent);opacity:1}
+.sw.on::after{left:17px}
+.sizer{display:flex;align-items:center;gap:14px;margin-top:13px}
+.sizer .a{font-family:Spectral,Georgia,serif;color:var(--ink-3)}
+.track{flex:1;height:22px;position:relative;display:flex;align-items:center}
+.track .bar{position:absolute;left:0;right:0;height:1px;background:var(--rule)}
+.track .tick{position:relative;flex:1;display:flex;justify-content:center}
+.track .tick::before{content:"";width:1px;height:7px;background:var(--rule)}
+.knob{position:absolute;left:50%;transform:translateX(-50%);width:15px;height:15px;border-radius:50%;background:var(--accent);box-shadow:0 1px 3px rgba(20,16,10,.3)}
+.dimmer{position:absolute;inset:0;background:rgba(20,16,10,.28);z-index:11}
+@media (prefers-color-scheme: dark){.dimmer{background:rgba(0,0,0,.5)}}
+
+.footnote{margin-top:80px;padding-top:26px;border-top:1px solid var(--rule);font-size:12px;color:var(--ink-4);letter-spacing:.02em}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="mark"></div>
+  <p class="eyebrow">Read · Design direction A</p>
+  <h1>Editorial Paper</h1>
+  <p class="lede">A reading site for people who have the French words and not the assembly. Warm paper, a serif with a spine, wide margins, and <em>three layers of text that never fight each other.</em></p>
+</header>
+
+<!-- ══ 01 ══════════════════════════════════════════════════ -->
+<section class="sec">
+  <div class="cap">
+    <span class="n">01</span>
+    <h2>Reader — default state</h2>
+    <p>The French carries the page. The English sits under each line at the edge of visibility — present enough to be found, faint enough to be ignored. A strip on the first visit says so out loud, then leaves.</p>
+  </div>
+  <div class="frames">
+    <div class="phone">
+      <div class="fcap">Phone · 390</div>
+      <div class="screen fade">
+        <div class="topbar">
+          <span class="ic"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M9.5 3.5 5 8l4.5 4.5"/></svg></span>
+          <span class="t">Le train de 7h12</span>
+          <span class="aa">Aa</span>
+          <span class="progress" style="width:14%"></span>
+        </div>
+        <div class="pagebody">
+          <div class="story live" data-story data-header="1" data-nudge="1" data-live="1" data-from="0" data-to="4"></div>
+        </div>
+      </div>
+    </div>
+    <div class="desk">
+      <div class="fcap">Desktop</div>
+      <div class="screen fade" style="height:720px">
+        <div class="chrome"><i></i><i></i><i></i><span>read.vjspranav.dev/story/le-train-de-7h12</span></div>
+        <div class="pagebody"><div class="measure">
+          <div class="story live" data-story data-header="1" data-nudge="1" data-live="1" data-from="0" data-to="4"></div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 02 ══════════════════════════════════════════════════ -->
+<section class="sec">
+  <div class="cap">
+    <span class="n">02</span>
+    <h2>Reader — a line revealed</h2>
+    <p>Tap a line and its English comes up to full strength, with a hairline in the one accent colour to mark which line you asked about. Nothing else on the page moves.</p>
+  </div>
+  <div class="frames">
+    <div class="phone">
+      <div class="fcap">Line two, tapped</div>
+      <div class="screen fade">
+        <div class="topbar">
+          <span class="ic"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M9.5 3.5 5 8l4.5 4.5"/></svg></span>
+          <span class="t">Le train de 7h12</span>
+          <span class="aa">Aa</span>
+          <span class="progress" style="width:26%"></span>
+        </div>
+        <div class="pagebody">
+          <div class="story live" data-story data-live="1" data-from="0" data-to="4" data-on="1"></div>
+        </div>
+      </div>
+    </div>
+    <div class="desk">
+      <div class="fcap">Every line revealed — the “Always” setting</div>
+      <div class="screen fade">
+        <div class="chrome"><i></i><i></i><i></i><span>read.vjspranav.dev/story/le-train-de-7h12</span></div>
+        <div class="pagebody"><div class="measure">
+          <div class="story live" data-story data-live="1" data-from="0" data-to="4" data-reveal="all"></div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 03 ══════════════════════════════════════════════════ -->
+<section class="sec">
+  <div class="cap">
+    <span class="n">03</span>
+    <h2>Reader — interlinear gloss on</h2>
+    <p>Three layers, three voices. Serif for the French, a small sans in a lighter ink for the gloss, the translation set apart by its rule. Each French word becomes a narrow column, so the gloss sits under the word it belongs to and the two never drift. <span style="color:var(--ink-2)">Notice <em style="font-family:Spectral,Georgia,serif">l’</em> and <em style="font-family:Spectral,Georgia,serif">avait</em> — separate tokens, held tight together, glossed apart.</span></p>
+  </div>
+  <div class="frames">
+    <div class="phone">
+      <div class="fcap">Phone · all three layers</div>
+      <div class="screen fade" style="height:816px">
+        <div class="topbar">
+          <span class="ic"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M9.5 3.5 5 8l4.5 4.5"/></svg></span>
+          <span class="t">Le train de 7h12</span>
+          <span class="aa">Aa</span>
+          <span class="progress" style="width:14%"></span>
+        </div>
+        <div class="pagebody">
+          <div class="story gloss-on live" data-story data-live="1" data-from="0" data-to="4" data-reveal="all"></div>
+        </div>
+      </div>
+    </div>
+    <div class="desk">
+      <div class="fcap">Desktop · wider measure, same stack</div>
+      <div class="screen fade" style="height:816px">
+        <div class="chrome"><i></i><i></i><i></i><span>read.vjspranav.dev/story/le-train-de-7h12</span></div>
+        <div class="pagebody" style="padding-top:40px"><div class="measure">
+          <div class="story gloss-on live" data-story data-live="1" data-from="0" data-to="4" data-reveal="all"></div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 04 ══════════════════════════════════════════════════ -->
+<section class="sec">
+  <div class="cap">
+    <span class="n">04</span>
+    <h2>Selection and the action bar</h2>
+    <p>Words are tapped, not dragged. Tap one, then tap the word beside it to extend. The highlight bleeds a little past each word so a run of them reads as one piece. Two things to do with a selection, and no more.</p>
+  </div>
+  <div class="frames">
+    <div class="phone">
+      <div class="fcap">Four tokens held: ne · l’ · avait · pas</div>
+      <div class="screen fade">
+        <div class="topbar">
+          <span class="ic"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M9.5 3.5 5 8l4.5 4.5"/></svg></span>
+          <span class="t">Le train de 7h12</span>
+          <span class="aa">Aa</span>
+          <span class="progress" style="width:26%"></span>
+        </div>
+        <div class="pagebody" style="padding-top:74px">
+          <div class="story" data-story data-from="0" data-to="4" data-on="1" data-presel="1|1|4"></div>
+        </div>
+      </div>
+    </div>
+    <div class="desk">
+      <div class="fcap">Desktop · adds shift-click and drag</div>
+      <div class="screen fade">
+        <div class="chrome"><i></i><i></i><i></i><span>read.vjspranav.dev/story/le-train-de-7h12</span></div>
+        <div class="pagebody" style="padding-top:96px"><div class="measure">
+          <div class="story" data-story data-from="0" data-to="4" data-on="3" data-presel="3|6|10"></div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 05 ══════════════════════════════════════════════════ -->
+<section class="sec">
+  <div class="cap">
+    <span class="n">05</span>
+    <h2>The Why panel</h2>
+    <p>Always the same four beats, always in the same order: what the words literally say, why this sentence does it this way, the general pattern folded away until asked for, and everywhere else it happens. Selecting is never a dead end.</p>
+  </div>
+  <div class="frames">
+    <div class="phone">
+      <div class="fcap">Phone · bottom sheet</div>
+      <div class="screen">
+        <div class="topbar">
+          <span class="ic"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M9.5 3.5 5 8l4.5 4.5"/></svg></span>
+          <span class="t">Le train de 7h12</span>
+          <span class="aa">Aa</span>
+          <span class="progress" style="width:26%"></span>
+        </div>
+        <div class="pagebody" style="padding-top:26px">
+          <div class="story" data-story data-from="0" data-to="2" data-on="1" data-presel="1|1|4"></div>
+        </div>
+        <div class="sheet">
+          <div class="grab"></div>
+          <div class="selstrip">
+            <div class="story gloss-on">
+              <p class="fr" style="margin-bottom:2px"><span class="w"><span class="f">ne</span><span class="g">not<span class="hy">-</span>1</span></span> <span class="w"><span class="f">l’</span><span class="g">him</span></span><span class="w"><span class="f">avait</span><span class="g">had</span></span> <span class="w"><span class="f">pas</span><span class="g">not<span class="hy">-</span>2</span></span></p>
+            </div>
+          </div>
+          <p class="label">In this sentence</p>
+          <p class="note">Negation is two pieces that sandwich the conjugated verb. Here the verb is <span class="fq">«avait»</span>, not <span class="fq">«entendu»</span> — so <span class="fq">«ne»</span> and <span class="fq">«pas»</span> wrap around <span class="fq">«avait»</span> and leave the past participle outside. The object pronoun <span class="fq">«l’»</span> squeezes in between <span class="fq">«ne»</span> and the verb.</p>
+          <p class="label" style="margin-top:24px;margin-bottom:0">The rule</p>
+          <details class="disc">
+            <summary>
+              <span class="chev"><svg width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3.5 10.5 8 6 12.5"/></svg></span>
+              <span class="rname">Negation wraps the conjugated verb</span>
+            </summary>
+            <p class="rbody">French negates with a pair: <span class="fq">«ne»</span> before the verb, <span class="fq">«pas»</span> after it. In compound tenses the pair closes around the helping verb, not the participle. <span class="fq">«Je n’ai pas mangé»</span>, never <span class="fq">«Je n’ai mangé pas»</span>.</p>
+          </details>
+          <a class="occ" href="#" style="text-decoration:none">This same rule appears in 11 other places <span class="arrow"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5"/></svg></span></a>
+        </div>
+      </div>
+    </div>
+    <div class="desk">
+      <div class="fcap">Desktop · side panel</div>
+      <div class="screen" style="height:640px">
+        <div class="chrome"><i></i><i></i><i></i><span>read.vjspranav.dev/story/le-train-de-7h12</span></div>
+        <div style="display:flex;flex-wrap:wrap;height:calc(100% - 34px)">
+          <div style="flex:1 1 340px;min-width:0;padding:44px 0 0;overflow:hidden;position:relative">
+            <div class="measure" style="max-width:31rem">
+              <div class="story" data-story data-from="0" data-to="4" data-on="1" data-presel="1|1|4"></div>
+            </div>
+          </div>
+          <aside class="side">
+            <div class="selstrip">
+              <div class="story gloss-on">
+                <p class="fr" style="margin-bottom:2px"><span class="w"><span class="f">ne</span><span class="g">not<span class="hy">-</span>1</span></span> <span class="w"><span class="f">l’</span><span class="g">him</span></span><span class="w"><span class="f">avait</span><span class="g">had</span></span> <span class="w"><span class="f">pas</span><span class="g">not<span class="hy">-</span>2</span></span></p>
+              </div>
+            </div>
+            <p class="label">In this sentence</p>
+            <p class="note">Negation is two pieces that sandwich the conjugated verb. Here the verb is <span class="fq">«avait»</span>, not <span class="fq">«entendu»</span> — so <span class="fq">«ne»</span> and <span class="fq">«pas»</span> wrap around <span class="fq">«avait»</span> and leave the past participle outside. The object pronoun <span class="fq">«l’»</span> squeezes in between <span class="fq">«ne»</span> and the verb.</p>
+            <p class="label" style="margin-top:24px;margin-bottom:0">The rule</p>
+            <details class="disc" open>
+              <summary>
+                <span class="chev"><svg width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3.5 10.5 8 6 12.5"/></svg></span>
+                <span class="rname">Negation wraps the conjugated verb</span>
+              </summary>
+              <p class="rbody">French negates with a pair: <span class="fq">«ne»</span> before the verb, <span class="fq">«pas»</span> after it. In compound tenses the pair closes around the helping verb, not the participle. <span class="fq">«Je n’ai pas mangé»</span>, never <span class="fq">«Je n’ai mangé pas»</span>.</p>
+            </details>
+            <a class="occ" href="#" style="text-decoration:none">This same rule appears in 11 other places <span class="arrow"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5"/></svg></span></a>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 06 ══════════════════════════════════════════════════ -->
+<section class="sec">
+  <div class="cap">
+    <span class="n">06</span>
+    <h2>The library</h2>
+    <p>Six stories to a shelf, divided by hairlines and sitting on a plank with a shadow under it. Titles in French, the English underneath in italic, one plain line about what happens, and how long it will take.</p>
+  </div>
+  <div class="frames">
+    <div class="desk" style="flex:1 1 620px">
+      <div class="fcap">Desktop</div>
+      <div class="screen" style="height:auto">
+        <div class="chrome"><i></i><i></i><i></i><span>read.vjspranav.dev/stories</span></div>
+        <div style="padding:44px 40px 40px">
+          <div class="shelfhead">
+            <h2>Stories</h2>
+            <div class="filters">
+              <button class="chip on">Everything</button>
+              <button class="chip">One page</button>
+              <button class="chip">Two pages</button>
+              <button class="chip">Chapters</button>
+            </div>
+          </div>
+          <div class="shelf">
+            <div class="card">
+              <span class="no">I</span>
+              <h3>Le train de 7h12</h3>
+              <p class="sub">The 7:12 train</p>
+              <p class="sum">A man misses the same train twice in one week, and the second time is deliberate.</p>
+              <span class="len">One page</span>
+            </div>
+            <div class="card">
+              <span class="no">II</span>
+              <h3>La voisine du dessus</h3>
+              <p class="sub">The woman upstairs</p>
+              <p class="sum">Every night at eleven she moves her furniture, and nobody in the building has ever asked why.</p>
+              <span class="len">One page</span>
+            </div>
+            <div class="card">
+              <span class="no">III</span>
+              <h3>Café, sans sucre</h3>
+              <p class="sub">Coffee, no sugar</p>
+              <p class="sum">A waiter remembers an order from four years ago. The customer does not remember him at all.</p>
+              <span class="len">Two pages</span>
+            </div>
+          </div>
+          <div class="shelf">
+            <div class="card">
+              <span class="no">IV</span>
+              <h3>Les clés de Madame Roux</h3>
+              <p class="sub">Madame Roux’s keys</p>
+              <p class="sum">Out of habit she still locks a door in a flat she sold three years ago.</p>
+              <span class="len">Two pages</span>
+            </div>
+            <div class="card">
+              <span class="no">V</span>
+              <h3>Dimanche, quatre heures</h3>
+              <p class="sub">Sunday, four o’clock</p>
+              <p class="sum">Two brothers meet for lunch every week and say almost nothing on purpose.</p>
+              <span class="len">Chapter</span>
+            </div>
+            <div class="card">
+              <span class="no">VI</span>
+              <h3>Le chien de personne</h3>
+              <p class="sub">Nobody’s dog</p>
+              <p class="sum">A whole street learns to feed a dog that belongs to no one, until a man turns up to claim him.</p>
+              <span class="len">Chapter</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="phone">
+      <div class="fcap">Phone</div>
+      <div class="screen fade phoneshelf" style="height:640px">
+        <div class="topbar"><span class="t" style="margin:0;font-size:15px;color:var(--ink)">Stories</span><span class="aa" style="margin-left:auto">Aa</span></div>
+        <div style="padding:20px 26px 0">
+          <div class="filters" style="margin:0 0 14px">
+            <button class="chip on">Everything</button>
+            <button class="chip">One page</button>
+            <button class="chip">Chapters</button>
+          </div>
+          <div class="shelf">
+            <div class="card">
+              <span class="no">I</span>
+              <h3>Le train de 7h12</h3>
+              <p class="sub">The 7:12 train</p>
+              <p class="sum">A man misses the same train twice in one week, and the second time is deliberate.</p>
+              <span class="len">One page</span>
+            </div>
+            <div class="card">
+              <span class="no">II</span>
+              <h3>La voisine du dessus</h3>
+              <p class="sub">The woman upstairs</p>
+              <p class="sum">Every night at eleven she moves her furniture, and nobody in the building has ever asked why.</p>
+              <span class="len">One page</span>
+            </div>
+            <div class="card">
+              <span class="no">III</span>
+              <h3>Café, sans sucre</h3>
+              <p class="sub">Coffee, no sugar</p>
+              <p class="sum">A waiter remembers an order from four years ago.</p>
+              <span class="len">Two pages</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 07 ══════════════════════════════════════════════════ -->
+<section class="sec">
+  <div class="cap">
+    <span class="n">07</span>
+    <h2>Settings</h2>
+    <p>Four things. Every one of them changes what you see on the page behind it, so the sheet stays short and the reader stays visible.</p>
+  </div>
+  <div class="frames">
+    <div class="phone">
+      <div class="fcap">Phone · sheet</div>
+      <div class="screen" style="height:700px">
+        <div class="topbar">
+          <span class="ic"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M9.5 3.5 5 8l4.5 4.5"/></svg></span>
+          <span class="t">Le train de 7h12</span>
+          <span class="aa" style="color:var(--accent)">Aa</span>
+          <span class="progress" style="width:14%"></span>
+        </div>
+        <div class="pagebody" style="padding-top:22px">
+          <div class="story" data-story data-from="0" data-to="2"></div>
+        </div>
+        <div class="dimmer"></div>
+        <div class="sheet">
+          <div class="grab"></div>
+          <div class="settings">
+            <div class="srow">
+              <div class="h"><span class="name">Reveal the English</span></div>
+              <div class="seg">
+                <button>Always</button><button class="on">On tap</button><button>Hidden</button>
+              </div>
+            </div>
+            <div class="srow">
+              <div class="h"><span class="name">Interlinear gloss</span><span class="sw"></span></div>
+              <p class="hint">A literal word under each French word, showing how the sentence is put together.</p>
+            </div>
+            <div class="srow">
+              <div class="h"><span class="name">Hints</span><span class="sw on"></span></div>
+              <p class="hint">A faint dotted underline under words that have a note behind them.</p>
+            </div>
+            <div class="srow">
+              <div class="h"><span class="name">Text size</span></div>
+              <div class="sizer">
+                <span class="a" style="font-size:13px">A</span>
+                <span class="track">
+                  <span class="bar"></span>
+                  <span class="tick"></span><span class="tick"></span>
+                  <span class="tick"><span class="knob"></span></span>
+                  <span class="tick"></span><span class="tick"></span>
+                </span>
+                <span class="a" style="font-size:21px">A</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="desk">
+      <div class="fcap">Desktop · popover under “Aa”</div>
+      <div class="screen" style="height:700px">
+        <div class="chrome"><i></i><i></i><i></i><span>read.vjspranav.dev/story/le-train-de-7h12</span></div>
+        <div style="position:relative;height:calc(100% - 34px);overflow:hidden">
+          <div style="display:flex;justify-content:flex-end;padding:14px 26px 0"><span class="aa" style="font-size:12.5px;font-weight:600;color:var(--accent)">Aa</span></div>
+          <div class="pagebody" style="padding-top:22px;height:auto"><div class="measure">
+            <div class="story" data-story data-from="0" data-to="4" data-reveal="all"></div>
+          </div></div>
+          <div style="position:absolute;right:22px;top:44px;z-index:5">
+            <div class="popover">
+              <div class="settings">
+                <div class="srow">
+                  <div class="h"><span class="name">Reveal the English</span></div>
+                  <div class="seg">
+                    <button class="on">Always</button><button>On tap</button><button>Hidden</button>
+                  </div>
+                </div>
+                <div class="srow">
+                  <div class="h"><span class="name">Interlinear gloss</span><span class="sw"></span></div>
+                  <p class="hint">A literal word under each French word, showing how the sentence is put together.</p>
+                </div>
+                <div class="srow">
+                  <div class="h"><span class="name">Hints</span><span class="sw on"></span></div>
+                  <p class="hint">A faint dotted underline under words that have a note behind them.</p>
+                </div>
+                <div class="srow">
+                  <div class="h"><span class="name">Text size</span></div>
+                  <div class="sizer">
+                    <span class="a" style="font-size:13px">A</span>
+                    <span class="track">
+                      <span class="bar"></span>
+                      <span class="tick"></span><span class="tick"></span><span class="tick"></span>
+                      <span class="tick"><span class="knob"></span></span>
+                      <span class="tick"></span>
+                    </span>
+                    <span class="a" style="font-size:21px">A</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<p class="footnote">Spectral for the French · Inter for English and interface · one accent, an oxblood terracotta, used six times on this page.</p>
+
+</div>
+
+<script>
+/* ── content ────────────────────────────────────────────────
+   w(french, gloss, flags)  flags: a = has a note, t = no space before
+   grp([parts], gloss)      two tokens under one gloss (jusqu’à)
+   ───────────────────────────────────────────────────────── */
+const w = (f,g,fl="") => ({f,g,ann:fl.includes("a"),tight:fl.includes("t")});
+const p = (f,ann)     => ({f,ann:!!ann});
+const grp = (parts,g,fl="") => ({parts,g,tight:fl.includes("t")});
+
+const LINES = [
+  { en:"The old man closed the door without a sound.",
+    t:[ w("Le","the"), w("vieil","old","a"), w("homme","man"), w("ferma","closed"),
+        w("la","the"), w("porte","door"), w("sans","without"), w("bruit.","noise") ] },
+
+  { en:"She hadn’t heard him leave.",
+    t:[ w("Elle","she"), w("ne","not-1","a"), w("l’","him","a"), w("avait","had","t"),
+        w("pas","not-2","a"), w("entendu","heard"), w("partir.","to-leave") ] },
+
+  { en:"Outside, it was still raining.",
+    t:[ w("Dehors,","outside"), w("il","it"), w("pleuvait","was-raining"), w("encore.","still") ] },
+
+  { en:"He walked to the station, his hands in his pockets.",
+    t:[ w("Il","he"), w("marcha","walked"), grp([p("jusqu’",1),p("à")],"until-to"),
+        w("la","the"), w("gare,","station"), w("les","the","a"), w("mains","hands","a"),
+        w("dans","in","a"), w("les","the","a"), w("poches.","pockets","a") ] },
+
+  { en:"The 7:12 train was leaving without him, like every Tuesday.",
+    t:[ w("Le","the"), w("train","train"), w("de","of"), w("7h12","7:12"),
+        w("partait","was-leaving","a"), w("sans","without"), w("lui,","him"),
+        w("comme","like"), w("chaque","each"), w("mardi.","Tuesday") ] }
+];
+
+const HEADER = `
+  <div class="storyhead">
+    <div class="kicker">Short story · One page</div>
+    <h1>Le train de 7h12</h1>
+    <div class="sub">The 7:12 train</div>
+    <hr>
+  </div>`;
+
+const NUDGE = `
+  <div class="nudge">
+    <p>The English is right below each line. Tap a line to bring it up.</p>
+    <div class="btns">
+      <button class="btn btn-acc" data-nudge="always">Always on</button>
+      <button class="btn" data-nudge="got">Got it</button>
+    </div>
+  </div>`;
+
+const gl = g => g.replace(/-/g,'<span class="hy">-</span>');
+
+function tokHTML(t){
+  if(t.parts){
+    const inner = t.parts.map(x => `<span class="f${x.ann?" ann":""}">${x.f}</span>`).join("");
+    return `<span class="w">${inner}<span class="g">${gl(t.g)}</span></span>`;
+  }
+  return `<span class="w"><span class="f${t.ann?" ann":""}">${t.f}</span><span class="g">${gl(t.g)}</span></span>`;
+}
+
+function lineHTML(L,i,revealAll){
+  let s = "";
+  L.t.forEach((t,n) => { if(n>0 && !t.tight) s += " "; s += tokHTML(t); });
+  return `<div class="line${revealAll?" on":""}" data-li="${i}"><p class="fr">${s}</p><p class="en">${L.en}</p></div>`;
+}
+
+document.querySelectorAll("[data-story]").forEach(el => {
+  const d = el.dataset;
+  const from = +(d.from||0), to = +(d.to ?? LINES.length-1);
+  let h = "";
+  if(d.header) h += HEADER;
+  if(d.nudge)  h += NUDGE;
+  for(let i=from;i<=to;i++) h += lineHTML(LINES[i], i, d.reveal === "all");
+  el.innerHTML = h;
+  if(d.on){ const l = el.querySelector('.line[data-li="'+d.on+'"]'); if(l) l.classList.add("on"); }
+});
+
+/* ── selection ──────────────────────────────────────────── */
+const bars = new Map();
+
+function wordsOf(line){ return Array.from(line.querySelectorAll(".f")); }
+
+function clearSel(pane){
+  if(!pane) return;
+  pane.querySelectorAll(".f.sel").forEach(f => f.classList.remove("sel"));
+  pane._sel = null;
+  const b = bars.get(pane);
+  if(b){ b.remove(); bars.delete(pane); }
+}
+
+function paint(pane){
+  pane.querySelectorAll(".f.sel").forEach(f => f.classList.remove("sel"));
+  const s = pane._sel; if(!s) return;
+  const line = pane.querySelector('.line[data-li="'+s.li+'"]');
+  const ws = wordsOf(line);
+  for(let i=s.a;i<=s.b;i++) ws[i] && ws[i].classList.add("sel");
+  showBar(pane, ws.slice(s.a, s.b+1));
+}
+
+function showBar(pane, sel){
+  const screen = pane.closest(".screen");
+  if(!screen || !sel.length) return;
+  let bar = bars.get(pane);
+  if(!bar){
+    bar = document.createElement("div");
+    bar.className = "actionbar";
+    bar.innerHTML =
+      '<button>Why?</button><span class="div"></span>' +
+      '<button><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round">' +
+      '<path d="M3.2 6.2h2.4L8.8 3.3v9.4L5.6 9.8H3.2z" fill="currentColor" stroke="none"/>' +
+      '<path d="M11 5.6a3.4 3.4 0 0 1 0 4.8"/><path d="M12.9 3.6a6 6 0 0 1 0 8.8"/></svg>Listen</button>';
+    screen.appendChild(bar);
+    bars.set(pane, bar);
+  }
+  const sr = screen.getBoundingClientRect();
+  const first = sel[0].getBoundingClientRect();
+  const last  = sel[sel.length-1].getBoundingClientRect();
+  const mid   = ((first.left + last.right) / 2) - sr.left;
+  const top   = first.top - sr.top;
+  const half  = bar.offsetWidth / 2 || 80;
+  bar.style.left = Math.max(half + 10, Math.min(sr.width - half - 10, mid)) + "px";
+  bar.style.top  = Math.max(6, top - bar.offsetHeight - 12) + "px";
+}
+
+document.addEventListener("click", e => {
+  const pane = e.target.closest(".story");
+  if(!pane){ bars.forEach((b,p) => { if(p.hasAttribute("data-live")) clearSel(p); }); return; }
+
+  const nudgeBtn = e.target.closest("[data-nudge]");
+  if(nudgeBtn){
+    if(nudgeBtn.dataset.nudge === "always")
+      pane.querySelectorAll(".line").forEach(l => l.classList.add("on"));
+    pane.querySelector(".nudge").remove();
+    return;
+  }
+  if(!pane.hasAttribute("data-live")) return;
+
+  const f = e.target.closest(".f");
+  if(f){
+    const line = f.closest(".line");
+    const li = line.dataset.li;
+    const i  = wordsOf(line).indexOf(f);
+    const s  = pane._sel;
+    bars.forEach((b,p) => { if(p !== pane && p.hasAttribute("data-live")) clearSel(p); });
+    if(s && s.li === li && i === s.b + 1)      s.b = i;
+    else if(s && s.li === li && i === s.a - 1) s.a = i;
+    else if(s && s.li === li && i >= s.a && i <= s.b && s.a !== s.b) { s.a = i; s.b = i; }
+    else pane._sel = { li, a:i, b:i };
+    paint(pane);
+    return;
+  }
+  const line = e.target.closest(".line");
+  if(line){ line.classList.toggle("on"); clearSel(pane); }
+});
+
+/* ── the pre-staged selections in 04 and 05 ─────────────── */
+function stage(){
+  document.querySelectorAll("[data-presel]").forEach(pane => {
+    const [li,a,b] = pane.dataset.presel.split("|");
+    pane._sel = { li, a:+a, b:+b };
+    paint(pane);
+  });
+}
+if(document.fonts && document.fonts.ready) document.fonts.ready.then(stage);
+else window.addEventListener("load", stage);
+stage();
+window.addEventListener("resize", () => {
+  document.querySelectorAll(".story").forEach(p => { if(p._sel) paint(p); });
+});
+</script>
+</body>
+</html>

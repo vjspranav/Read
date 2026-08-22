@@ -1,0 +1,984 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Museum Label — design direction C</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,200..700;1,6..72,200..600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   MUSEUM LABEL — palette
+   wall  : the gallery wall the labels hang on (page)
+   paper : the label card itself (screens)
+   ============================================================ */
+:root{
+  --wall:#D9D6CB;
+  --paper:#F1F0EA;
+  --paper-2:#E9E7DF;
+  --ink:#17150F;
+  --ink-2:#4C473C;
+  --ink-3:#8B8577;
+  --rule:#C6C1B2;
+  --rule-2:#DDDACE;
+  --accent:#26399B;
+  --accent-wash:rgba(38,57,155,.12);
+  --accent-ink:#26399B;
+  --dim:.13;
+  --shadow:0 1px 0 rgba(23,21,15,.05), 0 18px 44px -30px rgba(23,21,15,.5);
+
+  --fr:"Newsreader", Georgia, "Times New Roman", serif;
+  --ui:"Archivo", "Helvetica Neue", Arial, sans-serif;
+  --mo:"IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --wall:#0D0C0B;
+    --paper:#181713;
+    --paper-2:#111010;
+    --ink:#EEEBE1;
+    --ink-2:#ADA79B;
+    --ink-3:#6E6960;
+    --rule:#3E3A32;
+    --rule-2:#2C2A24;
+    --accent:#9AAAFF;
+    --accent-wash:rgba(154,170,255,.17);
+    --accent-ink:#A9B6FF;
+    --dim:.2;
+    --shadow:0 1px 0 rgba(0,0,0,.4), 0 18px 44px -30px #000;
+  }
+}
+
+*{box-sizing:border-box}
+html,body{max-width:100%;overflow-x:hidden}
+body{
+  margin:0;
+  background:var(--wall);
+  color:var(--ink);
+  font-family:var(--ui);
+  font-size:15px;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent}
+p,h1,h2,h3,h4{margin:0}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+
+/* ---------- shared label typography (the museum device) ---------- */
+.eyebrow{
+  font-family:var(--mo);
+  font-size:9.5px;
+  line-height:1;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--ink-3);
+}
+
+/* ============================================================
+   SHEET  (the presentation page)
+   ============================================================ */
+.sheet{max-width:1180px;margin:0 auto;padding:0 28px 120px}
+
+.masthead{padding:96px 0 52px;border-bottom:1px solid var(--rule)}
+.masthead .eyebrow{display:block;margin-bottom:26px}
+.masthead h1{
+  font-family:var(--fr);
+  font-optical-sizing:auto;
+  font-weight:300;
+  font-size:clamp(58px,10.5vw,124px);
+  line-height:.9;
+  letter-spacing:-.028em;
+  margin-bottom:30px;
+}
+.masthead h1 em{font-style:italic;font-weight:250}
+.masthead .lede{
+  max-width:46ch;
+  font-size:17px;
+  line-height:1.5;
+  color:var(--ink-2);
+}
+.tomb{
+  margin-top:44px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(184px,1fr));
+  gap:22px 34px;
+  border-top:1px solid var(--rule-2);
+  padding-top:22px;
+}
+.tomb div{min-width:0}
+.tomb dt{font-family:var(--mo);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);margin-bottom:7px}
+.tomb dd{margin:0;font-size:13px;line-height:1.45;color:var(--ink-2)}
+
+/* plates */
+.plate{padding-top:88px}
+.plate-head{display:flex;gap:20px;align-items:baseline;border-top:1px solid var(--rule);padding-top:14px;margin-bottom:28px;flex-wrap:wrap}
+.plate-no{font-family:var(--mo);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-ink);flex:0 0 auto}
+.plate-t{font-family:var(--fr);font-optical-sizing:auto;font-weight:400;font-size:22px;letter-spacing:-.01em;line-height:1.2}
+.plate-d{font-size:13px;color:var(--ink-2);max-width:56ch;line-height:1.5;flex:1 1 300px;min-width:0}
+
+.row{display:flex;gap:30px;flex-wrap:wrap;align-items:flex-start}
+.unit{min-width:0;max-width:100%;display:flex;flex-direction:column;gap:10px}
+.unit-cap{font-family:var(--mo);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
+
+/* ---------- device frames ---------- */
+.frame{background:var(--paper);border:1px solid var(--rule);box-shadow:var(--shadow);overflow:hidden;position:relative}
+.frame.phone{width:390px;max-width:100%;border-radius:26px;flex:0 0 auto}
+.frame.desk{width:100%;min-width:0;max-width:980px;border-radius:7px;flex:0 0 auto}
+
+.statusbar{height:32px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;font-family:var(--mo);font-size:10px;letter-spacing:.04em;color:var(--ink-3);background:var(--paper)}
+.statusbar .bars{display:flex;gap:3px;align-items:flex-end}
+.statusbar .bars i{display:block;width:2px;background:var(--ink-3)}
+.statusbar .bars i:nth-child(1){height:4px}
+.statusbar .bars i:nth-child(2){height:6px}
+.statusbar .bars i:nth-child(3){height:8px}
+.statusbar .bars i:nth-child(4){height:10px;background:var(--rule)}
+
+.chrome{height:32px;display:flex;align-items:center;padding:0 14px;border-bottom:1px solid var(--rule-2);background:var(--paper-2)}
+.chrome .dots{display:flex;gap:6px}
+.chrome .dots i{width:8px;height:8px;border-radius:50%;border:1px solid var(--rule);display:block}
+.chrome .path{flex:1;text-align:center;font-family:var(--mo);font-size:10px;color:var(--ink-3);letter-spacing:.03em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:0 12px}
+
+/* ============================================================
+   READER
+   ============================================================ */
+.screen{container-type:inline-size;background:var(--paper);position:relative;display:flex;flex-direction:column}
+.phone .screen{height:812px}
+.desk .screen{height:640px}
+.desk .screen.tall{height:770px}
+.desk .screen.taller{height:900px}
+.phone .screen.tall{height:900px}
+
+.rhead{
+  display:flex;align-items:flex-start;gap:16px;
+  padding:22px 26px 20px;
+  border-bottom:1px solid var(--rule);
+  flex:0 0 auto;
+}
+.rhead .ico{width:26px;height:26px;display:flex;align-items:center;justify-content:center;color:var(--ink-3);flex:0 0 auto;margin-top:2px}
+.rhead .ico:hover{color:var(--ink)}
+.rhead-t{flex:1;min-width:0}
+.rhead-t .eyebrow{display:block;margin-bottom:9px}
+.rhead-t h2{font-family:var(--fr);font-optical-sizing:auto;font-weight:400;font-size:21px;line-height:1.15;letter-spacing:-.012em}
+.rhead-t p{font-size:12px;color:var(--ink-2);margin-top:4px;letter-spacing:.005em}
+
+.reader{position:relative;flex:1;overflow:hidden;padding:0 26px}
+.reader::after{content:"";position:absolute;left:0;right:0;bottom:0;height:64px;pointer-events:none;
+  background:linear-gradient(to bottom,transparent,var(--paper) 78%)}
+
+.lines{padding:38px 0 90px;position:relative}
+.line{cursor:pointer;-webkit-tap-highlight-color:transparent}
+.line + .line{margin-top:30px}
+.screen[data-gloss="on"] .line + .line{margin-top:42px}
+
+.fr{
+  font-family:var(--fr);
+  font-optical-sizing:auto;
+  font-weight:390;
+  font-size:27px;
+  line-height:1.3;
+  letter-spacing:-.014em;
+  color:var(--ink);
+}
+.tok{display:inline-block;vertical-align:top;padding-right:.3em;transition:background .12s;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
+.tok .w{display:block;width:max-content}
+.tok .g{
+  display:none;
+  font-family:var(--mo);
+  font-size:9.5px;
+  line-height:1.15;
+  letter-spacing:.015em;
+  color:var(--ink-3);
+  margin-top:7px;
+  white-space:nowrap;
+}
+.screen[data-gloss="on"] .tok .g{display:block}
+
+/* annotation hint — the faint dotted underline */
+.tok.ann .w{border-bottom:1px dotted var(--ink-3);padding-bottom:2px}
+.screen[data-hints="off"] .tok.ann .w{border-bottom-color:transparent}
+
+/* elision: l’ + avait are two tokens written as one word.
+   The gloss columns are divided by a hairline instead of a word space. */
+.tok.gs{padding-right:0}
+.tok.gs .g{padding-right:7px}
+.tok.ge .g{border-left:1px solid var(--rule);padding-left:6px}
+
+/* selection */
+.tok.sel{background:var(--accent-wash)}
+.tok.sel-a{box-shadow:inset 1px 0 0 var(--accent)}
+.tok.sel-z{box-shadow:inset -1px 0 0 var(--accent)}
+.tok.sel-a.sel-z{box-shadow:inset 1px 0 0 var(--accent),inset -1px 0 0 var(--accent)}
+
+/* the English caption */
+.en{
+  font-family:var(--ui);
+  font-size:12.5px;
+  line-height:1.5;
+  letter-spacing:.004em;
+  color:var(--ink-2);
+  opacity:var(--dim);
+  transition:opacity .28s ease;
+}
+.line.on .en{opacity:1}
+.screen[data-reveal="all"] .en{opacity:1}
+.screen[data-reveal="hidden"] .en{display:none}
+
+/* --- desktop: the caption lives in the left margin, against the rail --- */
+.line{display:grid;grid-template-columns:158px 1fr;column-gap:34px}
+.fr{grid-area:1/2}
+.en{grid-area:1/1;text-align:right;padding-top:.62em}
+.lines::before{content:"";position:absolute;left:174px;top:18px;bottom:76px;width:1px;background:var(--rule)}
+/* an accent segment sitting on the rail marks the line you opened */
+.line::before{content:"";grid-area:1/1;justify-self:end;align-self:start;
+  width:1px;height:1.55em;background:var(--accent);margin-right:-17px;margin-top:.3em;opacity:0;transition:opacity .2s}
+.line.on::before{opacity:1}
+.screen[data-reveal="all"] .line::before{opacity:1}
+
+/* --- narrow container: everything stacks --- */
+@container (max-width: 620px){
+  .line{display:block}
+  .line::before{display:none}
+  .lines::before{display:none}
+  .en{text-align:left;padding-top:0;margin-top:15px;border-left:1px solid var(--rule);padding-left:13px}
+  .screen[data-gloss="on"] .en{margin-top:19px}
+}
+
+/* larger French inside wide (desktop) frames */
+@container (min-width: 621px){
+  .fr{font-size:35px;line-height:1.26}
+  .tok .g{font-size:10px;margin-top:8px}
+  .rhead{padding:26px 40px 24px}
+  .rhead-t h2{font-size:24px}
+  .reader{padding:0 40px}
+  .lines{padding:44px 0 100px}
+  .line + .line{margin-top:36px}
+  .screen[data-gloss="on"] .line + .line{margin-top:52px}
+  .en{font-size:13px}
+}
+
+/* ---------- first-visit nudge ---------- */
+.nudge{
+  display:flex;gap:18px;align-items:center;flex-wrap:wrap;
+  margin-top:20px;padding:15px 17px;
+  border:1px solid var(--rule);
+  background:var(--paper-2);
+}
+.nudge p{flex:1 1 190px;min-width:0;font-size:12.5px;line-height:1.45;color:var(--ink-2)}
+.nudge .acts{display:flex;gap:9px;flex:0 0 auto}
+.btn{
+  font-family:var(--ui);font-size:11.5px;font-weight:500;letter-spacing:.02em;
+  padding:7px 13px;border:1px solid var(--rule);color:var(--ink-2);white-space:nowrap;
+  transition:border-color .15s,color .15s,background .15s;
+}
+.btn:hover{border-color:var(--ink-3);color:var(--ink)}
+.btn.primary{border-color:var(--accent);color:var(--accent-ink)}
+.btn.primary:hover{background:var(--accent-wash)}
+
+/* ---------- floating action bar ---------- */
+.actionbar{
+  position:absolute;z-index:5;display:none;
+  background:var(--paper);border:1px solid var(--ink);
+  box-shadow:0 14px 30px -18px rgba(23,21,15,.6);
+}
+.actionbar.show{display:flex}
+.actionbar button{
+  display:flex;align-items:center;gap:7px;
+  font-size:12px;font-weight:500;letter-spacing:.02em;
+  padding:9px 15px;color:var(--ink);
+}
+.actionbar button + button{border-left:1px solid var(--rule)}
+.actionbar button:hover{background:var(--accent-wash);color:var(--accent-ink)}
+.actionbar svg{display:block;flex:0 0 auto}
+
+/* ============================================================
+   WHY PANEL
+   ============================================================ */
+.why{background:var(--paper);display:flex;flex-direction:column;min-width:0}
+.why-sheet{
+  position:absolute;left:0;right:0;bottom:0;z-index:9;
+  border-top:1px solid var(--ink);
+  box-shadow:0 -22px 44px -30px rgba(23,21,15,.7);
+  max-height:76%;
+}
+.why-side{width:372px;flex:0 0 372px;border-left:1px solid var(--rule)}
+.grip{width:34px;height:2px;background:var(--rule);margin:11px auto 0;flex:0 0 auto}
+
+.why-body{padding:22px 26px 30px;overflow:auto;flex:1 1 auto;min-height:0}
+.why-side .why-body{padding:26px 28px 34px}
+
+.why-sec + .why-sec{margin-top:26px;border-top:1px solid var(--rule-2);padding-top:22px}
+.why-sec > .eyebrow{display:block;margin-bottom:13px}
+
+/* selection, glossed */
+.why-gloss .fr{font-size:26px;grid-area:auto}
+.why-gloss .line,.specimen .line{display:block;cursor:default}
+.why-gloss .line::before,.specimen .line::before{display:none}
+.why-gloss .tok .g,.specimen .tok .g{display:block}
+.why-gloss .tok .w{border-bottom:0;padding-bottom:0}
+.specimen .fr{grid-area:auto}
+
+.note{font-size:13.5px;line-height:1.62;color:var(--ink-2)}
+.note b{font-weight:400;color:var(--ink);font-family:var(--fr);font-optical-sizing:auto;font-size:15.5px}
+
+/* rule disclosure */
+details.rule{border-top:1px solid var(--rule-2);margin-top:0}
+details.rule summary{
+  list-style:none;cursor:pointer;display:flex;gap:14px;align-items:flex-start;
+  padding:14px 0 0;
+}
+details.rule summary::-webkit-details-marker{display:none}
+details.rule summary .sig{
+  font-family:var(--mo);font-size:14px;line-height:1;color:var(--ink-3);
+  width:11px;flex:0 0 auto;margin-top:3px;
+}
+details[open].rule summary .sig::before{content:"–"}
+details.rule summary .sig::before{content:"+"}
+details.rule summary .nm{
+  font-family:var(--fr);font-optical-sizing:auto;font-weight:400;font-size:16.5px;line-height:1.3;
+  letter-spacing:-.008em;flex:1;min-width:0;
+}
+details.rule summary:hover .nm{color:var(--accent-ink)}
+details.rule .body{padding:11px 0 2px 25px;font-size:13px;line-height:1.62;color:var(--ink-2)}
+details.rule .body em{font-family:var(--fr);font-optical-sizing:auto;font-style:normal;font-size:15px;color:var(--ink)}
+
+.occur{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  width:100%;text-align:left;padding:15px 0 0;border-top:1px solid var(--rule-2);
+  font-size:13px;color:var(--ink-2);
+}
+.occur:hover{color:var(--accent-ink)}
+.occur .n{font-family:var(--mo);font-size:11px;color:var(--accent-ink);letter-spacing:.04em}
+
+/* ============================================================
+   LIBRARY
+   ============================================================ */
+.lib-head{padding:30px 26px 20px;border-bottom:1px solid var(--rule)}
+.lib-head .eyebrow{display:block;margin-bottom:16px}
+.lib-head h2{font-family:var(--fr);font-optical-sizing:auto;font-weight:300;font-size:38px;line-height:1;letter-spacing:-.025em}
+.lib-head h2 em{font-style:italic;font-weight:250}
+.filters{display:flex;gap:8px;margin-top:20px;flex-wrap:wrap}
+.chip{font-family:var(--mo);font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+  padding:6px 10px;border:1px solid var(--rule-2);color:var(--ink-3)}
+.chip[aria-pressed="true"]{border-color:var(--ink);color:var(--ink)}
+
+.shelf{padding:0 26px 40px;overflow:auto;flex:1}
+.book{
+  display:grid;grid-template-columns:158px 1fr 118px;column-gap:34px;
+  padding:24px 0;border-bottom:1px solid var(--rule-2);width:100%;text-align:left;align-items:start;
+}
+.book:hover .bt{color:var(--accent-ink)}
+.book .sub{display:block;grid-area:1/1;text-align:right;font-size:12px;line-height:1.45;color:var(--ink-2);padding-top:.5em}
+.book .mid{display:block;grid-area:1/2;min-width:0}
+.bt{display:block;font-family:var(--fr);font-optical-sizing:auto;font-weight:400;font-size:25px;line-height:1.2;letter-spacing:-.015em;transition:color .15s}
+.bs{display:block;font-size:12.5px;line-height:1.5;color:var(--ink-2);margin-top:9px;max-width:52ch}
+.len{grid-area:1/3;justify-self:end;display:flex;align-items:center;gap:8px;padding-top:.65em;
+  font-family:var(--mo);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);white-space:nowrap}
+.len .ticks{display:flex;gap:2px}
+.len .ticks i{display:block;width:2px;height:10px;background:var(--rule)}
+.len .ticks i.f{background:var(--ink-3)}
+
+@container (max-width: 620px){
+  .book{display:flex;flex-direction:column;align-items:flex-start;padding:22px 0}
+  .book .mid{order:1}
+  .book .sub{order:2;text-align:left;padding-top:0;margin-top:9px;color:var(--ink-3)}
+  .book .len{order:3;padding-top:0;margin-top:14px}
+  .bs{margin-top:8px}
+  .lib-head h2{font-size:31px}
+}
+@container (min-width: 621px){
+  .lib-head{padding:36px 40px 24px}
+  .shelf{padding:0 40px 40px}
+  .bt{font-size:28px}
+}
+
+/* ============================================================
+   SETTINGS
+   ============================================================ */
+.pop{
+  position:absolute;z-index:9;right:16px;top:92px;width:312px;max-width:calc(100% - 32px);
+  background:var(--paper);border:1px solid var(--ink);
+  box-shadow:0 22px 48px -28px rgba(23,21,15,.65);
+}
+.pop-h{padding:15px 18px 13px;border-bottom:1px solid var(--rule-2);display:flex;justify-content:space-between;align-items:center}
+.set{padding:16px 18px;border-bottom:1px solid var(--rule-2)}
+.set:last-child{border-bottom:0}
+.set-l{display:flex;justify-content:space-between;align-items:baseline;gap:14px}
+.set-l h4{font-size:13px;font-weight:500;letter-spacing:.005em}
+.set .hint{font-size:11.5px;color:var(--ink-3);line-height:1.4;margin-top:4px;max-width:34ch}
+.seg{display:flex;margin-top:11px;border:1px solid var(--rule)}
+.seg button{flex:1;padding:7px 4px;font-size:11.5px;letter-spacing:.01em;color:var(--ink-3);text-align:center}
+.seg button + button{border-left:1px solid var(--rule)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.sw{width:38px;height:20px;border:1px solid var(--rule);flex:0 0 auto;position:relative;transition:background .15s,border-color .15s}
+.sw::after{content:"";position:absolute;top:2px;left:2px;width:14px;height:14px;background:var(--ink-3);transition:transform .18s,background .18s}
+.sw[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-wash)}
+.sw[aria-pressed="true"]::after{transform:translateX(18px);background:var(--accent)}
+.sizes{display:flex;margin-top:11px;border:1px solid var(--rule)}
+.sizes button{flex:1;font-family:var(--fr);font-optical-sizing:auto;color:var(--ink-3);padding:6px 0;line-height:1.5}
+.sizes button + button{border-left:1px solid var(--rule)}
+.sizes button:nth-child(1){font-size:13px}
+.sizes button:nth-child(2){font-size:16px}
+.sizes button:nth-child(3){font-size:20px}
+.sizes button:nth-child(4){font-size:25px}
+.sizes button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+
+/* ============================================================
+   COLOPHON
+   ============================================================ */
+.colophon{margin-top:112px;border-top:1px solid var(--rule);padding-top:44px}
+.spec{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:34px;margin-top:30px}
+.spec > div{border-top:1px solid var(--rule-2);padding-top:16px;min-width:0}
+.spec .eyebrow{display:block;margin-bottom:14px}
+.spec .smp{line-height:1.15;margin-bottom:12px;overflow-wrap:break-word}
+.spec .s1{font-family:var(--fr);font-optical-sizing:auto;font-weight:380;font-size:38px;letter-spacing:-.02em}
+.spec .s2{font-family:var(--mo);font-size:15px;letter-spacing:.01em;color:var(--ink-2)}
+.spec .s3{font-family:var(--ui);font-size:19px;color:var(--ink-2);line-height:1.35}
+.spec .role{font-size:12.5px;line-height:1.5;color:var(--ink-2)}
+.spec .role b{font-weight:500;color:var(--ink)}
+.swatches{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px;border-top:1px solid var(--rule-2);padding-top:22px}
+.sw-c{display:flex;flex-direction:column;gap:8px}
+.sw-c i{display:block;width:64px;height:40px;border:1px solid var(--rule)}
+.sw-c span{font-family:var(--mo);font-size:9.5px;letter-spacing:.06em;color:var(--ink-3)}
+</style>
+</head>
+<body>
+
+<div class="sheet">
+
+  <!-- ===================== MASTHEAD ===================== -->
+  <header class="masthead">
+    <span class="eyebrow">Design direction C</span>
+    <h1>Museum<br><em>Label</em></h1>
+    <p class="lede">A French reading site for people who already know the words and cannot yet assemble them into sentences. The French is the artwork. The English is the wall label beside it.</p>
+    <dl class="tomb">
+      <div><dt>Reading level</dt><dd>A2 heading to B1</dd></div>
+      <div><dt>French</dt><dd>Newsreader, 390 weight</dd></div>
+      <div><dt>Gloss</dt><dd>IBM Plex Mono, 400</dd></div>
+      <div><dt>English &amp; interface</dt><dd>Archivo, 400 / 500</dd></div>
+      <div><dt>Plates</dt><dd>Seven, light and dark</dd></div>
+    </dl>
+  </header>
+
+  <!-- ===================== PLATE 1 ===================== -->
+  <section class="plate">
+    <div class="plate-head">
+      <span class="plate-no">Plate 1</span>
+      <h3 class="plate-t">Reader — default</h3>
+      <p class="plate-d">Translations sit at 13% ink: present, findable, never competing. The first-visit strip says where the English is and offers to leave it on.</p>
+    </div>
+    <div class="row">
+      <div class="unit">
+        <span class="unit-cap">Phone — 390pt</span>
+        <div class="frame phone">
+          <div class="statusbar"><span>7h04</span><span class="bars"><i></i><i></i><i></i><i></i></span></div>
+          <div class="screen" data-reader data-reveal="tap" data-hints="on" data-lines="0,1,2,3,4" data-nudge="1"></div>
+        </div>
+      </div>
+      <div class="unit" style="flex:1 1 560px">
+        <span class="unit-cap">Desktop — caption in the left margin</span>
+        <div class="frame desk">
+          <div class="chrome"><span class="dots"><i></i><i></i><i></i></span><span class="path">le train de 7h12</span></div>
+          <div class="screen" data-reader data-reveal="tap" data-hints="on" data-lines="0,1,2" data-nudge="1"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PLATE 2 ===================== -->
+  <section class="plate">
+    <div class="plate-head">
+      <span class="plate-no">Plate 2</span>
+      <h3 class="plate-t">Reader — one line revealed</h3>
+      <p class="plate-d">Tap a line and its caption comes up to full ink. On desktop a hairline tick appears in the rail, so you can see at a glance which lines you have already opened. Every line here is live — tap them.</p>
+    </div>
+    <div class="row">
+      <div class="unit">
+        <span class="unit-cap">Phone — line 2 open</span>
+        <div class="frame phone">
+          <div class="statusbar"><span>7h04</span><span class="bars"><i></i><i></i><i></i><i></i></span></div>
+          <div class="screen" data-reader data-reveal="tap" data-hints="on" data-lines="0,1,2,3,4" data-open="1"></div>
+        </div>
+      </div>
+      <div class="unit" style="flex:1 1 560px">
+        <span class="unit-cap">Desktop — the caption arrives in the margin</span>
+        <div class="frame desk">
+          <div class="chrome"><span class="dots"><i></i><i></i><i></i></span><span class="path">le train de 7h12</span></div>
+          <div class="screen" data-reader data-reveal="tap" data-hints="on" data-lines="0,1,2,3" data-open="1"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PLATE 3 ===================== -->
+  <section class="plate">
+    <div class="plate-head">
+      <span class="plate-no">Plate 3</span>
+      <h3 class="plate-t">Reader — interlinear gloss on</h3>
+      <p class="plate-d">Three layers, three different kinds of type. On desktop the third layer steps sideways into the margin, so only two things ever stack. <em>l’avait</em> and <em>jusqu’à</em> split into two glossed tokens, joined by a hairline where French writes them closed.</p>
+    </div>
+    <div class="row">
+      <div class="unit" style="flex:1 1 100%">
+        <span class="unit-cap">Desktop — French and gloss stack, English steps into the margin</span>
+        <div class="frame desk">
+          <div class="chrome"><span class="dots"><i></i><i></i><i></i></span><span class="path">le train de 7h12</span></div>
+          <div class="screen taller" data-reader data-reveal="all" data-gloss="on" data-hints="on" data-lines="0,1,2,3,4"></div>
+        </div>
+      </div>
+      <div class="unit">
+        <span class="unit-cap">Phone — all three stacked</span>
+        <div class="frame phone">
+          <div class="statusbar"><span>7h04</span><span class="bars"><i></i><i></i><i></i><i></i></span></div>
+          <div class="screen tall" data-reader data-reveal="all" data-gloss="on" data-hints="on" data-lines="0,1,2,3"></div>
+        </div>
+      </div>
+      <div class="unit" style="flex:1 1 420px">
+        <span class="unit-cap">Detail — the layer ladder</span>
+        <div class="frame" style="border-radius:4px;padding:34px 30px;background:var(--paper)">
+          <div class="screen" style="height:auto;display:block" data-gloss="on" data-hints="on">
+            <div class="specimen" style="margin-bottom:30px">
+              <div class="line"><p class="fr" id="detail-line"></p></div>
+            </div>
+            <dl class="tomb" style="margin-top:0;border-top:1px solid var(--rule-2)">
+              <div><dt>Layer 1 — the French</dt><dd>Newsreader 35 / 44, ink at 100%</dd></div>
+              <div><dt>Layer 2 — the gloss</dt><dd>Plex Mono 10, ink at ~48%, 8px below</dd></div>
+              <div><dt>Layer 3 — the English</dt><dd>Archivo 13, ink at ~72%, in the margin</dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PLATE 4 ===================== -->
+  <section class="plate">
+    <div class="plate-head">
+      <span class="plate-no">Plate 4</span>
+      <h3 class="plate-t">Selection</h3>
+      <p class="plate-d">Tap one word, or drag across a few. The selection is bracketed by two accent hairlines rather than rounded — a caliper, not a highlighter pen. The bar follows the selection. Try tapping words in any reader on this page.</p>
+    </div>
+    <div class="row">
+      <div class="unit">
+        <span class="unit-cap">Phone — <em>ne l’avait pas</em> selected</span>
+        <div class="frame phone">
+          <div class="statusbar"><span>7h04</span><span class="bars"><i></i><i></i><i></i><i></i></span></div>
+          <div class="screen" data-reader data-reveal="tap" data-hints="on" data-lines="0,1,2,3,4" data-sel="1:1,2,3,4"></div>
+        </div>
+      </div>
+      <div class="unit" style="flex:1 1 560px">
+        <span class="unit-cap">Desktop — selection with the gloss on</span>
+        <div class="frame desk">
+          <div class="chrome"><span class="dots"><i></i><i></i><i></i></span><span class="path">le train de 7h12</span></div>
+          <div class="screen tall" data-reader data-reveal="tap" data-gloss="on" data-hints="on" data-lines="0,1,2" data-sel="1:1,2,3,4"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PLATE 5 ===================== -->
+  <section class="plate">
+    <div class="plate-head">
+      <span class="plate-no">Plate 5</span>
+      <h3 class="plate-t">Why</h3>
+      <p class="plate-d">Always the same four beats, in the same order: the selection glossed, why this sentence does it, the rule underneath it, and where else to see it. The rule is folded away — you only open it if the note was not enough.</p>
+    </div>
+    <div class="row">
+      <div class="unit">
+        <span class="unit-cap">Phone — bottom sheet, rule closed</span>
+        <div class="frame phone">
+          <div class="statusbar"><span>7h04</span><span class="bars"><i></i><i></i><i></i><i></i></span></div>
+          <div class="screen" data-reader data-reveal="tap" data-hints="on" data-lines="0,1,2,3,4" data-sel="1:1,2,3,4" data-nobar="1">
+            <div class="why why-sheet">
+              <div class="grip"></div>
+              <div class="why-body">
+                <div class="why-sec why-gloss">
+                  <span class="eyebrow">You selected</span>
+                  <div class="line"><p class="fr" data-selgloss></p></div>
+                </div>
+                <div class="why-sec">
+                  <span class="eyebrow">The note</span>
+                  <p class="note">Negation is two pieces that sandwich the conjugated verb. Here the verb is «&#8239;avait&#8239;», not «&#8239;entendu&#8239;» — so «&#8239;ne&#8239;» and «&#8239;pas&#8239;» wrap around «&#8239;avait&#8239;» and leave the past participle outside. The object pronoun «&#8239;l’&#8239;» squeezes in between «&#8239;ne&#8239;» and the verb.</p>
+                </div>
+                <div class="why-sec" style="border-top:0;padding-top:0;margin-top:24px">
+                  <span class="eyebrow">The rule</span>
+                  <details class="rule">
+                    <summary><span class="sig" aria-hidden="true"></span><span class="nm">Negation wraps the conjugated verb</span></summary>
+                    <div class="body">French negates with a pair: «&#8239;ne&#8239;» before the verb, «&#8239;pas&#8239;» after it. In compound tenses the pair closes around the helping verb, not the participle. <em>Je n’ai pas mangé</em>, never <em>Je n’ai mangé pas</em>.</div>
+                  </details>
+                  <button class="occur" type="button" style="margin-top:16px"><span>This same rule appears in 11 other places</span><span class="n">11 →</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="unit" style="flex:1 1 100%">
+        <span class="unit-cap">Desktop — side panel, rule opened. The reading column narrows, so the caption steps back under its line.</span>
+        <div class="frame desk">
+          <div class="chrome"><span class="dots"><i></i><i></i><i></i></span><span class="path">le train de 7h12</span></div>
+          <div style="display:flex;align-items:stretch">
+            <div class="screen tall" style="flex:1;min-width:0" data-reader data-reveal="tap" data-hints="on" data-lines="0,1,2,3" data-sel="1:1,2,3,4" data-nobar="1"></div>
+            <aside class="why why-side">
+              <div class="why-body">
+                <div class="why-sec why-gloss">
+                  <span class="eyebrow">You selected</span>
+                  <div class="line"><p class="fr" data-selgloss></p></div>
+                </div>
+                <div class="why-sec">
+                  <span class="eyebrow">The note</span>
+                  <p class="note">Negation is two pieces that sandwich the conjugated verb. Here the verb is «&#8239;avait&#8239;», not «&#8239;entendu&#8239;» — so «&#8239;ne&#8239;» and «&#8239;pas&#8239;» wrap around «&#8239;avait&#8239;» and leave the past participle outside. The object pronoun «&#8239;l’&#8239;» squeezes in between «&#8239;ne&#8239;» and the verb.</p>
+                </div>
+                <div class="why-sec" style="border-top:0;padding-top:0;margin-top:24px">
+                  <span class="eyebrow">The rule</span>
+                  <details class="rule" open>
+                    <summary><span class="sig" aria-hidden="true"></span><span class="nm">Negation wraps the conjugated verb</span></summary>
+                    <div class="body">French negates with a pair: «&#8239;ne&#8239;» before the verb, «&#8239;pas&#8239;» after it. In compound tenses the pair closes around the helping verb, not the participle. <em>Je n’ai pas mangé</em>, never <em>Je n’ai mangé pas</em>.</div>
+                  </details>
+                  <button class="occur" type="button" style="margin-top:18px"><span>This same rule appears in 11 other places</span><span class="n">11 →</span></button>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PLATE 6 ===================== -->
+  <section class="plate">
+    <div class="plate-head">
+      <span class="plate-no">Plate 6</span>
+      <h3 class="plate-t">The shelf</h3>
+      <p class="plate-d">A catalogue index rather than a grid of covers. The English subtitle sits in the same left margin it occupies inside a story, so the shelf and the page are set to one rule. Length is a tick mark, not a word count.</p>
+    </div>
+    <div class="row">
+      <div class="unit" style="flex:1 1 100%">
+        <span class="unit-cap">Desktop</span>
+        <div class="frame desk">
+          <div class="chrome"><span class="dots"><i></i><i></i><i></i></span><span class="path">library</span></div>
+          <div class="screen taller" data-library></div>
+        </div>
+      </div>
+      <div class="unit">
+        <span class="unit-cap">Phone</span>
+        <div class="frame phone">
+          <div class="statusbar"><span>7h04</span><span class="bars"><i></i><i></i><i></i><i></i></span></div>
+          <div class="screen" data-library></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PLATE 7 ===================== -->
+  <section class="plate">
+    <div class="plate-head">
+      <span class="plate-no">Plate 7</span>
+      <h3 class="plate-t">Settings</h3>
+      <p class="plate-d">Four things, no more. Each one names what you would call it, and says in one line what it does. The size stepper shows its own sizes.</p>
+    </div>
+    <div class="row">
+      <div class="unit">
+        <span class="unit-cap">Phone — popover under the header</span>
+        <div class="frame phone">
+          <div class="statusbar"><span>7h04</span><span class="bars"><i></i><i></i><i></i><i></i></span></div>
+          <div class="screen" data-reader data-reveal="tap" data-hints="on" data-lines="0,1,2,3,4" data-nobar="1">
+            <div class="pop">
+              <div class="pop-h"><span class="eyebrow">Reading settings</span><button class="btn" style="padding:4px 9px;border:0" type="button">Done</button></div>
+              <div class="set">
+                <div class="set-l"><h4>Reveal</h4></div>
+                <p class="hint">When the English caption is shown.</p>
+                <div class="seg">
+                  <button type="button" aria-pressed="false">Always</button>
+                  <button type="button" aria-pressed="true">On tap</button>
+                  <button type="button" aria-pressed="false">Hidden</button>
+                </div>
+              </div>
+              <div class="set">
+                <div class="set-l">
+                  <div><h4>Interlinear gloss</h4><p class="hint">A word-by-word line under the French.</p></div>
+                  <button class="sw" type="button" aria-pressed="false" aria-label="Interlinear gloss"></button>
+                </div>
+              </div>
+              <div class="set">
+                <div class="set-l">
+                  <div><h4>Hints</h4><p class="hint">Dotted underline on words with a note.</p></div>
+                  <button class="sw" type="button" aria-pressed="true" aria-label="Hints"></button>
+                </div>
+              </div>
+              <div class="set">
+                <div class="set-l"><h4>Text size</h4></div>
+                <div class="sizes">
+                  <button type="button" aria-pressed="false">A</button>
+                  <button type="button" aria-pressed="false">A</button>
+                  <button type="button" aria-pressed="true">A</button>
+                  <button type="button" aria-pressed="false">A</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="unit" style="flex:1 1 420px">
+        <span class="unit-cap">Result — gloss on, English always, hints off</span>
+        <div class="frame desk" style="flex:1 1 auto">
+          <div class="chrome"><span class="dots"><i></i><i></i><i></i></span><span class="path">le train de 7h12</span></div>
+          <div class="screen" style="height:auto" data-reader data-reveal="all" data-gloss="on" data-hints="off" data-lines="1,2" data-nobar="1"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== COLOPHON ===================== -->
+  <section class="colophon">
+    <span class="eyebrow">Colophon</span>
+    <div class="spec">
+      <div>
+        <span class="eyebrow">Layer 1 — Newsreader</span>
+        <p class="smp s1">Le vieil homme</p>
+        <p class="role"><b>The French.</b> A text serif with optical sizing, so it stays warm at 35px instead of turning brittle. It carries the accents without fuss.</p>
+      </div>
+      <div>
+        <span class="eyebrow">Layer 2 — IBM Plex Mono</span>
+        <p class="smp s2">the / old / man</p>
+        <p class="role"><b>The gloss.</b> Monospace reads as apparatus, not prose. Nobody mistakes it for something to read straight through.</p>
+      </div>
+      <div>
+        <span class="eyebrow">Layer 3 — Archivo</span>
+        <p class="smp s3">The old man closed the door.</p>
+        <p class="role"><b>The English and every control.</b> A plain grotesque that stays legible at 12px and never argues with the serif.</p>
+      </div>
+    </div>
+    <div class="swatches">
+      <div class="sw-c"><i style="background:var(--wall)"></i><span>Wall</span></div>
+      <div class="sw-c"><i style="background:var(--paper)"></i><span>Label</span></div>
+      <div class="sw-c"><i style="background:var(--ink)"></i><span>Ink</span></div>
+      <div class="sw-c"><i style="background:var(--ink-3)"></i><span>Gloss</span></div>
+      <div class="sw-c"><i style="background:var(--rule)"></i><span>Rule</span></div>
+      <div class="sw-c"><i style="background:var(--accent)"></i><span>Accent</span></div>
+    </div>
+    <p class="role" style="margin-top:28px;max-width:60ch;font-size:12.5px;color:var(--ink-2)">Light and dark are the same drawing. The wall goes to near-black, the label card sits one step above it, and the accent lifts to a paler blue so it keeps its 8:1 against the paper.</p>
+  </section>
+
+</div>
+
+<script>
+/* ------------------------------------------------------------------
+   Story data. Each token is [french, gloss, flags]
+   a  = carries an annotation (dotted hint)
+   gs = start of an elision group (written closed: l’avait, jusqu’à)
+   ge = end of an elision group
+   ------------------------------------------------------------------ */
+const STORY = [
+  { en:"The old man closed the door without a sound.", t:[
+    ["Le","the"],["vieil","old",{a:1}],["homme","man"],["ferma","closed"],
+    ["la","the"],["porte","door"],["sans","without"],["bruit.","noise"]]},
+  { en:"She hadn’t heard him leave.", t:[
+    ["Elle","she"],["ne","not-1",{a:1}],["l’","him",{a:1,gs:1}],["avait","had",{ge:1}],
+    ["pas","not-2",{a:1}],["entendu","heard"],["partir.","to-leave"]]},
+  { en:"Outside, it was still raining.", t:[
+    ["Dehors,","outside"],["il","it"],["pleuvait","was-raining"],["encore.","still"]]},
+  { en:"He walked to the station, his hands in his pockets.", t:[
+    ["Il","he"],["marcha","walked"],["jusqu’","until",{a:1,gs:1}],["à","to",{ge:1}],
+    ["la","the"],["gare,","station"],["les","the",{a:1}],["mains","hands",{a:1}],
+    ["dans","in",{a:1}],["les","the",{a:1}],["poches.","pockets",{a:1}]]},
+  { en:"The 7:12 train was leaving without him, like every Tuesday.", t:[
+    ["Le","the"],["train","train"],["de","of"],["7h12","7:12"],["partait","was-leaving",{a:1}],
+    ["sans","without"],["lui,","him"],["comme","like"],["chaque","each"],["mardi.","Tuesday"]]}
+];
+
+const SHELF = [
+  { fr:"Le train de 7h12", en:"The 7:12 train", s:"A man misses the same train twice in one week, and the second time is deliberate.", len:3 },
+  { fr:"La voisine du dessus", en:"The woman upstairs", s:"Someone moves furniture at three in the morning, every night, and nobody has ever asked why.", len:2 },
+  { fr:"Une place pour deux", en:"A seat for two", s:"A café regular finds a stranger at his table and decides to say nothing at all.", len:1 },
+  { fr:"Le chien de Madame Perrin", en:"Madame Perrin’s dog", s:"The dog knows the neighbourhood far better than she does, and takes her on his rounds.", len:1 },
+  { fr:"Deux cafés, s’il vous plaît", en:"Two coffees, please", s:"He keeps ordering for two people, and the waiter has stopped asking about it.", len:2 },
+  { fr:"Le dernier carton", en:"The last box", s:"She has been unpacking the same flat for two years, and one box is still taped shut.", len:3 }
+];
+const LENWORD = { 1:"One page", 2:"Two pages", 3:"Chapter" };
+
+const esc = s => s.replace(/&/g,"&amp;").replace(/</g,"&lt;");
+
+function tokHTML(tk, li, i){
+  const o = tk[2] || {};
+  let c = "tok";
+  if(o.a) c += " ann";
+  if(o.gs) c += " gs";
+  if(o.ge) c += " ge";
+  return '<span class="'+c+'" data-l="'+li+'" data-i="'+i+'">'
+       + '<span class="w">'+esc(tk[0])+'</span>'
+       + '<span class="g">'+esc(tk[1])+'</span></span>';
+}
+function lineHTML(li, open){
+  const L = STORY[li];
+  return '<div class="line'+(open?' on':'')+'" tabindex="0" role="button" data-l="'+li+'">'
+       + '<p class="fr">'+L.t.map((t,i)=>tokHTML(t,li,i)).join("")+'</p>'
+       + '<p class="en">'+esc(L.en)+'</p></div>';
+}
+
+const ICON_WHY = '<svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><circle cx="6.5" cy="6.5" r="5.6" stroke="currentColor" stroke-width="1.1"/><path d="M4.9 5c0-.9.7-1.6 1.6-1.6S8.1 4.1 8.1 5c0 1.1-1.6 1-1.6 2.3" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/><circle cx="6.5" cy="9.4" r=".75" fill="currentColor"/></svg>';
+const ICON_PLAY = '<svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M2.6 5.1h1.9L7 3v7L4.5 7.9H2.6z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M9 4.6a3 3 0 0 1 0 3.8M10.7 3a5.2 5.2 0 0 1 0 7" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/></svg>';
+
+/* ---------- build readers ---------- */
+document.querySelectorAll('[data-reader]').forEach(sc => {
+  const idx  = (sc.dataset.lines || "0,1,2,3,4").split(",").map(Number);
+  const open = (sc.dataset.open || "").split(",").filter(x=>x!=="").map(Number);
+
+  const head = document.createElement('header');
+  head.className = 'rhead';
+  head.innerHTML =
+    '<button class="ico" type="button" aria-label="Back to library"><svg width="15" height="12" viewBox="0 0 15 12" fill="none" aria-hidden="true"><path d="M14 6H1m0 0 4.6-4.6M1 6l4.6 4.6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>'
+  + '<div class="rhead-t"><span class="eyebrow">Chapter — about 6 minutes</span>'
+  + '<h2>Le train de 7h12</h2><p>The 7:12 train</p></div>'
+  + '<button class="ico" type="button" aria-label="Reading settings"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true"><path d="M1 4h13M1 11h13" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><circle cx="5" cy="4" r="2" fill="var(--paper)" stroke="currentColor" stroke-width="1.2"/><circle cx="10.5" cy="11" r="2" fill="var(--paper)" stroke="currentColor" stroke-width="1.2"/></svg></button>';
+
+  const reader = document.createElement('div');
+  reader.className = 'reader';
+
+  let inner = '';
+  if(sc.dataset.nudge){
+    inner += '<div class="nudge"><p>The English sits just below each line, faded out. Tap a line to bring it up.</p>'
+          +  '<span class="acts"><button class="btn primary" type="button">Always on</button>'
+          +  '<button class="btn" type="button" data-dismiss>Got it</button></span></div>';
+  }
+  inner += '<div class="lines">' + idx.map(i => lineHTML(i, open.includes(i))).join("") + '</div>';
+  reader.innerHTML = inner;
+
+  const bar = document.createElement('div');
+  bar.className = 'actionbar';
+  bar.innerHTML = '<button type="button">'+ICON_WHY+'Why?</button><button type="button">'+ICON_PLAY+'Listen</button>';
+  reader.appendChild(bar);
+
+  sc.prepend(reader);
+  sc.prepend(head);
+
+  reader.querySelectorAll('[data-dismiss]').forEach(b =>
+    b.addEventListener('click', e => { e.stopPropagation(); b.closest('.nudge').remove(); }));
+
+  if(sc.dataset.sel){
+    const [ln, list] = sc.dataset.sel.split(":");
+    applySel(sc, Number(ln), list.split(",").map(Number));
+  }
+});
+
+function applySel(sc, li, ids){
+  sc.querySelectorAll('.tok.sel,.tok.sel-a,.tok.sel-z')
+    .forEach(t => t.classList.remove('sel','sel-a','sel-z'));
+  ids.sort((a,b)=>a-b);
+  ids.forEach((i, n) => {
+    const t = sc.querySelector('.tok[data-l="'+li+'"][data-i="'+i+'"]');
+    if(!t) return;
+    t.classList.add('sel');
+    if(n === 0) t.classList.add('sel-a');
+    if(n === ids.length-1) t.classList.add('sel-z');
+  });
+  placeBar(sc);
+}
+
+function placeBar(sc){
+  const bar = sc.querySelector('.actionbar');
+  if(!bar) return;
+  if(sc.dataset.nobar){ bar.classList.remove('show'); return; }
+  const first = sc.querySelector('.tok.sel-a'), last = sc.querySelector('.tok.sel-z');
+  if(!first || !last){ bar.classList.remove('show'); return; }
+  bar.classList.add('show');
+  const wrap = sc.querySelector('.reader');
+  const r = wrap.getBoundingClientRect(), a = first.getBoundingClientRect(), z = last.getBoundingClientRect();
+  const w = bar.offsetWidth;
+  let x = ((a.left + z.right) / 2) - r.left - w/2;
+  x = Math.max(10, Math.min(wrap.clientWidth - w - 10, x));
+  bar.style.left = Math.round(x) + 'px';
+  bar.style.top  = Math.round(z.bottom - r.top + 14) + 'px';
+}
+
+/* ---------- interaction ---------- */
+document.addEventListener('click', e => {
+  const tok = e.target.closest('.tok');
+  const sc  = e.target.closest('.screen[data-reader]');
+  if(tok && sc && !e.target.closest('.why')){
+    e.stopPropagation();
+    const li = Number(tok.dataset.l), i = Number(tok.dataset.i);
+    const cur = [...sc.querySelectorAll('.tok.sel')];
+    const sameLine = cur.length && Number(cur[0].dataset.l) === li;
+    let ids;
+    if(!sameLine){ ids = [i]; }
+    else {
+      const nums = cur.map(t => Number(t.dataset.i));
+      const lo = Math.min(...nums), hi = Math.max(...nums);
+      if(i >= lo && i <= hi && nums.length === 1){ ids = []; }
+      else { const a = Math.min(lo, i), b = Math.max(hi, i); ids = []; for(let k=a;k<=b;k++) ids.push(k); }
+    }
+    applySel(sc, li, ids);
+    return;
+  }
+  const line = e.target.closest('.line[data-l]');
+  if(line && !e.target.closest('.why') && line.closest('.screen[data-reader]')){
+    line.classList.toggle('on');
+  }
+});
+document.addEventListener('keydown', e => {
+  if((e.key === 'Enter' || e.key === ' ') && e.target.classList && e.target.classList.contains('line')){
+    e.preventDefault(); e.target.classList.toggle('on');
+  }
+});
+
+/* segmented controls + switches in the settings popover */
+document.querySelectorAll('.seg, .sizes').forEach(g =>
+  g.addEventListener('click', e => {
+    const b = e.target.closest('button'); if(!b) return;
+    g.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed','false'));
+    b.setAttribute('aria-pressed','true');
+  }));
+document.querySelectorAll('.sw').forEach(s =>
+  s.addEventListener('click', () =>
+    s.setAttribute('aria-pressed', s.getAttribute('aria-pressed') === 'true' ? 'false' : 'true')));
+
+/* ---------- the selection, glossed, inside the Why panel ---------- */
+document.querySelectorAll('[data-selgloss]').forEach(el => {
+  el.innerHTML = [1,2,3,4].map(i => tokHTML(STORY[1].t[i], 1, i)).join("");
+});
+
+/* ---------- detail specimen ---------- */
+const det = document.getElementById('detail-line');
+if(det) det.innerHTML = STORY[1].t.map((t,i)=>tokHTML(t,1,i)).join("");
+
+/* ---------- library ---------- */
+document.querySelectorAll('[data-library]').forEach(sc => {
+  sc.innerHTML =
+    '<div class="lib-head"><span class="eyebrow">Library — 6 stories</span>'
+  + '<h2>Short pieces,<br><em>read once through</em></h2>'
+  + '<div class="filters">'
+  + '<button class="chip" type="button" aria-pressed="true">All</button>'
+  + '<button class="chip" type="button" aria-pressed="false">One page</button>'
+  + '<button class="chip" type="button" aria-pressed="false">Two pages</button>'
+  + '<button class="chip" type="button" aria-pressed="false">Chapter</button>'
+  + '</div></div>'
+  + '<div class="shelf">' + SHELF.map(b =>
+      '<button class="book" type="button">'
+    + '<span class="sub">'+esc(b.en)+'</span>'
+    + '<span class="mid"><span class="bt">'+esc(b.fr)+'</span>'
+    + '<span class="bs">'+esc(b.s)+'</span></span>'
+    + '<span class="len"><span class="ticks">'
+    +   [1,2,3].map(n => '<i class="'+(n<=b.len?'f':'')+'"></i>').join("")
+    + '</span>'+LENWORD[b.len]+'</span></button>').join("")
+  + '</div>';
+  sc.querySelector('.filters').addEventListener('click', e => {
+    const b = e.target.closest('.chip'); if(!b) return;
+    sc.querySelectorAll('.chip').forEach(c => c.setAttribute('aria-pressed','false'));
+    b.setAttribute('aria-pressed','true');
+  });
+});
+/* keep the action bars pinned when the page reflows */
+let t;
+addEventListener('resize', () => {
+  clearTimeout(t);
+  t = setTimeout(() => document.querySelectorAll('.screen[data-reader]').forEach(placeBar), 90);
+});
+if(document.fonts && document.fonts.ready){
+  document.fonts.ready.then(() =>
+    document.querySelectorAll('.screen[data-reader]').forEach(placeBar));
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+# core.txt — the shared lexicon. one entry per line: form = gloss
+# glosses are hyphenated single concepts, never phrases: they sit under one
+# French word without wrapping.
+#
+# a form marked "| ambiguous" needs a per-line `=` override wherever it appears.
+# the build fails otherwise, on purpose: a confidently wrong gloss teaches the
+# wrong thing, which is worse than no gloss at all.
+
+# ── context-dependent forms ────────────────────────────────
+à         = to | ambiguous
+d'        = of | ambiguous
+de        = of | ambiguous
+en        = in | ambiguous
+est       = is | ambiguous
+était     = was | ambiguous
+femme     = woman | ambiguous
+heures    = hours | ambiguous
+il        = he | ambiguous
+l'        = the | ambiguous
+la        = the | ambiguous
+le        = the | ambiguous
+les       = the | ambiguous
+lui       = him | ambiguous
+même      = same | ambiguous
+par       = by | ambiguous
+pas       = not-2 | ambiguous
+personne  = nobody | ambiguous
+plus      = more | ambiguous
+qu'       = that | ambiguous
+s'        = himself | ambiguous
+sa        = his | ambiguous
+se        = himself | ambiguous
+son       = his | ambiguous
+y         = there | ambiguous
+
+# ── articles, determiners, pronouns ────────────────────────
+au        = at-the
+ce        = this
+cela      = that
+chaque    = each
+elle      = she
+lequel    = which-one
+n'        = not-1
+ne        = not-1
+non       = no
+un        = a
+une       = a
+tous      = all
+-là       = there
+
+# ── prepositions and connectors ────────────────────────────
+avant     = before
+avec      = with
+chez      = at-home-of
+comme     = like
+dans      = in
+depuis    = since
+dehors    = outside
+déjà      = already
+encore    = still
+entre     = between
+et        = and
+jamais    = never
+jusqu'    = until
+là        = there
+mais      = but
+pendant   = during
+pour      = for
+puis      = then
+quand     = when
+sans      = without
+sur       = on
+
+# ── verbs ──────────────────────────────────────────────────
+arriva    = arrived
+arrêté    = stopped
+assit     = sat
+attendre  = to-wait
+avait     = had
+connaissait = knew
+demanda   = asked
+dit       = said
+entendu   = heard
+ferma     = closed
+fermèrent = closed
+fit       = made
+leva      = lifted
+marcha    = walked
+marchait  = walked
+mettait   = put
+montait   = got-on
+partait   = was-leaving
+partir    = to-leave
+partit    = left
+pleuvait  = rained
+posé      = put
+prenait   = took
+presser   = to-hurry
+pris      = taken
+raté      = missed
+rentra    = came-back
+rentrait  = came-back
+suffi     = been-enough
+suivant   = following
+
+# ── nouns ──────────────────────────────────────────────────
+7h12      = 7:12
+ans       = years
+avance    = advance
+banc      = bench
+billet    = ticket
+bruit     = sound
+bureau    = office
+café      = coffee
+chaussures = shoes
+coin      = corner
+collègues = colleagues
+cuisine   = kitchen
+face      = front
+gare      = station
+heure     = hour
+homme     = man
+journal   = newspaper
+main      = hand
+mains     = hands
+mardi     = Tuesday
+matin     = morning
+matins    = mornings
+minutes   = minutes
+nom       = name
+poches    = pockets
+porte     = door
+portes    = doors
+questions = questions
+raison    = reason
+rue       = street
+rues      = streets
+réveil    = alarm-clock
+table     = table
+tasses    = cups
+train     = train
+tête      = head
+vendredi  = Friday
+yeux      = eyes
+Rouen     = Rouen
+
+# ── adjectives and numbers ─────────────────────────────────
+ancien    = former
+debout    = standing
+deux      = two
+dix       = ten
+onze      = eleven
+ouvertes  = open
+petites   = small
+quarante  = forty
+trempées  = soaked
+vieil     = old
+
+# ── one-token contractions the tokenizer keeps whole ───────
+aujourd'hui = today

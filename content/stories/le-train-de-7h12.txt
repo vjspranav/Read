@@ -1,0 +1,335 @@
+---
+id: le-train-de-7h12
+title: Le train de 7h12
+titleEn: The 7:12 train
+length: one-page
+tone: everyday
+summary: A man misses the same train twice in one week, and the second time is deliberate.
+---
+
+fr  Le vieil homme ferma la porte sans bruit.
+en  The old man closed the door without a sound.
+?   vieil | adjective-before-vowel
+    «vieux homme» would put the «eu» sound straight against the «o» of «homme»,
+    which French avoids, so the word changes shape to «vieil». Say it out loud and
+    you can hear why: vieil-homme runs together, vieux-homme stumbles.
+?   ferma | passe-simple-in-stories
+    You'd expect «a fermé» here, and in speech that's exactly what you'd get. This
+    is written storytelling, so the verb takes its written-only form, «ferma». It
+    means the same thing; it just sounds like a book rather than a conversation.
+=   Le | the
+=   la | the
+
+fr  Elle ne l'avait pas entendu partir.
+en  She hadn't heard him leave.
+?   l' | elision-before-vowel
+    This «l'» is «le», meaning him — her husband. «Le avait» is unsayable, so the
+    vowel drops out and the word leans onto the next one.
+?   ne ... pas | negation-wraps-verb
+    The two halves close around «avait», leaving «entendu partir» outside on the
+    right. Watch where «pas» lands: after the small verb that carries the tense,
+    not after the verb that carries the meaning.
+?   avait | plus-que-parfait
+    «avait entendu» is a step further back than the rest of the story. He had
+    already gone; her not-hearing happened before that. French marks that extra
+    step back the same way English does, with «had» plus the participle.
+=   l' | him
+=   pas | not-2
+
+fr  Dehors, il pleuvait encore.
+en  Outside, it was still raining.
+?   il | weather-il
+    Nothing is doing the raining here. This «il» is a placeholder, the way English
+    says "it's raining" without meaning anything by "it".
+=   il | it
+
+fr  Il marcha jusqu'à la gare, les mains dans les poches.
+en  He walked to the station, his hands in his pockets.
+?   jusqu'à | jusqua
+    «à la gare» on its own would just say where he ended up. «jusqu'à» adds the
+    whole distance — he walked the entire way, no bus, no lift.
+?   les mains dans les poches | body-parts-definite-article
+    English needs "his hands, his pockets" here; French says «les». They're
+    obviously his hands, so marking it would be fussy, and «ses mains dans ses
+    poches» sounds like someone learning the language.
+=   il | he
+=   à | to
+=   la | the
+=   les | the
+
+fr  Le train de 7h12 partait sans lui, comme chaque mardi.
+en  The 7:12 train was leaving without him, like every Tuesday.
+?   partait | imparfait-vs-passe-simple
+    «partait» leaves the departure open — the train pulling out, the thing that
+    happens every Tuesday, the background he's standing in. Compare the last line
+    of the story, where the same train «partit». That one is finished.
+?   sans lui | stressed-pronouns
+    After «sans» you can't use the little «le» that hides in front of a verb. The
+    standalone form «lui» is what goes after a preposition, and it's the same
+    word you'd use alone: «Lui ? Jamais.»
+=   Le | the
+=   de | of
+=   lui | him
+
+fr  Il s'était arrêté au coin de la rue, sans raison, et cela avait suffi.
+en  He'd stopped at the corner for no reason, and that had been enough.
+?   s'était arrêté | reflexive-verbs
+    Plain «arrêter» means stopping something else — a car, a thief. To come to a
+    halt yourself you stop yourself, so the verb needs its «se»: «s'arrêter». And
+    once that «se» is there the past is built with «être», never «avoir».
+=   il | he
+=   s' | himself
+=   était | had
+=   de | of
+=   la | the
+
+fr  Pendant quarante ans, il avait pris ce train tous les matins.
+en  For forty years he had taken that train every morning.
+?   Pendant | duration-pendant-depuis
+    «Pendant» is for a stretch of time that's over and done with. The forty years
+    finished; he's retired now. If he still took the train it would be «depuis
+    quarante ans».
+=   il | he
+=   les | the
+
+fr  Il connaissait le nom de chaque gare entre chez lui et Rouen.
+en  He knew the name of every station between his house and Rouen.
+?   connaissait | imparfait-vs-passe-simple
+    Knowing the names wasn't an event with a start and a finish — it was simply
+    true of him. States like this take «connaissait», not «connut». «Il connut» would
+    mean he found out, in one moment.
+?   chez lui | chez
+    There's no French word for "home" as a place you go to. «chez» plus a person
+    means at or to that person's place, so «chez lui» is his house, his flat,
+    wherever he lives.
+=   il | he
+=   le | the
+=   de | of
+=   lui | him
+
+fr  Aujourd'hui, il n'y avait plus de bureau, plus de collègues, plus personne pour l'attendre.
+en  Now there was no office, no colleagues, nobody waiting for him.
+?   n'y avait plus | negation-other-pairs
+    «pas» isn't the only word that finishes a negation. «plus» in this position
+    means not any more — the office existed once and doesn't now. Read it aloud
+    with a silent «s»; that's usually what tells it apart from «plus» meaning more.
+?   plus de bureau | de-after-negation
+    You'd expect «un bureau». After a negation the article collapses to a bare
+    «de», so «un bureau» becomes «plus de bureau» — the same thing happens to
+    «des collègues» right after it.
+?   pour l'attendre | preposition-plus-infinitive
+    English puts "-ing" after the preposition: nobody waiting. French can't do
+    that, so «pour» is followed by the plain «attendre», with the «l'» meaning him
+    tucked in front of it.
+=   il | it
+=   y | there
+=   plus | no-more
+=   de | any
+=   personne | nobody
+=   l' | him
+
+fr  Mais le mardi, il partait quand même.
+en  But on Tuesdays he set out all the same.
+?   le mardi | definite-article-days
+    «mardi» on its own would mean one particular Tuesday. Adding «le» turns it
+    into every Tuesday, the standing arrangement — which is the whole point of
+    this sentence.
+=   le | the
+=   il | he
+=   même | even
+
+fr  Il prenait un café en face de son ancien bureau, marchait une heure, puis rentrait.
+en  He'd have a coffee across from his old office, walk for an hour, then come home.
+?   prenait | imparfait-vs-passe-simple
+    Three verbs in a row, all in the same form, because none of them is a single
+    event. This is what he did every Tuesday, the shape of the day rather than
+    one particular day. English reaches for "he'd" to say the same thing.
+?   ancien bureau | adjective-position-meaning
+    In front of the noun, «ancien» means former — the office he used to work in.
+    Put it after and «un bureau ancien» would be a piece of antique furniture,
+    which is a very different sentence.
+=   il | he
+=   en | in
+=   de | of
+=   son | his
+
+fr  Sa femme ne lui avait jamais posé de questions.
+en  His wife had never asked him any questions.
+?   lui | object-pronoun-before-verb
+    «lui» here means to him, and it sits in front of the verb group where English
+    puts it after: asked him. Once you have a pronoun instead of a full name, it
+    moves left and stays there.
+=   Sa | his
+=   femme | wife
+=   lui | to-him
+=   de | any
+
+fr  Ce matin-là, il rentra à onze heures, les chaussures trempées.
+en  That morning he came home at eleven, his shoes soaked.
+?   rentra | imparfait-vs-passe-simple
+    Everything before this line was the routine. This one verb changes form, and
+    that alone tells you the routine broke — one particular morning, one specific
+    arrival, eleven o'clock instead of the evening.
+?   les chaussures trempées | bare-descriptive-phrase
+    French can hang a bare noun phrase on the end of a sentence to describe the
+    state someone is in, with no verb and no "with". It's the same move as «les
+    mains dans les poches» in the fourth line.
+=   il | he
+=   à | at
+=   heures | o'clock
+=   les | the
+
+fr  Sa femme leva les yeux de son journal.
+en  His wife looked up from her paper.
+?   les yeux | body-parts-definite-article
+    «ses yeux» would be odd here — whose eyes could they be? French leaves the
+    ownership implied and uses «les», exactly as it did with his hands and his
+    pockets.
+=   Sa | his
+=   femme | wife
+=   les | the
+=   de | from
+=   son | her
+
+fr  Il lui dit qu'il avait raté le train.
+en  He told her he'd missed the train.
+?   qu' | reported-speech-que
+    English lets you drop "that" — he told her he'd missed it. French never
+    does; «qu'» has to be there. And since «il» starts with a vowel, «que» loses
+    its own vowel and becomes «qu'».
+=   il | he
+=   lui | to-her
+=   qu' | that
+=   le | the
+
+fr  Elle ne lui demanda pas lequel.
+en  She didn't ask him which one.
+?   lequel | lequel
+    "Which one" is a single word in French, and it carries the gender and number
+    of what it stands for. It's standing in for «le train» here, so it comes out
+    masculine and singular: «lequel».
+=   lui | to-him
+=   pas | not-2
+
+fr  Le vendredi suivant, il se leva avant le réveil.
+en  The following Friday he got up before the alarm.
+?   se leva | reflexive-verbs
+    «lever» is to lift something. What he lifts is himself, so the «se» is doing
+    real work: «se lever» is how French says get up. Drop it and you've said he
+    lifted something, and the sentence stops making sense.
+=   Le | the
+=   il | he
+=   se | himself
+
+fr  Il ne pleuvait plus.
+en  It had stopped raining.
+=   il | it
+=   plus | no-more
+
+fr  Il arriva à la gare avec dix minutes d'avance.
+en  He got to the station ten minutes early.
+?   à la gare | a-for-places
+    «arriver» takes «à» before a place, always — you can't arrive a station in
+    French any more than you can in English. The «à» is part of the verb's habit,
+    not something you choose.
+=   il | he
+=   à | at
+=   la | the
+=   d' | of
+
+fr  Le train était déjà là, portes ouvertes.
+en  The train was already there, doors open.
+?   ouvertes | adjective-agreement
+    «ouvert» grows an «e» for the feminine «portes» and an «s» because there are
+    several — «ouvertes». You can't hear the difference when it's read aloud, but
+    leaving it off looks wrong on the page.
+=   Le | the
+=   était | was
+
+fr  Il s'assit sur un banc, son billet à la main.
+en  He sat down on a bench, his ticket in his hand.
+?   son | possessive-agrees-with-noun
+    «son» doesn't tell you the owner is male — it tells you «billet» is a
+    masculine word. His wife's ticket would also be «son billet» — and «son
+    journal», seven lines back, was hers for exactly the same reason.
+=   il | he
+=   s' | himself
+=   son | his
+=   à | in
+=   la | the
+
+fr  Une femme lui demanda s'il montait.
+en  A woman asked him if he was getting on.
+?   s'il | elision-si-il
+    «si» meaning if normally keeps its vowel — «si elle montait» is fine. In
+    front of «il» and «ils» only, it shortens to «s'», which is why this looks
+    like the «s'» of a reflexive verb but isn't one.
+=   femme | woman
+=   lui | to-him
+=   s' | if
+=   il | he
+
+fr  Il fit non de la tête.
+en  He shook his head.
+?   fit non de la tête | faire-expressions
+    French says he made no with the head. There's no verb for shaking your head;
+    «faire» plus «oui» or «non» covers both, and it's the ordinary everyday way
+    to say it.
+=   il | he
+=   de | of
+=   la | the
+
+fr  Les portes se fermèrent.
+en  The doors closed.
+?   se fermèrent | reflexive-passive
+    Nobody is closing them, and «les portes fermèrent» would be wrong. The «se»
+    is how French says a thing happens to itself when the doer is irrelevant —
+    here, the doors close on their own schedule, which is rather the point.
+=   Les | the
+=   se | themselves
+
+fr  Le train de 7h12 partit sans lui.
+en  The 7:12 train left without him.
+?   partit | imparfait-vs-passe-simple
+    Same train, same words, one letter of difference from the fifth line of the
+    story. «partait» was a train in the act of leaving, every Tuesday. «partit» is
+    one departure, complete, and he watched it happen.
+=   Le | the
+=   de | of
+=   lui | him
+
+fr  Il rentra par les petites rues, sans se presser.
+en  He walked home through the back streets, taking his time.
+?   sans se presser | preposition-plus-infinitive
+    English would say "without hurrying". French puts the plain infinitive after
+    «sans», and «se presser» keeps its «se» because what he isn't hurrying is
+    himself.
+=   il | he
+=   les | the
+=   se | himself
+=   par | through
+
+fr  Sa femme était debout dans la cuisine, et il y avait deux tasses sur la table.
+en  His wife was standing in the kitchen, and there were two cups on the table.
+?   il y avait | il-y-a-impersonal
+    Word for word this is "it there had", which is no help at all. Taken together
+    the three words mean there was or there were — and unlike English, the phrase
+    never changes for a plural. Two cups, still «il y avait».
+=   Sa | his
+=   femme | wife
+=   était | was
+=   la | the
+=   il | it
+=   y | there
+
+fr  Elle en mettait deux depuis mardi.
+en  She'd been setting out two since Tuesday.
+?   en | pronoun-en
+    «en» stands in for «des tasses» — of them. French won't let you say «elle
+    mettait deux» and stop there; if you don't name the thing, «en» has to hold
+    its place in front of the verb.
+?   depuis | duration-pendant-depuis
+    «depuis» plus this form of the verb is how French says something started back
+    then and is still going. English needs a whole scaffolding — she'd been
+    setting out — where French needs one preposition.
+=   en | of-them

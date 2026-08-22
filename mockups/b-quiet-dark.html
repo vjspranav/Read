@@ -1,0 +1,1268 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiet Dark — French reader</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   QUIET DARK — palette
+   Light is the daytime translation; dark is the primary voice.
+   One accent (old brass, the colour of a reading lamp) and one
+   cool grey (slate) that belongs only to the gloss layer.
+   ============================================================ */
+:root{
+  color-scheme: light dark;
+
+  --ink:#EDE6DA;
+  --frame:#DDD3C2;
+  --pane:#F7F2E9;
+  --pane2:#FCF8F1;
+  --pane3:#F1EADE;
+  --edge:rgba(60,45,28,.11);
+  --edge2:rgba(60,45,28,.18);
+
+  --fr:#2F271E;
+  --glow:transparent;
+  --en:#6C6255;
+  --enh:rgba(108,98,85,.24);
+  --gloss:#5F6A74;
+  --muted:#7E7466;
+  --faint:#A69B8C;
+  --hint:rgba(90,70,42,.38);
+
+  --accent:#8A6220;
+  --accenthi:#6E4C14;
+  --wash:rgba(154,110,39,.14);
+  --join:rgba(60,45,28,.030);
+  --lamp:rgba(255,238,205,.6);
+  --shadow:0 26px 50px -32px rgba(60,44,24,.45), 0 1px 2px rgba(60,44,24,.10);
+  --sel-line:rgba(138,98,32,.55);
+
+  --serif:'Newsreader', Georgia, 'Times New Roman', serif;
+  --sans:'Instrument Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ink:#100E0C;
+    --frame:#1A1613;
+    --pane:#16120F;
+    --pane2:#1D1815;
+    --pane3:#241E19;
+    --edge:rgba(236,214,182,.075);
+    --edge2:rgba(236,214,182,.14);
+
+    --fr:#E4DACA;
+    --glow:rgba(255,228,183,.14);
+    --en:#A2968A;
+    --enh:rgba(200,184,164,.115);
+    --gloss:#79838C;
+    --muted:#8C8175;
+    --faint:#5F574E;
+    --hint:rgba(214,190,155,.34);
+
+    --accent:#CBA36A;
+    --accenthi:#E4C08A;
+    --wash:rgba(203,163,106,.15);
+    --join:rgba(236,214,182,.030);
+    --lamp:rgba(255,222,172,.055);
+    --shadow:0 34px 64px -34px rgba(0,0,0,.9), 0 2px 12px rgba(0,0,0,.45);
+    --sel-line:rgba(203,163,106,.7);
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#100E0C; --frame:#1A1613; --pane:#16120F; --pane2:#1D1815; --pane3:#241E19;
+  --edge:rgba(236,214,182,.075); --edge2:rgba(236,214,182,.14);
+  --fr:#E4DACA; --glow:rgba(255,228,183,.14); --en:#A2968A; --enh:rgba(200,184,164,.115);
+  --gloss:#79838C; --muted:#8C8175; --faint:#5F574E; --hint:rgba(214,190,155,.34);
+  --accent:#CBA36A; --accenthi:#E4C08A; --wash:rgba(203,163,106,.15); --join:rgba(236,214,182,.030);
+  --lamp:rgba(255,222,172,.055);
+  --shadow:0 34px 64px -34px rgba(0,0,0,.9), 0 2px 12px rgba(0,0,0,.45);
+  --sel-line:rgba(203,163,106,.7);
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--ink); color:var(--fr);
+  font-family:var(--sans); font-size:15px; line-height:1.55;
+  overflow-x:hidden; -webkit-font-smoothing:antialiased;
+}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+:focus-visible{outline:1.5px solid var(--accent); outline-offset:2px; border-radius:3px}
+
+.wrap{max-width:1250px;margin:0 auto;padding:0 24px}
+
+/* ---------- masthead ---------- */
+.masthead{padding:76px 0 8px; position:relative}
+.masthead::before{
+  content:''; position:absolute; left:0; right:0; top:0; height:340px; pointer-events:none;
+  background:radial-gradient(80% 100% at 22% 0%, var(--lamp), transparent 70%);
+}
+.eyebrow{
+  font-size:11px; letter-spacing:.16em; text-transform:uppercase; font-weight:500;
+  color:var(--muted); margin:0 0 18px;
+}
+h1{
+  font-family:var(--serif); font-optical-sizing:auto;
+  font-weight:400; font-size:clamp(38px,6.4vw,60px); line-height:1.03;
+  letter-spacing:-.02em; margin:0 0 20px; color:var(--fr);
+  text-shadow:0 0 40px var(--glow);
+}
+h1 em{font-style:italic; color:var(--accent)}
+.deck{max-width:46ch; color:var(--en); font-size:16px; margin:0 0 30px}
+.metarow{display:flex; flex-wrap:wrap; gap:10px 26px; align-items:center;
+  border-top:1px solid var(--edge); padding-top:18px; margin-bottom:70px}
+.metarow .m{font-size:12.5px; color:var(--muted)}
+.metarow .m b{font-weight:500; color:var(--en)}
+.themebtn{
+  margin-left:auto; font-size:12px; letter-spacing:.06em; color:var(--muted);
+  border:1px solid var(--edge2); border-radius:100px; padding:7px 15px; transition:color .2s,border-color .2s;
+}
+.themebtn:hover{color:var(--accent); border-color:var(--accent)}
+
+/* ---------- sections ---------- */
+.section{margin:0 0 104px}
+.cap{border-top:1px solid var(--edge); padding-top:16px; margin-bottom:26px;
+  display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 16px}
+.cap .n{font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--faint); font-weight:500}
+.cap h2{font-family:var(--serif); font-weight:400; font-size:21px; letter-spacing:-.01em; margin:0; color:var(--fr)}
+.cap p{margin:0; color:var(--muted); font-size:13.5px; max-width:52ch}
+.frames{display:flex; gap:30px; align-items:flex-start; flex-wrap:wrap}
+.stack{display:flex; flex-direction:column; gap:12px}
+.framelabel{font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--faint); font-weight:500}
+
+.sidenote{max-width:250px; padding-top:6px}
+.sidenote h4{font-family:var(--serif); font-weight:400; font-size:16px; margin:0 0 10px; color:var(--fr)}
+.sidenote ul{margin:0; padding:0; list-style:none}
+.sidenote li{font-size:12.5px; line-height:1.6; color:var(--muted); padding:9px 0; border-top:1px solid var(--edge)}
+.sidenote li b{color:var(--en); font-weight:500}
+
+/* ---------- device frames ---------- */
+.phone{
+  width:390px; max-width:100%; padding:9px; border-radius:38px;
+  background:var(--frame); box-shadow:inset 0 0 0 1px var(--edge2), var(--shadow); flex:0 0 auto;
+}
+.phone .screen{
+  position:relative; border-radius:30px; overflow:hidden; background:var(--pane);
+  height:780px; display:flex; flex-direction:column;
+}
+.phone.tall .screen{height:840px}
+.phone.short .screen{height:720px}
+
+.desktop{
+  width:100%; max-width:800px; min-width:0; border-radius:14px; padding:0;
+  background:var(--frame); box-shadow:inset 0 0 0 1px var(--edge2), var(--shadow); overflow:hidden; flex:1 1 460px;
+}
+.desktop .chrome{height:36px; display:flex; align-items:center; gap:7px; padding:0 15px}
+.desktop .chrome i{width:9px;height:9px;border-radius:50%;background:var(--edge2);display:block}
+.desktop .chrome span{margin-left:12px;font-size:11px;letter-spacing:.05em;color:var(--faint)}
+.desktop .screen{position:relative; height:620px; background:var(--pane); display:flex; overflow:hidden}
+.desktop.tall .screen{height:720px}
+.desktop.lib .screen{height:780px}
+
+.statusbar{
+  height:26px; flex:0 0 auto; display:flex; align-items:center; justify-content:space-between;
+  padding:0 26px 0 30px; font-size:11px; font-weight:500; color:var(--muted); letter-spacing:.02em;
+}
+.statusbar .dots{display:flex;gap:3px;align-items:center}
+.statusbar .dots i{width:3px;height:3px;border-radius:50%;background:currentColor;display:block;opacity:.6}
+.statusbar .dots i:last-child{width:14px;height:7px;border-radius:2px;opacity:.45}
+
+/* ---------- reader ---------- */
+.reader{position:relative; display:flex; flex-direction:column; flex:1 1 auto; min-width:0; min-height:0}
+.reader::before{
+  content:''; position:absolute; inset:0; pointer-events:none; z-index:3;
+  background:radial-gradient(115% 46% at 50% -6%, var(--lamp), transparent 62%);
+}
+.topbar{
+  flex:0 0 auto; position:relative; z-index:4;
+  display:flex; align-items:center; gap:14px; padding:10px 18px 11px;
+  border-bottom:1px solid var(--edge);
+}
+.topbar .tb-title{
+  flex:1; min-width:0; font-size:12px; letter-spacing:.05em; color:var(--muted);
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.iconbtn{
+  width:30px;height:30px;border-radius:8px;display:grid;place-items:center;color:var(--muted);
+  transition:color .18s, background .18s;
+}
+.iconbtn:hover{color:var(--fr); background:var(--pane3)}
+.iconbtn.on{color:var(--accent); background:var(--wash)}
+.progress{position:absolute;left:0;bottom:-1px;height:1px;background:var(--accent);opacity:.75}
+
+.content{
+  flex:1 1 auto; min-height:0; overflow-y:auto; overflow-x:hidden; position:relative; z-index:2;
+  padding:26px 22px 60px; scrollbar-width:none;
+}
+.content::-webkit-scrollbar{display:none}
+.desktop .content{padding:44px 30px 80px}
+.reading{max-width:34em; margin:0 auto}
+.desktop .reading{max-width:33em}
+
+.storyhead{margin:0 0 34px}
+.storyhead .kicker{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);font-weight:500;margin-bottom:14px}
+.storyhead h3{
+  font-family:var(--serif); font-weight:400; font-size:31px; line-height:1.12; letter-spacing:-.018em;
+  margin:0 0 6px; color:var(--fr); text-shadow:0 0 30px var(--glow);
+}
+.storyhead .sub{font-family:var(--serif); font-style:italic; font-size:17px; color:var(--muted); margin:0 0 16px}
+.storyhead .meta{font-size:11.5px; letter-spacing:.06em; color:var(--faint); display:flex; gap:9px; align-items:center}
+.storyhead .meta i{width:2px;height:2px;border-radius:50%;background:currentColor;display:block}
+.rule{height:1px;background:var(--edge);margin:22px 0 0}
+
+/* ---------- the three layers ---------- */
+.line{
+  position:relative; margin:0 0 30px; padding:2px 0; cursor:pointer;
+  border-radius:4px;
+}
+.line:hover .fr{color:var(--fr)}
+.fr{
+  font-family:var(--serif); font-optical-sizing:auto; font-weight:400;
+  font-size:var(--frsize,19.5px); line-height:1.6; letter-spacing:.003em;
+  color:var(--fr); text-shadow:0 0 22px var(--glow);
+  transition:color .3s;
+}
+.desktop .fr{--frsize:21px}
+
+.tok{display:inline; position:relative; -webkit-user-select:none; user-select:none; -webkit-tap-highlight-color:transparent}
+.tok .w{display:inline}
+.tok .g{display:none}
+.tok .ws{display:inline; white-space:nowrap}
+.sp{font-style:normal; display:inline}
+.tie{display:inline}
+
+.hint{
+  text-decoration:underline; text-decoration-style:dotted; text-decoration-thickness:1px;
+  text-decoration-color:var(--hint); text-underline-offset:.22em;
+}
+.no-hints .hint{text-decoration:none}
+
+.en{
+  display:block; font-family:var(--serif); font-style:italic; font-weight:300;
+  font-size:calc(var(--frsize,19.5px) * .84); line-height:1.5;
+  color:var(--enh); margin:9px 0 0 1.3em;
+  transition:color .55s cubic-bezier(.2,.6,.2,1);
+}
+.line.revealed .en, .reveal-always .en{color:var(--en)}
+.reveal-hidden .en{display:none}
+
+/* interlinear mode */
+.gloss-on .fr{line-height:1.2}
+.gloss-on .tok{
+  display:inline-block; text-align:center; vertical-align:baseline; margin:0 0 15px; padding:1px 0 0;
+}
+.gloss-on .tok .w{display:block; line-height:1.34}
+.gloss-on .tok .ws{display:inline-block}
+.gloss-on .tok.grp .w{display:inline}
+.gloss-on .tok .g{
+  display:block; font-family:var(--sans); font-weight:400;
+  font-size:10px; line-height:1; letter-spacing:.035em; white-space:nowrap;
+  color:var(--gloss); margin-top:6px;
+}
+.gloss-on .sp{display:inline-block; width:.34em}
+.gloss-on .tie{
+  display:inline-block; background:var(--join); border-radius:4px;
+  padding:0 1px; margin:0 -1px;
+}
+.gloss-on .line{margin-bottom:34px}
+.gloss-on .en{margin-top:2px}
+
+/* selection */
+.tok.sel, .sp.sel{background:var(--wash); box-shadow:inset 0 -1px 0 var(--sel-line)}
+.tok.sel.selA, .sp.sel.selA{border-radius:3px 0 0 3px}
+.tok.sel.selB, .sp.sel.selB{border-radius:0 3px 3px 0}
+.tok.sel.selA.selB{border-radius:3px}
+.gloss-on .tok.sel{padding-top:2px}
+
+/* action bar */
+.actionbar{
+  position:absolute; z-index:6; bottom:calc(100% - 4px); left:0; transform:translateX(-50%);
+  display:flex; align-items:stretch; background:var(--pane3);
+  border:1px solid var(--edge2); border-radius:9px; box-shadow:var(--shadow);
+  font-family:var(--sans); white-space:nowrap; opacity:0; pointer-events:none;
+  transition:opacity .18s ease, transform .18s ease;
+}
+.actionbar.show{opacity:1; pointer-events:auto}
+.actionbar button{
+  padding:8px 15px; font-size:13px; font-weight:500; color:var(--fr);
+  display:flex; align-items:center; gap:7px;
+}
+.actionbar button:first-child{color:var(--accent)}
+.actionbar button:hover{background:var(--wash)}
+.actionbar button:first-child{border-radius:8px 0 0 8px}
+.actionbar button:last-child{border-radius:0 8px 8px 0}
+.actionbar .div{width:1px; background:var(--edge2); margin:6px 0}
+.actionbar::after{
+  content:''; position:absolute; left:50%; margin-left:-5px; bottom:-5px;
+  width:9px;height:9px; background:var(--pane3);
+  border-right:1px solid var(--edge2); border-bottom:1px solid var(--edge2);
+  transform:rotate(45deg);
+}
+
+/* ---------- nudge strip ---------- */
+.nudge{
+  position:absolute; z-index:7; left:14px; right:14px; bottom:14px;
+  background:var(--pane3); border:1px solid var(--edge2); border-radius:14px;
+  padding:14px 15px 12px; box-shadow:var(--shadow);
+}
+.nudge p{margin:0 0 12px; font-size:13px; line-height:1.45; color:var(--en); max-width:30ch}
+.nudge .acts{display:flex; gap:8px; align-items:center}
+.nudge button{
+  font-size:12.5px; font-weight:500; padding:7px 13px; border-radius:8px;
+  border:1px solid var(--edge2); color:var(--en); transition:.18s;
+}
+.nudge button:hover{color:var(--fr); border-color:var(--faint)}
+.nudge button.primary{color:var(--accent); border-color:var(--wash); background:var(--wash)}
+.nudge button.primary:hover{border-color:var(--accent)}
+.nudge.gone{display:none}
+
+/* ---------- why panel ---------- */
+.scrim{position:absolute; inset:0; z-index:8; background:rgba(0,0,0,.42); backdrop-filter:blur(1px)}
+.sheet{
+  position:absolute; z-index:9; left:0; right:0; bottom:0; background:var(--pane2);
+  border-top:1px solid var(--edge2); border-radius:20px 20px 0 0;
+  padding:10px 20px 24px; max-height:82%; overflow-y:auto; scrollbar-width:none;
+  box-shadow:0 -20px 50px -30px rgba(0,0,0,.7);
+}
+.sheet::-webkit-scrollbar{display:none}
+.grab{width:34px;height:3px;border-radius:3px;background:var(--edge2);margin:0 auto 16px}
+
+.sidepanel{
+  flex:0 0 326px; max-width:326px; background:var(--pane2); border-left:1px solid var(--edge);
+  padding:26px 26px 30px; overflow-y:auto; scrollbar-width:none; position:relative; z-index:5;
+}
+.sidepanel::-webkit-scrollbar{display:none}
+
+.panelhead{display:flex; align-items:flex-start; gap:14px; margin-bottom:20px}
+.panelhead .ph-lab{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);font-weight:500;margin-bottom:9px}
+.panelhead h4{font-family:var(--serif); font-weight:400; font-size:24px; margin:0; color:var(--fr); letter-spacing:-.01em}
+.closebtn{margin-left:auto; width:28px;height:28px;border-radius:50%;display:grid;place-items:center;color:var(--muted);border:1px solid var(--edge)}
+.closebtn:hover{color:var(--fr)}
+
+.selgloss{
+  padding:16px 4px 4px; border-top:1px solid var(--edge); border-bottom:1px solid var(--edge);
+  margin-bottom:22px; --frsize:22px;
+}
+.selgloss .fr{text-align:left}
+
+.block{margin-bottom:22px}
+.blab{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);font-weight:500;margin-bottom:10px}
+.note{font-size:14.5px; line-height:1.62; color:var(--en); margin:0}
+.note b{color:var(--fr); font-weight:400}
+.fq{font-family:var(--serif); color:var(--fr); font-style:normal}
+
+details.rule-d{border-top:1px solid var(--edge); border-bottom:1px solid var(--edge); padding:0}
+details.rule-d summary{
+  list-style:none; cursor:pointer; padding:15px 0; display:flex; align-items:center; gap:12px;
+  font-family:var(--serif); font-size:16.5px; color:var(--fr);
+}
+details.rule-d summary::-webkit-details-marker{display:none}
+details.rule-d summary .plus{
+  margin-left:auto; width:18px;height:18px; flex:0 0 auto; position:relative; color:var(--muted);
+}
+details.rule-d summary .plus::before,
+details.rule-d summary .plus::after{
+  content:''; position:absolute; background:currentColor; left:50%; top:50%;
+}
+details.rule-d summary .plus::before{width:11px;height:1px;margin:-.5px 0 0 -5.5px}
+details.rule-d summary .plus::after{width:1px;height:11px;margin:-5.5px 0 0 -.5px; transition:transform .2s}
+details.rule-d[open] summary .plus::after{transform:scaleY(0)}
+details.rule-d .body{padding:0 0 18px; font-size:14px; line-height:1.65; color:var(--en); max-width:44ch}
+
+.occ{
+  width:100%; display:flex; align-items:center; gap:12px; padding:16px 0 4px;
+  font-size:13.5px; color:var(--en); text-align:left;
+}
+.occ b{color:var(--accent); font-weight:500}
+.occ .arr{margin-left:auto; color:var(--accent); transition:transform .2s}
+.occ:hover .arr{transform:translateX(3px)}
+
+/* ---------- library ---------- */
+.libhead{padding:34px 40px 0}
+.libhead .kicker{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);font-weight:500;margin-bottom:12px}
+.libhead h3{font-family:var(--serif);font-weight:400;font-size:27px;margin:0 0 4px;letter-spacing:-.015em}
+.libhead p{margin:0 0 20px;color:var(--muted);font-size:13.5px}
+.filters{display:flex; gap:6px; flex-wrap:wrap; margin-bottom:6px}
+.filters button{
+  font-size:12px; padding:6px 12px; border-radius:100px; border:1px solid var(--edge);
+  color:var(--muted); transition:.18s;
+}
+.filters button.on{color:var(--accent); border-color:var(--wash); background:var(--wash)}
+.filters button:hover{color:var(--fr)}
+
+.shelf{padding:22px 40px 40px; overflow-y:auto; scrollbar-width:none; flex:1 1 auto; min-height:0}
+.shelf::-webkit-scrollbar{display:none}
+.plank{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:20px;
+  padding-bottom:26px; position:relative;
+}
+.plank + .plank{padding-top:28px}
+.plank::after{
+  content:''; position:absolute; left:0; right:0; bottom:0; height:1px; background:var(--edge);
+  box-shadow:0 8px 16px -8px rgba(0,0,0,.35);
+}
+.plank:last-child::after{display:none}
+
+.book{
+  position:relative; text-align:left; padding:2px 6px 2px 18px; border-radius:3px;
+  transition:transform .22s cubic-bezier(.2,.7,.3,1);
+}
+.book::before{
+  content:''; position:absolute; left:0; top:4px; width:2px; border-radius:2px;
+  background:var(--accent); opacity:.5; height:var(--spine,18px);
+  transition:opacity .22s;
+}
+.book:hover{transform:translateY(-3px)}
+.book:hover::before{opacity:1}
+.book h4{font-family:var(--serif); font-weight:400; font-size:19px; line-height:1.2; margin:0 0 3px; color:var(--fr); letter-spacing:-.01em}
+.book .ensub{font-family:var(--serif); font-style:italic; font-size:14px; color:var(--muted); margin:0 0 9px}
+.book .sum{font-size:12.5px; line-height:1.5; color:var(--en); margin:0 0 11px; max-width:34ch}
+.book .len{font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--faint); display:flex; align-items:center; gap:8px}
+.book .now{color:var(--accent)}
+.book .now{margin-left:2px}
+.book .now::before{content:''; width:4px;height:4px;border-radius:50%;background:var(--accent);display:inline-block;margin-right:7px;vertical-align:1px}
+.book .len span + span::before{content:'·'; margin-right:8px; color:var(--faint)}
+
+.shelf.mobile .plank{grid-template-columns:1fr; gap:24px}
+
+/* ---------- settings ---------- */
+.setblock{padding:2px 0 0}
+.setblock h3{font-family:var(--serif);font-weight:400;font-size:20px;margin:0 0 20px}
+.set-row{padding:15px 0; border-top:1px solid var(--edge)}
+.set-row:first-of-type{border-top:0; padding-top:0}
+.set-top{display:flex; align-items:center; gap:14px; margin-bottom:11px}
+.set-name{font-size:14px; color:var(--fr); font-weight:500}
+.set-sub{font-size:12px; color:var(--muted); margin-top:1px}
+.set-row.inline .set-top{margin-bottom:0}
+
+.seg{display:flex; background:var(--pane3); border-radius:9px; padding:3px; gap:2px}
+.seg button{
+  flex:1; padding:7px 4px; border-radius:7px; font-size:12.5px; color:var(--muted);
+  transition:.16s; text-align:center;
+}
+.seg button.on{background:var(--pane); color:var(--fr); box-shadow:inset 0 0 0 1px var(--edge)}
+.seg button:hover{color:var(--fr)}
+.seg.sizes button{font-family:var(--serif)}
+.seg.sizes button:nth-child(1){font-size:12px}
+.seg.sizes button:nth-child(2){font-size:14px}
+.seg.sizes button:nth-child(3){font-size:16.5px}
+.seg.sizes button:nth-child(4){font-size:19px}
+
+.switch{
+  margin-left:auto; flex:0 0 auto; width:40px; height:23px; border-radius:100px;
+  background:var(--pane3); box-shadow:inset 0 0 0 1px var(--edge); position:relative; transition:.2s;
+}
+.switch::after{
+  content:''; position:absolute; top:3px; left:3px; width:17px; height:17px; border-radius:50%;
+  background:var(--faint); transition:.22s cubic-bezier(.3,.8,.3,1);
+}
+.switch.on{background:var(--wash); box-shadow:inset 0 0 0 1px var(--accent)}
+.switch.on::after{transform:translateX(17px); background:var(--accent)}
+
+.popover{
+  position:absolute; z-index:9; top:52px; right:22px; width:320px;
+  background:var(--pane2); border:1px solid var(--edge2); border-radius:14px;
+  padding:20px 20px 18px; box-shadow:var(--shadow);
+}
+.popover::after{
+  content:''; position:absolute; right:26px; top:-5px; width:9px;height:9px; background:var(--pane2);
+  border-left:1px solid var(--edge2); border-top:1px solid var(--edge2); transform:rotate(45deg);
+}
+
+footer{border-top:1px solid var(--edge); padding:34px 0 80px; color:var(--faint); font-size:12.5px}
+footer b{color:var(--muted); font-weight:500}
+
+@media (max-width:900px){
+  .desktop{max-width:100%}
+  .sidenote{max-width:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition-duration:.01ms !important; animation-duration:.01ms !important}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="masthead">
+    <p class="eyebrow">Design direction B</p>
+    <h1>Quiet dark,<br>or: reading French<br>at <em>half past midnight</em></h1>
+    <p class="deck">A reading site for people who know the words but can't yet assemble the sentence. Warm near-black ground, one accent the colour of a lamp, and three layers of text that have to sit on top of one another without turning to mush.</p>
+    <div class="metarow">
+      <span class="m"><b>Newsreader</b> — the French, and the English in italic</span>
+      <span class="m"><b>Instrument Sans</b> — the gloss, and the interface</span>
+      <span class="m">Tap a line to show its English. Tap words to select them.</span>
+      <button class="themebtn" id="themebtn">Switch to light</button>
+    </div>
+  </header>
+
+  <main>
+
+  <!-- ============ 1. READER, DEFAULT ============ -->
+  <section class="section">
+    <div class="cap">
+      <span class="n">Screen one</span>
+      <h2>Reader, as you first find it</h2>
+      <p>English sits under every line at the edge of visible. The strip explains that once, then goes away.</p>
+    </div>
+    <div class="frames">
+      <div class="stack">
+        <span class="framelabel">Phone — first visit</span>
+        <div class="phone">
+          <div class="screen">
+            <div class="statusbar"><span>00:41</span><span class="dots"><i></i><i></i><i></i></span></div>
+            <div class="reader" data-reader data-reveal="tap">
+              <div class="topbar">
+                <button class="iconbtn" aria-label="Back"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3.2 5.2 8l4.8 4.8"/></svg></button>
+                <span class="tb-title">Le train de 7h12</span>
+                <button class="iconbtn js-gloss" aria-label="Word-by-word gloss"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><path d="M2.5 5h12M2.5 8.4h12"/><path d="M2.5 12.2h4M8.2 12.2h3.4" opacity=".55"/></svg></button>
+                <button class="iconbtn" aria-label="Reading settings"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><path d="M2.5 5.4h11M2.5 11.6h11"/><circle cx="6.2" cy="5.4" r="1.9" fill="var(--pane)"/><circle cx="10.6" cy="11.6" r="1.9" fill="var(--pane)"/></svg></button>
+                <span class="progress" style="width:18%"></span>
+              </div>
+              <div class="content"><div class="reading" data-story></div></div>
+              <div class="nudge">
+                <p>The English is under every line. Tap a line to bring it up.</p>
+                <div class="acts">
+                  <button class="primary js-always">Always on</button>
+                  <button class="js-gotit">Got it</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stack" style="flex:1 1 420px; min-width:0">
+        <span class="framelabel">Desktop — same page, wider measure</span>
+        <div class="desktop">
+          <div class="chrome"><i></i><i></i><i></i><span>Le train de 7h12</span></div>
+          <div class="screen">
+            <div class="reader" data-reader data-reveal="tap">
+              <div class="topbar">
+                <button class="iconbtn" aria-label="Back"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3.2 5.2 8l4.8 4.8"/></svg></button>
+                <span class="tb-title">Everyday stories · Le train de 7h12</span>
+                <button class="iconbtn js-gloss" aria-label="Word-by-word gloss"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><path d="M2.5 5h12M2.5 8.4h12"/><path d="M2.5 12.2h4M8.2 12.2h3.4" opacity=".55"/></svg></button>
+                <button class="iconbtn" aria-label="Reading settings"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><path d="M2.5 5.4h11M2.5 11.6h11"/><circle cx="6.2" cy="5.4" r="1.9" fill="var(--pane)"/><circle cx="10.6" cy="11.6" r="1.9" fill="var(--pane)"/></svg></button>
+                <span class="progress" style="width:18%"></span>
+              </div>
+              <div class="content"><div class="reading" data-story></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 2. LINE REVEALED ============ -->
+  <section class="section">
+    <div class="cap">
+      <span class="n">Screen two</span>
+      <h2>One line, opened</h2>
+      <p>The English fades up over half a second. Nothing moves — the space was always reserved for it.</p>
+    </div>
+    <div class="frames">
+      <div class="stack">
+        <span class="framelabel">Phone — line two tapped</span>
+        <div class="phone">
+          <div class="screen">
+            <div class="statusbar"><span>00:41</span><span class="dots"><i></i><i></i><i></i></span></div>
+            <div class="reader" data-reader data-reveal="tap" data-revealed="1">
+              <div class="topbar">
+                <button class="iconbtn" aria-label="Back"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3.2 5.2 8l4.8 4.8"/></svg></button>
+                <span class="tb-title">Le train de 7h12</span>
+                <button class="iconbtn js-gloss" aria-label="Word-by-word gloss"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><path d="M2.5 5h12M2.5 8.4h12"/><path d="M2.5 12.2h4M8.2 12.2h3.4" opacity=".55"/></svg></button>
+                <button class="iconbtn" aria-label="Reading settings"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><path d="M2.5 5.4h11M2.5 11.6h11"/><circle cx="6.2" cy="5.4" r="1.9" fill="var(--pane)"/><circle cx="10.6" cy="11.6" r="1.9" fill="var(--pane)"/></svg></button>
+                <span class="progress" style="width:32%"></span>
+              </div>
+              <div class="content"><div class="reading" data-story></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sidenote">
+        <h4>Why it reads this way</h4>
+        <ul>
+          <li>The English is the <b>same typeface as the French, in italic</b> — one voice, saying the thing twice. A sans here would sound like a machine talking over the story.</li>
+          <li>It is set <b>smaller and indented by 1.3em</b>, so the ragged left edge tells you at a glance which layer you are in.</li>
+          <li>Hidden is not gone — it is set at 11% opacity. You can see something is there, which is the whole point of the nudge.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. INTERLINEAR ============ -->
+  <section class="section">
+    <div class="cap">
+      <span class="n">Screen three</span>
+      <h2>All three layers at once</h2>
+      <p>French, the word-by-word gloss beneath each word, then the English. Off by default; this is what it looks like on.</p>
+    </div>
+    <div class="frames">
+      <div class="stack">
+        <span class="framelabel">Phone — gloss on</span>
+        <div class="phone tall">
+          <div class="screen">
+            <div class="statusbar"><span>00:47</span><span class="dots"><i></i><i></i><i></i></span></div>
+            <div class="reader gloss-on" data-reader data-reveal="always" data-gloss="on">
+              <div class="topbar">
+                <button class="iconbtn" aria-label="Back"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3.2 5.2 8l4.8 4.8"/></svg></button>
+                <span class="tb-title">Le train de 7h12</span>
+                <button class="iconbtn js-gloss on" aria-label="Word-by-word gloss"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><path d="M2.5 5h12M2.5 8.4h12"/><path d="M2.5 12.2h4M8.2 12.2h3.4" opacity=".55"/></svg></button>
+                <button class="iconbtn" aria-label="Reading settings"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><path d="M2.5 5.4h11M2.5 11.6h11"/><circle cx="6.2" cy="5.4" r="1.9" fill="var(--pane)"/><circle cx="10.6" cy="11.6" r="1.9" fill="var(--pane)"/></svg></button>
+                <span class="progress" style="width:32%"></span>
+              </div>
+              <div class="content"><div class="reading" data-story data-compacthead="1"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stack" style="flex:1 1 400px; min-width:0">
+        <span class="framelabel">Desktop — gloss on</span>
+        <div class="desktop tall">
+          <div class="chrome"><i></i><i></i><i></i><span>Le train de 7h12</span></div>
+          <div class="screen">
+            <div class="reader gloss-on" data-reader data-reveal="always" data-gloss="on">
+              <div class="topbar">
+                <button class="iconbtn" aria-label="Back"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3.2 5.2 8l4.8 4.8"/></svg></button>
+                <span class="tb-title">Everyday stories · Le train de 7h12</span>
+                <button class="iconbtn js-gloss on" aria-label="Word-by-word gloss"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><path d="M2.5 5h12M2.5 8.4h12"/><path d="M2.5 12.2h4M8.2 12.2h3.4" opacity=".55"/></svg></button>
+                <button class="iconbtn" aria-label="Reading settings"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><path d="M2.5 5.4h11M2.5 11.6h11"/><circle cx="6.2" cy="5.4" r="1.9" fill="var(--pane)"/><circle cx="10.6" cy="11.6" r="1.9" fill="var(--pane)"/></svg></button>
+                <span class="progress" style="width:32%"></span>
+              </div>
+              <div class="content"><div class="reading" data-story data-compacthead="1"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="sidenote" style="max-width:none">
+          <ul>
+            <li><b>Three voices, not three sizes.</b> French in roman, English in the same serif italic, gloss in the only sans on the page. The gloss is machinery, so it is allowed to sound mechanical.</li>
+            <li><b>The gloss is the only cool grey.</b> Everything else — paper, ink, lamp — is warm. Hue does the separating so the layers can sit close without fighting.</li>
+            <li><b>Proximity ladder:</b> 6px word to gloss, 2px gloss to English, 34px line to line. Grouping does the work that boxes and rules would otherwise have to do.</li>
+            <li><b>Elision keeps its shape.</b> <span class="fq">l’avait</span> is two tokens with two glosses; <span class="fq">jusqu’à</span> is two tokens sharing one. Both get a faint tint behind them so a split word never reads as a typo.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4. SELECTION ============ -->
+  <section class="section">
+    <div class="cap">
+      <span class="n">Screen four</span>
+      <h2>Three words picked up</h2>
+      <p>Tap a word, drag or tap along to take more. The bar arrives above the selection and asks two questions.</p>
+    </div>
+    <div class="frames">
+      <div class="stack">
+        <span class="framelabel">Phone — «ne l’avait pas» selected</span>
+        <div class="phone">
+          <div class="screen">
+            <div class="statusbar"><span>00:49</span><span class="dots"><i></i><i></i><i></i></span></div>
+            <div class="reader" data-reader data-reveal="tap" data-revealed="1" data-select="1:1:4">
+              <div class="topbar">
+                <button class="iconbtn" aria-label="Back"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3.2 5.2 8l4.8 4.8"/></svg></button>
+                <span class="tb-title">Le train de 7h12</span>
+                <button class="iconbtn js-gloss" aria-label="Word-by-word gloss"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><path d="M2.5 5h12M2.5 8.4h12"/><path d="M2.5 12.2h4M8.2 12.2h3.4" opacity=".55"/></svg></button>
+                <button class="iconbtn" aria-label="Reading settings"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><path d="M2.5 5.4h11M2.5 11.6h11"/><circle cx="6.2" cy="5.4" r="1.9" fill="var(--pane)"/><circle cx="10.6" cy="11.6" r="1.9" fill="var(--pane)"/></svg></button>
+                <span class="progress" style="width:32%"></span>
+              </div>
+              <div class="content"><div class="reading" data-story></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stack" style="flex:1 1 400px; min-width:0">
+        <span class="framelabel">Desktop — same selection</span>
+        <div class="desktop">
+          <div class="chrome"><i></i><i></i><i></i><span>Le train de 7h12</span></div>
+          <div class="screen">
+            <div class="reader" data-reader data-reveal="tap" data-revealed="1" data-select="1:1:4">
+              <div class="topbar">
+                <button class="iconbtn" aria-label="Back"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3.2 5.2 8l4.8 4.8"/></svg></button>
+                <span class="tb-title">Everyday stories · Le train de 7h12</span>
+                <button class="iconbtn js-gloss" aria-label="Word-by-word gloss"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><path d="M2.5 5h12M2.5 8.4h12"/><path d="M2.5 12.2h4M8.2 12.2h3.4" opacity=".55"/></svg></button>
+                <button class="iconbtn" aria-label="Reading settings"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><path d="M2.5 5.4h11M2.5 11.6h11"/><circle cx="6.2" cy="5.4" r="1.9" fill="var(--pane)"/><circle cx="10.6" cy="11.6" r="1.9" fill="var(--pane)"/></svg></button>
+                <span class="progress" style="width:32%"></span>
+              </div>
+              <div class="content"><div class="reading" data-story></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 5. WHY PANEL ============ -->
+  <section class="section">
+    <div class="cap">
+      <span class="n">Screen five</span>
+      <h2>Why?</h2>
+      <p>Always the same four things in the same order: the words, why this sentence does it, the pattern behind it, and where else to see it.</p>
+    </div>
+    <div class="frames">
+      <div class="stack">
+        <span class="framelabel">Phone — bottom sheet</span>
+        <div class="phone">
+          <div class="screen">
+            <div class="statusbar"><span>00:49</span><span class="dots"><i></i><i></i><i></i></span></div>
+            <div class="reader" data-reader data-reveal="tap" data-revealed="1" data-select="1:1:4" data-nobar="1">
+              <div class="topbar">
+                <button class="iconbtn" aria-label="Back"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3.2 5.2 8l4.8 4.8"/></svg></button>
+                <span class="tb-title">Le train de 7h12</span>
+                <button class="iconbtn js-gloss" aria-label="Word-by-word gloss"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><path d="M2.5 5h12M2.5 8.4h12"/><path d="M2.5 12.2h4M8.2 12.2h3.4" opacity=".55"/></svg></button>
+                <button class="iconbtn" aria-label="Reading settings"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><path d="M2.5 5.4h11M2.5 11.6h11"/><circle cx="6.2" cy="5.4" r="1.9" fill="var(--pane)"/><circle cx="10.6" cy="11.6" r="1.9" fill="var(--pane)"/></svg></button>
+                <span class="progress" style="width:32%"></span>
+              </div>
+              <div class="content"><div class="reading" data-story></div></div>
+              <div class="scrim"></div>
+              <div class="sheet">
+                <div class="grab"></div>
+                <div class="panelhead">
+                  <div>
+                    <div class="ph-lab">You picked</div>
+                    <h4>ne l’avait pas</h4>
+                  </div>
+                  <button class="closebtn" aria-label="Close"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><path d="M2.5 2.5l7 7M9.5 2.5l-7 7"/></svg></button>
+                </div>
+                <div class="selgloss gloss-on" data-selgloss></div>
+                <div class="block">
+                  <div class="blab">In this sentence</div>
+                  <p class="note">Negation is two pieces that sandwich the conjugated verb. Here the verb is <span class="fq">«avait»</span>, not <span class="fq">«entendu»</span> — so <span class="fq">«ne»</span> and <span class="fq">«pas»</span> wrap around <span class="fq">«avait»</span> and leave the past participle outside. The object pronoun <span class="fq">«l’»</span> squeezes in between <span class="fq">«ne»</span> and the verb.</p>
+                </div>
+                <details class="rule-d">
+                  <summary>Negation wraps the conjugated verb<span class="plus"></span></summary>
+                  <div class="body">French negates with a pair: <span class="fq">«ne»</span> before the verb, <span class="fq">«pas»</span> after it. In compound tenses the pair closes around the helping verb, not the participle. <span class="fq">«Je n’ai pas mangé»</span>, never <span class="fq">«Je n’ai mangé pas»</span>.</div>
+                </details>
+                <button class="occ"><span>This same rule appears in <b>11</b> other places</span><span class="arr">→</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stack" style="flex:1 1 400px; min-width:0">
+        <span class="framelabel">Desktop — side panel, story stays put</span>
+        <div class="desktop tall">
+          <div class="chrome"><i></i><i></i><i></i><span>Le train de 7h12</span></div>
+          <div class="screen">
+            <div class="reader" data-reader data-reveal="tap" data-revealed="1" data-select="1:1:4" data-nobar="1">
+              <div class="topbar">
+                <button class="iconbtn" aria-label="Back"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3.2 5.2 8l4.8 4.8"/></svg></button>
+                <span class="tb-title">Everyday stories · Le train de 7h12</span>
+                <button class="iconbtn js-gloss" aria-label="Word-by-word gloss"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><path d="M2.5 5h12M2.5 8.4h12"/><path d="M2.5 12.2h4M8.2 12.2h3.4" opacity=".55"/></svg></button>
+                <span class="progress" style="width:32%"></span>
+              </div>
+              <div class="content"><div class="reading" data-story></div></div>
+            </div>
+            <aside class="sidepanel">
+              <div class="panelhead">
+                <div>
+                  <div class="ph-lab">You picked</div>
+                  <h4>ne l’avait pas</h4>
+                </div>
+                <button class="closebtn" aria-label="Close"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><path d="M2.5 2.5l7 7M9.5 2.5l-7 7"/></svg></button>
+              </div>
+              <div class="selgloss gloss-on" data-selgloss></div>
+              <div class="block">
+                <div class="blab">In this sentence</div>
+                <p class="note">Negation is two pieces that sandwich the conjugated verb. Here the verb is <span class="fq">«avait»</span>, not <span class="fq">«entendu»</span> — so <span class="fq">«ne»</span> and <span class="fq">«pas»</span> wrap around <span class="fq">«avait»</span> and leave the past participle outside. The object pronoun <span class="fq">«l’»</span> squeezes in between <span class="fq">«ne»</span> and the verb.</p>
+              </div>
+              <details class="rule-d" open>
+                <summary>Negation wraps the conjugated verb<span class="plus"></span></summary>
+                <div class="body">French negates with a pair: <span class="fq">«ne»</span> before the verb, <span class="fq">«pas»</span> after it. In compound tenses the pair closes around the helping verb, not the participle. <span class="fq">«Je n’ai pas mangé»</span>, never <span class="fq">«Je n’ai mangé pas»</span>.</div>
+              </details>
+              <button class="occ"><span>This same rule appears in <b>11</b> other places</span><span class="arr">→</span></button>
+            </aside>
+          </div>
+        </div>
+        <p class="framelabel" style="text-transform:none; letter-spacing:0; font-size:12.5px; color:var(--muted); max-width:62ch">The rule is folded shut on the phone and open here only to show the second state — on both, closed is the default. Most people want the note, not the grammar lesson.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 6. LIBRARY ============ -->
+  <section class="section">
+    <div class="cap">
+      <span class="n">Screen six</span>
+      <h2>The shelf</h2>
+      <p>Six stories on a plank. The brass mark down the left of each card grows with the length of the story — a short spine is a short read.</p>
+    </div>
+    <div class="frames">
+      <div class="stack" style="flex:1 1 480px; min-width:0">
+        <span class="framelabel">Desktop</span>
+        <div class="desktop lib">
+          <div class="chrome"><i></i><i></i><i></i><span>Library</span></div>
+          <div class="screen" style="flex-direction:column">
+            <div class="libhead">
+              <div class="kicker">Your shelf</div>
+              <h3>Everyday stories</h3>
+              <p>Quiet, ordinary, and short enough to finish tonight.</p>
+              <div class="filters">
+                <button class="on">All</button><button>One page</button><button>Two pages</button><button>Chapters</button>
+              </div>
+            </div>
+            <div class="shelf" data-shelf></div>
+          </div>
+        </div>
+      </div>
+      <div class="stack">
+        <span class="framelabel">Phone</span>
+        <div class="phone short">
+          <div class="screen">
+            <div class="statusbar"><span>00:52</span><span class="dots"><i></i><i></i><i></i></span></div>
+            <div class="libhead" style="padding:18px 22px 0">
+              <div class="kicker">Your shelf</div>
+              <h3 style="font-size:24px">Everyday stories</h3>
+              <p style="margin-bottom:16px">Quiet, ordinary, and short enough to finish tonight.</p>
+              <div class="filters"><button class="on">All</button><button>One page</button><button>Two pages</button><button>Chapters</button></div>
+            </div>
+            <div class="shelf mobile" style="padding:20px 22px 30px" data-shelf data-mobile="1"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 7. SETTINGS ============ -->
+  <section class="section">
+    <div class="cap">
+      <span class="n">Screen seven</span>
+      <h2>Settings</h2>
+      <p>Four controls, no more. These ones are live — change them and the story behind them changes with you.</p>
+    </div>
+    <div class="frames">
+      <div class="stack">
+        <span class="framelabel">Phone — sheet</span>
+        <div class="phone">
+          <div class="screen">
+            <div class="statusbar"><span>00:53</span><span class="dots"><i></i><i></i><i></i></span></div>
+            <div class="reader" data-reader data-reveal="tap" data-settings="1">
+              <div class="topbar">
+                <button class="iconbtn" aria-label="Back"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3.2 5.2 8l4.8 4.8"/></svg></button>
+                <span class="tb-title">Le train de 7h12</span>
+                <button class="iconbtn js-gloss" aria-label="Word-by-word gloss"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><path d="M2.5 5h12M2.5 8.4h12"/><path d="M2.5 12.2h4M8.2 12.2h3.4" opacity=".55"/></svg></button>
+                <button class="iconbtn on" aria-label="Reading settings"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><path d="M2.5 5.4h11M2.5 11.6h11"/><circle cx="6.2" cy="5.4" r="1.9" fill="var(--pane3)"/><circle cx="10.6" cy="11.6" r="1.9" fill="var(--pane3)"/></svg></button>
+                <span class="progress" style="width:32%"></span>
+              </div>
+              <div class="content"><div class="reading" data-story></div></div>
+              <div class="scrim"></div>
+              <div class="sheet">
+                <div class="grab"></div>
+                <div class="setblock" data-settings-panel>
+                  <h3>Reading</h3>
+                  <div class="set-row">
+                    <div class="set-top"><div><div class="set-name">Reveal</div><div class="set-sub">When the English shows up</div></div></div>
+                    <div class="seg" data-ctl="reveal"><button data-v="always">Always</button><button data-v="tap" class="on">On tap</button><button data-v="hidden">Hidden</button></div>
+                  </div>
+                  <div class="set-row inline">
+                    <div class="set-top">
+                      <div><div class="set-name">Word-by-word gloss</div><div class="set-sub">A small English word under each French one</div></div>
+                      <button class="switch" data-ctl="gloss" aria-pressed="false"></button>
+                    </div>
+                  </div>
+                  <div class="set-row inline">
+                    <div class="set-top">
+                      <div><div class="set-name">Hints</div><div class="set-sub">Dotted underline where there is a note</div></div>
+                      <button class="switch on" data-ctl="hints" aria-pressed="true"></button>
+                    </div>
+                  </div>
+                  <div class="set-row">
+                    <div class="set-top"><div><div class="set-name">Text size</div></div></div>
+                    <div class="seg sizes" data-ctl="size"><button data-v="17">A</button><button data-v="19.5" class="on">A</button><button data-v="22">A</button><button data-v="25">A</button></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stack" style="flex:1 1 400px; min-width:0">
+        <span class="framelabel">Desktop — popover under the control</span>
+        <div class="desktop tall">
+          <div class="chrome"><i></i><i></i><i></i><span>Le train de 7h12</span></div>
+          <div class="screen">
+            <div class="reader" data-reader data-reveal="tap" data-settings="1">
+              <div class="topbar">
+                <button class="iconbtn" aria-label="Back"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3.2 5.2 8l4.8 4.8"/></svg></button>
+                <span class="tb-title">Everyday stories · Le train de 7h12</span>
+                <button class="iconbtn js-gloss" aria-label="Word-by-word gloss"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><path d="M2.5 5h12M2.5 8.4h12"/><path d="M2.5 12.2h4M8.2 12.2h3.4" opacity=".55"/></svg></button>
+                <button class="iconbtn on" aria-label="Reading settings"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><path d="M2.5 5.4h11M2.5 11.6h11"/><circle cx="6.2" cy="5.4" r="1.9" fill="var(--pane3)"/><circle cx="10.6" cy="11.6" r="1.9" fill="var(--pane3)"/></svg></button>
+                <span class="progress" style="width:32%"></span>
+              </div>
+              <div class="content"><div class="reading" data-story></div></div>
+              <div class="popover">
+                <div class="setblock" data-settings-panel>
+                  <div class="set-row">
+                    <div class="set-top"><div><div class="set-name">Reveal</div><div class="set-sub">When the English shows up</div></div></div>
+                    <div class="seg" data-ctl="reveal"><button data-v="always">Always</button><button data-v="tap" class="on">On tap</button><button data-v="hidden">Hidden</button></div>
+                  </div>
+                  <div class="set-row inline">
+                    <div class="set-top">
+                      <div><div class="set-name">Word-by-word gloss</div><div class="set-sub">A small English word under each French one</div></div>
+                      <button class="switch" data-ctl="gloss" aria-pressed="false"></button>
+                    </div>
+                  </div>
+                  <div class="set-row inline">
+                    <div class="set-top">
+                      <div><div class="set-name">Hints</div><div class="set-sub">Dotted underline where there is a note</div></div>
+                      <button class="switch on" data-ctl="hints" aria-pressed="true"></button>
+                    </div>
+                  </div>
+                  <div class="set-row">
+                    <div class="set-top"><div><div class="set-name">Text size</div></div></div>
+                    <div class="seg sizes" data-ctl="size"><button data-v="18">A</button><button data-v="21" class="on">A</button><button data-v="24">A</button><button data-v="27">A</button></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <footer>
+    <b>Quiet dark</b> — direction B. Newsreader and Instrument Sans from Google Fonts. Light and dark both follow your system; the switch at the top overrides it.
+  </footer>
+</div>
+
+<script>
+(function(){
+"use strict";
+
+/* ---------- the story ---------- */
+var STORY = {
+  title:"Le train de 7h12",
+  sub:"The 7:12 train",
+  summary:"A man misses the same train twice in one week, and the second time is deliberate.",
+  lines:[
+    { fr:[
+        {w:"Le",g:"the"},{w:"vieil",g:"old",hint:1},{w:"homme",g:"man"},{w:"ferma",g:"closed"},
+        {w:"la",g:"the"},{w:"porte",g:"door"},{w:"sans",g:"without"},{w:"bruit.",g:"noise"}
+      ],
+      en:"The old man closed the door without a sound." },
+    { fr:[
+        {w:"Elle",g:"she"},{w:"ne",g:"not-1",hint:1},{w:"l’",g:"him",hint:1},
+        {w:"avait",g:"had",join:1},{w:"pas",g:"not-2",hint:1},{w:"entendu",g:"heard"},{w:"partir.",g:"to-leave"}
+      ],
+      en:"She hadn’t heard him leave." },
+    { fr:[
+        {w:"Dehors,",g:"outside"},{w:"il",g:"it"},{w:"pleuvait",g:"was-raining"},{w:"encore.",g:"still"}
+      ],
+      en:"Outside, it was still raining." },
+    { fr:[
+        {w:"Il",g:"he"},{w:"marcha",g:"walked"},
+        {ws:["jusqu’","à"],hintIdx:0,g:"until-to"},
+        {w:"la",g:"the"},{w:"gare,",g:"station"},
+        {w:"les",g:"the",hint:1},{w:"mains",g:"hands",hint:1},{w:"dans",g:"in",hint:1},
+        {w:"les",g:"the",hint:1},{w:"poches.",g:"pockets",hint:1}
+      ],
+      en:"He walked to the station, his hands in his pockets." },
+    { fr:[
+        {w:"Le",g:"the"},{w:"train",g:"train"},{w:"de",g:"of"},{w:"7h12",g:"7:12"},
+        {w:"partait",g:"was-leaving",hint:1},{w:"sans",g:"without"},{w:"lui,",g:"him"},
+        {w:"comme",g:"like"},{w:"chaque",g:"each"},{w:"mardi.",g:"Tuesday"}
+      ],
+      en:"The 7:12 train was leaving without him, like every Tuesday." }
+  ]
+};
+
+var SEL_PHRASE = [
+  {w:"ne",g:"not-1"},{w:"l’",g:"him"},{w:"avait",g:"had",join:1},{w:"pas",g:"not-2"}
+];
+
+var BOOKS = [
+  { fr:"Le train de 7h12", en:"The 7:12 train",
+    sum:"A man misses the same train twice in one week, and the second time is deliberate.",
+    len:"one page", spine:18, now:1 },
+  { fr:"La voisine du dessus", en:"The woman upstairs",
+    sum:"Someone plays the same three piano notes every evening at six, and never the fourth.",
+    len:"one page", spine:18 },
+  { fr:"Trois euros quarante", en:"Three euros forty",
+    sum:"A baker will not round the price down, and has been explaining why for eleven years.",
+    len:"two pages", spine:34 },
+  { fr:"Le chat n’a pas de nom", en:"The cat has no name",
+    sum:"Four neighbours are each quite certain the same cat belongs to them.",
+    len:"two pages", spine:34 },
+  { fr:"La lettre dans le manteau", en:"The letter in the coat",
+    sum:"A coat comes back from the cleaner’s with somebody’s letter still in the pocket.",
+    len:"two pages", spine:34 },
+  { fr:"Mardi, il pleut toujours", en:"It always rains on Tuesday",
+    sum:"A woman keeps an umbrella at her office for a man who never comes back for it.",
+    len:"chapter", spine:52 }
+];
+
+/* ---------- rendering ---------- */
+function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+
+function tokHTML(t, li, ti){
+  if(t.ws){
+    var parts = t.ws.map(function(s,i){
+      return '<span class="w'+(t.hintIdx===i?' hint':'')+'">'+esc(s)+'</span>';
+    }).join("");
+    return '<span class="tok grp" data-l="'+li+'" data-t="'+ti+'"><span class="ws">'+parts+'</span>'
+         + '<span class="g">'+esc(t.g)+'</span></span>';
+  }
+  return '<span class="tok" data-l="'+li+'" data-t="'+ti+'">'
+       + '<span class="w'+(t.hint?' hint':'')+'">'+esc(t.w)+'</span>'
+       + '<span class="g">'+esc(t.g)+'</span></span>';
+}
+
+/* Groups consecutive tokens joined by elision into a .tie, and emits an
+   explicit .sp element for every inter-word space so a selection can span it. */
+function frHTML(toks, li){
+  var out = "", i = 0;
+  while(i < toks.length){
+    var j = i + 1;
+    while(j < toks.length && toks[j].join) j++;
+    var chunk = "";
+    for(var k = i; k < j; k++) chunk += tokHTML(toks[k], li, k);
+    out += (j - i > 1 || toks[i].ws) ? '<span class="tie">'+chunk+'</span>' : chunk;
+    if(j < toks.length) out += '<i class="sp" data-l="'+li+'" data-s="'+j+'"> </i>';
+    i = j;
+  }
+  return out;
+}
+
+function lineHTML(line, li){
+  return '<div class="line" data-line="'+li+'" tabindex="0" role="button" aria-label="Show English">'
+       + '<div class="fr">'+frHTML(line.fr, li)+'</div>'
+       + '<div class="en">'+esc(line.en)+'</div>'
+       + '<div class="actionbar"><button>'
+       + '<svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><path d="M4.4 4.6a2.1 2.1 0 1 1 2.6 2.1v1.1"/><circle cx="7" cy="10.2" r=".7" fill="currentColor" stroke="none"/></svg>'
+       + 'Why?</button><span class="div"></span><button>'
+       + '<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round"><path d="M3 5.4h2L7.6 3.2v7.6L5 8.6H3z"/><path d="M9.8 5.3a2.6 2.6 0 0 1 0 3.4" stroke-linecap="round"/></svg>'
+       + 'Listen</button></div>'
+       + '</div>';
+}
+
+function storyHTML(compactHead){
+  var h = '<div class="storyhead">'
+        + '<div class="kicker">Everyday stories</div>'
+        + '<h3>'+esc(STORY.title)+'</h3>'
+        + '<p class="sub">'+esc(STORY.sub)+'</p>'
+        + '<div class="meta"><span>one page</span><i></i><span>about 2 minutes</span></div>'
+        + '<div class="rule"></div></div>';
+  if(compactHead){
+    h = '<div class="storyhead" style="margin-bottom:22px">'
+      + '<h3 style="font-size:23px">'+esc(STORY.title)+'</h3>'
+      + '<p class="sub" style="font-size:15px;margin-bottom:0">'+esc(STORY.sub)+'</p>'
+      + '<div class="rule"></div></div>';
+  }
+  var body = STORY.lines.map(function(l,i){ return lineHTML(l,i); }).join("");
+  return h + body;
+}
+
+/* ---------- selection ---------- */
+function clearSel(reader){
+  reader.querySelectorAll(".sel").forEach(function(el){
+    el.classList.remove("sel","selA","selB");
+  });
+  reader.querySelectorAll(".actionbar.show").forEach(function(b){ b.classList.remove("show"); });
+  reader._sel = null;
+}
+
+function applySel(reader, li, a, b){
+  clearSel(reader);
+  reader._sel = {l:li, a:a, b:b};
+  var line = reader.querySelector('.line[data-line="'+li+'"]');
+  if(!line) return;
+  var first = null, last = null;
+  line.querySelectorAll(".tok").forEach(function(t){
+    var i = +t.getAttribute("data-t");
+    if(i >= a && i <= b){
+      t.classList.add("sel");
+      if(i === a){ t.classList.add("selA"); first = t; }
+      if(i === b){ t.classList.add("selB"); last = t; }
+    }
+  });
+  line.querySelectorAll(".sp").forEach(function(s){
+    var i = +s.getAttribute("data-s");
+    if(i > a && i <= b) s.classList.add("sel");
+  });
+  if(reader.getAttribute("data-nobar") === "1") return;
+  var bar = line.querySelector(".actionbar");
+  if(bar && first && last){
+    var lr = line.getBoundingClientRect();
+    var fr = first.getBoundingClientRect(), lar = last.getBoundingClientRect();
+    var centre;
+    if(Math.abs(fr.top - lar.top) > 4){ centre = fr.left - lr.left + fr.width/2; }
+    else { centre = (fr.left + lar.right)/2 - lr.left; }
+    var half = 88;
+    centre = Math.max(half, Math.min(lr.width - half, centre));
+    bar.style.left = centre + "px";
+    bar.style.top = (fr.top - lr.top) + "px";
+    bar.style.bottom = "auto";
+    bar.style.transform = "translate(-50%,-100%)";
+    bar.style.marginTop = "-8px";
+    bar.classList.add("show");
+  }
+}
+
+/* ---------- reader wiring ---------- */
+function initReader(reader){
+  var host = reader.querySelector("[data-story]");
+  if(host) host.innerHTML = storyHTML(host.getAttribute("data-compacthead") === "1");
+
+  var reveal = reader.getAttribute("data-reveal") || "tap";
+  setReveal(reader, reveal);
+  if(reader.getAttribute("data-gloss") === "on") reader.classList.add("gloss-on");
+
+  var rv = reader.getAttribute("data-revealed");
+  if(rv !== null){
+    var l = reader.querySelector('.line[data-line="'+rv+'"]');
+    if(l) l.classList.add("revealed");
+  }
+
+  reader.addEventListener("click", function(e){
+    var tok = e.target.closest(".tok");
+    var line = e.target.closest(".line");
+    if(e.target.closest(".actionbar")) return;
+    if(tok && line){
+      var li = +line.getAttribute("data-line");
+      var ti = +tok.getAttribute("data-t");
+      var s = reader._sel;
+      if(s && s.l === li && ti >= s.a && ti <= s.b) applySel(reader, li, ti, ti);
+      else if(s && s.l === li) applySel(reader, li, Math.min(s.a, ti), Math.max(s.b, ti));
+      else applySel(reader, li, ti, ti);
+      return;
+    }
+    if(line){ clearSel(reader); line.classList.toggle("revealed"); return; }
+    clearSel(reader);
+  });
+
+  reader.addEventListener("keydown", function(e){
+    if(e.key === "Escape"){ clearSel(reader); return; }
+    var line = e.target.closest && e.target.closest(".line");
+    if(line && (e.key === "Enter" || e.key === " ")){ e.preventDefault(); line.classList.toggle("revealed"); }
+  });
+
+  var gbtn = reader.querySelector(".js-gloss");
+  if(gbtn) gbtn.addEventListener("click", function(){
+    var on = reader.classList.toggle("gloss-on");
+    gbtn.classList.toggle("on", on);
+    var sw = reader.querySelector('[data-ctl="gloss"]');
+    if(sw){ sw.classList.toggle("on", on); sw.setAttribute("aria-pressed", String(on)); }
+    if(reader._sel) applySel(reader, reader._sel.l, reader._sel.a, reader._sel.b);
+  });
+
+  var nudge = reader.querySelector(".nudge");
+  if(nudge){
+    var got = nudge.querySelector(".js-gotit");
+    var alw = nudge.querySelector(".js-always");
+    if(got) got.addEventListener("click", function(){ nudge.classList.add("gone"); });
+    if(alw) alw.addEventListener("click", function(){
+      setReveal(reader, "always");
+      var seg = reader.querySelector('[data-ctl="reveal"]');
+      if(seg) seg.querySelectorAll("button").forEach(function(b){ b.classList.toggle("on", b.getAttribute("data-v") === "always"); });
+      nudge.classList.add("gone");
+    });
+  }
+
+  var presel = reader.getAttribute("data-select");
+  if(presel){
+    var p = presel.split(":");
+    requestAnimationFrame(function(){
+      requestAnimationFrame(function(){ applySel(reader, +p[0], +p[1], +p[2]); });
+    });
+  }
+}
+
+function setReveal(reader, v){
+  reader.classList.remove("reveal-always","reveal-hidden");
+  if(v === "always") reader.classList.add("reveal-always");
+  if(v === "hidden") reader.classList.add("reveal-hidden");
+}
+
+/* ---------- settings ---------- */
+function initSettings(panel){
+  var reader = panel.closest(".reader");
+  if(!reader) return;
+  panel.querySelectorAll(".seg").forEach(function(seg){
+    seg.addEventListener("click", function(e){
+      var b = e.target.closest("button"); if(!b) return;
+      seg.querySelectorAll("button").forEach(function(x){ x.classList.toggle("on", x === b); });
+      var ctl = seg.getAttribute("data-ctl"), v = b.getAttribute("data-v");
+      if(ctl === "reveal") setReveal(reader, v);
+      if(ctl === "size"){
+        reader.style.setProperty("--frsize", v + "px");
+        reader.querySelectorAll(".content .fr").forEach(function(f){ f.style.fontSize = v + "px"; });
+        reader.querySelectorAll(".content .en").forEach(function(f){ f.style.fontSize = (v * 0.84) + "px"; });
+        if(reader._sel) applySel(reader, reader._sel.l, reader._sel.a, reader._sel.b);
+      }
+    });
+  });
+  panel.querySelectorAll(".switch").forEach(function(sw){
+    sw.addEventListener("click", function(){
+      var on = sw.classList.toggle("on");
+      sw.setAttribute("aria-pressed", String(on));
+      var ctl = sw.getAttribute("data-ctl");
+      if(ctl === "gloss"){
+        reader.classList.toggle("gloss-on", on);
+        var g = reader.querySelector(".js-gloss"); if(g) g.classList.toggle("on", on);
+      }
+      if(ctl === "hints") reader.classList.toggle("no-hints", !on);
+      if(reader._sel) applySel(reader, reader._sel.l, reader._sel.a, reader._sel.b);
+    });
+  });
+}
+
+/* ---------- library ---------- */
+function bookHTML(b){
+  return '<button class="book" style="--spine:'+b.spine+'%">'
+       + '<h4>'+esc(b.fr)+'</h4>'
+       + '<p class="ensub">'+esc(b.en)+'</p>'
+       + '<p class="sum">'+esc(b.sum)+'</p>'
+       + '<div class="len"><span>'+esc(b.len)+'</span>'+(b.now ? '<span class="now">Reading now</span>' : '')+'</div>'
+       + '</button>';
+}
+function initShelf(el){
+  var per = el.getAttribute("data-mobile") === "1" ? 2 : 3;
+  var html = "";
+  for(var i = 0; i < BOOKS.length; i += per){
+    html += '<div class="plank">' + BOOKS.slice(i, i + per).map(bookHTML).join("") + '</div>';
+  }
+  el.innerHTML = html;
+}
+
+/* ---------- boot ---------- */
+document.querySelectorAll("[data-selgloss]").forEach(function(el){
+  el.innerHTML = '<div class="fr">' + frHTML(SEL_PHRASE, 99) + '</div>';
+});
+document.querySelectorAll("[data-reader]").forEach(initReader);
+document.querySelectorAll("[data-settings-panel]").forEach(initSettings);
+document.querySelectorAll("[data-shelf]").forEach(initShelf);
+
+var tb = document.getElementById("themebtn");
+function currentDark(){
+  var t = document.documentElement.getAttribute("data-theme");
+  if(t) return t === "dark";
+  return window.matchMedia("(prefers-color-scheme: dark)").matches;
+}
+function syncBtn(){ tb.textContent = currentDark() ? "Switch to light" : "Switch to dark"; }
+syncBtn();
+tb.addEventListener("click", function(){
+  document.documentElement.setAttribute("data-theme", currentDark() ? "light" : "dark");
+  syncBtn();
+});
+window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", syncBtn);
+
+window.addEventListener("resize", function(){
+  document.querySelectorAll("[data-reader]").forEach(function(r){
+    if(r._sel) applySel(r, r._sel.l, r._sel.a, r._sel.b);
+  });
+});
+})();
+</script>
+</body>
+</html>

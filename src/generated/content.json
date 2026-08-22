@@ -1,0 +1,1954 @@
+{
+  "stories": [
+    {
+      "id": "le-train-de-7h12",
+      "title": "Le train de 7h12",
+      "titleEn": "The 7:12 train",
+      "length": "one-page",
+      "tone": "everyday",
+      "summary": "A man misses the same train twice in one week, and the second time is deliberate.",
+      "lines": [
+        {
+          "fr": [
+            {
+              "t": "Le",
+              "g": "the"
+            },
+            {
+              "t": "vieil",
+              "g": "old"
+            },
+            {
+              "t": "homme",
+              "g": "man"
+            },
+            {
+              "t": "ferma",
+              "g": "closed"
+            },
+            {
+              "t": "la",
+              "g": "the"
+            },
+            {
+              "t": "porte",
+              "g": "door"
+            },
+            {
+              "t": "sans",
+              "g": "without"
+            },
+            {
+              "t": "bruit",
+              "after": ".",
+              "g": "sound"
+            }
+          ],
+          "en": "The old man closed the door without a sound.",
+          "notes": [
+            {
+              "from": 1,
+              "to": 1,
+              "ruleId": "adjective-before-vowel",
+              "note": "«vieux homme» would put the «eu» sound straight against the «o» of «homme», which French avoids, so the word changes shape to «vieil». Say it out loud and you can hear why: vieil-homme runs together, vieux-homme stumbles."
+            },
+            {
+              "from": 3,
+              "to": 3,
+              "ruleId": "passe-simple-in-stories",
+              "note": "You'd expect «a fermé» here, and in speech that's exactly what you'd get. This is written storytelling, so the verb takes its written-only form, «ferma». It means the same thing; it just sounds like a book rather than a conversation."
+            }
+          ]
+        },
+        {
+          "fr": [
+            {
+              "t": "Elle",
+              "g": "she"
+            },
+            {
+              "t": "ne",
+              "g": "not-1"
+            },
+            {
+              "t": "l'",
+              "g": "him"
+            },
+            {
+              "t": "avait",
+              "g": "had"
+            },
+            {
+              "t": "pas",
+              "g": "not-2"
+            },
+            {
+              "t": "entendu",
+              "g": "heard"
+            },
+            {
+              "t": "partir",
+              "after": ".",
+              "g": "to-leave"
+            }
+          ],
+          "en": "She hadn't heard him leave.",
+          "notes": [
+            {
+              "from": 2,
+              "to": 2,
+              "ruleId": "elision-before-vowel",
+              "note": "This «l'» is «le», meaning him — her husband. «Le avait» is unsayable, so the vowel drops out and the word leans onto the next one."
+            },
+            {
+              "from": 1,
+              "to": 4,
+              "ruleId": "negation-wraps-verb",
+              "note": "The two halves close around «avait», leaving «entendu partir» outside on the right. Watch where «pas» lands: after the small verb that carries the tense, not after the verb that carries the meaning."
+            },
+            {
+              "from": 3,
+              "to": 3,
+              "ruleId": "plus-que-parfait",
+              "note": "«avait entendu» is a step further back than the rest of the story. He had already gone; her not-hearing happened before that. French marks that extra step back the same way English does, with «had» plus the participle."
+            }
+          ]
+        },
+        {
+          "fr": [
+            {
+              "t": "Dehors",
+              "after": ",",
+              "g": "outside"
+            },
+            {
+              "t": "il",
+              "g": "it"
+            },
+            {
+              "t": "pleuvait",
+              "g": "rained"
+            },
+            {
+              "t": "encore",
+              "after": ".",
+              "g": "still"
+            }
+          ],
+          "en": "Outside, it was still raining.",
+          "notes": [
+            {
+              "from": 1,
+              "to": 1,
+              "ruleId": "weather-il",
+              "note": "Nothing is doing the raining here. This «il» is a placeholder, the way English says \"it's raining\" without meaning anything by \"it\"."
+            }
+          ]
+        },
+        {
+          "fr": [
+            {
+              "t": "Il",
+              "g": "he"
+            },
+            {
+              "t": "marcha",
+              "g": "walked"
+            },
+            {
+              "t": "jusqu'",
+              "g": "until"
+            },
+            {
+              "t": "à",
+              "g": "to"
+            },
+            {
+              "t": "la",
+              "g": "the"
+            },
+            {
+              "t": "gare",
+              "after": ",",
+              "g": "station"
+            },
+            {
+              "t": "les",
+              "g": "the"
+            },
+            {
+              "t": "mains",
+              "g": "hands"
+            },
+            {
+              "t": "dans",
+              "g": "in"
+            },
+            {
+              "t": "les",
+              "g": "the"
+            },
+            {
+              "t": "poches",
+              "after": ".",
+              "g": "pockets"
+            }
+          ],
+          "en": "He walked to the station, his hands in his pockets.",
+          "notes": [
+            {
+              "from": 2,
+              "to": 3,
+              "ruleId": "jusqua",
+              "note": "«à la gare» on its own would just say where he ended up. «jusqu'à» adds the whole distance — he walked the entire way, no bus, no lift."
+            },
+            {
+              "from": 6,
+              "to": 10,
+              "ruleId": "body-parts-definite-article",
+              "note": "English needs \"his hands, his pockets\" here; French says «les». They're obviously his hands, so marking it would be fussy, and «ses mains dans ses poches» sounds like someone learning the language."
+            }
+          ]
+        },
+        {
+          "fr": [
+            {
+              "t": "Le",
+              "g": "the"
+            },
+            {
+              "t": "train",
+              "g": "train"
+            },
+            {
+              "t": "de",
+              "g": "of"
+            },
+            {
+              "t": "7h12",
+              "g": "7:12"
+            },
+            {
+              "t": "partait",
+              "g": "was-leaving"
+            },
+            {
+              "t": "sans",
+              "g": "without"
+            },
+            {
+              "t": "lui",
+              "after": ",",
+              "g": "him"
+            },
+            {
+              "t": "comme",
+              "g": "like"
+            },
+            {
+              "t": "chaque",
+              "g": "each"
+            },
+            {
+              "t": "mardi",
+              "after": ".",
+              "g": "Tuesday"
+            }
+          ],
+          "en": "The 7:12 train was leaving without him, like every Tuesday.",
+          "notes": [
+            {
+              "from": 4,
+              "to": 4,
+              "ruleId": "imparfait-vs-passe-simple",
+              "note": "«partait» leaves the departure open — the train pulling out, the thing that happens every Tuesday, the background he's standing in. Compare the last line of the story, where the same train «partit». That one is finished."
+            },
+            {
+              "from": 5,
+              "to": 6,
+              "ruleId": "stressed-pronouns",
+              "note": "After «sans» you can't use the little «le» that hides in front of a verb. The standalone form «lui» is what goes after a preposition, and it's the same word you'd use alone: «Lui ? Jamais.»"
+            }
+          ]
+        },
+        {
+          "fr": [
+            {
+              "t": "Il",
+              "g": "he"
+            },
+            {
+              "t": "s'",
+              "g": "himself"
+            },
+            {
+              "t": "était",
+              "g": "had"
+            },
+            {
+              "t": "arrêté",
+              "g": "stopped"
+            },
+            {
+              "t": "au",
+              "g": "at-the"
+            },
+            {
+              "t": "coin",
+              "g": "corner"
+            },
+            {
+              "t": "de",
+              "g": "of"
+            },
+            {
+              "t": "la",
+              "g": "the"
+            },
+            {
+              "t": "rue",
+              "after": ",",
+              "g": "street"
+            },
+            {
+              "t": "sans",
+              "g": "without"
+            },
+            {
+              "t": "raison",
+              "after": ",",
+              "g": "reason"
+            },
+            {
+              "t": "et",
+              "g": "and"
+            },
+            {
+              "t": "cela",
+              "g": "that"
+            },
+            {
+              "t": "avait",
+              "g": "had"
+            },
+            {
+              "t": "suffi",
+              "after": ".",
+              "g": "been-enough"
+            }
+          ],
+          "en": "He'd stopped at the corner for no reason, and that had been enough.",
+          "notes": [
+            {
+              "from": 1,
+              "to": 3,
+              "ruleId": "reflexive-verbs",
+              "note": "Plain «arrêter» means stopping something else — a car, a thief. To come to a halt yourself you stop yourself, so the verb needs its «se»: «s'arrêter». And once that «se» is there the past is built with «être», never «avoir»."
+            }
+          ]
+        },
+        {
+          "fr": [
+            {
+              "t": "Pendant",
+              "g": "during"
+            },
+            {
+              "t": "quarante",
+              "g": "forty"
+            },
+            {
+              "t": "ans",
+              "after": ",",
+              "g": "years"
+            },
+            {
+              "t": "il",
+              "g": "he"
+            },
+            {
+              "t": "avait",
+              "g": "had"
+            },
+            {
+              "t": "pris",
+              "g": "taken"
+            },
+            {
+              "t": "ce",
+              "g": "this"
+            },
+            {
+              "t": "train",
+              "g": "train"
+            },
+            {
+              "t": "tous",
+              "g": "all"
+            },
+            {
+              "t": "les",
+              "g": "the"
+            },
+            {
+              "t": "matins",
+              "after": ".",
+              "g": "mornings"
+            }
+          ],
+          "en": "For forty years he had taken that train every morning.",
+          "notes": [
+            {
+              "from": 0,
+              "to": 0,
+              "ruleId": "duration-pendant-depuis",
+              "note": "«Pendant» is for a stretch of time that's over and done with. The forty years finished; he's retired now. If he still took the train it would be «depuis quarante ans»."
+            }
+          ]
+        },
+        {
+          "fr": [
+            {
+              "t": "Il",
+              "g": "he"
+            },
+            {
+              "t": "connaissait",
+              "g": "knew"
+            },
+            {
+              "t": "le",
+              "g": "the"
+            },
+            {
+              "t": "nom",
+              "g": "name"
+            },
+            {
+              "t": "de",
+              "g": "of"
+            },
+            {
+              "t": "chaque",
+              "g": "each"
+            },
+            {
+              "t": "gare",
+              "g": "station"
+            },
+            {
+              "t": "entre",
+              "g": "between"
+            },
+            {
+              "t": "chez",
+              "g": "at-home-of"
+            },
+            {
+              "t": "lui",
+              "g": "him"
+            },
+            {
+              "t": "et",
+              "g": "and"
+            },
+            {
+              "t": "Rouen",
+              "after": ".",
+              "g": "Rouen"
+            }
+          ],
+          "en": "He knew the name of every station between his house and Rouen.",
+          "notes": [
+            {
+              "from": 1,
+              "to": 1,
+              "ruleId": "imparfait-vs-passe-simple",
+              "note": "Knowing the names wasn't an event with a start and a finish — it was simply true of him. States like this take «connaissait», not «connut». «Il connut» would mean he found out, in one moment."
+            },
+            {
+              "from": 8,
+              "to": 9,
+              "ruleId": "chez",
+              "note": "There's no French word for \"home\" as a place you go to. «chez» plus a person means at or to that person's place, so «chez lui» is his house, his flat, wherever he lives."
+            }
+          ]
+        },
+        {
+          "fr": [
+            {
+              "t": "Aujourd'hui",
+              "after": ",",
+              "g": "today"
+            },
+            {
+              "t": "il",
+              "g": "it"
+            },
+            {
+              "t": "n'",
+              "g": "not-1"
+            },
+            {
+              "t": "y",
+              "g": "there"
+            },
+            {
+              "t": "avait",
+              "g": "had"
+            },
+            {
+              "t": "plus",
+              "g": "no-more"
+            },
+            {
+              "t": "de",
+              "g": "any"
+            },
+            {
+              "t": "bureau",
+              "after": ",",
+              "g": "office"
+            },
+            {
+              "t": "plus",
+              "g": "no-more"
+            },
+            {
+              "t": "de",
+              "g": "any"
+            },
+            {
+              "t": "collègues",
+              "after": ",",
+              "g": "colleagues"
+            },
+            {
+              "t": "plus",
+              "g": "no-more"
+            },
+            {
+              "t": "personne",
+              "g": "nobody"
+            },
+            {
+              "t": "pour",
+              "g": "for"
+            },
+            {
+              "t": "l'",
+              "g": "him"
+            },
+            {
+              "t": "attendre",
+              "after": ".",
+              "g": "to-wait"
+            }
+          ],
+          "en": "Now there was no office, no colleagues, nobody waiting for him.",
+          "notes": [
+            {
+              "from": 2,
+              "to": 5,
+              "ruleId": "negation-other-pairs",
+              "note": "«pas» isn't the only word that finishes a negation. «plus» in this position means not any more — the office existed once and doesn't now. Read it aloud with a silent «s»; that's usually what tells it apart from «plus» meaning more."
+            },
+            {
+              "from": 5,
+              "to": 7,
+              "ruleId": "de-after-negation",
+              "note": "You'd expect «un bureau». After a negation the article collapses to a bare «de», so «un bureau» becomes «plus de bureau» — the same thing happens to «des collègues» right after it."
+            },
+            {
+              "from": 13,
+              "to": 15,
+              "ruleId": "preposition-plus-infinitive",
+              "note": "English puts \"-ing\" after the preposition: nobody waiting. French can't do that, so «pour» is followed by the plain «attendre», with the «l'» meaning him tucked in front of it."
+            }
+          ]
+        },
+        {
+          "fr": [
+            {
+              "t": "Mais",
+              "g": "but"
+            },
+            {
+              "t": "le",
+              "g": "the"
+            },
+            {
+              "t": "mardi",
+              "after": ",",
+              "g": "Tuesday"
+            },
+            {
+              "t": "il",
+              "g": "he"
+            },
+            {
+              "t": "partait",
+              "g": "was-leaving"
+            },
+            {
+              "t": "quand",
+              "g": "when"
+            },
+            {
+              "t": "même",
+              "after": ".",
+              "g": "even"
+            }
+          ],
+          "en": "But on Tuesdays he set out all the same.",
+          "notes": [
+            {
+              "from": 1,
+              "to": 2,
+              "ruleId": "definite-article-days",
+              "note": "«mardi» on its own would mean one particular Tuesday. Adding «le» turns it into every Tuesday, the standing arrangement — which is the whole point of this sentence."
+            }
+          ]
+        },
+        {
+          "fr": [
+            {
+              "t": "Il",
+              "g": "he"
+            },
+            {
+              "t": "prenait",
+              "g": "took"
+            },
+            {
+              "t": "un",
+              "g": "a"
+            },
+            {
+              "t": "café",
+              "g": "coffee"
+            },
+            {
+              "t": "en",
+              "g": "in"
+            },
+            {
+              "t": "face",
+              "g": "front"
+            },
+            {
+              "t": "de",
+              "g": "of"
+            },
+            {
+              "t": "son",
+              "g": "his"
+            },
+            {
+              "t": "ancien",
+              "g": "former"
+            },
+            {
+              "t": "bureau",
+              "after": ",",
+              "g": "office"
+            },
+            {
+              "t": "marchait",
+              "g": "walked"
+            },
+            {
+              "t": "une",
+              "g": "a"
+            },
+            {
+              "t": "heure",
+              "after": ",",
+              "g": "hour"
+            },
+            {
+              "t": "puis",
+              "g": "then"
+            },
+            {
+              "t": "rentrait",
+              "after": ".",
+              "g": "came-back"
+            }
+          ],
+          "en": "He'd have a coffee across from his old office, walk for an hour, then come home.",
+          "notes": [
+            {
+              "from": 1,
+              "to": 1,
+              "ruleId": "imparfait-vs-passe-simple",
+              "note": "Three verbs in a row, all in the same form, because none of them is a single event. This is what he did every Tuesday, the shape of the day rather than one particular day. English reaches for \"he'd\" to say the same thing."
+            },
+            {
+              "from": 8,
+              "to": 9,
+              "ruleId": "adjective-position-meaning",
+              "note": "In front of the noun, «ancien» means former — the office he used to work in. Put it after and «un bureau ancien» would be a piece of antique furniture, which is a very different sentence."
+            }
+          ]
+        },
+        {
+          "fr": [
+            {
+              "t": "Sa",
+              "g": "his"
+            },
+            {
+              "t": "femme",
+              "g": "wife"
+            },
+            {
+              "t": "ne",
+              "g": "not-1"
+            },
+            {
+              "t": "lui",
+              "g": "to-him"
+            },
+            {
+              "t": "avait",
+              "g": "had"
+            },
+            {
+              "t": "jamais",
+              "g": "never"
+            },
+            {
+              "t": "posé",
+              "g": "put"
+            },
+            {
+              "t": "de",
+              "g": "any"
+            },
+            {
+              "t": "questions",
+              "after": ".",
+              "g": "questions"
+            }
+          ],
+          "en": "His wife had never asked him any questions.",
+          "notes": [
+            {
+              "from": 3,
+              "to": 3,
+              "ruleId": "object-pronoun-before-verb",
+              "note": "«lui» here means to him, and it sits in front of the verb group where English puts it after: asked him. Once you have a pronoun instead of a full name, it moves left and stays there."
+            }
+          ]
+        },
+        {
+          "fr": [
+            {
+              "t": "Ce",
+              "g": "this"
+            },
+            {
+              "t": "matin",
+              "g": "morning"
+            },
+            {
+              "t": "-là",
+              "after": ",",
+              "g": "there"
+            },
+            {
+              "t": "il",
+              "g": "he"
+            },
+            {
+              "t": "rentra",
+              "g": "came-back"
+            },
+            {
+              "t": "à",
+              "g": "at"
+            },
+            {
+              "t": "onze",
+              "g": "eleven"
+            },
+            {
+              "t": "heures",
+              "after": ",",
+              "g": "o'clock"
+            },
+            {
+              "t": "les",
+              "g": "the"
+            },
+            {
+              "t": "chaussures",
+              "g": "shoes"
+            },
+            {
+              "t": "trempées",
+              "after": ".",
+              "g": "soaked"
+            }
+          ],
+          "en": "That morning he came home at eleven, his shoes soaked.",
+          "notes": [
+            {
+              "from": 4,
+              "to": 4,
+              "ruleId": "imparfait-vs-passe-simple",
+              "note": "Everything before this line was the routine. This one verb changes form, and that alone tells you the routine broke — one particular morning, one specific arrival, eleven o'clock instead of the evening."
+            },
+            {
+              "from": 8,
+              "to": 10,
+              "ruleId": "bare-descriptive-phrase",
+              "note": "French can hang a bare noun phrase on the end of a sentence to describe the state someone is in, with no verb and no \"with\". It's the same move as «les mains dans les poches» in the fourth line."
+            }
+          ]
+        },
+        {
+          "fr": [
+            {
+              "t": "Sa",
+              "g": "his"
+            },
+            {
+              "t": "femme",
+              "g": "wife"
+            },
+            {
+              "t": "leva",
+              "g": "lifted"
+            },
+            {
+              "t": "les",
+              "g": "the"
+            },
+            {
+              "t": "yeux",
+              "g": "eyes"
+            },
+            {
+              "t": "de",
+              "g": "from"
+            },
+            {
+              "t": "son",
+              "g": "her"
+            },
+            {
+              "t": "journal",
+              "after": ".",
+              "g": "newspaper"
+            }
+          ],
+          "en": "His wife looked up from her paper.",
+          "notes": [
+            {
+              "from": 3,
+              "to": 4,
+              "ruleId": "body-parts-definite-article",
+              "note": "«ses yeux» would be odd here — whose eyes could they be? French leaves the ownership implied and uses «les», exactly as it did with his hands and his pockets."
+            }
+          ]
+        },
+        {
+          "fr": [
+            {
+              "t": "Il",
+              "g": "he"
+            },
+            {
+              "t": "lui",
+              "g": "to-her"
+            },
+            {
+              "t": "dit",
+              "g": "said"
+            },
+            {
+              "t": "qu'",
+              "g": "that"
+            },
+            {
+              "t": "il",
+              "g": "he"
+            },
+            {
+              "t": "avait",
+              "g": "had"
+            },
+            {
+              "t": "raté",
+              "g": "missed"
+            },
+            {
+              "t": "le",
+              "g": "the"
+            },
+            {
+              "t": "train",
+              "after": ".",
+              "g": "train"
+            }
+          ],
+          "en": "He told her he'd missed the train.",
+          "notes": [
+            {
+              "from": 3,
+              "to": 3,
+              "ruleId": "reported-speech-que",
+              "note": "English lets you drop \"that\" — he told her he'd missed it. French never does; «qu'» has to be there. And since «il» starts with a vowel, «que» loses its own vowel and becomes «qu'»."
+            }
+          ]
+        },
+        {
+          "fr": [
+            {
+              "t": "Elle",
+              "g": "she"
+            },
+            {
+              "t": "ne",
+              "g": "not-1"
+            },
+            {
+              "t": "lui",
+              "g": "to-him"
+            },
+            {
+              "t": "demanda",
+              "g": "asked"
+            },
+            {
+              "t": "pas",
+              "g": "not-2"
+            },
+            {
+              "t": "lequel",
+              "after": ".",
+              "g": "which-one"
+            }
+          ],
+          "en": "She didn't ask him which one.",
+          "notes": [
+            {
+              "from": 5,
+              "to": 5,
+              "ruleId": "lequel",
+              "note": "\"Which one\" is a single word in French, and it carries the gender and number of what it stands for. It's standing in for «le train» here, so it comes out masculine and singular: «lequel»."
+            }
+          ]
+        },
+        {
+          "fr": [
+            {
+              "t": "Le",
+              "g": "the"
+            },
+            {
+              "t": "vendredi",
+              "g": "Friday"
+            },
+            {
+              "t": "suivant",
+              "after": ",",
+              "g": "following"
+            },
+            {
+              "t": "il",
+              "g": "he"
+            },
+            {
+              "t": "se",
+              "g": "himself"
+            },
+            {
+              "t": "leva",
+              "g": "lifted"
+            },
+            {
+              "t": "avant",
+              "g": "before"
+            },
+            {
+              "t": "le",
+              "g": "the"
+            },
+            {
+              "t": "réveil",
+              "after": ".",
+              "g": "alarm-clock"
+            }
+          ],
+          "en": "The following Friday he got up before the alarm.",
+          "notes": [
+            {
+              "from": 4,
+              "to": 5,
+              "ruleId": "reflexive-verbs",
+              "note": "«lever» is to lift something. What he lifts is himself, so the «se» is doing real work: «se lever» is how French says get up. Drop it and you've said he lifted something, and the sentence stops making sense."
+            }
+          ]
+        },
+        {
+          "fr": [
+            {
+              "t": "Il",
+              "g": "it"
+            },
+            {
+              "t": "ne",
+              "g": "not-1"
+            },
+            {
+              "t": "pleuvait",
+              "g": "rained"
+            },
+            {
+              "t": "plus",
+              "after": ".",
+              "g": "no-more"
+            }
+          ],
+          "en": "It had stopped raining.",
+          "notes": []
+        },
+        {
+          "fr": [
+            {
+              "t": "Il",
+              "g": "he"
+            },
+            {
+              "t": "arriva",
+              "g": "arrived"
+            },
+            {
+              "t": "à",
+              "g": "at"
+            },
+            {
+              "t": "la",
+              "g": "the"
+            },
+            {
+              "t": "gare",
+              "g": "station"
+            },
+            {
+              "t": "avec",
+              "g": "with"
+            },
+            {
+              "t": "dix",
+              "g": "ten"
+            },
+            {
+              "t": "minutes",
+              "g": "minutes"
+            },
+            {
+              "t": "d'",
+              "g": "of"
+            },
+            {
+              "t": "avance",
+              "after": ".",
+              "g": "advance"
+            }
+          ],
+          "en": "He got to the station ten minutes early.",
+          "notes": [
+            {
+              "from": 2,
+              "to": 4,
+              "ruleId": "a-for-places",
+              "note": "«arriver» takes «à» before a place, always — you can't arrive a station in French any more than you can in English. The «à» is part of the verb's habit, not something you choose."
+            }
+          ]
+        },
+        {
+          "fr": [
+            {
+              "t": "Le",
+              "g": "the"
+            },
+            {
+              "t": "train",
+              "g": "train"
+            },
+            {
+              "t": "était",
+              "g": "was"
+            },
+            {
+              "t": "déjà",
+              "g": "already"
+            },
+            {
+              "t": "là",
+              "after": ",",
+              "g": "there"
+            },
+            {
+              "t": "portes",
+              "g": "doors"
+            },
+            {
+              "t": "ouvertes",
+              "after": ".",
+              "g": "open"
+            }
+          ],
+          "en": "The train was already there, doors open.",
+          "notes": [
+            {
+              "from": 6,
+              "to": 6,
+              "ruleId": "adjective-agreement",
+              "note": "«ouvert» grows an «e» for the feminine «portes» and an «s» because there are several — «ouvertes». You can't hear the difference when it's read aloud, but leaving it off looks wrong on the page."
+            }
+          ]
+        },
+        {
+          "fr": [
+            {
+              "t": "Il",
+              "g": "he"
+            },
+            {
+              "t": "s'",
+              "g": "himself"
+            },
+            {
+              "t": "assit",
+              "g": "sat"
+            },
+            {
+              "t": "sur",
+              "g": "on"
+            },
+            {
+              "t": "un",
+              "g": "a"
+            },
+            {
+              "t": "banc",
+              "after": ",",
+              "g": "bench"
+            },
+            {
+              "t": "son",
+              "g": "his"
+            },
+            {
+              "t": "billet",
+              "g": "ticket"
+            },
+            {
+              "t": "à",
+              "g": "in"
+            },
+            {
+              "t": "la",
+              "g": "the"
+            },
+            {
+              "t": "main",
+              "after": ".",
+              "g": "hand"
+            }
+          ],
+          "en": "He sat down on a bench, his ticket in his hand.",
+          "notes": [
+            {
+              "from": 6,
+              "to": 6,
+              "ruleId": "possessive-agrees-with-noun",
+              "note": "«son» doesn't tell you the owner is male — it tells you «billet» is a masculine word. His wife's ticket would also be «son billet» — and «son journal», seven lines back, was hers for exactly the same reason."
+            }
+          ]
+        },
+        {
+          "fr": [
+            {
+              "t": "Une",
+              "g": "a"
+            },
+            {
+              "t": "femme",
+              "g": "woman"
+            },
+            {
+              "t": "lui",
+              "g": "to-him"
+            },
+            {
+              "t": "demanda",
+              "g": "asked"
+            },
+            {
+              "t": "s'",
+              "g": "if"
+            },
+            {
+              "t": "il",
+              "g": "he"
+            },
+            {
+              "t": "montait",
+              "after": ".",
+              "g": "got-on"
+            }
+          ],
+          "en": "A woman asked him if he was getting on.",
+          "notes": [
+            {
+              "from": 4,
+              "to": 5,
+              "ruleId": "elision-si-il",
+              "note": "«si» meaning if normally keeps its vowel — «si elle montait» is fine. In front of «il» and «ils» only, it shortens to «s'», which is why this looks like the «s'» of a reflexive verb but isn't one."
+            }
+          ]
+        },
+        {
+          "fr": [
+            {
+              "t": "Il",
+              "g": "he"
+            },
+            {
+              "t": "fit",
+              "g": "made"
+            },
+            {
+              "t": "non",
+              "g": "no"
+            },
+            {
+              "t": "de",
+              "g": "of"
+            },
+            {
+              "t": "la",
+              "g": "the"
+            },
+            {
+              "t": "tête",
+              "after": ".",
+              "g": "head"
+            }
+          ],
+          "en": "He shook his head.",
+          "notes": [
+            {
+              "from": 1,
+              "to": 5,
+              "ruleId": "faire-expressions",
+              "note": "French says he made no with the head. There's no verb for shaking your head; «faire» plus «oui» or «non» covers both, and it's the ordinary everyday way to say it."
+            }
+          ]
+        },
+        {
+          "fr": [
+            {
+              "t": "Les",
+              "g": "the"
+            },
+            {
+              "t": "portes",
+              "g": "doors"
+            },
+            {
+              "t": "se",
+              "g": "themselves"
+            },
+            {
+              "t": "fermèrent",
+              "after": ".",
+              "g": "closed"
+            }
+          ],
+          "en": "The doors closed.",
+          "notes": [
+            {
+              "from": 2,
+              "to": 3,
+              "ruleId": "reflexive-passive",
+              "note": "Nobody is closing them, and «les portes fermèrent» would be wrong. The «se» is how French says a thing happens to itself when the doer is irrelevant — here, the doors close on their own schedule, which is rather the point."
+            }
+          ]
+        },
+        {
+          "fr": [
+            {
+              "t": "Le",
+              "g": "the"
+            },
+            {
+              "t": "train",
+              "g": "train"
+            },
+            {
+              "t": "de",
+              "g": "of"
+            },
+            {
+              "t": "7h12",
+              "g": "7:12"
+            },
+            {
+              "t": "partit",
+              "g": "left"
+            },
+            {
+              "t": "sans",
+              "g": "without"
+            },
+            {
+              "t": "lui",
+              "after": ".",
+              "g": "him"
+            }
+          ],
+          "en": "The 7:12 train left without him.",
+          "notes": [
+            {
+              "from": 4,
+              "to": 4,
+              "ruleId": "imparfait-vs-passe-simple",
+              "note": "Same train, same words, one letter of difference from the fifth line of the story. «partait» was a train in the act of leaving, every Tuesday. «partit» is one departure, complete, and he watched it happen."
+            }
+          ]
+        },
+        {
+          "fr": [
+            {
+              "t": "Il",
+              "g": "he"
+            },
+            {
+              "t": "rentra",
+              "g": "came-back"
+            },
+            {
+              "t": "par",
+              "g": "through"
+            },
+            {
+              "t": "les",
+              "g": "the"
+            },
+            {
+              "t": "petites",
+              "g": "small"
+            },
+            {
+              "t": "rues",
+              "after": ",",
+              "g": "streets"
+            },
+            {
+              "t": "sans",
+              "g": "without"
+            },
+            {
+              "t": "se",
+              "g": "himself"
+            },
+            {
+              "t": "presser",
+              "after": ".",
+              "g": "to-hurry"
+            }
+          ],
+          "en": "He walked home through the back streets, taking his time.",
+          "notes": [
+            {
+              "from": 6,
+              "to": 8,
+              "ruleId": "preposition-plus-infinitive",
+              "note": "English would say \"without hurrying\". French puts the plain infinitive after «sans», and «se presser» keeps its «se» because what he isn't hurrying is himself."
+            }
+          ]
+        },
+        {
+          "fr": [
+            {
+              "t": "Sa",
+              "g": "his"
+            },
+            {
+              "t": "femme",
+              "g": "wife"
+            },
+            {
+              "t": "était",
+              "g": "was"
+            },
+            {
+              "t": "debout",
+              "g": "standing"
+            },
+            {
+              "t": "dans",
+              "g": "in"
+            },
+            {
+              "t": "la",
+              "g": "the"
+            },
+            {
+              "t": "cuisine",
+              "after": ",",
+              "g": "kitchen"
+            },
+            {
+              "t": "et",
+              "g": "and"
+            },
+            {
+              "t": "il",
+              "g": "it"
+            },
+            {
+              "t": "y",
+              "g": "there"
+            },
+            {
+              "t": "avait",
+              "g": "had"
+            },
+            {
+              "t": "deux",
+              "g": "two"
+            },
+            {
+              "t": "tasses",
+              "g": "cups"
+            },
+            {
+              "t": "sur",
+              "g": "on"
+            },
+            {
+              "t": "la",
+              "g": "the"
+            },
+            {
+              "t": "table",
+              "after": ".",
+              "g": "table"
+            }
+          ],
+          "en": "His wife was standing in the kitchen, and there were two cups on the table.",
+          "notes": [
+            {
+              "from": 8,
+              "to": 10,
+              "ruleId": "il-y-a-impersonal",
+              "note": "Word for word this is \"it there had\", which is no help at all. Taken together the three words mean there was or there were — and unlike English, the phrase never changes for a plural. Two cups, still «il y avait»."
+            }
+          ]
+        },
+        {
+          "fr": [
+            {
+              "t": "Elle",
+              "g": "she"
+            },
+            {
+              "t": "en",
+              "g": "of-them"
+            },
+            {
+              "t": "mettait",
+              "g": "put"
+            },
+            {
+              "t": "deux",
+              "g": "two"
+            },
+            {
+              "t": "depuis",
+              "g": "since"
+            },
+            {
+              "t": "mardi",
+              "after": ".",
+              "g": "Tuesday"
+            }
+          ],
+          "en": "She'd been setting out two since Tuesday.",
+          "notes": [
+            {
+              "from": 1,
+              "to": 1,
+              "ruleId": "pronoun-en",
+              "note": "«en» stands in for «des tasses» — of them. French won't let you say «elle mettait deux» and stop there; if you don't name the thing, «en» has to hold its place in front of the verb."
+            },
+            {
+              "from": 4,
+              "to": 4,
+              "ruleId": "duration-pendant-depuis",
+              "note": "«depuis» plus this form of the verb is how French says something started back then and is still going. English needs a whole scaffolding — she'd been setting out — where French needs one preposition."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "id": "a-for-places",
+      "name": "Verbs that need «à» before a place",
+      "category": "prepositions",
+      "body": "Some French verbs come with a preposition attached, and you can't drop it even\nwhen English has none. «arriver» is one: you always arrive **at**.\n\n- Il arriva **à** la gare. — He reached the station.\n- Elle est entrée **dans** la cuisine. — She entered the kitchen.\n- Nous allons **à** Rouen. — We're going to Rouen.\n\nCities take «à», feminine countries take «en» (en France), masculine ones take\n«au» (au Portugal)."
+    },
+    {
+      "id": "adjective-agreement",
+      "name": "Adjectives match the noun in gender and number",
+      "category": "agreement",
+      "body": "An adjective takes an «e» for a feminine noun and an «s» for a plural, in\nwhatever order applies. You often can't hear it; you always have to write it.\n\n- portes **ouvertes** — feminine and plural, so «-es».\n- les chaussures **trempées** — same, and the participle behaves like an adjective.\n- un banc **vert**, une porte **verte**, des portes **vertes**.\n\nAdjectives already ending in «e» add only the «s»: «une rue calme», «des rues\ncalmes»."
+    },
+    {
+      "id": "adjective-before-vowel",
+      "name": "Adjectives that change shape before a vowel",
+      "category": "adjectives",
+      "body": "Three common adjectives have a third form used only in front of a masculine\nnoun starting with a vowel or a silent «h». It exists purely so the words don't\ncollide when you say them.\n\n- vieux → **vieil** : un vieil homme, un vieil ami. But un vieux monsieur.\n- beau → **bel** : un bel été. But un beau jardin.\n- nouveau → **nouvel** : un nouvel appartement. But un nouveau bureau.\n\nThe feminine forms already end in a consonant sound — vieille, belle, nouvelle —\nso they never need this and never change."
+    },
+    {
+      "id": "adjective-position-meaning",
+      "name": "Adjectives that change meaning when they move",
+      "category": "adjectives",
+      "body": "Most French adjectives follow the noun. A few can go either side, and the side\nchanges what they mean — before the noun the sense is figurative, after it the\nsense is literal.\n\n- son **ancien** bureau (his former office) / un bureau **ancien** (an antique desk)\n- un **grand** homme (a great man) / un homme **grand** (a tall man)\n- mon **propre** livre (my own book) / un livre **propre** (a clean book)\n\nThe same list includes cher, pauvre, and dernier. When in doubt, put the\nadjective after — that's where the plain meaning lives."
+    },
+    {
+      "id": "bare-descriptive-phrase",
+      "name": "A bare noun phrase tacked on to describe a state",
+      "category": "adjectives",
+      "body": "French can end a sentence with a comma and a naked noun phrase — no verb, no\n\"with\" — describing the state of the person or thing just mentioned.\n\n- Il rentra, **les chaussures trempées**. — his shoes soaked.\n- Le train était là, **portes ouvertes**. — doors open.\n- Il s'assit, **son billet à la main**. — ticket in hand.\n\nEnglish needs \"with\" or a participle to do this. French needs nothing, which is\nwhy it reads as compact and slightly literary."
+    },
+    {
+      "id": "body-parts-definite-article",
+      "name": "«le» where English says \"my\", \"his\", \"her\"",
+      "category": "articles",
+      "body": "With parts of the body, and with clothes you're wearing, French uses the plain\ndefinite article. Whose they are is obvious, so saying it would sound heavy.\n\n- les mains dans **les** poches — his hands in his pockets.\n- Elle leva **les** yeux. — She looked up (lifted her eyes).\n- Il a mal à **la** tête. — His head hurts.\n\nUse «son», «sa», «ses» here and a French reader hears a learner. Save the\npossessives for things that could belong to somebody else."
+    },
+    {
+      "id": "chez",
+      "name": "«chez» — at someone's place",
+      "category": "prepositions",
+      "body": "«chez» has no English equivalent. It means at or to the home, shop, or world\nof the person named after it, and it must be followed by a person, not a place.\n\n- **chez** lui — at his place, home.\n- Je vais **chez** le médecin. — To the doctor's.\n- **chez** Renault — at Renault, as an employer.\n\nYou cannot say «chez la maison». For a building you use «à»: «à la maison»."
+    },
+    {
+      "id": "de-after-negation",
+      "name": "After a negation, «un» and «du» collapse to «de»",
+      "category": "negation",
+      "body": "A negated verb strips the article down to a bare «de» (or «d'»). The thing\ndoesn't exist, so French stops marking how much of it there is.\n\n- Il y a **un** bureau. → Il n'y a plus **de** bureau.\n- Elle pose **des** questions. → Elle ne pose pas **de** questions.\n- Je bois **du** café. → Je ne bois pas **de** café.\n\nThe definite article survives untouched: «je n'aime pas **le** café» — I don't\nlike coffee in general. And «être» is exempt: «ce n'est pas **un** train»."
+    },
+    {
+      "id": "definite-article-days",
+      "name": "«le mardi» means every Tuesday",
+      "category": "articles",
+      "body": "A bare day name points at one particular day. Add «le» and it becomes a\nroutine — the same thing English does with a plural.\n\n- **mardi**, il part à sept heures. — This coming Tuesday.\n- **le** mardi, il part à sept heures. — On Tuesdays, as a rule.\n- **le** matin, elle lit le journal. — In the mornings.\n\nSame trick with «le soir», «le week-end», «l'été». Without the article you're\nnaming an occasion; with it, a habit."
+    },
+    {
+      "id": "duration-pendant-depuis",
+      "name": "«pendant» and «depuis» — two kinds of \"for\"",
+      "category": "prepositions",
+      "body": "English uses \"for\" for both. French splits them by whether the thing is over.\n\n- **Pendant** quarante ans, il avait pris ce train. — Finished stretch.\n- Il travaille ici **depuis** quarante ans. — Started then, still true.\n- Elle en mettait deux **depuis** mardi. — Since Tuesday, still doing it.\n\nThe tense follows the choice. «depuis» goes with the present for something\nstill going on, or the imparfait inside a story — never the tense English uses\n(\"has been\"). «pendant» goes with a finished past."
+    },
+    {
+      "id": "elision-before-vowel",
+      "name": "Small words drop their vowel before another vowel",
+      "category": "articles",
+      "body": "A handful of one-syllable words lose their final vowel when the next word\nbegins with a vowel or a silent «h». The apostrophe is what's left of it. This\nis not optional and not casual — writing the full form would be a mistake.\n\n- le, la → **l'** : l'homme, l'avait entendu.\n- de → **d'** : dix minutes d'avance.\n- ne → **n'** : il n'y avait plus rien.\n- que → **qu'** : il dit qu'il avait raté le train.\n\n«l'» hides which word it came from, so «l'» can be the, him, or her, and only\nthe sentence tells you which."
+    },
+    {
+      "id": "elision-si-il",
+      "name": "«si» shortens only before «il» and «ils»",
+      "category": "pronouns",
+      "body": "«si» meaning if keeps its vowel almost everywhere. The single exception is in\nfront of «il» and «ils».\n\n- Elle demanda **s'il** montait. — if he was getting on.\n- Elle demanda **s'ils** montaient. — if they were.\n- But: **si elle** montait, **si on** partait, **si un** train arrivait.\n\nBecause of this, «s'il» looks identical to the «s'» of «s'arrêter» and is a\ncompletely different word. Check what follows: a pronoun subject means «if»."
+    },
+    {
+      "id": "faire-expressions",
+      "name": "«faire» does the work of many English verbs",
+      "category": "verbs",
+      "body": "French leans on «faire» — to do, to make — where English has a specific verb.\nThese are set phrases; the pieces don't translate one by one.\n\n- **faire non de la tête** — to shake one's head. Literally: to make no with the head.\n- **faire la queue** — to queue.\n- **faire attention** — to pay attention.\n- Il **fait** froid. — It's cold.\n\nLearn each as a block. Assembling them from the English is how you end up with\nsentences no one says."
+    },
+    {
+      "id": "il-y-a-impersonal",
+      "name": "«il y a» — there is, there are",
+      "category": "verbs",
+      "body": "Three words that only mean anything together. Word for word it's \"it there\nhas\", which is no help; take it as one block meaning there is or there are.\n\n- **Il y a** deux tasses sur la table. — There are two cups.\n- **Il y avait** plus personne. — There was no one left.\n- **Il y a** trois ans — three years ago. Same phrase, time meaning.\n\nIt never becomes plural — «il y a deux tasses», never «ils y ont». Only the\ntense of «avoir» changes: il y avait, il y aura, il y a eu."
+    },
+    {
+      "id": "imparfait-vs-passe-simple",
+      "name": "Imparfait or passé simple — the choice that carries the story",
+      "category": "verbs",
+      "body": "Both are past. The imparfait (-ait, -aient) is unfinished: the setting, the\nhabit, the state, what was going on. The passé simple — or the passé composé in\nspeech — is one completed event that moves the story forward.\n\n- Il **pleuvait**. Il **ferma** la porte. — Rain all around; one closed door.\n- Le train **partait** sans lui, comme chaque mardi. — The weekly pattern.\n- Le train **partit** sans lui. — One departure, over.\n\nSame verb, different frame. Ask whether you're describing the picture or\nadding the next thing that happened."
+    },
+    {
+      "id": "jusqua",
+      "name": "«jusqu'à» — all the way to",
+      "category": "prepositions",
+      "body": "«à» tells you the destination. «jusqu'à» tells you the whole distance or\nduration was covered — up to and including that point.\n\n- Il marcha **jusqu'à** la gare. — He walked the entire way there.\n- Elle a attendu **jusqu'à** midi. — Right up until noon.\n- **jusqu'au** bout — all the way to the end. («à + le» contracts as usual.)\n\nIt behaves like «à» afterwards: «jusqu'au», «jusqu'aux», and «jusqu'en» before\na year or a month."
+    },
+    {
+      "id": "lequel",
+      "name": "«lequel» — which one",
+      "category": "pronouns",
+      "body": "«quel» sits in front of a noun; «lequel» replaces the noun entirely and means\nwhich one. It agrees with whatever it stands for.\n\n- **Quel** train ? — Which train? → **Lequel** ? — Which one?\n- masculine: lequel / lesquels — feminine: laquelle / lesquelles.\n- Elle ne lui demanda pas **lequel**. — She didn't ask which one.\n\nAfter «à» and «de» it contracts: «auquel», «duquel», «desquelles»."
+    },
+    {
+      "id": "negation-other-pairs",
+      "name": "Beyond «pas» — plus, jamais, rien, personne",
+      "category": "negation",
+      "body": "«ne» is the constant; the second word chooses the meaning. Swap «pas» for\nanother and you get a different negative, in the same position.\n\n- ne … **plus** — not any more. Il n'y avait **plus** de bureau.\n- ne … **jamais** — never. Elle ne lui avait **jamais** posé de questions.\n- ne … **rien** — nothing. Il ne dit **rien**.\n- ne … **personne** — nobody. Il n'y avait **personne**.\n\nNever combine them with «pas». «ne … plus» already contains the negation;\n«ne pas plus» is not French."
+    },
+    {
+      "id": "negation-wraps-verb",
+      "name": "Negation wraps the conjugated verb",
+      "category": "negation",
+      "body": "French negates with a pair: «ne» before the verb, «pas» after it. In compound\ntenses the pair closes around the small verb that carries the tense, not around\nthe participle that carries the meaning.\n\n- Je **ne** mange **pas**. — I'm not eating.\n- Je **n'**ai **pas** mangé. — I haven't eaten. Never «je n'ai mangé pas».\n- Elle **ne** l'avait **pas** entendu partir. — «pas» lands after «avait».\n\nObject pronouns stay inside the sandwich too, tucked between «ne» and the verb:\n«je **ne** le vois **pas**»."
+    },
+    {
+      "id": "object-pronoun-before-verb",
+      "name": "Object pronouns go in front of the verb",
+      "category": "pronouns",
+      "body": "Replace a noun with a pronoun and it moves to the left, in front of the verb\ngroup. English keeps it after the verb; French almost never does.\n\n- Elle ne **lui** avait jamais posé de questions. — asked **him**.\n- Je **le** vois. — I see **him**.\n- Il **nous** a écrit. — He wrote to **us**.\n\nIn a compound tense it lands before the helper, not before the participle:\n«il **l'**a vu», never «il a **l'**vu». The one place it goes after the verb is\na positive command: «regarde-**moi**»."
+    },
+    {
+      "id": "passe-simple-in-stories",
+      "name": "The written past — ferma, marcha, partit",
+      "category": "verbs",
+      "body": "French has a past tense that is only ever written: novels, history books,\nfairy tales. Nobody speaks it. Where a conversation says «il a fermé», a story\nsays «il ferma» — same meaning, different register.\n\n- Il **ferma** la porte. — In speech: il a fermé la porte.\n- Il **marcha** jusqu'à la gare. — In speech: il a marché.\n- Les portes **se fermèrent**. — In speech: elles se sont fermées.\n\nYou need to recognise it, not produce it. Most verbs are predictable: -er verbs\nend in -a (il parla), and a lot of others end in -it (il partit, il dit)."
+    },
+    {
+      "id": "plus-que-parfait",
+      "name": "One step further back — avait fait",
+      "category": "verbs",
+      "body": "When a story in the past needs to mention something that happened even earlier,\nFrench uses «avait» or «était» plus the participle. It works exactly like\nEnglish \"had done\".\n\n- Elle ne l'avait pas entendu partir. — He left; her not-hearing came after.\n- Il **avait pris** ce train pendant quarante ans. — Before the story starts.\n- Il **s'était arrêté** au coin de la rue. — Before he reached the station.\n\nWhich helper you use is the same choice as in the passé composé: «être» for\nreflexives and for the come-and-go verbs, «avoir» for everything else."
+    },
+    {
+      "id": "possessive-agrees-with-noun",
+      "name": "«son» and «sa» agree with the thing, not the owner",
+      "category": "agreement",
+      "body": "French possessives take the gender of what is owned. They tell you nothing\nabout who owns it — «son» is his, her, or its, and only the context decides.\n\n- **son** billet — his ticket or her ticket; «billet» is masculine.\n- **sa** femme — his wife; «femme» is feminine.\n- **ses** mains — his or her hands; plural.\n\nBefore a feminine word starting with a vowel, «sa» becomes «son» for the sound:\n«**son** amie» is still a female friend."
+    },
+    {
+      "id": "preposition-plus-infinitive",
+      "name": "After a preposition, French uses the infinitive",
+      "category": "prepositions",
+      "body": "Where English puts an \"-ing\" form after a preposition, French puts the plain\ndictionary form of the verb.\n\n- **sans** se presser — without hurrying.\n- **pour** l'attendre — to wait for him / for waiting for him.\n- **avant de** partir — before leaving.\n\nThe one exception is «en», which takes the -ant form: «en partant» — while\nleaving. Everything else — sans, pour, avant de, après avoir, au lieu de —\ntakes the infinitive."
+    },
+    {
+      "id": "pronoun-en",
+      "name": "«en» stands in for «de» plus a thing",
+      "category": "pronouns",
+      "body": "«en» replaces a noun introduced by «de», «du», «des», or by a number or\nquantity. English usually just leaves the noun out; French insists on marking\nthe gap.\n\n- Elle **en** mettait deux. — She put out two (of them).\n- Tu veux du café ? — J'**en** veux bien. — I'd like some.\n- Il **en** revient. — He's coming back from there.\n\nLike other object pronouns it sits in front of the verb, and it stays even when\na number follows: «j'**en** ai trois», never «j'ai trois»."
+    },
+    {
+      "id": "reflexive-passive",
+      "name": "«se» when nobody in particular is doing it",
+      "category": "verbs",
+      "body": "French often uses «se» to say something happens, without naming who caused it.\nEnglish uses the plain verb, or a passive.\n\n- Les portes **se** fermèrent. — The doors closed.\n- Ça **se** dit. — People say that.\n- Le vin blanc **se** boit frais. — White wine is drunk chilled.\n\nWithout the «se», «les portes fermèrent» would claim the doors closed something\nelse. The «se» is what turns the action back on the subject."
+    },
+    {
+      "id": "reflexive-verbs",
+      "name": "Verbs that act on themselves — se lever, s'arrêter",
+      "category": "verbs",
+      "body": "A lot of everyday French verbs carry a «se». It marks that the subject is also\nthe target: you lift yourself, you stop yourself. English usually has a\nseparate word for the same idea and no pronoun at all.\n\n- lever (to lift) → **se lever** — to get up.\n- arrêter (to stop something) → **s'arrêter** — to come to a halt.\n- presser → **se presser** — to hurry.\n\nThe pronoun changes with the subject (je **me** lève, tu **te** lèves), and in\ncompound tenses these verbs always take «être»: «il **s'était** arrêté»."
+    },
+    {
+      "id": "reported-speech-que",
+      "name": "«que» is never optional",
+      "category": "verbs",
+      "body": "English lets you drop \"that\" when reporting speech or thought. French does not:\nthe «que» has to be written, and it shortens to «qu'» before a vowel.\n\n- Il dit **qu'**il avait raté le train. — He said (that) he'd missed it.\n- Je crois **que** tu as raison. — I think you're right.\n- Elle sait **qu'**il ment. — She knows he's lying.\n\nLeaving it out is one of the clearest signs of an English sentence wearing\nFrench words."
+    },
+    {
+      "id": "stressed-pronouns",
+      "name": "The standalone pronouns — moi, toi, lui, elle, eux",
+      "category": "pronouns",
+      "body": "French has two sets of pronouns. The little ones (le, la, lui, me) can only\nlive glued to a verb. After a preposition, or standing alone, you need the\nstrong forms: moi, toi, lui, elle, nous, vous, eux, elles.\n\n- Le train partait sans **lui**. — Never «sans le».\n- Je pense à **elle**. — I'm thinking about her.\n- Qui a fait ça ? — **Moi**. — Me.\n\nThey're also what you use for emphasis: «**Moi**, je reste» — me, I'm staying."
+    },
+    {
+      "id": "weather-il",
+      "name": "The empty «il» — weather, time, and there-is",
+      "category": "pronouns",
+      "body": "Some French sentences need a subject even when nothing is doing anything. «il»\nfills the slot and means nothing, just as \"it\" does in \"it's raining\".\n\n- **Il** pleuvait encore. — It was still raining.\n- **Il** est sept heures. — It's seven o'clock.\n- **Il** faut partir. — We have to go.\n\nThis «il» never refers to a person, so it is never «elle», whatever the weather\nword is."
+    }
+  ],
+  "occurrences": [
+    {
+      "ruleId": "adjective-before-vowel",
+      "storyId": "le-train-de-7h12",
+      "storyTitle": "Le train de 7h12",
+      "lineIndex": 0,
+      "span": "vieil"
+    },
+    {
+      "ruleId": "passe-simple-in-stories",
+      "storyId": "le-train-de-7h12",
+      "storyTitle": "Le train de 7h12",
+      "lineIndex": 0,
+      "span": "ferma"
+    },
+    {
+      "ruleId": "elision-before-vowel",
+      "storyId": "le-train-de-7h12",
+      "storyTitle": "Le train de 7h12",
+      "lineIndex": 1,
+      "span": "l'"
+    },
+    {
+      "ruleId": "negation-wraps-verb",
+      "storyId": "le-train-de-7h12",
+      "storyTitle": "Le train de 7h12",
+      "lineIndex": 1,
+      "span": "ne l' avait pas"
+    },
+    {
+      "ruleId": "plus-que-parfait",
+      "storyId": "le-train-de-7h12",
+      "storyTitle": "Le train de 7h12",
+      "lineIndex": 1,
+      "span": "avait"
+    },
+    {
+      "ruleId": "weather-il",
+      "storyId": "le-train-de-7h12",
+      "storyTitle": "Le train de 7h12",
+      "lineIndex": 2,
+      "span": "il"
+    },
+    {
+      "ruleId": "jusqua",
+      "storyId": "le-train-de-7h12",
+      "storyTitle": "Le train de 7h12",
+      "lineIndex": 3,
+      "span": "jusqu' à"
+    },
+    {
+      "ruleId": "body-parts-definite-article",
+      "storyId": "le-train-de-7h12",
+      "storyTitle": "Le train de 7h12",
+      "lineIndex": 3,
+      "span": "les mains dans les poches"
+    },
+    {
+      "ruleId": "imparfait-vs-passe-simple",
+      "storyId": "le-train-de-7h12",
+      "storyTitle": "Le train de 7h12",
+      "lineIndex": 4,
+      "span": "partait"
+    },
+    {
+      "ruleId": "stressed-pronouns",
+      "storyId": "le-train-de-7h12",
+      "storyTitle": "Le train de 7h12",
+      "lineIndex": 4,
+      "span": "sans lui"
+    },
+    {
+      "ruleId": "reflexive-verbs",
+      "storyId": "le-train-de-7h12",
+      "storyTitle": "Le train de 7h12",
+      "lineIndex": 5,
+      "span": "s' était arrêté"
+    },
+    {
+      "ruleId": "duration-pendant-depuis",
+      "storyId": "le-train-de-7h12",
+      "storyTitle": "Le train de 7h12",
+      "lineIndex": 6,
+      "span": "Pendant"
+    },
+    {
+      "ruleId": "imparfait-vs-passe-simple",
+      "storyId": "le-train-de-7h12",
+      "storyTitle": "Le train de 7h12",
+      "lineIndex": 7,
+      "span": "connaissait"
+    },
+    {
+      "ruleId": "chez",
+      "storyId": "le-train-de-7h12",
+      "storyTitle": "Le train de 7h12",
+      "lineIndex": 7,
+      "span": "chez lui"
+    },
+    {
+      "ruleId": "negation-other-pairs",
+      "storyId": "le-train-de-7h12",
+      "storyTitle": "Le train de 7h12",
+      "lineIndex": 8,
+      "span": "n' y avait plus"
+    },
+    {
+      "ruleId": "de-after-negation",
+      "storyId": "le-train-de-7h12",
+      "storyTitle": "Le train de 7h12",
+      "lineIndex": 8,
+      "span": "plus de bureau"
+    },
+    {
+      "ruleId": "preposition-plus-infinitive",
+      "storyId": "le-train-de-7h12",
+      "storyTitle": "Le train de 7h12",
+      "lineIndex": 8,
+      "span": "pour l' attendre"
+    },
+    {
+      "ruleId": "definite-article-days",
+      "storyId": "le-train-de-7h12",
+      "storyTitle": "Le train de 7h12",
+      "lineIndex": 9,
+      "span": "le mardi"
+    },
+    {
+      "ruleId": "imparfait-vs-passe-simple",
+      "storyId": "le-train-de-7h12",
+      "storyTitle": "Le train de 7h12",
+      "lineIndex": 10,
+      "span": "prenait"
+    },
+    {
+      "ruleId": "adjective-position-meaning",
+      "storyId": "le-train-de-7h12",
+      "storyTitle": "Le train de 7h12",
+      "lineIndex": 10,
+      "span": "ancien bureau"
+    },
+    {
+      "ruleId": "object-pronoun-before-verb",
+      "storyId": "le-train-de-7h12",
+      "storyTitle": "Le train de 7h12",
+      "lineIndex": 11,
+      "span": "lui"
+    },
+    {
+      "ruleId": "imparfait-vs-passe-simple",
+      "storyId": "le-train-de-7h12",
+      "storyTitle": "Le train de 7h12",
+      "lineIndex": 12,
+      "span": "rentra"
+    },
+    {
+      "ruleId": "bare-descriptive-phrase",
+      "storyId": "le-train-de-7h12",
+      "storyTitle": "Le train de 7h12",
+      "lineIndex": 12,
+      "span": "les chaussures trempées"
+    },
+    {
+      "ruleId": "body-parts-definite-article",
+      "storyId": "le-train-de-7h12",
+      "storyTitle": "Le train de 7h12",
+      "lineIndex": 13,
+      "span": "les yeux"
+    },
+    {
+      "ruleId": "reported-speech-que",
+      "storyId": "le-train-de-7h12",
+      "storyTitle": "Le train de 7h12",
+      "lineIndex": 14,
+      "span": "qu'"
+    },
+    {
+      "ruleId": "lequel",
+      "storyId": "le-train-de-7h12",
+      "storyTitle": "Le train de 7h12",
+      "lineIndex": 15,
+      "span": "lequel"
+    },
+    {
+      "ruleId": "reflexive-verbs",
+      "storyId": "le-train-de-7h12",
+      "storyTitle": "Le train de 7h12",
+      "lineIndex": 16,
+      "span": "se leva"
+    },
+    {
+      "ruleId": "a-for-places",
+      "storyId": "le-train-de-7h12",
+      "storyTitle": "Le train de 7h12",
+      "lineIndex": 18,
+      "span": "à la gare"
+    },
+    {
+      "ruleId": "adjective-agreement",
+      "storyId": "le-train-de-7h12",
+      "storyTitle": "Le train de 7h12",
+      "lineIndex": 19,
+      "span": "ouvertes"
+    },
+    {
+      "ruleId": "possessive-agrees-with-noun",
+      "storyId": "le-train-de-7h12",
+      "storyTitle": "Le train de 7h12",
+      "lineIndex": 20,
+      "span": "son"
+    },
+    {
+      "ruleId": "elision-si-il",
+      "storyId": "le-train-de-7h12",
+      "storyTitle": "Le train de 7h12",
+      "lineIndex": 21,
+      "span": "s' il"
+    },
+    {
+      "ruleId": "faire-expressions",
+      "storyId": "le-train-de-7h12",
+      "storyTitle": "Le train de 7h12",
+      "lineIndex": 22,
+      "span": "fit non de la tête"
+    },
+    {
+      "ruleId": "reflexive-passive",
+      "storyId": "le-train-de-7h12",
+      "storyTitle": "Le train de 7h12",
+      "lineIndex": 23,
+      "span": "se fermèrent"
+    },
+    {
+      "ruleId": "imparfait-vs-passe-simple",
+      "storyId": "le-train-de-7h12",
+      "storyTitle": "Le train de 7h12",
+      "lineIndex": 24,
+      "span": "partit"
+    },
+    {
+      "ruleId": "preposition-plus-infinitive",
+      "storyId": "le-train-de-7h12",
+      "storyTitle": "Le train de 7h12",
+      "lineIndex": 25,
+      "span": "sans se presser"
+    },
+    {
+      "ruleId": "il-y-a-impersonal",
+      "storyId": "le-train-de-7h12",
+      "storyTitle": "Le train de 7h12",
+      "lineIndex": 26,
+      "span": "il y avait"
+    },
+    {
+      "ruleId": "pronoun-en",
+      "storyId": "le-train-de-7h12",
+      "storyTitle": "Le train de 7h12",
+      "lineIndex": 27,
+      "span": "en"
+    },
+    {
+      "ruleId": "duration-pendant-depuis",
+      "storyId": "le-train-de-7h12",
+      "storyTitle": "Le train de 7h12",
+      "lineIndex": 27,
+      "span": "depuis"
+    }
+  ]
+}
