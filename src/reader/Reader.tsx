@@ -65,8 +65,14 @@ export function Reader() {
         </Link>
         <span className="t">{story.title}</span>
         <span className="popwrap">
-          <button className={`aa${showSettings ? ' on' : ''}`} aria-label="Reading settings"
-            onClick={(e) => { e.stopPropagation(); setShowSettings((v) => !v); }}>Aa</button>
+          <button className={`gear${showSettings ? ' on' : ''}`} aria-label="Reading settings"
+            onClick={(e) => { e.stopPropagation(); setShowSettings((v) => !v); }}>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="3.1" />
+              <path d="M19.1 14.4a1.5 1.5 0 0 0 .3 1.65l.05.06a1.82 1.82 0 1 1-2.58 2.58l-.05-.06a1.5 1.5 0 0 0-1.65-.3 1.5 1.5 0 0 0-.91 1.37v.16a1.82 1.82 0 1 1-3.64 0v-.08a1.5 1.5 0 0 0-.98-1.37 1.5 1.5 0 0 0-1.65.3l-.06.05a1.82 1.82 0 1 1-2.58-2.58l.06-.05a1.5 1.5 0 0 0 .3-1.65 1.5 1.5 0 0 0-1.37-.91h-.16a1.82 1.82 0 1 1 0-3.64h.08a1.5 1.5 0 0 0 1.37-.98 1.5 1.5 0 0 0-.3-1.65l-.05-.06a1.82 1.82 0 1 1 2.58-2.58l.05.06a1.5 1.5 0 0 0 1.65.3h.07a1.5 1.5 0 0 0 .91-1.37v-.16a1.82 1.82 0 1 1 3.64 0v.08a1.5 1.5 0 0 0 .91 1.37 1.5 1.5 0 0 0 1.65-.3l.06-.05a1.82 1.82 0 1 1 2.58 2.58l-.06.05a1.5 1.5 0 0 0-.3 1.65v.07a1.5 1.5 0 0 0 1.37.91h.16a1.82 1.82 0 1 1 0 3.64h-.08a1.5 1.5 0 0 0-1.37.91z" />
+            </svg>
+          </button>
           {showSettings && (
             <SettingsPopover settings={settings} set={set} onClose={() => setShowSettings(false)} />
           )}
