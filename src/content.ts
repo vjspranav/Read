@@ -1,7 +1,7 @@
 import bundle from './generated/content.json';
-import type { Annotation, Bundle, Line, Occurrence, Rule, Story } from '../scripts/types.js';
+import type { Annotation, Bundle, Line, Occurrence, Rule, Story, Token } from '../scripts/types.js';
 
-export type { Annotation, Line, Occurrence, Rule, Story };
+export type { Annotation, Line, Occurrence, Rule, Story, Token };
 
 const data = bundle as unknown as Bundle;
 

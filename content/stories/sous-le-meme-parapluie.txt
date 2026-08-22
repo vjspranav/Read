@@ -1,0 +1,233 @@
+---
+id: sous-le-meme-parapluie
+title: Sous le même parapluie
+titleEn: Under the same umbrella
+length: one-page
+tone: everyday
+summary: A woman shares a stranger's umbrella one rainy morning, and it turns into a small daily habit.
+---
+
+fr  Léa habite dans une petite rue, à côté d'une boulangerie.
+en  Léa lives on a small street, next to a bakery.
+?   d' | elision-before-vowel
+    «de» would run straight into «une», two vowel sounds with nothing between
+    them, so it drops its own vowel and becomes «d'». You'll see the same move
+    happen to «le» and «la» later in the story.
+=   à | at
+=   d' | of
+
+fr  Chaque matin, elle achète du pain et des croissants avant le travail.
+en  Every morning, she buys bread and croissants before work.
+?   du | partitive-article
+    Léa isn't buying one specific, whole loaf — «pain» is masculine, so «de»
+    plus «le» contracts to «du», and together they mean some bread, an amount
+    with no number attached.
+?   des | partitive-article
+    Same idea for the croissants: an unspecified number of them, so the
+    plural partitive «des» does the job. English just says croissants and
+    leaves the amount implied.
+=   le | the
+
+fr  Elle attend le bus devant la boulangerie.
+en  She waits for the bus in front of the bakery.
+=   le | the
+=   la | the
+
+fr  Il y a toujours un homme au même arrêt, mais elle ne connaît pas son nom.
+en  There's always a man at the same stop, but she doesn't know his name.
+?   il y a | il-y-a-impersonal
+    Nothing here literally means it, there, or has on its own — the three
+    words work as one fixed phrase for there is. It's how the man at the stop
+    gets introduced into the story.
+=   il | it
+=   y | there
+=   même | same
+=   pas | not-2
+=   son | his
+
+fr  Un mardi, il pleuvait depuis le matin.
+en  One Tuesday, it had been raining since morning.
+?   depuis | duration-pendant-depuis
+    «depuis» plus this imparfait form, «pleuvait», says the rain had already
+    been going on before this moment and was still happening then — not one
+    downpour, but weather that was already the backdrop.
+=   il | it
+=   le | the
+
+fr  Léa a couru jusqu'à l'arrêt de bus.
+en  Léa ran to the bus stop.
+?   a couru | imparfait-vs-passe-compose
+    The line before this one set the scene with «pleuvait» — imparfait,
+    ongoing. This verb switches to passé composé because running to the stop
+    is a single, finished action: she started, she arrived, done.
+?   jusqu'à | jusqua
+    «à l'arrêt» alone would just name where she ended up. «jusqu'à» adds the
+    whole distance she covered getting there — she ran the entire way.
+=   à | to
+=   l' | the
+=   de | of
+
+fr  Elle a cherché son parapluie dans son sac, mais il n'était pas là.
+en  She looked for her umbrella in her bag, but it wasn't there.
+?   n'était pas | imparfait-vs-passe-compose
+    Searching her bag, «a cherché», is the event; the umbrella simply not
+    being there is the state she found. That's why the two verbs sit in
+    different tenses in the same sentence.
+?   son sac | possessive-agrees-with-noun
+    Two lines, two different things called «son» — «son parapluie» and now
+    «son sac» — because both «parapluie» and «sac» are masculine words, not
+    because two different people own them. It's always Léa's.
+=   son | his
+=   il | it
+=   était | was
+=   pas | not-2
+
+fr  Elle l'a oublié sur la table de la cuisine.
+en  She'd left it on the kitchen table.
+?   l'a | object-pronoun-before-verb
+    «l'» stands for the umbrella and sits right in front of «a», the helping
+    verb. English puts it after the verb — left it — but French moves it left
+    and keeps it there.
+=   l' | it
+=   la | the
+=   de | of
+
+fr  Le bus n'était pas encore là.
+en  The bus wasn't there yet.
+=   le | the
+=   était | was
+=   pas | not-2
+
+fr  L'homme a levé son parapluie noir au-dessus d'elle.
+en  The man raised his black umbrella above her.
+?   d' | elision-before-vowel
+    «de» meets «elle», another vowel start, and contracts the same way it did
+    in the first line of the story — this time after the compound preposition
+    «au-dessus», above.
+?   au-dessus d'elle | stressed-pronouns
+    After a preposition like «au-dessus de», French needs the standalone
+    pronoun «elle», not a form that hides in front of a verb. It's the same
+    slot «lui» fills after «sans» or «chez».
+=   l' | the
+=   son | his
+=   d' | of
+
+fr  « Vous n'avez pas de parapluie ? » a-t-il demandé.
+en  "You don't have an umbrella?" he asked.
+?   pas de parapluie | de-after-negation
+    Asked as a plain fact, this would be «un parapluie». Once «ne … pas» is
+    in the sentence, the article shrinks to bare «de» — the same drop you'd
+    see in a statement.
+?   a-t-il | euphonic-t-inversion
+    Flipping «il a» to make a question would give «a-il», two vowels
+    colliding. French drops in a «t» that carries no meaning at all — it's
+    only there to make the question sayable.
+=   pas | not-2
+=   de | any
+=   il | he
+
+fr  « Non, je l'ai oublié », a répondu Léa, et elle a ri.
+en  "No, I forgot it," Léa replied, and she laughed.
+?   l'ai | elision-before-vowel
+    «le», standing for the umbrella, meets «ai» and loses its vowel the same
+    way «de» and «que» do elsewhere in the story. Say «le ai» out loud and
+    you'll hear why it can't stay whole.
+=   l' | it
+
+fr  Ils sont restés sous le parapluie jusqu'à l'arrivée du bus.
+en  They stayed under the umbrella until the bus arrived.
+?   sont restés | passe-compose-etre
+    «rester» is one of the small set of verbs that build their past with
+    «être» instead of «avoir». Because the subject is «ils», the participle
+    picks up an «s»: «restés», the way an adjective would.
+?   jusqu'à | jusqua
+    Same word, same job as the first time it appeared: not just where they
+    end up, but the whole stretch of time they stood there, right up to the
+    bus turning up.
+=   le | the
+=   à | to
+=   l' | the
+
+fr  Dans le bus, ils ont parlé pour la première fois.
+en  On the bus, they talked for the first time.
+?   première | adjective-agreement
+    «fois» is feminine, so the ordinal «premier» takes its feminine form,
+    «première», with the extra «e». Say «premier fois» out loud in French and
+    it sounds wrong before you can explain why.
+=   le | the
+=   la | the
+
+fr  Elle a appris qu'il s'appelle Thomas et qu'il travaille près de chez elle.
+en  She learned his name was Thomas, and that he works near her place.
+?   qu' | reported-speech-que | 1
+    English would happily drop that here: she learned he's called Thomas.
+    French can't; «que» has to introduce what she learned, and it shortens to
+    «qu'» because «il» starts with a vowel.
+?   chez elle | chez
+    «chez elle» means at her place, near where she lives — there's no French
+    word that just means home the way English has one, so «chez» plus the
+    person does that job instead.
+=   qu' | that
+=   il | he
+=   s' | himself
+=   de | of
+
+fr  Depuis ce jour, Léa n'oublie plus son parapluie.
+en  Since that day, Léa never forgets her umbrella.
+?   depuis | duration-pendant-depuis
+    That Tuesday marked a starting point, and the habit is still going now,
+    so it's «depuis», not «pendant». If the habit had already ended, French
+    would switch to «pendant ce jour-là».
+?   n'oublie plus | negation-other-pairs
+    «plus» here means not any more, not more — she used to forget it and now
+    she doesn't. Read the sentence with a silent «s» on «plus» and that's the
+    sense you want.
+=   plus | no-more
+=   son | his
+
+fr  Elle en apporte même un deuxième, pour Thomas.
+en  She even brings a second one, for Thomas.
+?   en apporte | pronoun-en
+    «en» stands in for parapluies without naming it again — a second one of
+    them. Leave it out and «elle apporte même un deuxième» is missing a
+    piece; French won't let the sentence stand without it.
+=   en | of-them
+=   même | even
+
+fr  Il ne pleut pas toujours, mais elle l'apporte quand même.
+en  It doesn't always rain, but she brings it anyway.
+?   il | weather-il
+    Same empty «il» as the rain earlier in the story — nothing is doing the
+    raining, the pronoun is just a placeholder the sentence needs to have a
+    subject at all.
+?   ne ... pas | negation-wraps-verb
+    «pleut» is the only verb in the sentence, so that's what the negation
+    wraps — no helping verb here to argue about, unlike the compound tenses
+    earlier in the story.
+=   il | it
+=   pas | not-2
+=   l' | it
+=   même | even
+
+fr  Un matin, Thomas arrive avec deux cafés.
+en  One morning, Thomas arrives with two coffees.
+
+fr  « Pour vous, dit-il, avec ou sans pluie. »
+en  "For you," he says, "rain or not."
+
+fr  Maintenant, ils attendent le bus ensemble, chaque matin.
+en  Now, they wait for the bus together, every morning.
+=   le | the
+
+fr  Et Léa ne rentre plus seule quand il pleut.
+en  And Léa doesn't walk home alone anymore when it rains.
+?   ne rentre plus | negation-other-pairs
+    The same not any more as before, now about walking home alone rather
+    than forgetting an umbrella — the routine that changed is different, but
+    the grammar doing the work is identical.
+?   seule | adjective-agreement
+    «seul» adds an «e» to agree with Léa, who's «elle», not «il». Drop the
+    «e» and the sentence would technically describe a man walking home
+    alone.
+=   plus | no-more
+=   il | it

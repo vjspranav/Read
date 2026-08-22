@@ -127,7 +127,7 @@
             },
             {
               "t": "pleuvait",
-              "g": "rained"
+              "g": "was-raining"
             },
             {
               "t": "encore",
@@ -618,7 +618,7 @@
             },
             {
               "t": "prenait",
-              "g": "took"
+              "g": "was-taking"
             },
             {
               "t": "un",
@@ -655,7 +655,7 @@
             },
             {
               "t": "marchait",
-              "g": "walked"
+              "g": "was-walking"
             },
             {
               "t": "une",
@@ -673,7 +673,7 @@
             {
               "t": "rentrait",
               "after": ".",
-              "g": "came-back"
+              "g": "was-coming-back"
             }
           ],
           "en": "He'd have a coffee across from his old office, walk for an hour, then come home.",
@@ -1005,7 +1005,7 @@
             },
             {
               "t": "pleuvait",
-              "g": "rained"
+              "g": "was-raining"
             },
             {
               "t": "plus",
@@ -1201,7 +1201,7 @@
             {
               "t": "montait",
               "after": ".",
-              "g": "got-on"
+              "g": "was-getting-on"
             }
           ],
           "en": "A woman asked him if he was getting on.",
@@ -1466,7 +1466,7 @@
             },
             {
               "t": "mettait",
-              "g": "put"
+              "g": "was-putting"
             },
             {
               "t": "deux",
@@ -1495,6 +1495,1262 @@
               "to": 4,
               "ruleId": "duration-pendant-depuis",
               "note": "«depuis» plus this form of the verb is how French says something started back then and is still going. English needs a whole scaffolding — she'd been setting out — where French needs one preposition."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sous-le-meme-parapluie",
+      "title": "Sous le même parapluie",
+      "titleEn": "Under the same umbrella",
+      "length": "one-page",
+      "tone": "everyday",
+      "summary": "A woman shares a stranger's umbrella one rainy morning, and it turns into a small daily habit.",
+      "lines": [
+        {
+          "fr": [
+            {
+              "t": "Léa",
+              "g": "Léa"
+            },
+            {
+              "t": "habite",
+              "g": "lives"
+            },
+            {
+              "t": "dans",
+              "g": "in"
+            },
+            {
+              "t": "une",
+              "g": "a"
+            },
+            {
+              "t": "petite",
+              "g": "small"
+            },
+            {
+              "t": "rue",
+              "after": ",",
+              "g": "street"
+            },
+            {
+              "t": "à",
+              "g": "at"
+            },
+            {
+              "t": "côté",
+              "g": "side"
+            },
+            {
+              "t": "d'",
+              "g": "of"
+            },
+            {
+              "t": "une",
+              "g": "a"
+            },
+            {
+              "t": "boulangerie",
+              "after": ".",
+              "g": "bakery"
+            }
+          ],
+          "en": "Léa lives on a small street, next to a bakery.",
+          "notes": [
+            {
+              "from": 8,
+              "to": 8,
+              "ruleId": "elision-before-vowel",
+              "note": "«de» would run straight into «une», two vowel sounds with nothing between them, so it drops its own vowel and becomes «d'». You'll see the same move happen to «le» and «la» later in the story."
+            }
+          ]
+        },
+        {
+          "fr": [
+            {
+              "t": "Chaque",
+              "g": "each"
+            },
+            {
+              "t": "matin",
+              "after": ",",
+              "g": "morning"
+            },
+            {
+              "t": "elle",
+              "g": "she"
+            },
+            {
+              "t": "achète",
+              "g": "buys"
+            },
+            {
+              "t": "du",
+              "g": "of-the"
+            },
+            {
+              "t": "pain",
+              "g": "bread"
+            },
+            {
+              "t": "et",
+              "g": "and"
+            },
+            {
+              "t": "des",
+              "g": "of-the"
+            },
+            {
+              "t": "croissants",
+              "g": "croissants"
+            },
+            {
+              "t": "avant",
+              "g": "before"
+            },
+            {
+              "t": "le",
+              "g": "the"
+            },
+            {
+              "t": "travail",
+              "after": ".",
+              "g": "work"
+            }
+          ],
+          "en": "Every morning, she buys bread and croissants before work.",
+          "notes": [
+            {
+              "from": 4,
+              "to": 4,
+              "ruleId": "partitive-article",
+              "note": "Léa isn't buying one specific, whole loaf — «pain» is masculine, so «de» plus «le» contracts to «du», and together they mean some bread, an amount with no number attached."
+            },
+            {
+              "from": 7,
+              "to": 7,
+              "ruleId": "partitive-article",
+              "note": "Same idea for the croissants: an unspecified number of them, so the plural partitive «des» does the job. English just says croissants and leaves the amount implied."
+            }
+          ]
+        },
+        {
+          "fr": [
+            {
+              "t": "Elle",
+              "g": "she"
+            },
+            {
+              "t": "attend",
+              "g": "waits"
+            },
+            {
+              "t": "le",
+              "g": "the"
+            },
+            {
+              "t": "bus",
+              "g": "bus"
+            },
+            {
+              "t": "devant",
+              "g": "in-front-of"
+            },
+            {
+              "t": "la",
+              "g": "the"
+            },
+            {
+              "t": "boulangerie",
+              "after": ".",
+              "g": "bakery"
+            }
+          ],
+          "en": "She waits for the bus in front of the bakery.",
+          "notes": []
+        },
+        {
+          "fr": [
+            {
+              "t": "Il",
+              "g": "it"
+            },
+            {
+              "t": "y",
+              "g": "there"
+            },
+            {
+              "t": "a",
+              "g": "has"
+            },
+            {
+              "t": "toujours",
+              "g": "always"
+            },
+            {
+              "t": "un",
+              "g": "a"
+            },
+            {
+              "t": "homme",
+              "g": "man"
+            },
+            {
+              "t": "au",
+              "g": "at-the"
+            },
+            {
+              "t": "même",
+              "g": "same"
+            },
+            {
+              "t": "arrêt",
+              "after": ",",
+              "g": "stop"
+            },
+            {
+              "t": "mais",
+              "g": "but"
+            },
+            {
+              "t": "elle",
+              "g": "she"
+            },
+            {
+              "t": "ne",
+              "g": "not-1"
+            },
+            {
+              "t": "connaît",
+              "g": "knows"
+            },
+            {
+              "t": "pas",
+              "g": "not-2"
+            },
+            {
+              "t": "son",
+              "g": "his"
+            },
+            {
+              "t": "nom",
+              "after": ".",
+              "g": "name"
+            }
+          ],
+          "en": "There's always a man at the same stop, but she doesn't know his name.",
+          "notes": [
+            {
+              "from": 0,
+              "to": 2,
+              "ruleId": "il-y-a-impersonal",
+              "note": "Nothing here literally means it, there, or has on its own — the three words work as one fixed phrase for there is. It's how the man at the stop gets introduced into the story."
+            }
+          ]
+        },
+        {
+          "fr": [
+            {
+              "t": "Un",
+              "g": "a"
+            },
+            {
+              "t": "mardi",
+              "after": ",",
+              "g": "Tuesday"
+            },
+            {
+              "t": "il",
+              "g": "it"
+            },
+            {
+              "t": "pleuvait",
+              "g": "was-raining"
+            },
+            {
+              "t": "depuis",
+              "g": "since"
+            },
+            {
+              "t": "le",
+              "g": "the"
+            },
+            {
+              "t": "matin",
+              "after": ".",
+              "g": "morning"
+            }
+          ],
+          "en": "One Tuesday, it had been raining since morning.",
+          "notes": [
+            {
+              "from": 4,
+              "to": 4,
+              "ruleId": "duration-pendant-depuis",
+              "note": "«depuis» plus this imparfait form, «pleuvait», says the rain had already been going on before this moment and was still happening then — not one downpour, but weather that was already the backdrop."
+            }
+          ]
+        },
+        {
+          "fr": [
+            {
+              "t": "Léa",
+              "g": "Léa"
+            },
+            {
+              "t": "a",
+              "g": "has"
+            },
+            {
+              "t": "couru",
+              "g": "ran"
+            },
+            {
+              "t": "jusqu'",
+              "g": "until"
+            },
+            {
+              "t": "à",
+              "g": "to"
+            },
+            {
+              "t": "l'",
+              "g": "the"
+            },
+            {
+              "t": "arrêt",
+              "g": "stop"
+            },
+            {
+              "t": "de",
+              "g": "of"
+            },
+            {
+              "t": "bus",
+              "after": ".",
+              "g": "bus"
+            }
+          ],
+          "en": "Léa ran to the bus stop.",
+          "notes": [
+            {
+              "from": 1,
+              "to": 2,
+              "ruleId": "imparfait-vs-passe-compose",
+              "note": "The line before this one set the scene with «pleuvait» — imparfait, ongoing. This verb switches to passé composé because running to the stop is a single, finished action: she started, she arrived, done."
+            },
+            {
+              "from": 3,
+              "to": 4,
+              "ruleId": "jusqua",
+              "note": "«à l'arrêt» alone would just name where she ended up. «jusqu'à» adds the whole distance she covered getting there — she ran the entire way."
+            }
+          ]
+        },
+        {
+          "fr": [
+            {
+              "t": "Elle",
+              "g": "she"
+            },
+            {
+              "t": "a",
+              "g": "has"
+            },
+            {
+              "t": "cherché",
+              "g": "looked-for"
+            },
+            {
+              "t": "son",
+              "g": "his"
+            },
+            {
+              "t": "parapluie",
+              "g": "umbrella"
+            },
+            {
+              "t": "dans",
+              "g": "in"
+            },
+            {
+              "t": "son",
+              "g": "his"
+            },
+            {
+              "t": "sac",
+              "after": ",",
+              "g": "bag"
+            },
+            {
+              "t": "mais",
+              "g": "but"
+            },
+            {
+              "t": "il",
+              "g": "it"
+            },
+            {
+              "t": "n'",
+              "g": "not-1"
+            },
+            {
+              "t": "était",
+              "g": "was"
+            },
+            {
+              "t": "pas",
+              "g": "not-2"
+            },
+            {
+              "t": "là",
+              "after": ".",
+              "g": "there"
+            }
+          ],
+          "en": "She looked for her umbrella in her bag, but it wasn't there.",
+          "notes": [
+            {
+              "from": 10,
+              "to": 12,
+              "ruleId": "imparfait-vs-passe-compose",
+              "note": "Searching her bag, «a cherché», is the event; the umbrella simply not being there is the state she found. That's why the two verbs sit in different tenses in the same sentence."
+            },
+            {
+              "from": 6,
+              "to": 7,
+              "ruleId": "possessive-agrees-with-noun",
+              "note": "Two lines, two different things called «son» — «son parapluie» and now «son sac» — because both «parapluie» and «sac» are masculine words, not because two different people own them. It's always Léa's."
+            }
+          ]
+        },
+        {
+          "fr": [
+            {
+              "t": "Elle",
+              "g": "she"
+            },
+            {
+              "t": "l'",
+              "g": "it"
+            },
+            {
+              "t": "a",
+              "g": "has"
+            },
+            {
+              "t": "oublié",
+              "g": "forgotten"
+            },
+            {
+              "t": "sur",
+              "g": "on"
+            },
+            {
+              "t": "la",
+              "g": "the"
+            },
+            {
+              "t": "table",
+              "g": "table"
+            },
+            {
+              "t": "de",
+              "g": "of"
+            },
+            {
+              "t": "la",
+              "g": "the"
+            },
+            {
+              "t": "cuisine",
+              "after": ".",
+              "g": "kitchen"
+            }
+          ],
+          "en": "She'd left it on the kitchen table.",
+          "notes": [
+            {
+              "from": 1,
+              "to": 2,
+              "ruleId": "object-pronoun-before-verb",
+              "note": "«l'» stands for the umbrella and sits right in front of «a», the helping verb. English puts it after the verb — left it — but French moves it left and keeps it there."
+            }
+          ]
+        },
+        {
+          "fr": [
+            {
+              "t": "Le",
+              "g": "the"
+            },
+            {
+              "t": "bus",
+              "g": "bus"
+            },
+            {
+              "t": "n'",
+              "g": "not-1"
+            },
+            {
+              "t": "était",
+              "g": "was"
+            },
+            {
+              "t": "pas",
+              "g": "not-2"
+            },
+            {
+              "t": "encore",
+              "g": "still"
+            },
+            {
+              "t": "là",
+              "after": ".",
+              "g": "there"
+            }
+          ],
+          "en": "The bus wasn't there yet.",
+          "notes": []
+        },
+        {
+          "fr": [
+            {
+              "t": "L'",
+              "g": "the"
+            },
+            {
+              "t": "homme",
+              "g": "man"
+            },
+            {
+              "t": "a",
+              "g": "has"
+            },
+            {
+              "t": "levé",
+              "g": "lifted"
+            },
+            {
+              "t": "son",
+              "g": "his"
+            },
+            {
+              "t": "parapluie",
+              "g": "umbrella"
+            },
+            {
+              "t": "noir",
+              "g": "black"
+            },
+            {
+              "t": "au-dessus",
+              "g": "above"
+            },
+            {
+              "t": "d'",
+              "g": "of"
+            },
+            {
+              "t": "elle",
+              "after": ".",
+              "g": "she"
+            }
+          ],
+          "en": "The man raised his black umbrella above her.",
+          "notes": [
+            {
+              "from": 8,
+              "to": 8,
+              "ruleId": "elision-before-vowel",
+              "note": "«de» meets «elle», another vowel start, and contracts the same way it did in the first line of the story — this time after the compound preposition «au-dessus», above."
+            },
+            {
+              "from": 7,
+              "to": 9,
+              "ruleId": "stressed-pronouns",
+              "note": "After a preposition like «au-dessus de», French needs the standalone pronoun «elle», not a form that hides in front of a verb. It's the same slot «lui» fills after «sans» or «chez»."
+            }
+          ]
+        },
+        {
+          "fr": [
+            {
+              "t": "Vous",
+              "before": "«",
+              "g": "you"
+            },
+            {
+              "t": "n'",
+              "g": "not-1"
+            },
+            {
+              "t": "avez",
+              "g": "have"
+            },
+            {
+              "t": "pas",
+              "g": "not-2"
+            },
+            {
+              "t": "de",
+              "g": "any"
+            },
+            {
+              "t": "parapluie",
+              "after": "?»",
+              "g": "umbrella"
+            },
+            {
+              "t": "a",
+              "g": "has"
+            },
+            {
+              "t": "-t-",
+              "g": "linking-t"
+            },
+            {
+              "t": "il",
+              "g": "he"
+            },
+            {
+              "t": "demandé",
+              "after": ".",
+              "g": "asked"
+            }
+          ],
+          "en": "\"You don't have an umbrella?\" he asked.",
+          "notes": [
+            {
+              "from": 3,
+              "to": 5,
+              "ruleId": "de-after-negation",
+              "note": "Asked as a plain fact, this would be «un parapluie». Once «ne … pas» is in the sentence, the article shrinks to bare «de» — the same drop you'd see in a statement."
+            },
+            {
+              "from": 6,
+              "to": 8,
+              "ruleId": "euphonic-t-inversion",
+              "note": "Flipping «il a» to make a question would give «a-il», two vowels colliding. French drops in a «t» that carries no meaning at all — it's only there to make the question sayable."
+            }
+          ]
+        },
+        {
+          "fr": [
+            {
+              "t": "Non",
+              "after": ",",
+              "before": "«",
+              "g": "no"
+            },
+            {
+              "t": "je",
+              "g": "I"
+            },
+            {
+              "t": "l'",
+              "g": "it"
+            },
+            {
+              "t": "ai",
+              "g": "have"
+            },
+            {
+              "t": "oublié",
+              "after": "»,",
+              "g": "forgotten"
+            },
+            {
+              "t": "a",
+              "g": "has"
+            },
+            {
+              "t": "répondu",
+              "g": "replied"
+            },
+            {
+              "t": "Léa",
+              "after": ",",
+              "g": "Léa"
+            },
+            {
+              "t": "et",
+              "g": "and"
+            },
+            {
+              "t": "elle",
+              "g": "she"
+            },
+            {
+              "t": "a",
+              "g": "has"
+            },
+            {
+              "t": "ri",
+              "after": ".",
+              "g": "laughed"
+            }
+          ],
+          "en": "\"No, I forgot it,\" Léa replied, and she laughed.",
+          "notes": [
+            {
+              "from": 2,
+              "to": 3,
+              "ruleId": "elision-before-vowel",
+              "note": "«le», standing for the umbrella, meets «ai» and loses its vowel the same way «de» and «que» do elsewhere in the story. Say «le ai» out loud and you'll hear why it can't stay whole."
+            }
+          ]
+        },
+        {
+          "fr": [
+            {
+              "t": "Ils",
+              "g": "they"
+            },
+            {
+              "t": "sont",
+              "g": "are"
+            },
+            {
+              "t": "restés",
+              "g": "stayed"
+            },
+            {
+              "t": "sous",
+              "g": "under"
+            },
+            {
+              "t": "le",
+              "g": "the"
+            },
+            {
+              "t": "parapluie",
+              "g": "umbrella"
+            },
+            {
+              "t": "jusqu'",
+              "g": "until"
+            },
+            {
+              "t": "à",
+              "g": "to"
+            },
+            {
+              "t": "l'",
+              "g": "the"
+            },
+            {
+              "t": "arrivée",
+              "g": "arrival"
+            },
+            {
+              "t": "du",
+              "g": "of-the"
+            },
+            {
+              "t": "bus",
+              "after": ".",
+              "g": "bus"
+            }
+          ],
+          "en": "They stayed under the umbrella until the bus arrived.",
+          "notes": [
+            {
+              "from": 1,
+              "to": 2,
+              "ruleId": "passe-compose-etre",
+              "note": "«rester» is one of the small set of verbs that build their past with «être» instead of «avoir». Because the subject is «ils», the participle picks up an «s»: «restés», the way an adjective would."
+            },
+            {
+              "from": 6,
+              "to": 7,
+              "ruleId": "jusqua",
+              "note": "Same word, same job as the first time it appeared: not just where they end up, but the whole stretch of time they stood there, right up to the bus turning up."
+            }
+          ]
+        },
+        {
+          "fr": [
+            {
+              "t": "Dans",
+              "g": "in"
+            },
+            {
+              "t": "le",
+              "g": "the"
+            },
+            {
+              "t": "bus",
+              "after": ",",
+              "g": "bus"
+            },
+            {
+              "t": "ils",
+              "g": "they"
+            },
+            {
+              "t": "ont",
+              "g": "have"
+            },
+            {
+              "t": "parlé",
+              "g": "talked"
+            },
+            {
+              "t": "pour",
+              "g": "for"
+            },
+            {
+              "t": "la",
+              "g": "the"
+            },
+            {
+              "t": "première",
+              "g": "first"
+            },
+            {
+              "t": "fois",
+              "after": ".",
+              "g": "time"
+            }
+          ],
+          "en": "On the bus, they talked for the first time.",
+          "notes": [
+            {
+              "from": 8,
+              "to": 8,
+              "ruleId": "adjective-agreement",
+              "note": "«fois» is feminine, so the ordinal «premier» takes its feminine form, «première», with the extra «e». Say «premier fois» out loud in French and it sounds wrong before you can explain why."
+            }
+          ]
+        },
+        {
+          "fr": [
+            {
+              "t": "Elle",
+              "g": "she"
+            },
+            {
+              "t": "a",
+              "g": "has"
+            },
+            {
+              "t": "appris",
+              "g": "learned"
+            },
+            {
+              "t": "qu'",
+              "g": "that"
+            },
+            {
+              "t": "il",
+              "g": "he"
+            },
+            {
+              "t": "s'",
+              "g": "himself"
+            },
+            {
+              "t": "appelle",
+              "g": "calls"
+            },
+            {
+              "t": "Thomas",
+              "g": "Thomas"
+            },
+            {
+              "t": "et",
+              "g": "and"
+            },
+            {
+              "t": "qu'",
+              "g": "that"
+            },
+            {
+              "t": "il",
+              "g": "he"
+            },
+            {
+              "t": "travaille",
+              "g": "works"
+            },
+            {
+              "t": "près",
+              "g": "near"
+            },
+            {
+              "t": "de",
+              "g": "of"
+            },
+            {
+              "t": "chez",
+              "g": "at-home-of"
+            },
+            {
+              "t": "elle",
+              "after": ".",
+              "g": "she"
+            }
+          ],
+          "en": "She learned his name was Thomas, and that he works near her place.",
+          "notes": [
+            {
+              "from": 3,
+              "to": 3,
+              "ruleId": "reported-speech-que",
+              "note": "English would happily drop that here: she learned he's called Thomas. French can't; «que» has to introduce what she learned, and it shortens to «qu'» because «il» starts with a vowel."
+            },
+            {
+              "from": 14,
+              "to": 15,
+              "ruleId": "chez",
+              "note": "«chez elle» means at her place, near where she lives — there's no French word that just means home the way English has one, so «chez» plus the person does that job instead."
+            }
+          ]
+        },
+        {
+          "fr": [
+            {
+              "t": "Depuis",
+              "g": "since"
+            },
+            {
+              "t": "ce",
+              "g": "this"
+            },
+            {
+              "t": "jour",
+              "after": ",",
+              "g": "day"
+            },
+            {
+              "t": "Léa",
+              "g": "Léa"
+            },
+            {
+              "t": "n'",
+              "g": "not-1"
+            },
+            {
+              "t": "oublie",
+              "g": "forgets"
+            },
+            {
+              "t": "plus",
+              "g": "no-more"
+            },
+            {
+              "t": "son",
+              "g": "his"
+            },
+            {
+              "t": "parapluie",
+              "after": ".",
+              "g": "umbrella"
+            }
+          ],
+          "en": "Since that day, Léa never forgets her umbrella.",
+          "notes": [
+            {
+              "from": 0,
+              "to": 0,
+              "ruleId": "duration-pendant-depuis",
+              "note": "That Tuesday marked a starting point, and the habit is still going now, so it's «depuis», not «pendant». If the habit had already ended, French would switch to «pendant ce jour-là»."
+            },
+            {
+              "from": 4,
+              "to": 6,
+              "ruleId": "negation-other-pairs",
+              "note": "«plus» here means not any more, not more — she used to forget it and now she doesn't. Read the sentence with a silent «s» on «plus» and that's the sense you want."
+            }
+          ]
+        },
+        {
+          "fr": [
+            {
+              "t": "Elle",
+              "g": "she"
+            },
+            {
+              "t": "en",
+              "g": "of-them"
+            },
+            {
+              "t": "apporte",
+              "g": "brings"
+            },
+            {
+              "t": "même",
+              "g": "even"
+            },
+            {
+              "t": "un",
+              "g": "a"
+            },
+            {
+              "t": "deuxième",
+              "after": ",",
+              "g": "second"
+            },
+            {
+              "t": "pour",
+              "g": "for"
+            },
+            {
+              "t": "Thomas",
+              "after": ".",
+              "g": "Thomas"
+            }
+          ],
+          "en": "She even brings a second one, for Thomas.",
+          "notes": [
+            {
+              "from": 1,
+              "to": 2,
+              "ruleId": "pronoun-en",
+              "note": "«en» stands in for parapluies without naming it again — a second one of them. Leave it out and «elle apporte même un deuxième» is missing a piece; French won't let the sentence stand without it."
+            }
+          ]
+        },
+        {
+          "fr": [
+            {
+              "t": "Il",
+              "g": "it"
+            },
+            {
+              "t": "ne",
+              "g": "not-1"
+            },
+            {
+              "t": "pleut",
+              "g": "rains"
+            },
+            {
+              "t": "pas",
+              "g": "not-2"
+            },
+            {
+              "t": "toujours",
+              "after": ",",
+              "g": "always"
+            },
+            {
+              "t": "mais",
+              "g": "but"
+            },
+            {
+              "t": "elle",
+              "g": "she"
+            },
+            {
+              "t": "l'",
+              "g": "it"
+            },
+            {
+              "t": "apporte",
+              "g": "brings"
+            },
+            {
+              "t": "quand",
+              "g": "when"
+            },
+            {
+              "t": "même",
+              "after": ".",
+              "g": "even"
+            }
+          ],
+          "en": "It doesn't always rain, but she brings it anyway.",
+          "notes": [
+            {
+              "from": 0,
+              "to": 0,
+              "ruleId": "weather-il",
+              "note": "Same empty «il» as the rain earlier in the story — nothing is doing the raining, the pronoun is just a placeholder the sentence needs to have a subject at all."
+            },
+            {
+              "from": 1,
+              "to": 3,
+              "ruleId": "negation-wraps-verb",
+              "note": "«pleut» is the only verb in the sentence, so that's what the negation wraps — no helping verb here to argue about, unlike the compound tenses earlier in the story."
+            }
+          ]
+        },
+        {
+          "fr": [
+            {
+              "t": "Un",
+              "g": "a"
+            },
+            {
+              "t": "matin",
+              "after": ",",
+              "g": "morning"
+            },
+            {
+              "t": "Thomas",
+              "g": "Thomas"
+            },
+            {
+              "t": "arrive",
+              "g": "arrives"
+            },
+            {
+              "t": "avec",
+              "g": "with"
+            },
+            {
+              "t": "deux",
+              "g": "two"
+            },
+            {
+              "t": "cafés",
+              "after": ".",
+              "g": "coffees"
+            }
+          ],
+          "en": "One morning, Thomas arrives with two coffees.",
+          "notes": []
+        },
+        {
+          "fr": [
+            {
+              "t": "Pour",
+              "before": "«",
+              "g": "for"
+            },
+            {
+              "t": "vous",
+              "after": ",",
+              "g": "you"
+            },
+            {
+              "t": "dit",
+              "g": "said"
+            },
+            {
+              "t": "-il",
+              "after": ",",
+              "g": "he"
+            },
+            {
+              "t": "avec",
+              "g": "with"
+            },
+            {
+              "t": "ou",
+              "g": "or"
+            },
+            {
+              "t": "sans",
+              "g": "without"
+            },
+            {
+              "t": "pluie",
+              "after": ".»",
+              "g": "rain"
+            }
+          ],
+          "en": "\"For you,\" he says, \"rain or not.\"",
+          "notes": []
+        },
+        {
+          "fr": [
+            {
+              "t": "Maintenant",
+              "after": ",",
+              "g": "now"
+            },
+            {
+              "t": "ils",
+              "g": "they"
+            },
+            {
+              "t": "attendent",
+              "g": "wait"
+            },
+            {
+              "t": "le",
+              "g": "the"
+            },
+            {
+              "t": "bus",
+              "g": "bus"
+            },
+            {
+              "t": "ensemble",
+              "after": ",",
+              "g": "together"
+            },
+            {
+              "t": "chaque",
+              "g": "each"
+            },
+            {
+              "t": "matin",
+              "after": ".",
+              "g": "morning"
+            }
+          ],
+          "en": "Now, they wait for the bus together, every morning.",
+          "notes": []
+        },
+        {
+          "fr": [
+            {
+              "t": "Et",
+              "g": "and"
+            },
+            {
+              "t": "Léa",
+              "g": "Léa"
+            },
+            {
+              "t": "ne",
+              "g": "not-1"
+            },
+            {
+              "t": "rentre",
+              "g": "comes-back"
+            },
+            {
+              "t": "plus",
+              "g": "no-more"
+            },
+            {
+              "t": "seule",
+              "g": "alone"
+            },
+            {
+              "t": "quand",
+              "g": "when"
+            },
+            {
+              "t": "il",
+              "g": "it"
+            },
+            {
+              "t": "pleut",
+              "after": ".",
+              "g": "rains"
+            }
+          ],
+          "en": "And Léa doesn't walk home alone anymore when it rains.",
+          "notes": [
+            {
+              "from": 2,
+              "to": 4,
+              "ruleId": "negation-other-pairs",
+              "note": "The same not any more as before, now about walking home alone rather than forgetting an umbrella — the routine that changed is different, but the grammar doing the work is identical."
+            },
+            {
+              "from": 5,
+              "to": 5,
+              "ruleId": "adjective-agreement",
+              "note": "«seul» adds an «e» to agree with Léa, who's «elle», not «il». Drop the «e» and the sentence would technically describe a man walking home alone."
             }
           ]
         }
@@ -1575,6 +2831,12 @@
       "body": "«si» meaning if keeps its vowel almost everywhere. The single exception is in\nfront of «il» and «ils».\n\n- Elle demanda **s'il** montait. — if he was getting on.\n- Elle demanda **s'ils** montaient. — if they were.\n- But: **si elle** montait, **si on** partait, **si un** train arrivait.\n\nBecause of this, «s'il» looks identical to the «s'» of «s'arrêter» and is a\ncompletely different word. Check what follows: a pronoun subject means «if»."
     },
     {
+      "id": "euphonic-t-inversion",
+      "name": "The extra «-t-» that stops two vowels colliding",
+      "category": "verbs",
+      "body": "To ask a question, French can flip the verb and its subject: «il a» becomes\n«a-t-il». «a» and «il» are both vowel sounds, and saying them back to back is\nawkward, so a «t» gets inserted between them purely for the sound. It doesn't\nmean anything on its own — it's only there to make the question sayable.\n\n- Il **a** un parapluie. → **A-t-il** un parapluie ? — never «a-il».\n- Elle **arrive**. → **Arrive-t-elle** demain ?\n- Il **dit** vrai. → **Dit-il** vrai ? — «dit» already ends on a consonant\n  sound, so no extra «-t-» is needed.\n\nYou only see this «-t-» after a verb form that ends in a vowel, like «-e» or\n«-a». Once the verb already ends in a consonant, like «dit» or «part», the\nsubject just attaches directly."
+    },
+    {
       "id": "faire-expressions",
       "name": "«faire» does the work of many English verbs",
       "category": "verbs",
@@ -1585,6 +2847,12 @@
       "name": "«il y a» — there is, there are",
       "category": "verbs",
       "body": "Three words that only mean anything together. Word for word it's \"it there\nhas\", which is no help; take it as one block meaning there is or there are.\n\n- **Il y a** deux tasses sur la table. — There are two cups.\n- **Il y avait** plus personne. — There was no one left.\n- **Il y a** trois ans — three years ago. Same phrase, time meaning.\n\nIt never becomes plural — «il y a deux tasses», never «ils y ont». Only the\ntense of «avoir» changes: il y avait, il y aura, il y a eu."
+    },
+    {
+      "id": "imparfait-vs-passe-compose",
+      "name": "Imparfait or passé composé — background versus event",
+      "category": "verbs",
+      "body": "Both describe the past, and in speech that's the choice most people actually\nhave to make. The imparfait (**-ait**, **-aient**) paints the scene: what was\ngoing on, what was already true. The passé composé (**avoir**/**être** plus a\nparticiple) is the thing that happened — one event, with a start and a finish.\n\n- Il **pleuvait** depuis le matin. Léa **a couru** jusqu'à l'arrêt. — The rain\n  is the backdrop; the running is the thing that happened.\n- Le bus **n'était pas** encore là. — Still the backdrop: a state, not an\n  event.\n- Elle **a cherché** son parapluie, mais il **n'était pas** là. — One search\n  (event) inside one unchanging fact (state).\n\nAsk yourself: is this the picture, or is this the next thing that happened?\nThe picture takes imparfait; the next thing takes passé composé."
     },
     {
       "id": "imparfait-vs-passe-simple",
@@ -1621,6 +2889,18 @@
       "name": "Object pronouns go in front of the verb",
       "category": "pronouns",
       "body": "Replace a noun with a pronoun and it moves to the left, in front of the verb\ngroup. English keeps it after the verb; French almost never does.\n\n- Elle ne **lui** avait jamais posé de questions. — asked **him**.\n- Je **le** vois. — I see **him**.\n- Il **nous** a écrit. — He wrote to **us**.\n\nIn a compound tense it lands before the helper, not before the participle:\n«il **l'**a vu», never «il a **l'**vu». The one place it goes after the verb is\na positive command: «regarde-**moi**»."
+    },
+    {
+      "id": "partitive-article",
+      "name": "«du», «de la», «des» — some, without saying how much",
+      "category": "articles",
+      "body": "When you're talking about part of something rather than a whole, specific\nobject, French doesn't leave the noun bare — it puts a small word in front\nmeaning roughly \"some\", even in places English drops it entirely.\n\n- Elle achète **du** pain. — She buys (some) bread. «pain» is masculine, so\n  «de» plus «le» contracts to «du».\n- Elle achète **de la** confiture. — Some jam. «confiture» is feminine, so\n  «de la» stays whole.\n- Elle achète **des** croissants. — Some croissants. Plural always takes\n  «des», whatever the gender.\n\nEnglish can say \"bread\" and mean some bread. French can't leave the noun on\nits own like that — one of «du», «de la», «des» has to be there."
+    },
+    {
+      "id": "passe-compose-etre",
+      "name": "A handful of verbs build their past with «être», not «avoir»",
+      "category": "verbs",
+      "body": "Most verbs use «avoir» to build the passé composé. A small set of verbs —\nmostly about movement or a change of state, like «aller», «arriver»,\n«partir», «rester», «venir» — use «être» instead. When «être» is the helper,\nthe past participle agrees with the subject, the way an adjective does.\n\n- Ils **sont restés** sous le parapluie. — «restés» because the subject,\n  «ils», is plural.\n- Elle **est arrivée** à l'heure. — «arrivée» gets an «e» because «elle» is\n  feminine.\n- Il **a couru**. — «courir» isn't in this set, so it keeps «avoir» and the\n  participle never changes shape.\n\nReflexive verbs — the ones with «se» — always use «être» too, and agree the\nsame way."
     },
     {
       "id": "passe-simple-in-stories",
@@ -1949,6 +3229,195 @@
       "storyTitle": "Le train de 7h12",
       "lineIndex": 27,
       "span": "depuis"
+    },
+    {
+      "ruleId": "elision-before-vowel",
+      "storyId": "sous-le-meme-parapluie",
+      "storyTitle": "Sous le même parapluie",
+      "lineIndex": 0,
+      "span": "d'"
+    },
+    {
+      "ruleId": "partitive-article",
+      "storyId": "sous-le-meme-parapluie",
+      "storyTitle": "Sous le même parapluie",
+      "lineIndex": 1,
+      "span": "du"
+    },
+    {
+      "ruleId": "partitive-article",
+      "storyId": "sous-le-meme-parapluie",
+      "storyTitle": "Sous le même parapluie",
+      "lineIndex": 1,
+      "span": "des"
+    },
+    {
+      "ruleId": "il-y-a-impersonal",
+      "storyId": "sous-le-meme-parapluie",
+      "storyTitle": "Sous le même parapluie",
+      "lineIndex": 3,
+      "span": "Il y a"
+    },
+    {
+      "ruleId": "duration-pendant-depuis",
+      "storyId": "sous-le-meme-parapluie",
+      "storyTitle": "Sous le même parapluie",
+      "lineIndex": 4,
+      "span": "depuis"
+    },
+    {
+      "ruleId": "imparfait-vs-passe-compose",
+      "storyId": "sous-le-meme-parapluie",
+      "storyTitle": "Sous le même parapluie",
+      "lineIndex": 5,
+      "span": "a couru"
+    },
+    {
+      "ruleId": "jusqua",
+      "storyId": "sous-le-meme-parapluie",
+      "storyTitle": "Sous le même parapluie",
+      "lineIndex": 5,
+      "span": "jusqu' à"
+    },
+    {
+      "ruleId": "imparfait-vs-passe-compose",
+      "storyId": "sous-le-meme-parapluie",
+      "storyTitle": "Sous le même parapluie",
+      "lineIndex": 6,
+      "span": "n' était pas"
+    },
+    {
+      "ruleId": "possessive-agrees-with-noun",
+      "storyId": "sous-le-meme-parapluie",
+      "storyTitle": "Sous le même parapluie",
+      "lineIndex": 6,
+      "span": "son sac"
+    },
+    {
+      "ruleId": "object-pronoun-before-verb",
+      "storyId": "sous-le-meme-parapluie",
+      "storyTitle": "Sous le même parapluie",
+      "lineIndex": 7,
+      "span": "l' a"
+    },
+    {
+      "ruleId": "elision-before-vowel",
+      "storyId": "sous-le-meme-parapluie",
+      "storyTitle": "Sous le même parapluie",
+      "lineIndex": 9,
+      "span": "d'"
+    },
+    {
+      "ruleId": "stressed-pronouns",
+      "storyId": "sous-le-meme-parapluie",
+      "storyTitle": "Sous le même parapluie",
+      "lineIndex": 9,
+      "span": "au-dessus d' elle"
+    },
+    {
+      "ruleId": "de-after-negation",
+      "storyId": "sous-le-meme-parapluie",
+      "storyTitle": "Sous le même parapluie",
+      "lineIndex": 10,
+      "span": "pas de parapluie"
+    },
+    {
+      "ruleId": "euphonic-t-inversion",
+      "storyId": "sous-le-meme-parapluie",
+      "storyTitle": "Sous le même parapluie",
+      "lineIndex": 10,
+      "span": "a -t- il"
+    },
+    {
+      "ruleId": "elision-before-vowel",
+      "storyId": "sous-le-meme-parapluie",
+      "storyTitle": "Sous le même parapluie",
+      "lineIndex": 11,
+      "span": "l' ai"
+    },
+    {
+      "ruleId": "passe-compose-etre",
+      "storyId": "sous-le-meme-parapluie",
+      "storyTitle": "Sous le même parapluie",
+      "lineIndex": 12,
+      "span": "sont restés"
+    },
+    {
+      "ruleId": "jusqua",
+      "storyId": "sous-le-meme-parapluie",
+      "storyTitle": "Sous le même parapluie",
+      "lineIndex": 12,
+      "span": "jusqu' à"
+    },
+    {
+      "ruleId": "adjective-agreement",
+      "storyId": "sous-le-meme-parapluie",
+      "storyTitle": "Sous le même parapluie",
+      "lineIndex": 13,
+      "span": "première"
+    },
+    {
+      "ruleId": "reported-speech-que",
+      "storyId": "sous-le-meme-parapluie",
+      "storyTitle": "Sous le même parapluie",
+      "lineIndex": 14,
+      "span": "qu'"
+    },
+    {
+      "ruleId": "chez",
+      "storyId": "sous-le-meme-parapluie",
+      "storyTitle": "Sous le même parapluie",
+      "lineIndex": 14,
+      "span": "chez elle"
+    },
+    {
+      "ruleId": "duration-pendant-depuis",
+      "storyId": "sous-le-meme-parapluie",
+      "storyTitle": "Sous le même parapluie",
+      "lineIndex": 15,
+      "span": "Depuis"
+    },
+    {
+      "ruleId": "negation-other-pairs",
+      "storyId": "sous-le-meme-parapluie",
+      "storyTitle": "Sous le même parapluie",
+      "lineIndex": 15,
+      "span": "n' oublie plus"
+    },
+    {
+      "ruleId": "pronoun-en",
+      "storyId": "sous-le-meme-parapluie",
+      "storyTitle": "Sous le même parapluie",
+      "lineIndex": 16,
+      "span": "en apporte"
+    },
+    {
+      "ruleId": "weather-il",
+      "storyId": "sous-le-meme-parapluie",
+      "storyTitle": "Sous le même parapluie",
+      "lineIndex": 17,
+      "span": "Il"
+    },
+    {
+      "ruleId": "negation-wraps-verb",
+      "storyId": "sous-le-meme-parapluie",
+      "storyTitle": "Sous le même parapluie",
+      "lineIndex": 17,
+      "span": "ne pleut pas"
+    },
+    {
+      "ruleId": "negation-other-pairs",
+      "storyId": "sous-le-meme-parapluie",
+      "storyTitle": "Sous le même parapluie",
+      "lineIndex": 21,
+      "span": "ne rentre plus"
+    },
+    {
+      "ruleId": "adjective-agreement",
+      "storyId": "sous-le-meme-parapluie",
+      "storyTitle": "Sous le même parapluie",
+      "lineIndex": 21,
+      "span": "seule"
     }
   ]
 }

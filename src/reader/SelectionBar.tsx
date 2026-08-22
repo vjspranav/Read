@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useLayoutEffect, useState } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 
 interface Pos { left: number; top: number; }
 interface Props { anchor: string; onWhy: () => void; onListen: () => void; }
@@ -16,6 +16,7 @@ const same = (a: Pos | null, b: Pos | null) =>
  */
 export function SelectionBar({ anchor, onWhy, onListen }: Props) {
   const [pos, setPos] = useState<Pos | null>(null);
+  const barRef = useRef<HTMLDivElement>(null);
 
   const place = useCallback(() => {
     const marks = document.querySelectorAll('.f.sel');
@@ -27,9 +28,12 @@ export function SelectionBar({ anchor, onWhy, onListen }: Props) {
       left = Math.min(left, r.left); right = Math.max(right, r.right); top = Math.min(top, r.top);
     });
 
-    const margin = 78;
+    // The bar is centred on `left`, so half of it hangs either side. Clamp
+    // with its real width so it can never run off a narrow screen.
+    const half = (barRef.current?.offsetWidth ?? 150) / 2;
+    const edge = 8;
     const next: Pos = {
-      left: Math.max(margin, Math.min(window.innerWidth - margin, (left + right) / 2)),
+      left: Math.max(half + edge, Math.min(window.innerWidth - half - edge, (left + right) / 2)),
       // Above the words, unless that would run off the top — then below.
       top: top > 96 ? top - 46 : top + 38,
     };
@@ -47,10 +51,19 @@ export function SelectionBar({ anchor, onWhy, onListen }: Props) {
     };
   }, [place]);
 
-  if (!pos) return null;
-
+  // Rendered even before it is positioned, but hidden: the clamp needs the
+  // bar's real width, and the width only exists once it is in the document.
   return (
-    <div className="actionbar" style={{ left: pos.left, top: pos.top }} onClick={(e) => e.stopPropagation()}>
+    <div
+      className="actionbar"
+      ref={barRef}
+      style={{
+        left: pos?.left ?? 0,
+        top: pos?.top ?? 0,
+        visibility: pos ? 'visible' : 'hidden',
+      }}
+      onClick={(e) => e.stopPropagation()}
+    >
       <button onClick={onWhy}>
         <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
           <circle cx="8" cy="8" r="6.5" /><path d="M6.2 6.1a1.9 1.9 0 1 1 2.4 1.85c-.4.12-.6.4-.6.8v.35" />

@@ -56,7 +56,7 @@ export function Reader() {
   const selLine = sel ? story.lines[sel.line] : null;
 
   return (
-    <div className="shell" onClick={() => { clear(); }}>
+    <div className={`shell${why ? ' panel-open' : ''}`} onClick={() => { clear(); }}>
       <div className="topbar">
         <Link className="ic" to="/stories" aria-label="All stories">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.4">
