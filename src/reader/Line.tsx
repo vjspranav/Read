@@ -1,3 +1,4 @@
+import type React from 'react';
 import type { Line as LineData, Token } from '../content.js';
 
 interface Props {
@@ -8,6 +9,7 @@ interface Props {
   isSelected: (i: number) => boolean;
   onTapWord: (i: number) => void;
   onTapLine: () => void;
+  onKey: (e: React.KeyboardEvent) => void;
 }
 
 /**
@@ -35,9 +37,17 @@ export function punctAfter(after: string): string {
 }
 
 /** One French line, with its gloss and translation underneath. */
-export function Line({ line, index, revealed, annotated, isSelected, onTapWord, onTapLine }: Props) {
+export function Line({ line, index, revealed, annotated, isSelected, onTapWord, onTapLine, onKey }: Props) {
   return (
-    <div className={`line${revealed ? ' on' : ''}`} data-line={index} onClick={onTapLine}>
+    <div
+      className={`line${revealed ? ' on' : ''}`}
+      data-line={index}
+      onClick={onTapLine}
+      onKeyDown={onKey}
+      tabIndex={0}
+      role="group"
+      aria-label={`Line ${index + 1}. ${line.en}`}
+    >
       <div className="fr">
         {line.fr.map((tok, i) => (
           <span className="w" key={i} data-tok={i}>
@@ -48,6 +58,9 @@ export function Line({ line, index, revealed, annotated, isSelected, onTapWord, 
             <span
               className={`f${annotated.has(i) ? ' ann' : ''}${isSelected(i) ? ' sel' : ''}`}
               onClick={(e) => { e.stopPropagation(); onTapWord(i); }}
+              role="button"
+              aria-pressed={isSelected(i)}
+              aria-label={tok.g ? `${tok.t}, ${tok.g}` : tok.t}
             >
               {tok.t}
             </span>

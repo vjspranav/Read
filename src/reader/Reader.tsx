@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
+import type React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { getStory, lineText, spanText } from '../content.js';
 import { SIZES, useSettings } from '../settings/useSettings.js';
@@ -16,7 +17,7 @@ export function Reader() {
   const story = id ? getStory(id) : undefined;
 
   const { settings, set } = useSettings();
-  const { sel, tap, clear, has } = useSelection();
+  const { sel, tap, clear, has, setSel } = useSelection();
   const [why, setWhy] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [tapped, setTapped] = useState<Set<number>>(new Set());
@@ -96,6 +97,36 @@ export function Reader() {
 
   const selLine = sel ? story.lines[sel.line] : null;
 
+  /**
+   * Keyboard equivalent of tapping.
+   *
+   *   Tab            move between lines
+   *   Enter / Space  reveal the translation, or open Why when words are selected
+   *   ← →            move the word selection; hold Shift to extend it
+   *   Escape         clear the selection
+   */
+  const onKey = (li: number) => (e: React.KeyboardEvent) => {
+    const last = story.lines[li].fr.length - 1;
+    const on = sel && sel.line === li ? sel : null;
+
+    if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+      e.preventDefault();
+      const step = e.key === 'ArrowRight' ? 1 : -1;
+      if (!on) { setSel({ line: li, from: 0, to: 0 }); return; }
+      const edge = Math.min(last, Math.max(0, (step > 0 ? on.to : on.from) + step));
+      setSel(e.shiftKey
+        ? { line: li, from: Math.min(on.from, edge), to: Math.max(on.to, edge) }
+        : { line: li, from: edge, to: edge });
+      return;
+    }
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      if (on) setWhy(true); else toggleLine(li);
+      return;
+    }
+    if (e.key === 'Escape' && on) { e.preventDefault(); clear(); }
+  };
+
   return (
     <div className={`shell${why ? ' panel-open' : ''}`} onClick={() => { clear(); }}>
       <div className="topbar">
@@ -162,6 +193,7 @@ export function Reader() {
               isSelected={(t) => has(i, t)}
               onTapWord={(t) => tap(i, t)}
               onTapLine={() => toggleLine(i)}
+              onKey={onKey(i)}
             />
           ))}
         </div>

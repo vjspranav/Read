@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { countFor, getRule, matchNotes, spanText, type Line, type Story } from '../content.js';
 
@@ -45,6 +46,16 @@ export function WhyPanel({ story, line, lineIndex, from, to, onClose }: Props) {
   const selected = line.fr.slice(from, to + 1);
   const phrase = spanText(line, from, to);
 
+  const sheetRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const esc = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
+    document.addEventListener('keydown', esc);
+    // Move focus into the panel so a keyboard reader lands on the answer.
+    sheetRef.current?.focus();
+    return () => document.removeEventListener('keydown', esc);
+  }, [onClose]);
+
   const issue =
     `${ISSUE_BASE}?title=${encodeURIComponent(`Why: « ${phrase} »`)}` +
     `&body=${encodeURIComponent(
@@ -54,8 +65,21 @@ export function WhyPanel({ story, line, lineIndex, from, to, onClose }: Props) {
   return (
     <>
       <div className="scrim" onClick={onClose} />
-      <div className="sheet" role="dialog" aria-label="Why is it written this way">
+      <div
+        className="sheet"
+        role="dialog"
+        aria-modal="true"
+        aria-label={`Why « ${phrase} » is written this way`}
+        ref={sheetRef}
+        tabIndex={-1}
+      >
         <div className="grab" />
+        <button className="sheetclose" onClick={onClose} aria-label="Close">
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor"
+            strokeWidth="1.5" strokeLinecap="round" aria-hidden="true">
+            <path d="M4 4l8 8M12 4l-8 8" />
+          </svg>
+        </button>
 
         {/* 1 — the selection, glossed word by word */}
         <div className="selstrip">

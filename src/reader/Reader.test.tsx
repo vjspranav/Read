@@ -132,3 +132,98 @@ describe('the reader', () => {
     expect(glosses.slice(0, 4)).toEqual(['the', 'old', 'man', 'closed']);
   });
 });
+
+describe('using the reader without a mouse', () => {
+  const focusLine = async (container: HTMLElement, i = 0) => {
+    const line = container.querySelectorAll('.line')[i] as HTMLElement;
+    line.focus();
+    return line;
+  };
+
+  it('lines are reachable by keyboard', async () => {
+    const { container } = open();
+    const line = await focusLine(container);
+    expect(line).toHaveAttribute('tabIndex', '0');
+    expect(document.activeElement).toBe(line);
+  });
+
+  it('Enter reveals the translation', async () => {
+    const u = userEvent.setup();
+    const { container } = open();
+    const line = await focusLine(container);
+    expect(line).not.toHaveClass('on');
+    await u.keyboard('{Enter}');
+    expect(line).toHaveClass('on');
+  });
+
+  it('arrow keys select and move a word', async () => {
+    const u = userEvent.setup();
+    const { container } = open();
+    await focusLine(container);
+    await u.keyboard('{ArrowRight}');
+    expect(container.querySelectorAll('.f.sel')).toHaveLength(1);
+    await u.keyboard('{ArrowRight}');
+    expect(container.querySelectorAll('.f.sel')).toHaveLength(1);   // moved, not grown
+  });
+
+  it('Shift with an arrow extends the selection', async () => {
+    const u = userEvent.setup();
+    const { container } = open();
+    await focusLine(container);
+    await u.keyboard('{ArrowRight}');
+    await u.keyboard('{Shift>}{ArrowRight}{ArrowRight}{/Shift}');
+    expect(container.querySelectorAll('.f.sel')).toHaveLength(3);
+  });
+
+  it('Enter opens Why once words are selected, instead of revealing', async () => {
+    const u = userEvent.setup();
+    const { container } = open();
+    await focusLine(container);
+    await u.keyboard('{ArrowRight}{Enter}');
+    expect(container.querySelector('.sheet')).toBeTruthy();
+  });
+
+  it('Escape clears the selection', async () => {
+    const u = userEvent.setup();
+    const { container } = open();
+    await focusLine(container);
+    await u.keyboard('{ArrowRight}');
+    expect(container.querySelectorAll('.f.sel')).toHaveLength(1);
+    await u.keyboard('{Escape}');
+    expect(container.querySelectorAll('.f.sel')).toHaveLength(0);
+  });
+
+  it('Escape closes the Why panel', async () => {
+    const u = userEvent.setup();
+    const { container } = open();
+    await focusLine(container);
+    await u.keyboard('{ArrowRight}{Enter}');
+    expect(container.querySelector('.sheet')).toBeTruthy();
+    await u.keyboard('{Escape}');
+    expect(container.querySelector('.sheet')).toBeNull();
+  });
+
+  it('the panel has a close button and announces what it is about', async () => {
+    const u = userEvent.setup();
+    const { container } = open();
+    await focusLine(container);
+    await u.keyboard('{ArrowRight}{Enter}');
+    const sheet = container.querySelector('.sheet')!;
+    expect(sheet).toHaveAttribute('role', 'dialog');
+    expect(sheet.getAttribute('aria-label')).toMatch(/Why «/);
+    await u.click(screen.getByRole('button', { name: 'Close' }));
+    expect(container.querySelector('.sheet')).toBeNull();
+  });
+
+  it('reads a word and its literal gloss together', () => {
+    const { container } = open();
+    const w = container.querySelector('.f')!;
+    expect(w).toHaveAttribute('role', 'button');
+    expect(w.getAttribute('aria-label')).toBe('Le, the');
+  });
+
+  it('does not read the gloss layer twice', () => {
+    const { container } = open();
+    container.querySelectorAll('.g').forEach((g) => expect(g).toHaveAttribute('aria-hidden', 'true'));
+  });
+});

@@ -97,6 +97,15 @@
 }
 @keyframes rise{from{transform:translateY(14px);opacity:0}}
 .grab{width:34px;height:3px;border-radius:2px;background:var(--ink-4);opacity:.5;margin:0 auto 16px}
+.sheet:focus{outline:none}
+.sheetclose{position:absolute;top:12px;right:16px;color:var(--ink-4);padding:6px;border-radius:6px;line-height:0}
+.sheetclose:hover{color:var(--ink);background:var(--rule-soft)}
+@media (min-width:900px){.sheetclose{top:18px;right:18px}}
+
+/* a visible focus ring, since lines and words are reachable by keyboard */
+.line:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:5px}
+.line:focus{outline:none}
+.f:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 @media (min-width:900px){
   .shell.panel-open .page{padding-right:384px}
   .scrim{background:transparent;pointer-events:none}
@@ -161,3 +170,9 @@
 .sw::after{content:"";position:absolute;top:2px;left:2px;width:17px;height:17px;border-radius:50%;background:var(--paper);transition:.2s}
 .sw.on{background:var(--accent);opacity:1}
 .sw.on::after{left:17px}
+
+/* Respect a preference for less movement. */
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;
+    transition-duration:.001ms !important;scroll-behavior:auto !important}
+}
