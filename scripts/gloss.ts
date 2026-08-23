@@ -9,9 +9,25 @@ export interface LexEntry {
 
 export type Lexicon = Map<string, LexEntry>;
 
-/** Lexicon keys ignore case and normalise the two apostrophe characters. */
+/** Normalise apostrophes and strip opening punctuation, keeping case. */
+export function exactKey(word: string): string {
+  return word.replace(/’/g, "'").replace(/^[«"'“‘(\[]+/, '');
+}
+
+/** The case-folded form, used as the fallback so «Le» finds «le». */
 export function lexKey(word: string): string {
-  return word.toLowerCase().replace(/’/g, "'").replace(/^[«"'“‘(\[]+/, '');
+  return exactKey(word).toLowerCase();
+}
+
+/**
+ * Look a word up: its exact spelling first, then case-folded.
+ *
+ * This is what lets a name and an ordinary word coexist — «Petit» the surname
+ * beside «petit» the adjective — while a capitalised «Le» at the start of a
+ * sentence still finds the ordinary entry.
+ */
+export function lookup(lex: Lexicon, word: string): LexEntry | undefined {
+  return lex.get(exactKey(word)) ?? lex.get(lexKey(word));
 }
 
 /**
@@ -50,7 +66,15 @@ export function parseLexicon(text: string, where: string): Lexicon {
       );
     }
 
-    lex.set(lexKey(form), { gloss: rest, ambiguous });
+    // Keyed by exact spelling, so «Petit» the surname and «petit» the
+    // adjective can coexist. Each entry also claims its case-folded form
+    // unless a differently-cased entry already holds it — that is what lets
+    // «Bonjour» answer a lower-case «bonjour», and «le» answer «Le».
+    const entry = { gloss: rest, ambiguous };
+    const exact = exactKey(form);
+    lex.set(exact, entry);
+    const folded = exact.toLowerCase();
+    if (folded !== exact && !lex.has(folded)) lex.set(folded, entry);
   });
 
   return lex;

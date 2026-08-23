@@ -6,6 +6,7 @@ id: t
 title: Titre
 titleEn: Title
 length: one-page
+level: A2
 tone: everyday
 summary: A summary.
 ---
@@ -52,6 +53,11 @@ en  The door of the house.
   it('FAILS on frontmatter that is missing a field', () => {
     expect(() => parseStory('---\nid: t\n---\nfr  A.\nen  B.\n', 'story.txt'))
       .toThrow(/missing "title"/);
+  });
+
+  it('FAILS on an unknown level', () => {
+    expect(() => parseStory(HEAD.replace('level: A2', 'level: C1') + '\nfr  A.\nen  B.\n', 'story.txt'))
+      .toThrow(/must be one of A2, A2-B1, B1/);
   });
 
   it('FAILS on an unknown length', () => {

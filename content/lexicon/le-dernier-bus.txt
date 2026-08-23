@@ -1,0 +1,106 @@
+# lexicon for "Le dernier bus" — new words only, core.txt is not touched here.
+
+# ── names ───────────────────────────────────────────────────
+Camille   = Camille
+Karim     = Karim
+Léo       = Léo
+Nadia     = Nadia
+
+# ── pronouns and small words ───────────────────────────────
+c'        = it
+moi       = me
+ses       = his
+
+# ── prepositions, adverbs, connectors ──────────────────────
+alors     = so
+après     = after
+aussi     = also
+contre    = against
+d'abord   = at-first
+dedans    = inside
+demain    = tomorrow
+demi      = half
+ici       = here
+peu       = a-little
+si        = if
+tard      = late
+tout      = very
+très      = very
+
+# ── verbs ──────────────────────────────────────────────────
+arrivé    = arrived
+arrivée   = arrived
+arrivent  = arrive
+assis     = sat
+assise    = sat
+attendez  = wait
+chante    = sings
+continuent = continue
+crois     = believe
+décide    = decides
+décident  = decide
+demande   = asks
+faisait   = was-making
+ferme     = closes
+fini      = finished
+joue      = plays
+marchant  = walking
+marchent  = walk
+parler    = to-talk
+partagent = share
+parti     = left
+passe     = passes
+passent   = pass
+passé     = passed
+plaint    = complains
+prend     = takes
+regarde   = watches
+regardent = watch
+regrette  = regrets
+rentrer   = to-go-back
+repasse   = comes-back
+répond    = replies
+riant     = laughing
+rit       = laughs
+sourit    = smiles
+va        = goes
+venir     = to-come
+vient     = comes
+vu        = seen
+
+# ── nouns ──────────────────────────────────────────────────
+amis      = friends
+argent    = money
+bibliothèque = library
+chanson   = song
+ciel      = sky
+concert   = concert
+dos       = back
+étoiles   = stars
+faim      = hunger
+guitare   = guitar
+hôpital   = hospital
+marche    = walk
+minuit    = midnight
+minute    = minute
+nuit      = night
+papier    = paper
+pied      = foot
+restaurant = restaurant
+soir      = evening
+taxi      = taxi
+temps     = time
+ville     = town
+
+# ── adjectives and numbers ─────────────────────────────────
+autres    = other
+clair     = clear
+dernier   = last
+fatiguée  = tired
+froid     = cold
+grand     = big
+jeune     = young
+quatre    = four
+vides     = empty
+vingt     = twenty
+oui       = yes

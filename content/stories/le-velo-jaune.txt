@@ -3,6 +3,7 @@ id: le-velo-jaune
 title: Le vélo jaune
 titleEn: The yellow bicycle
 length: one-page
+level: A2
 order: 30
 tone: humour
 summary: A battered yellow bicycle keeps disappearing and reappearing down the street, and the neighbours' confident theories give way to a far more ordinary explanation.

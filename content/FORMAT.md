@@ -10,6 +10,7 @@ id: le-train-de-7h12
 title: Le train de 7h12
 titleEn: The 7:12 train
 length: one-page          # one-page | two-page | chapter
+level: A2                 # A2 | A2-B1 | B1
 order: 20                 # shelf position, lowest first; omit to sort last
 tone: everyday            # everyday | literary | humour
 summary: One plain-English sentence.
@@ -89,3 +90,25 @@ phrases. They sit under one French word without wrapping.
   so it renders in place but is never selectable and never breaks a span match.
 - Dialogue works: `« Tu es rentré tôt », dit-elle.` tokenizes to
   `Tu es rentré tôt dit -elle`, with the guillemets carried as punctuation.
+
+## Chapters
+
+A story whose `length` is `chapter` divides itself with `==` lines:
+
+```
+== Le premier matin | The first morning
+
+fr  ...
+en  ...
+
+== Ce que le facteur a vu | What the postman saw
+
+fr  ...
+en  ...
+```
+
+- The English half after `|` is optional.
+- A chapter story needs at least two of them, and a story that is not
+  `length: chapter` may not have any — the build enforces both.
+- Chapters are ranges over the story's lines, so reading progress and the
+  rule occurrence lists carry on addressing lines by one index throughout.

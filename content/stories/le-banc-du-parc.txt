@@ -3,6 +3,7 @@ id: le-banc-du-parc
 title: Le banc du parc
 titleEn: The bench in the park
 length: one-page
+level: A2-B1
 order: 50
 tone: everyday
 summary: Two strangers share opposite ends of a park bench every day without speaking, until an empty bench makes one of them realize how little she knows about the other.

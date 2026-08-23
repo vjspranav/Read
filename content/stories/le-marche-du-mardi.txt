@@ -1,0 +1,454 @@
+---
+id: le-marche-du-mardi
+title: Le marché du mardi
+titleEn: Tuesday market
+length: two-page
+level: A2
+order: 90
+tone: everyday
+summary: A teenager helps their grandmother at her vegetable stall on market day, and slowly realises the stall was never really about vegetables.
+---
+
+fr  Ce mardi matin, il fait encore nuit quand Mamie me réveille.
+en  This Tuesday morning, it's still dark when Mamie wakes me up.
+?   il fait encore nuit | weather-il
+    Nothing is actually "making" the night — «il» is just a placeholder
+    subject French sentences need even when nobody is doing anything, the
+    same empty «il» you get with «il pleut» or «il est sept heures».
+=   il | it
+
+fr  « Debout, dit-elle, j'ai besoin de toi au marché. »
+en  "Up you get," she says, "I need you at the market."
+?   besoin de | verb-plus-de-fixed
+    «avoir besoin de» is glued together as one unit meaning "to need." The
+    «de» isn't "of" here and nothing can slide between «besoin» and «de» —
+    treat the whole phrase as one block.
+=   de | of
+
+fr  Je n'ai pas envie de me lever, mais je la suis dans l'escalier.
+en  I don't feel like getting up, but I follow her down the stairs.
+?   me lever | reflexive-verbs
+    «lever» means to lift something; «se lever» means to get yourself up
+    out of bed. The «me» shows the action lands back on the subject — you
+    lift yourself.
+?   la suis | object-pronoun-before-verb
+    «la» stands for Mamie and sits right before «suis», the verb it
+    belongs to. Careful: this is «suivre», to follow — not «être», to be —
+    so «je la suis» means "I follow her," not "I am her."
+=   pas | not-2
+=   de | of
+=   la | her
+=   l' | the
+
+fr  Dehors, il fait très froid, et mes mains sont déjà gelées.
+en  Outside, it's very cold, and my hands are already frozen.
+?   il fait très froid | faire-expressions
+    French reaches for «faire» — literally "to make" — for weather, where
+    English uses "to be." «il fait froid» is a fixed block; nobody
+    translates «fait» on its own here.
+?   gelées | adjective-agreement
+    «gelées» picks up an «e» and an «s» to match «mains», which is
+    feminine and plural. You can't hear the difference when you say it,
+    but it has to be there in writing.
+=   il | it
+
+fr  Sur la place, Mamie installe sa table : carottes, poireaux, pommes de terre.
+en  In the square, Mamie sets up her table: carrots, leeks, potatoes.
+?   sa table | possessive-agrees-with-noun
+    «sa» agrees with «table», a feminine word — not with Mamie, even
+    though the table is obviously hers either way. French possessives
+    always track the gender of the thing owned.
+=   la | the
+=   sa | her
+=   de | of
+
+fr  Elle vient ici le mardi depuis quarante ans, même quand il pleut.
+en  She's come here every Tuesday for forty years, even when it rains.
+?   le mardi | definite-article-days
+    A bare «mardi» would mean one particular Tuesday. Adding «le» turns it
+    into a routine — every Tuesday, as a rule — which is exactly the habit
+    this line is describing.
+?   depuis quarante ans | duration-pendant-depuis
+    The habit started forty years ago and is still going now, so French
+    uses «depuis», not «pendant». If it had already stopped, the sentence
+    would need «pendant» instead.
+=   le | the
+=   même | even
+=   il | it
+
+fr  « Aide-moi à sortir les tomates », dit-elle, et je comprends pourquoi je suis là.
+en  "Help me get the tomatoes out," she says, and I understand why I'm here.
+?   Aide-moi | object-pronoun-before-verb
+    Object pronouns almost always go before the verb, but a positive
+    command is the one exception — the pronoun jumps after and attaches
+    with a hyphen: «aide-moi», not «me aide».
+=   à | to
+=   les | the
+
+fr  Le premier client arrive très tôt, avant tous les autres.
+en  The first customer arrives very early, before everyone else.
+=   Le | the
+=   les | the
+
+fr  C'est Monsieur Blanchard ; Mamie lui donne toujours les mêmes poireaux.
+en  It's Monsieur Blanchard; Mamie always gives him the same leeks.
+?   lui donne | object-pronoun-before-verb
+    «lui» stands for Monsieur Blanchard — to him — and sits in front of
+    «donne», the verb it belongs to. English leaves "him" after the verb;
+    French moves it to the left and keeps it there.
+=   est | is
+=   lui | to-him
+=   les | the
+
+fr  « Et votre femme, elle va mieux ? » demande Mamie.
+en  "And your wife, is she doing better?" Mamie asks.
+=   femme | wife
+
+fr  « Un peu mieux, merci », répond-il, et il choisit trois poireaux de plus.
+en  "A little better, thank you," he replies, and he picks three more leeks.
+=   il | he
+=   de | of
+=   plus | more
+
+fr  Je regarde le prix sur le petit carton et je compte les pièces.
+en  I look at the price on the little sign and count the coins.
+?   le petit carton | adjective-position-default
+    «petit» is one of the short, common adjectives — like «beau» or
+    «grand» — that go in front of the noun instead of after it. Most
+    French adjectives follow the noun; this small group doesn't.
+=   le | the
+=   les | the
+
+fr  La cliente suivante est Madame Vidal, qui achète toujours les mêmes légumes.
+en  The next customer is Madame Vidal, who always buys the same vegetables.
+?   mêmes légumes | adjective-agreement
+    «même» itself doesn't change for gender, but it still has to agree in
+    number: an «s» for the plural «légumes», the same way any other
+    adjective would pick up an ending.
+=   La | the
+=   est | is
+=   les | the
+
+fr  « Comme d'habitude ? » demande Mamie, sans même écrire la commande.
+en  "The usual?" Mamie asks, without even writing down the order.
+?   sans même écrire | preposition-plus-infinitive
+    After «sans», French uses the plain dictionary form of the verb,
+    «écrire», never an "-ing" form. «même» slots in between but doesn't
+    change that — the infinitive still follows the preposition directly.
+=   d' | of
+=   même | even
+=   la | the
+
+fr  Mamie n'a pas besoin de demander : elle sait déjà ce qu'il faut.
+en  Mamie doesn't need to ask: she already knows what she needs.
+?   besoin de demander | verb-plus-de-fixed
+    Same fixed pair as before — «avoir besoin de» — now with an infinitive
+    after it instead of a person. The «de» stays glued on regardless of
+    what follows.
+?   il faut | weather-il
+    «il faut» is another job for the empty «il»: nothing "needs" anything
+    on its own, the pronoun just fills the subject slot so the sentence
+    has one. «ce qu'il faut» is literally "what it needs" — what's
+    necessary.
+=   pas | not-2
+=   de | of
+=   qu' | that
+=   il | it
+
+fr  Je commence à comprendre que Mamie ne vend pas seulement des légumes.
+en  I start to understand that Mamie doesn't only sell vegetables.
+?   que | reported-speech-que
+    English can drop "that" here — "I understand Mamie doesn't only
+    sell..." — but French can't. «que» has to introduce what I'm coming to
+    understand.
+=   à | to
+=   pas | not-2
+
+fr  Une jeune femme arrive avec un bébé qui pleure dans les bras.
+en  A young woman arrives with a baby crying in her arms.
+?   dans les bras | body-parts-definite-article
+    With parts of the body, French uses the plain «les» instead of a
+    possessive like «ses». Whose arms they are is obvious from context, so
+    saying "her arms" out loud would sound heavy.
+=   femme | woman
+=   les | the
+
+fr  Elle compte ses pièces, mais il n'y a pas assez d'argent pour les tomates.
+en  She counts her coins, but there isn't enough money for the tomatoes.
+?   il ... a | il-y-a-impersonal
+    «il y a» is one fixed block meaning "there is." The negation slides
+    its «n'» in between «il» and «y», which looks like it breaks the
+    phrase apart, but the three words are still doing their usual job
+    together.
+?   assez d'argent | quantity-de
+    «assez» already says how much — enough — so no article follows «de».
+    Compare «de l'argent» with no quantity word, which would just mean
+    some money with no amount implied.
+=   il | it
+=   y | there
+=   pas | not-2
+=   d' | of
+=   les | the
+
+fr  Mamie met quand même les tomates dans le sac, sans rien dire.
+en  Mamie puts the tomatoes in the bag anyway, without saying anything.
+?   sans rien dire | preposition-plus-infinitive
+    «sans» is followed by the plain form of the verb, «dire», the same
+    pattern as «sans même écrire» earlier. «rien» sits between them but
+    the infinitive still comes right after the preposition.
+=   même | even
+=   les | the
+=   le | the
+
+fr  « Combien je vous dois ? » demande la jeune femme, un peu gênée.
+en  "How much do I owe you?" the young woman asks, a little embarrassed.
+?   un peu gênée | bare-descriptive-phrase
+    French can tack a bare description onto the end of a sentence after a
+    comma, describing the state of the person just mentioned — no "and she
+    was" needed, the way English would add it.
+=   la | the
+=   femme | woman
+
+fr  « Juste les carottes, un euro », répond Mamie avec un sourire.
+en  "Just the carrots, one euro," Mamie replies with a smile.
+=   les | the
+
+fr  La jeune femme dit merci deux fois et repart avec un sourire.
+en  The young woman says thank you twice and leaves again with a smile.
+=   La | the
+=   femme | woman
+
+fr  Je demande à Mamie pourquoi elle a fait ça.
+en  I ask Mamie why she did that.
+=   à | to
+=   fait | made
+
+fr  « Elle a trois enfants et pas de mari », dit Mamie.
+en  "She has three children and no husband," Mamie says.
+?   pas de mari | de-after-negation
+    A husband she had would be «un mari». Once the sentence is negated,
+    the article shrinks down to bare «de» — the same drop you'd see with
+    «du» or «des».
+=   pas | not-2
+=   de | any
+
+fr  « Les tomates ne coûtent presque rien. »
+en  "The tomatoes cost almost nothing."
+?   ne ... rien | negation-other-pairs
+    Swap «pas» for «rien» and the sentence denies not "not doing
+    something" but a thing itself — here, any real cost. «presque» sits
+    inside the pair without breaking it.
+=   Les | the
+
+fr  Je regarde Mamie, debout dans le froid, et je ne dis plus rien.
+en  I look at Mamie, standing in the cold, and I don't say anything more.
+?   debout dans le froid | bare-descriptive-phrase
+    Another bare tag after a comma, like «un peu gênée» earlier — no verb,
+    just a description of how Mamie is standing there, tacked straight
+    onto the sentence.
+?   ne ... plus | negation-other-pairs
+    «plus» here means not any more, not more of it — I used to say
+    something, now I don't. It stacks with «rien» at the end for "nothing
+    more," but the pair doing the actual negating is still «ne ... plus».
+=   le | the
+=   plus | no-more
+
+fr  Un vieil homme s'approche lentement, avec une canne.
+en  An old man approaches slowly, with a cane.
+?   vieil homme | adjective-before-vowel
+    «vieux» has a special form just for this spot — right before a
+    masculine noun starting with a vowel sound. «vieil homme» is easier to
+    say than «vieux homme» would be.
+?   s'approche | reflexive-verbs
+    «approcher» can mean to bring something closer; «s'approcher» means to
+    come closer yourself. The «s'» sends the action back onto the subject,
+    the old man himself.
+=   s' | himself
+
+fr  « Bonjour Monsieur Roux, la même chose que d'habitude ? » demande Mamie.
+en  "Hello Monsieur Roux, the same as usual?" Mamie asks.
+?   d'habitude | elision-before-vowel
+    «de» runs into «habitude», which starts with a vowel sound even though
+    the letter is an "h" — French "h" is silent — so it drops its own
+    vowel and becomes «d'».
+=   d' | of
+=   la | the
+=   même | same
+
+fr  « Oui, mais juste pour moi maintenant », répond-il, triste.
+en  "Yes, but just for me now," he replies sadly.
+?   pour moi | stressed-pronouns
+    After a preposition like «pour», French needs the standalone pronoun
+    «moi», not a form that hides in front of a verb. The little pronouns
+    like «me» can't stand alone like this.
+
+fr  Son fils est parti vivre à Lyon, et la maison est bien calme.
+en  His son has moved away to live in Lyon, and the house is very quiet.
+?   est parti | passe-compose-etre
+    «partir» is one of the verbs that build their past with «être», not
+    «avoir». The subject here, «fils», is a single masculine noun, so the
+    participle stays plain «parti» with no extra letter added.
+?   à Lyon | a-for-places
+    Cities always take «à» — you don't just go "to Lyon" in French, you go
+    «à» Lyon, and the preposition can't be dropped the way it sometimes
+    can in English.
+=   Son | his
+=   est | is
+=   à | to
+=   la | the
+
+fr  Mamie ajoute une pomme dans son sac, sans lui demander un euro de plus.
+en  Mamie adds an apple to his bag, without asking him for one more euro.
+?   lui demander | object-pronoun-before-verb
+    «lui» stands for Monsieur Roux — to him — and sits in front of
+    «demander», the verb it belongs to, even though that verb is an
+    infinitive here rather than a conjugated form.
+=   son | her
+=   lui | him
+=   de | of
+=   plus | more
+
+fr  Monsieur Roux ne dit rien, mais il sourit un peu avant de partir.
+en  Monsieur Roux says nothing, but he smiles a little before leaving.
+?   avant de partir | preposition-plus-infinitive
+    «avant de» always takes the plain form of the verb after it, «partir»
+    — never an "-ing" form the way English would say "before leaving."
+=   il | he
+=   de | of
+
+fr  Vers midi, je n'ai plus froid, mais le vent souffle encore.
+en  By midday, I'm not cold anymore, but the wind still blows.
+?   ai ... froid | avoir-expressions
+    French uses «avoir» — literally "to have" — for how your body feels,
+    where English uses "to be." «avoir froid» is a fixed pair; there's no
+    article and you don't translate «ai» as "have" on its own.
+=   plus | no-more
+=   le | the
+
+fr  Je pèse un kilo de carottes et je rends la monnaie sans me tromper.
+en  I weigh a kilo of carrots and give the change back without a mistake.
+?   un kilo de | quantity-de
+    «kilo» already names the amount, so no «du» or «des» follows «de» —
+    just the bare word, the same pattern as «assez de» or «un peu de».
+?   me tromper | reflexive-verbs
+    «tromper» means to deceive someone else; «se tromper» means to be
+    wrong yourself, to make a mistake. The «me» turns the action back onto
+    the person doing it.
+=   de | of
+=   la | the
+
+fr  Une femme aux cheveux blancs s'arrête devant la table et regarde Mamie.
+en  A woman with white hair stops in front of the table and looks at Mamie.
+?   aux cheveux blancs | body-parts-definite-article
+    French describes hair the same way it handles other body parts — the
+    plain article «les» (contracted here into «aux», à plus les) instead
+    of a possessive. There's no need to say "her" hair; it's already clear
+    whose it is.
+=   femme | woman
+=   s' | herself
+=   la | the
+
+fr  « Vous ne me connaissez pas ? » demande-t-elle doucement.
+en  "You don't know me?" she asks softly.
+?   ne me connaissez pas | negation-wraps-verb
+    The negation wraps around the whole verb group, and the object pronoun
+    «me» rides along inside it, tucked between «ne» and the verb rather
+    than sitting outside the pair.
+=   pas | not-2
+
+fr  « Bien sûr », répond Mamie, et elle lui prend les mains.
+en  "Of course," Mamie replies, and she takes her hands.
+?   lui prend les mains | body-parts-definite-article
+    «lui» already says whose hands they are — the woman's — so «les
+    mains» stays with the plain article instead of a possessive. Adding
+    «ses» on top of «lui» would say the same thing twice.
+=   lui | her
+=   les | the
+
+fr  « Merci encore, pour l'hiver dernier », dit la femme, les yeux mouillés.
+en  "Thank you again, for last winter," the woman says, her eyes wet.
+?   les yeux mouillés | bare-descriptive-phrase
+    A third bare tag in this story: no verb, just «les yeux mouillés»
+    dropped in after a comma to describe her, the way «debout dans le
+    froid» described Mamie earlier.
+=   l' | the
+=   la | the
+=   femme | woman
+=   les | the
+
+fr  Je ne comprends pas ; je n'ai jamais entendu cette histoire.
+en  I don't understand; I've never heard this story.
+?   n' ... jamais | negation-other-pairs
+    «jamais» swaps in for «pas» to mean never instead of simply not. «n'»
+    still comes right before the verb group; «jamais» lands after it, the
+    same shape as «ne ... pas» or «ne ... plus».
+=   pas | not-2
+
+fr  La femme part, et je demande à Mamie : « Quel hiver ? »
+en  The woman leaves, and I ask Mamie: "What winter?"
+=   La | the
+=   femme | woman
+=   à | to
+
+fr  Mamie hésite, puis elle raconte : son mari était à l'hôpital pendant deux mois.
+en  Mamie hesitates, then she tells the story: her husband was in the hospital for two months.
+?   pendant deux mois | duration-pendant-depuis
+    This time the stretch is over — the two months in hospital ended long
+    ago — so French switches to «pendant» instead of the «depuis» from
+    earlier in the story, which was about a habit still going on.
+?   était | imparfait-vs-passe-compose
+    The rest of this scene sits in the present, but the story inside it
+    drops into the imparfait. «était» paints the background fact — he was
+    in hospital — the state the rest of the memory happened inside.
+=   son | her
+=   était | was
+=   à | to
+=   l' | the
+
+fr  Chaque soir, après le marché, Mamie lui apportait de la soupe chaude.
+en  Every evening, after the market, Mamie brought her hot soup.
+?   de la soupe | partitive-article
+    «soupe» is feminine, so "some soup" needs «de la», not «du». English
+    can just say "soup"; French always marks that it's an unnamed amount
+    of it.
+?   apportait | imparfait-vs-passe-compose
+    This isn't one delivery — it's every evening, all winter, so French
+    reaches for the imparfait to paint a repeated habit rather than a
+    single finished event.
+=   le | the
+=   lui | her
+=   de | of
+=   la | the
+
+fr  Elle ne m'avait jamais raconté ça, même pas une fois.
+en  She had never told me that, not even once.
+?   avait jamais raconté | plus-que-parfait
+    This goes one step further back than the passé composé: «avait» plus
+    the participle means "had done," describing something already true
+    before this whole conversation started.
+=   même | even
+=   pas | not-2
+
+fr  Je regarde ces légumes sur la table, et je ne les vois plus de la même façon.
+en  I look at these vegetables on the table, and I don't see them the same way anymore.
+?   ne ... plus | negation-other-pairs
+    Same not any more as before — I used to see the vegetables one way,
+    and now, knowing about the soup, I don't. The pair «ne ... plus»
+    wraps around «les vois», with the pronoun riding along inside it.
+=   la | the
+=   les | them
+=   plus | no-more
+=   de | of
+=   même | same
+
+fr  « Tu reviens mardi prochain ? » demande Mamie, et elle range les derniers poireaux.
+en  "Are you coming back next Tuesday?" Mamie asks, and she puts away the last leeks.
+?   mardi prochain | definite-article-days
+    No «le» this time, because Mamie means one specific Tuesday coming up
+    — not the weekly habit from the start of the story. Compare «le
+    mardi» back then, which meant every Tuesday, as a rule.
+=   les | the
+
+fr  « Oui, Mamie », je réponds, et cette fois, c'est vrai.
+en  "Yes, Mamie," I answer, and this time, it's true.
+=   est | is

@@ -3,6 +3,7 @@ id: le-chat-du-troisieme
 title: Le chat du troisième
 titleEn: The cat from the third floor
 length: one-page
+level: A2
 order: 20
 tone: everyday
 summary: A grey cat has a different name on every floor of the building, and the child who sets out to find its real owner discovers there isn't just one.
@@ -19,16 +20,21 @@ en  There's a grey cat in the building.
 =   y | there
 =   l' | the
 
-fr  Personne ne sait à qui il appartient.
-en  Nobody knows who he belongs to.
+fr  Personne ne sait à qui est le chat.
+en  Nobody knows whose cat he is.
 ?   Personne ne | negation-other-pairs
     Here «personne» (nobody) is the one doing the not-knowing, so it comes
     first and «ne» follows it, right before the verb. It's the same
     negative word you'll see later in the story, just moved because this
     time it's the subject.
+?   à qui est le chat | etre-a-possession
+    «être» plus «à» plus a name is how French says who something belongs
+    to. «à qui est le chat ?» is literally "to whom is the cat" — the
+    everyday way of asking whose cat it is.
 =   personne | nobody
 =   à | to
-=   il | he
+=   est | is
+=   le | the
 
 fr  Le chat connaît toutes les portes de l'immeuble.
 en  The cat knows every door in the building.
@@ -37,6 +43,10 @@ en  The cat knows every door in the building.
     picks up both endings. Later on you'll see «tout le monde», where
     «tout» stays masculine and singular because it's describing a
     different, singular idea — everyone, not the doors.
+?   de l'immeuble | elision-before-vowel
+    «le» runs into «immeuble», which starts with a vowel sound, so it
+    drops its own vowel and becomes «l'» — the same contraction you'll see
+    with «l'escalier» a couple of lines from here.
 =   le | the
 =   les | the
 =   de | of
@@ -66,6 +76,11 @@ en  There, everyone calls him Gris.
     that's actually doing the calling. English puts it after — calls him
     — but French always moves the pronoun to the left of the verb it
     belongs to.
+?   tout le monde | adjective-agreement
+    «tout» stays masculine and singular here because «tout le monde» —
+    everyone — is a fixed phrase, not a case of agreement changing shape.
+    Compare «toutes les portes» a moment ago, where «toutes» really does
+    agree, feminine and plural, with «portes».
 =   le | the
 =   l' | him
 
@@ -84,21 +99,28 @@ en  The neighbour on the second floor calls him Moustache.
 fr  Léo habite au troisième étage, juste au-dessus.
 en  Léo lives on the third floor, just above.
 
-fr  L'après-midi, le chat dort aussi sur son rebord à lui.
-en  In the afternoon, the cat also sleeps on his own windowsill.
-?   son ... lui | stressed-pronouns
-    «son rebord» already means his windowsill, so adding «à lui»
-    afterwards is pure emphasis — his own, not the neighbours'. That extra
-    «lui» is the standalone pronoun French adds to underline whose
-    something is.
+fr  L'après-midi, le chat dort aussi devant sa fenêtre à lui.
+en  In the afternoon, the cat sleeps in front of his own window too.
+?   sa ... lui | stressed-pronouns
+    «sa fenêtre» already means his window, so adding «à lui» afterwards is
+    pure emphasis — his own, not the neighbours'. That extra «lui» is the
+    standalone pronoun French adds to underline whose something is.
+?   sa fenêtre | possessive-agrees-with-noun
+    «sa» matches «fenêtre», a feminine word, even though «le chat» is
+    «il», grammatically masculine. The possessive always tracks the thing
+    owned, never the owner.
 =   l' | the
 =   le | the
-=   son | his
+=   sa | his
 =   à | to
 =   lui | him
 
 fr  Léo lui donne un peu de lait dans une vieille tasse.
 en  Léo gives him a little milk in an old cup.
+?   lui donne | object-pronoun-before-verb
+    «lui» stands for the cat and sits right in front of «donne», the verb
+    it belongs to — to him, moved to the left the way object pronouns
+    always are in French.
 ?   un peu de lait | quantity-de
     «un peu» already says how much — a little — so no article follows
     «de». Compare it to «du lait» with no quantity word at all, which
@@ -121,14 +143,20 @@ en  He calls him Cloud, because he's grey like a cloud.
 =   qu' | that
 =   est | is
 
-fr  Un jour, Léo a décidé de trouver le vrai propriétaire du chat.
-en  One day, Léo decided to find the cat's real owner.
+fr  Un jour, Léo a décidé de trouver à qui est le chat.
+en  One day, Léo decided to find out whose cat it was.
 ?   de trouver | preposition-plus-infinitive
     «décider» needs «de» before whatever comes next, and what follows is
     the plain form of the verb, «trouver», never an "-ing" form. English
     says decided to find; French just glues «de» and the infinitive
     straight onto «décidé».
+?   à qui est le chat | etre-a-possession
+    Same construction as earlier in the story — «être» plus «à» plus who
+    something belongs to. Léo isn't hunting for a person called "the
+    owner"; he's trying to find out who the cat is «à».
 =   de | of
+=   à | to
+=   est | is
 =   le | the
 
 fr  Il a frappé à toutes les portes de l'immeuble.
@@ -166,6 +194,11 @@ en  "No," Monsieur Duval replied, "but I feed him."
     «donne» — the same leftward move as «l'appelle» earlier in the story.
     Here it means to him rather than replacing the cat directly the way
     «l'» did, but the rule about where the pronoun goes doesn't change.
+?   à manger | preposition-plus-infinitive
+    «donner à manger» means "to feed" — literally "to give to eat". «à»
+    here is followed by the plain infinitive «manger», the same pattern as
+    «de trouver» earlier, just with a different preposition glued to a
+    different verb.
 =   lui | to-him
 =   à | to
 
@@ -179,21 +212,31 @@ en  "No," the neighbour on the second floor replied, "but he sleeps at my place 
 =   il | he
 =   le | the
 
-fr  Enfin, Léo a compris : le chat n'appartient à personne.
+fr  Enfin, Léo a compris : le chat n'est à personne.
 en  Finally, Léo understood: the cat doesn't belong to anyone.
 ?   n' ... personne | negation-other-pairs
     This time «personne» comes after the verb instead of before it,
     because it's the thing being denied — the cat belongs to nobody —
     rather than the one doing the not-knowing, like back in the second
     line. «ne» still wraps around the verb either way.
+?   est à personne | etre-a-possession
+    «être» plus «à» is how French says something belongs to someone —
+    here it's just negated. «à personne» is "belongs to nobody", the same
+    shape as «c'est à moi» said the ordinary, positive way.
 =   le | the
+=   est | is
 =   à | to
 =   personne | nobody
 
-fr  Ou peut-être qu'il appartient à tout l'immeuble.
+fr  Ou peut-être qu'il est à tout l'immeuble.
 en  Or maybe he belongs to the whole building.
+?   il est à tout l'immeuble | etre-a-possession
+    «est à» is the same "belongs to" construction as the rest of the
+    story, just aimed at the whole building this time instead of one
+    person.
 =   qu' | that
 =   il | he
+=   est | is
 =   à | to
 =   l' | the
 
@@ -204,6 +247,10 @@ en  That evening, Léo left his window open.
     belongs to Léo, a boy. French possessives track the gender of the
     thing owned, not the owner — say «son fenêtre» and it would sound
     wrong before you could explain why.
+?   fenêtre ouverte | adjective-position-default
+    «ouverte» comes after «fenêtre», which is where most French adjectives
+    sit. It isn't on the short list of common words — like «vieux» or
+    «petit» — that jump in front of the noun instead.
 ?   ouverte | adjective-agreement
     «ouverte» adds an «e» to match «fenêtre», feminine. Léo isn't just
     leaving the window open in some generic sense — the word itself has
@@ -217,6 +264,11 @@ en  The grey cat came in, and picked, as always, the best spot.
     «arriver», that build their past with «être» instead of «avoir». The
     cat is a single «il», so the participle stays plain «entré» with no
     extra letter.
+?   la meilleure place | superlative-le-plus
+    «meilleure» is the irregular superlative of «bon» — it means "best",
+    not "more good". French skips «plus» entirely for this one word and
+    swaps in a different form instead, the way English swaps "good" for
+    "best".
 =   le | the
 =   est | is
 =   il | he

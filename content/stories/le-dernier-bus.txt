@@ -1,0 +1,386 @@
+---
+id: le-dernier-bus
+title: Le dernier bus
+titleEn: The last bus
+length: two-page
+level: A2
+order: 80
+tone: everyday
+summary: A woman misses the last bus home and waits anyway, and the strangers who join her make the long walk back better than the ride would have been.
+---
+
+fr  Camille travaille dans un restaurant, en ville.
+en  Camille works in a restaurant, in town.
+=   en | in
+
+fr  Ce soir-là, elle a fini très tard, après minuit.
+en  That evening, she finished very late, after midnight.
+
+fr  Elle a couru jusqu'à l'arrêt, mais le bus était déjà parti.
+en  She ran to the stop, but the bus had already left.
+?   jusqu'à | jusqua
+    «à» alone would just say where she ended up. «jusqu'à» adds the whole
+    distance she covered getting there — she ran the entire way.
+?   était déjà parti | plus-que-parfait
+    The bus leaving happened before Camille got to the stop — a past inside
+    the past — so French reaches one step further back than the passé
+    composé: «était parti», not «est parti».
+=   à | to
+=   l' | the
+=   le | the
+=   était | was
+
+fr  Le dernier bus de la nuit ne repasse pas avant demain.
+en  The last bus of the night doesn't come back before tomorrow.
+?   ne ... pas | negation-wraps-verb
+    «repasse» is the only verb in this sentence, so «ne» and «pas» just wrap
+    it directly — the same plain pattern as «je ne mange pas».
+=   le | the
+=   de | of
+=   la | the
+=   pas | not-2
+
+fr  Camille n'a pas d'argent pour un taxi.
+en  Camille doesn't have money for a taxi.
+?   pas d'argent | de-after-negation
+    Said as a plain fact this would be «de l'argent». Once «ne ... pas»
+    lands in the sentence, the amount stops being named at all and the
+    article shrinks to bare «d'».
+=   pas | not-2
+=   d' | any
+
+fr  Alors elle décide d'attendre, même sans raison.
+en  So she decides to wait, even without a reason.
+=   d' | to
+=   même | even
+
+fr  Elle s'est assise sur le banc de l'arrêt.
+en  She sat down on the bench at the stop.
+?   s'est assise | passe-compose-etre
+    «s'asseoir» is reflexive, and reflexive verbs always build their past
+    with «être». Camille is «elle», so the participle picks up an «e»:
+    «assise», the way an adjective would.
+=   s' | herself
+=   est | is
+=   le | the
+=   de | of
+=   l' | the
+
+fr  Il faisait froid, mais le ciel était clair.
+en  It was cold, but the sky was clear.
+?   faisait froid | faire-expressions
+    English says "it was cold" with "to be". French reaches for «faire»
+    instead — nobody makes the cold happen, but the weather still takes this
+    verb, not «être».
+=   il | it
+=   le | the
+=   était | was
+
+fr  Elle a levé les yeux et a vu des étoiles.
+en  She looked up and saw some stars.
+?   les yeux | body-parts-definite-article
+    They're obviously her own eyes, so French skips «ses» and uses the plain
+    «les» instead. Adding a possessive here would sound like a learner
+    overexplaining.
+?   des étoiles | partitive-article
+    Not one specific star — an unnamed number of them — so the plural
+    partitive «des» marks that. English just says "stars" and leaves the
+    amount unsaid.
+=   les | the
+
+fr  Un jeune homme est arrivé avec un grand sac à dos.
+en  A young man arrived with a big backpack.
+?   jeune | adjective-position-default
+    «jeune» is one of the short, common adjectives — about age, like
+    «vieux» — that jump in front of the noun instead of following it.
+?   grand | adjective-position-default
+    Same rule, different noun: «grand» is about size, another word on that
+    short list, so it sits before «sac à dos» too.
+=   est | is
+=   à | on
+
+fr  « Le bus est passé ? » a-t-il demandé.
+en  "Has the bus gone by?" he asked.
+?   a-t-il | euphonic-t-inversion
+    Flipping «il a» to ask a question would give «a-il», two vowels running
+    straight into each other. French drops in a «t» that means nothing on
+    its own — it only exists to make the question sayable.
+=   le | the
+=   est | is
+=   il | he
+
+fr  « Oui, il y a dix minutes », a répondu Camille.
+en  "Yes, ten minutes ago," Camille replied.
+?   il y a | il-y-a-impersonal
+    The same three words that usually mean "there is" can give a time
+    instead: «il y a dix minutes» is "ten minutes ago", the same way «il y a
+    trois ans» means "three years ago".
+=   il | it
+=   y | there
+
+fr  Il s'appelle Léo et il rentre de la bibliothèque.
+en  His name is Léo, and he's coming back from the library.
+?   s'appelle | reflexive-verbs
+    Word for word, «il s'appelle Léo» is "he calls himself Léo" — French
+    always uses the reflexive here, where English just says "his name is".
+=   il | he
+=   s' | himself
+=   de | from
+=   la | the
+
+fr  Il s'est assis à côté de Camille.
+en  He sat down next to Camille.
+?   s'est assis | passe-compose-etre
+    Same reflexive verb as Camille's, but Léo is «il», not «elle», so the
+    participle stays in its plain form: «assis», no extra «e».
+=   il | he
+=   s' | himself
+=   est | is
+=   à | at
+=   de | of
+
+fr  Ils attendent ensemble, sans parler.
+en  They wait together, without talking.
+?   sans parler | preposition-plus-infinitive
+    English would say "without talking", an -ing form. After a preposition
+    like «sans», French always uses the plain dictionary form of the verb
+    instead: «parler».
+
+fr  Dix minutes passent, mais le bus n'arrive toujours pas.
+en  Ten minutes go by, but the bus still doesn't come.
+?   n'arrive ... pas | negation-wraps-verb
+    One more plain example: «arrive» is the only verb, so «ne» and «pas»
+    close around it directly, with «toujours» sitting inside the sandwich.
+=   le | the
+=   pas | not-2
+
+fr  Un homme est arrivé avec une guitare sur le dos.
+en  A man arrived with a guitar on his back.
+?   sur le dos | body-parts-definite-article
+    It's obviously his own back, so French uses the plain «le», not «son».
+    The same move you saw with «les yeux» a moment ago works for any body
+    part.
+=   est | is
+=   le | the
+
+fr  Il a posé sa guitare contre le banc et s'est assis.
+en  He put his guitar against the bench and sat down.
+?   sa guitare | possessive-agrees-with-noun
+    «sa» agrees with «guitare», a feminine word — not with the man who owns
+    it. A woman with the same guitar would also say «sa guitare».
+=   il | he
+=   sa | his
+=   le | the
+=   s' | himself
+=   est | is
+
+fr  « Il n'y a plus de bus ce soir, je crois », dit-il.
+en  "There's no more bus tonight, I think," he said.
+?   il n'y a plus | negation-other-pairs
+    Swap «pas» for «plus» in the middle of «il y a» and the meaning shifts
+    from "there isn't" to "there isn't anymore" — the bus existed earlier
+    tonight, and now it doesn't.
+?   plus de bus | de-after-negation
+    Once the sentence is negative, «un bus» can't stay whole — the article
+    shrinks to bare «de», the same drop you saw with «d'argent» earlier.
+=   il | it
+=   y | there
+=   plus | no-more
+=   de | any
+
+fr  Il s'appelle Karim et il joue de la guitare, tout près d'ici.
+en  His name is Karim, and he plays guitar, right nearby.
+=   il | he
+=   s' | himself
+=   de | of
+=   la | the
+=   d' | of
+
+fr  Karim a un sac en papier, avec du pain dedans.
+en  Karim has a paper bag, with bread inside.
+?   du pain | partitive-article
+    Not a whole, specific loaf — an amount with no number attached, so the
+    partitive «du» carries that sense here, the same as the bread in
+    another story.
+=   en | made-of
+
+fr  « Vous avez faim ? » demande-t-il à Camille et à Léo.
+en  "Are you hungry?" he asks Camille and Léo.
+?   avez faim | avoir-expressions
+    English uses "to be" for hunger. French uses «avoir» — literally "to
+    have" — plus the bare noun «faim», with no article at all.
+=   il | he
+=   à | to
+
+fr  Ils partagent le pain, assis sur le banc.
+en  They share the bread, sitting on the bench.
+?   assis sur le banc | bare-descriptive-phrase
+    No verb, no "while" — French just tacks the state on after a comma.
+    English needs something like "sitting" to do the same job.
+=   le | the
+
+fr  Une femme est arrivée, très fatiguée.
+en  A woman arrived, very tired.
+?   fatiguée | adjective-agreement
+    «une femme» is feminine, so the adjective takes the extra «e» — not
+    «fatigué», which would describe a man.
+=   femme | woman
+=   est | is
+
+fr  Elle s'appelle Nadia et elle travaille à l'hôpital, la nuit.
+en  Her name is Nadia, and she works at the hospital, at night.
+?   la nuit | definite-article-days
+    A bare time word names one occasion; add «la» and it becomes a routine —
+    the same trick as «le soir» for every evening. Here it means she works
+    nights as a rule.
+=   s' | herself
+=   à | at
+=   l' | the
+=   la | the
+
+fr  Elle a fini son travail il y a vingt minutes.
+en  She finished work twenty minutes ago.
+=   son | his
+=   il | it
+=   y | there
+
+fr  « Vous attendez le bus aussi ? » demande Nadia.
+en  "Are you waiting for the bus too?" asks Nadia.
+=   le | the
+
+fr  « Moi aussi, je l'ai raté », répond Léo.
+en  "Me too, I missed it," replies Léo.
+?   Moi aussi | stressed-pronouns
+    «je» can only stand glued to a verb. Standing alone for emphasis, at the
+    front of the sentence, needs the strong form instead: «moi».
+?   l'ai | object-pronoun-before-verb
+    «l'» stands for the bus and sits in front of «ai», the helping verb.
+    English puts it after the verb — missed it — but French moves it left
+    and keeps it there.
+=   l' | it
+
+fr  Camille sourit, et ils sont maintenant quatre à attendre.
+en  Camille smiles, and now there are four of them waiting.
+=   à | to
+
+fr  Le temps passe, mais le bus ne vient toujours pas.
+en  Time passes, but the bus still doesn't come.
+=   le | the
+=   pas | not-2
+
+fr  Karim prend sa guitare et joue une petite chanson.
+en  Karim picks up his guitar and plays a little song.
+?   petite | adjective-position-default
+    Another of the short, common adjectives — about size — that goes before
+    the noun instead of after it: «une petite chanson», never «une chanson
+    petite».
+=   sa | his
+
+fr  Nadia ferme les yeux une minute, puis elle rit.
+en  Nadia closes her eyes for a minute, then she laughs.
+=   les | the
+
+fr  « C'est comme un concert ! » dit Camille.
+en  "It's like a concert!" says Camille.
+=   est | is
+
+fr  Ils regardent l'heure.
+en  They look at the time.
+=   l' | the
+
+fr  Il est minuit et demi, et le bus n'est toujours pas là.
+en  It's half past midnight, and the bus still isn't there.
+?   Il est minuit | weather-il
+    «il» here doesn't stand for anyone — it's just the placeholder French
+    sentences need to have a subject, the same empty «il» that shows up for
+    weather.
+=   il | it
+=   le | the
+=   est | is
+=   pas | not-2
+
+fr  « Je crois qu'il ne va plus venir », dit Nadia.
+en  "I think it's not going to come anymore," says Nadia.
+?   qu'il | reported-speech-que
+    English can drop "that" here — I think it's not coming. French can't;
+    «que» has to introduce what she thinks, and it shortens to «qu'» before
+    the vowel in «il».
+?   ne va plus venir | negation-wraps-verb
+    «va» is the conjugated piece; «venir» is the plain infinitive after it.
+    The negation wraps «va» and leaves «venir» outside, the same split you'd
+    see with a helping verb in the passé composé.
+=   qu' | that
+=   il | it
+=   plus | no-more
+
+fr  Alors ils décident de rentrer à pied, tous ensemble.
+en  So they decide to walk back, all together.
+=   de | to
+=   à | on
+
+fr  Ils marchent ensemble dans les rues vides de la ville.
+en  They walk together through the empty streets of the town.
+?   vides | adjective-agreement
+    «rues» is feminine and plural, so «vide» — already ending in «e» — only
+    needs the extra «s»: «vides».
+=   les | the
+=   de | of
+=   la | the
+
+fr  Karim joue de la guitare en marchant.
+en  Karim plays guitar while walking.
+?   en marchant | preposition-plus-infinitive
+    «en» is the one preposition that breaks the infinitive rule — it takes
+    the «-ant» form instead: «en marchant», while walking.
+=   de | of
+=   la | the
+=   en | while
+
+fr  Nadia chante un peu, même si elle est fatiguée.
+en  Nadia sings a little, even though she's tired.
+=   même | even
+=   est | is
+
+fr  Personne ne se plaint, même après une heure de marche.
+en  Nobody complains, even after an hour of walking.
+?   Personne ne | negation-other-pairs
+    «personne» is the subject here, so it sits at the front, before «ne».
+    The pair still needs «ne», but there's no «pas» — «personne» already
+    carries the negative on its own, the same way «plus» and «jamais» do
+    elsewhere in this story.
+=   personne | nobody
+=   se | himself
+=   même | even
+=   de | of
+
+fr  Ils arrivent d'abord chez Camille.
+en  They arrive at Camille's place first.
+?   chez Camille | chez
+    «chez» has no real English equivalent — it means at the home of the
+    person named after it. You can't say «chez la maison»; for a plain
+    building you'd use «à» instead.
+
+fr  Les autres continuent, en riant.
+en  The others carry on, laughing.
+=   les | the
+=   en | while
+
+fr  Camille regarde ses amis partir, puis elle sourit.
+en  Camille watches her friends leave, then she smiles.
+?   ses amis | possessive-agrees-with-noun
+    «ses» marks a plural owned thing, not a plural owner — it stays «ses»
+    whether the friends are men, women, or both, because «amis» is plural.
+
+fr  Ce dernier bus n'est jamais passé, et personne ne le regrette.
+en  That last bus never came, and nobody regrets it.
+?   n'est jamais | negation-other-pairs
+    «jamais» swaps in for «pas» one more time, and the meaning becomes
+    "never" — the bus didn't just fail to come once tonight, it never came
+    at all.
+?   le regrette | object-pronoun-before-verb
+    «le» stands for the bus and moves to the front of the verb group, right
+    between «ne» and «regrette». English leaves the object after the verb —
+    regrets it — but French always tucks the pronoun in before.
+=   est | is
+=   personne | nobody
+=   le | it

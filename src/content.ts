@@ -1,7 +1,7 @@
 import bundle from './generated/content.json';
-import type { Annotation, Bundle, Line, Occurrence, Rule, Story, Token } from '../scripts/types.js';
+import type { Annotation, Bundle, Chapter, Line, Occurrence, Rule, Story, Token } from '../scripts/types.js';
 
-export type { Annotation, Line, Occurrence, Rule, Story, Token };
+export type { Annotation, Chapter, Line, Occurrence, Rule, Story, Token };
 
 const data = bundle as unknown as Bundle;
 
@@ -64,4 +64,9 @@ export function spanText(line: Line, from: number, to: number): string {
 /** The whole French line as a sentence, punctuation included. */
 export function lineText(line: Line): string {
   return line.fr.map((t) => (t.before ?? '') + t.t + (t.after ?? '')).join(' ');
+}
+
+/** Which chapter a line falls in, or -1 when the story has none. */
+export function chapterOf(story: Story, line: number): number {
+  return story.chapters?.findIndex((c) => line >= c.from && line <= c.to) ?? -1;
 }

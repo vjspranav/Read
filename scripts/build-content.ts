@@ -1,10 +1,10 @@
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { tokenize } from './tokenize.js';
-import { loadLexicon, lexKey } from './gloss.js';
+import { loadLexicon, lexKey, lookup } from './gloss.js';
 import { parseStory } from './parse-story.js';
 import { resolveSpan } from './resolve-span.js';
-import type { Bundle, Line, Occurrence, Rule, Story, StoryLength, Token } from './types.js';
+import type { Bundle, Chapter, Level, Line, Occurrence, Rule, Story, StoryLength, Token } from './types.js';
 
 /** Content is wrong in a way the author must fix. */
 export class BuildError extends Error {}
@@ -55,7 +55,7 @@ export function build(CONTENT = DEFAULT_CONTENT, OUT = DEFAULT_OUT): Bundle {
 
   for (const file of files) {
     const where = `stories/${file}`;
-    const { meta, blocks } = parseStory(readFileSync(join(storyDir, file), 'utf8'), where);
+    const { meta, blocks, chapters: rawChapters } = parseStory(readFileSync(join(storyDir, file), 'utf8'), where);
     const lines: Line[] = [];
 
     blocks.forEach((b, li) => {
@@ -72,7 +72,7 @@ export function build(CONTENT = DEFAULT_CONTENT, OUT = DEFAULT_OUT): Bundle {
         const ov = overrides.get(key);
         if (ov) { tok.g = ov; usedOverride.add(key); return; }
 
-        const entry = lexicon.get(key);
+        const entry = lookup(lexicon, tok.t);
         if (!entry) { ungloss.set(key, (ungloss.get(key) ?? 0) + 1); return; }
         if (entry.ambiguous) {
           problems.push(
@@ -114,12 +114,26 @@ export function build(CONTENT = DEFAULT_CONTENT, OUT = DEFAULT_OUT): Bundle {
       lines.push({ fr: tokens, en: b.en, notes });
     });
 
+    // Chapters are ranges over the flat line list.
+    const chapters: Chapter[] | undefined = rawChapters.length
+      ? rawChapters.map((c, i) => ({
+          title: c.title,
+          titleEn: c.titleEn,
+          from: c.startBlock,
+          to: (rawChapters[i + 1]?.startBlock ?? blocks.length) - 1,
+        }))
+      : undefined;
+    for (const c of chapters ?? []) {
+      if (c.to < c.from) throw new Error(`${where}  chapter "${c.title}" has no lines in it`);
+    }
+
     const order = meta.order === undefined ? Number.MAX_SAFE_INTEGER : Number(meta.order);
     if (!Number.isFinite(order)) throw new Error(`${where}  order must be a number, got "${meta.order}"`);
 
     stories.push({
       id: meta.id, order, title: meta.title, titleEn: meta.titleEn,
-      length: meta.length as StoryLength, tone: meta.tone, summary: meta.summary, lines,
+      length: meta.length as StoryLength, level: meta.level as Level, tone: meta.tone,
+      summary: meta.summary, lines, ...(chapters ? { chapters } : {}),
     });
   }
 

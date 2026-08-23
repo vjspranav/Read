@@ -49,6 +49,9 @@ export function Library() {
 
         <div className="shelfhead">
           <h2>Stories</h2>
+          <p className="levelnote">
+            A2 is the plain end — everyday words, present and past. B1 asks more of you.
+          </p>
           <div className="filters">
             {FILTERS.map(([v, label]) => (
               <button key={v} className={`chip${filter === v ? ' on' : ''}`}
@@ -75,10 +78,11 @@ export function Library() {
                   </span>
                 )}
                 <span className="len">
+                  <span className={`lv lv-${s.level.toLowerCase()}`}>{s.level}</span>
                   <span className="ticks">
                     {[0, 1, 2].map((i) => <i key={i} className={i < (TICKS[s.length] ?? 1) ? 'f' : ''} />)}
                   </span>
-                  {LABEL[s.length] ?? s.length}
+                  {s.chapters ? `${s.chapters.length} chapters` : (LABEL[s.length] ?? s.length)}
                 </span>
               </Link>
             );

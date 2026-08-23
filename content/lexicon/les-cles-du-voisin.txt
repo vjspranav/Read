@@ -1,0 +1,132 @@
+# lexicon for "Les clés du voisin" — new words only, not in core.txt.
+# glosses are hyphenated single concepts, never phrases.
+
+# ── proper nouns ─────────────────────────────────────────────
+Camille   = Camille
+
+# ── articles, determiners, pronouns ─────────────────────────
+aux       = at-the
+c'        = this
+ces       = these
+ça        = that
+elles     = they
+j'        = I
+m'        = me
+me        = myself
+ma        = my
+mes       = my
+mon       = my
+moi       = me
+-moi      = me
+nous      = we
+que       = that
+qui       = who
+quelqu'un = someone
+ses       = his
+tout      = all
+
+# ── verbs — present ──────────────────────────────────────────
+avons     = have
+crois     = believe
+excusez   = excuse
+prenons   = take
+suis      = am
+
+# ── verbs — imparfait ────────────────────────────────────────
+achetait  = was-buying
+allait    = was-going
+avais     = had
+connaissais = knew
+disait    = was-saying
+étaient   = were
+faisait   = was-making
+habitions = lived
+pensais   = was-thinking
+savait    = knew
+voulais   = wanted
+voyais    = was-seeing
+
+# ── verbs — infinitive ───────────────────────────────────────
+dormir    = to-sleep
+savoir    = to-know
+venir     = to-come
+
+# ── verbs — gerund (-ant) ────────────────────────────────────
+rentrant  = returning
+
+# ── verbs — passé composé participles ───────────────────────
+collé     = stuck
+descendu  = went-down
+devenues  = became
+donné     = gave
+écrit     = wrote
+expliqué  = explained
+frappé    = knocked
+laissé    = left
+lu        = read
+montré    = showed
+ouvert    = opened
+perdu     = lost
+remercié  = thanked
+souri     = smiled
+téléphoné = phoned
+trouvé    = found
+venu      = came
+
+# ── nouns ──────────────────────────────────────────────────
+bas       = bottom
+boîtes    = boxes
+boulanger = baker
+cause     = cause
+choses    = things
+chose     = thing
+clés      = keys
+courrier  = mail
+croissant = croissant
+dame      = lady
+dessus    = on-it
+escalier  = staircase
+étage     = floor
+gardienne = caretaker
+immeuble  = building
+lettres   = letters
+livre     = book
+longtemps = long-time
+marche    = step
+mot       = word
+numéro    = number
+page      = page
+poids     = weight
+porte-clés = keyring
+réponse   = answer
+rien      = nothing
+samedi    = Saturday
+lundi     = Monday
+mercredi  = Wednesday
+jeudi     = Thursday
+semaine   = week
+soir      = evening
+suite     = following
+tasse     = cup
+téléphone = telephone
+voisin    = neighbour
+
+# ── adjectives ───────────────────────────────────────────────
+grande    = big
+gentil    = kind
+petit     = small
+pleine    = full
+premier   = first
+troisième = third
+vide      = empty
+vides     = empty
+
+# ── adverbs / other ──────────────────────────────────────────
+aussi     = also
+autour    = around
+froid     = cold
+partout   = everywhere
+parce     = because
+peut-être = maybe
+presque   = almost
+seulement = only

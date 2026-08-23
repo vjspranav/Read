@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { lexKey, parseLexicon } from './gloss.js';
+import { lexKey, lookup, parseLexicon } from './gloss.js';
 
 describe('lexKey', () => {
   it('folds case and apostrophe shape together', () => {
@@ -54,5 +54,29 @@ describe('ambiguity is a library-wide decision', () => {
     // parseLexicon itself accepts the flag; loadLexicon is where scope is enforced.
     const lex = parseLexicon('de = of | ambiguous\n', 'x');
     expect(lex.get('de')?.ambiguous).toBe(true);
+  });
+});
+
+describe('names and ordinary words coexist', () => {
+  it('a capitalised entry does not shadow the ordinary word', () => {
+    const lex = parseLexicon('petit = small\nPetit = Petit\n', 'x');
+    expect(lookup(lex, 'petit')?.gloss).toBe('small');
+    expect(lookup(lex, 'Petit')?.gloss).toBe('Petit');
+  });
+
+  it('an ordinary entry still answers a capitalised word at the start of a line', () => {
+    const lex = parseLexicon('le = the\n', 'x');
+    expect(lookup(lex, 'Le')?.gloss).toBe('the');
+  });
+
+  it('a capitalised-only entry still answers the lower-case form', () => {
+    const lex = parseLexicon('Bonjour = hello\n', 'x');
+    expect(lookup(lex, 'bonjour')?.gloss).toBe('hello');
+    expect(lookup(lex, 'Bonjour')?.gloss).toBe('hello');
+  });
+
+  it('strips an opening guillemet before looking up', () => {
+    const lex = parseLexicon('pain = bread\n', 'x');
+    expect(lookup(lex, '«pain')?.gloss).toBe('bread');
   });
 });

@@ -71,6 +71,15 @@
 @media (prefers-color-scheme: dark){.btn-acc{color:var(--paper)}}
 .btn-acc:hover{opacity:.9;background:var(--accent)}
 
+/* ── chapter navigation ───────────────────────────────────── */
+.chapternav{display:flex;justify-content:space-between;align-items:center;gap:16px;
+  margin-top:52px;padding-top:24px;border-top:1px solid var(--rule)}
+.chapbtn{font-family:var(--serif);font-size:15.5px;color:var(--ink-2);
+  max-width:46%;transition:color .18s}
+.chapbtn:hover{color:var(--accent)}
+.chapbtn.next{text-align:right}
+.chapend{font-size:10px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-4)}
+
 /* ── the action bar ───────────────────────────────────────── */
 .actionbar{
   position:fixed;z-index:40;transform:translateX(-50%);

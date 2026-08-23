@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type React from 'react';
-import { Link, useParams } from 'react-router-dom';
-import { getStory, lineText, spanText } from '../content.js';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import { chapterOf, getStory, lineText, spanText } from '../content.js';
 import { SIZES, useSettings } from '../settings/useSettings.js';
 import { markFor, useTrackProgress } from '../settings/useProgress.js';
 import { useSelection } from './useSelection.js';
@@ -13,8 +13,18 @@ import { speak } from './speak.js';
 import './reader.css';
 
 export function Reader() {
-  const { id } = useParams();
+  const { id, chapter } = useParams();
   const story = id ? getStory(id) : undefined;
+  const navigate = useNavigate();
+
+  // Chapter stories show one chapter at a time; everything else shows the lot.
+  const chapters = story?.chapters;
+  const chapterIndex = chapters
+    ? Math.min(Math.max(Number(chapter ?? 1) - 1, 0), chapters.length - 1)
+    : -1;
+  const window_ = chapters ? chapters[chapterIndex] : null;
+  const firstLine = window_ ? window_.from : 0;
+  const lastLine = window_ ? window_.to : (story ? story.lines.length - 1 : 0);
 
   const { settings, set } = useSettings();
   const { sel, tap, clear, has, setSel } = useSelection();
@@ -64,14 +74,19 @@ export function Reader() {
     return () => io.disconnect();
   }, [story, report]);
 
-  // Pick up where they left off.
+  // Pick up where they left off — including which chapter that was in.
   useEffect(() => {
     if (!story || !id) return;
     const mark = markFor(id);
     if (!mark || mark.line < 2 || mark.done) return;
+
+    if (chapters && chapter === undefined) {
+      const c = chapterOf(story, mark.line);
+      if (c > 0) { navigate(`/story/${id}/${c + 1}`, { replace: true }); return; }
+    }
     const el = document.querySelector(`.line[data-line="${mark.line}"]`);
     el?.scrollIntoView({ block: 'center' });
-  }, [story, id]);
+  }, [story, id, chapters, chapter, navigate]);
 
   if (!story) {
     return (
@@ -157,9 +172,11 @@ export function Reader() {
 
       <div className="page" ref={bodyRef}>
         <div className="storyhead">
-          <span className="eyebrow">{story.length.replace('-', ' ')}</span>
-          <h1>{story.title}</h1>
-          <p className="sub">{story.titleEn}</p>
+          <span className="eyebrow">
+            {window_ ? `Chapter ${chapterIndex + 1} of ${chapters!.length}` : story.length.replace('-', ' ')}
+          </span>
+          <h1>{window_ ? window_.title : story.title}</h1>
+          <p className="sub">{window_ ? (window_.titleEn ?? story.title) : story.titleEn}</p>
           <hr />
         </div>
 
@@ -183,7 +200,9 @@ export function Reader() {
           }
           style={{ ['--fr' as string]: SIZES[settings.size] }}
         >
-          {story.lines.map((line, i) => (
+          {story.lines.slice(firstLine, lastLine + 1).map((line, offset) => {
+            const i = firstLine + offset;
+            return (
             <Line
               key={i}
               line={line}
@@ -195,8 +214,24 @@ export function Reader() {
               onTapLine={() => toggleLine(i)}
               onKey={onKey(i)}
             />
-          ))}
+            );
+          })}
         </div>
+
+        {chapters && (
+          <nav className="chapternav">
+            {chapterIndex > 0 ? (
+              <Link className="chapbtn" to={`/story/${story.id}/${chapterIndex}`}>
+                ← {chapters[chapterIndex - 1].title}
+              </Link>
+            ) : <span />}
+            {chapterIndex < chapters.length - 1 ? (
+              <Link className="chapbtn next" to={`/story/${story.id}/${chapterIndex + 2}`}>
+                {chapters[chapterIndex + 1].title} →
+              </Link>
+            ) : <span className="chapend">The end</span>}
+          </nav>
+        )}
       </div>
 
       {sel && selLine && !why && (

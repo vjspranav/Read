@@ -1,0 +1,423 @@
+---
+id: les-cles-du-voisin
+title: Les clés du voisin
+titleEn: The neighbour's keys
+length: two-page
+level: A2
+order: 70
+tone: everyday
+summary: A narrator finds a stranger's keys on the stairs, spends a week trying to return them, and finally meets the neighbour they had already crossed paths with many times without knowing their name.
+---
+
+fr  Un lundi matin, il faisait encore froid, et l'escalier de mon immeuble était vide.
+en  One Monday morning, it was still cold, and the stairway of my building was empty.
+?   il | weather-il
+    «il» doesn't stand for a person or a thing here — French just needs a
+    subject for weather, the same empty «il» you'd see in «il pleut», it's
+    raining. Nothing is actually cold in a way «il» could point to.
+?   l' | elision-before-vowel
+    «le» would run straight into «escalier», a word starting with a vowel
+    sound, so it drops its own vowel and becomes «l'». You'll see the same
+    move happen to «de» later in the story.
+=   il | it
+=   l' | the
+=   de | of
+=   était | was
+
+fr  J'ai trouvé un porte-clés sur une marche, tout seul.
+en  I found a keyring on a step, all alone.
+
+fr  Il y avait deux clés dessus, une grande et une petite.
+en  There were two keys on it, a big one and a small one.
+?   Il y avait | il-y-a-impersonal
+    «il», «y», and «avait» only mean something as one block: there was. It's
+    how the keys get introduced into the story, the same way «il y a» would
+    do it in the present.
+?   grande | adjective-agreement
+    «clé» is feminine, so both size words end in «e» to match it — «grand»
+    and «petit» would be the versions for a masculine noun. You can't hear
+    the difference out loud, but it has to be written.
+=   il | it
+=   y | there
+
+fr  Elles n'étaient pas à moi.
+en  They weren't mine.
+?   à moi | etre-a-possession
+    French doesn't have a separate verb for belonging — «être» plus «à» plus
+    a person does the job. «Elles sont à moi» would mean they're mine; the
+    negation here just flips it around.
+?   n' ... pas | negation-wraps-verb
+    Only one verb here, «étaient», so «ne» and «pas» simply close around it —
+    no helping verb to complicate things yet, unlike the compound tenses
+    coming up soon.
+=   étaient | were
+=   pas | not-2
+=   à | to
+
+fr  Je me suis dit que quelqu'un a perdu ses clés.
+en  I told myself that someone had lost their keys.
+?   me suis dit | reflexive-verbs
+    «se dire» means to tell yourself something — «me» shows the telling
+    loops back to the narrator. Reflexive verbs like this always build the
+    passé composé with «être», never «avoir», which is why it's «suis», not
+    «ai».
+?   que | reported-speech-que
+    English could drop that here — I told myself someone lost their keys —
+    but French can't. «que» has to introduce what was said, even inside your
+    own head.
+
+fr  Je voulais savoir à qui étaient ces clés.
+en  I wanted to know whose keys these were.
+?   à qui | etre-a-possession
+    Asking whose something is uses the same «être à» pattern as saying it
+    plainly, just turned into a question. «à qui» stands where «à moi» or
+    «à elle» would go, asking which person the «à» points to.
+=   à | to
+=   étaient | were
+
+fr  Au premier étage, j'ai frappé à la porte d'un vieil homme.
+en  On the first floor, I knocked on an old man's door.
+?   vieil | adjective-before-vowel
+    «vieux» would put two vowel sounds back to back in «vieux homme» — the
+    «h» is silent, so it's really «vieux + omme». French swaps in the
+    special form «vieil» to avoid that collision.
+=   à | at
+=   la | the
+=   d' | of
+
+fr  Ce n'était pas ses clés non plus.
+en  They weren't his keys either.
+=   était | was
+=   pas | not-2
+=   plus | either
+
+fr  Au deuxième étage, une dame m'a dit que ces clés n'étaient pas à elle.
+en  On the second floor, a lady told me these keys weren't hers.
+?   que | reported-speech-que
+    Same rule as before: what she said has to be introduced with «que», even
+    though English would happily just say a lady told me these keys weren't
+    hers.
+?   à elle | etre-a-possession
+    Same shape as «à moi» a few lines back, just with «elle» instead — the
+    standalone pronoun that has to follow a preposition like «à».
+=   étaient | were
+=   pas | not-2
+=   à | to
+
+fr  Au troisième étage, j'ai frappé, mais personne n'a répondu.
+en  On the third floor, I knocked, but nobody answered.
+?   personne n'a répondu | negation-other-pairs
+    «personne» takes the place of «pas» here and means nobody — it's the
+    subject of the sentence, not something sitting after the verb the way it
+    does in «il n'y a personne». It still pairs with «ne» the same way
+    «plus» and «jamais» do.
+=   personne | nobody
+
+fr  Je suis descendu à la boulangerie, en bas de l'immeuble.
+en  I went down to the bakery, at the bottom of the building.
+?   suis descendu | passe-compose-etre
+    «descendre» is one of the small set of movement verbs that build the
+    passé composé with «être» instead of «avoir» — the same family as
+    «aller» and «rentrer». That's why it's «je suis descendu», never «j'ai
+    descendu».
+=   à | at
+=   la | the
+=   en | in
+=   de | of
+=   l' | the
+
+fr  J'ai montré les clés au boulanger, mais il ne connaissait pas ces clés.
+en  I showed the keys to the baker, but he didn't know them.
+?   il ne connaissait pas | imparfait-vs-passe-compose
+    «j'ai montré» is the event — one action, holding the keys out. «il ne
+    connaissait pas» is imparfait because not recognising them isn't
+    something that happened; it's the state the baker was already in.
+=   il | he
+=   les | the
+=   pas | not-2
+
+fr  Alors, j'ai écrit un mot et je l'ai collé près des boîtes aux lettres.
+en  So, I wrote a note and stuck it up near the mailboxes.
+?   je l'ai collé | object-pronoun-before-verb
+    «l'» stands for the note and sits right in front of «ai», the helper
+    verb. English says stuck it up after the verb; French moves the pronoun
+    left and keeps it there.
+=   l' | it
+
+fr  Le mot disait : « J'ai trouvé des clés. Elles ne sont pas à moi. Elles sont peut-être à vous ? »
+en  The note said: "I found some keys. They aren't mine. Maybe they're yours?"
+?   des clés | partitive-article
+    «clés» is plural, so «des» does the job «du» or «de la» would do for
+    something singular — an unspecified number of keys, not a count.
+?   à moi | etre-a-possession
+    Both halves of the note lean on the same «être à» pattern the narrator
+    used out loud earlier — «à moi» rules the keys out as the narrator's,
+    and «à vous» asks whoever reads the note if they're theirs.
+=   le | the
+=   pas | not-2
+=   à | to
+
+fr  J'ai laissé mon numéro de téléphone au bas de la page.
+en  I left my phone number at the bottom of the page.
+=   de | of
+=   la | the
+
+fr  Un voisin a lu mon mot, et il m'a dit : « C'est gentil, ça. »
+en  A neighbour read my note, and told me: "That's kind of you."
+=   il | he
+=   est | is
+
+fr  Mardi, personne n'a téléphoné.
+en  On Tuesday, nobody phoned.
+=   personne | nobody
+
+fr  Mercredi, j'ai demandé à la gardienne, mais elle ne savait rien.
+en  On Wednesday, I asked the caretaker, but she didn't know anything.
+?   elle ne savait rien | imparfait-vs-passe-compose
+    «j'ai demandé» is the one-off event, going and asking. «elle ne savait
+    rien» is imparfait because not knowing isn't an action — it's a state
+    she was already in before the narrator even asked.
+=   à | at
+=   la | the
+
+fr  J'ai laissé les clés sur la table de la cuisine.
+en  I left the keys on the kitchen table.
+=   les | the
+=   la | the
+=   de | of
+
+fr  Chaque soir, en rentrant, je les voyais sur la table.
+en  Every evening, coming home, I saw them on the table.
+?   en rentrant | preposition-plus-infinitive
+    «en» is the one preposition that doesn't take the plain infinitive after
+    it — it takes this «-ant» form instead. «En rentrant» means while coming
+    home, something happening at the same time as noticing the keys.
+?   je les voyais | object-pronoun-before-verb
+    «les» stands for the keys and sits in front of «voyais» rather than
+    after it — the same leftward move object pronouns always make.
+=   la | the
+=   en | while
+=   les | them
+
+fr  Les clés n'étaient plus seulement des clés.
+en  The keys weren't just keys any more.
+?   n' ... plus | negation-other-pairs
+    «plus» here doesn't mean more — paired with «ne», it means not any more.
+    The keys used to be just keys, and that had stopped being true.
+=   les | the
+=   étaient | were
+=   plus | no-more
+
+fr  Elles sont devenues un petit poids sur la table.
+en  They became a small weight on the table.
+?   sont devenues | passe-compose-etre
+    «devenir» is another être verb, like «descendre» earlier — and because
+    the subject is «elles», the keys, the participle picks up an «s»,
+    «devenues», agreeing the way an adjective would.
+=   la | the
+
+fr  Jeudi, j'ai posé une tasse de café à côté des clés, mais personne n'est venu.
+en  Thursday, I put a cup of coffee next to the keys, but nobody came.
+?   personne n'est venu | negation-other-pairs
+    «personne» is the subject again, nobody, and «venir» is one of the être
+    verbs — so together it's «personne n'est venu». «venu» stays in its
+    plain masculine form because «personne» is always treated as masculine,
+    whoever it turns out to mean.
+=   de | of
+=   à | at
+=   personne | nobody
+=   est | is
+
+fr  Vendredi, il y avait aussi mon courrier et un livre autour d'elles.
+en  Friday, my mail and a book were around them too.
+?   d'elles | elision-before-vowel
+    «de» meets «elles», a vowel start, and drops its own vowel the same way
+    it did with «l'escalier» right at the start of the story.
+?   autour d'elles | stressed-pronouns
+    After a preposition like «autour de», French needs this standalone
+    «elles», not a form that hides in front of a verb — the same slot «moi»
+    and «elle» filled after «à» earlier on.
+=   il | it
+=   y | there
+=   d' | of
+
+fr  À cause des clés, ma table de cuisine était pleine de petites choses.
+en  Because of the keys, my kitchen table was full of little things.
+?   pleine | adjective-agreement
+    «table» is feminine, so «plein» picks up an «e» to match it, «pleine».
+    Say «ma table était plein» out loud and it's immediately wrong, even
+    though you can't hear the missing letter.
+?   petites choses | adjective-position-default
+    «petit» is one of a short list of common adjectives — about size, age,
+    beauty, or goodness — that jump in front of the noun instead of
+    following it, unlike most French adjectives.
+=   à | at
+=   de | of
+=   était | was
+
+fr  Le soir, avant de dormir, je pensais encore aux clés.
+en  In the evening, before sleeping, I still thought about the keys.
+?   avant de dormir | preposition-plus-infinitive
+    Where English puts an -ing form after before — before sleeping — French
+    uses the plain dictionary form of the verb instead: «avant de dormir»,
+    never «avant de dormant».
+=   le | the
+=   de | of
+
+fr  Les clés étaient sur ma table depuis une semaine.
+en  The keys had been on my table for a week.
+?   depuis une semaine | duration-pendant-depuis
+    The keys didn't sit there for a week and then stop — they were still
+    there, so French uses «depuis» with the imparfait rather than «pendant»,
+    which would mark a stretch that's already over.
+=   les | the
+=   étaient | were
+
+fr  Je n'avais toujours pas de réponse à mon mot.
+en  I still had no answer to my note.
+?   pas de réponse | de-after-negation
+    «réponse» would normally take «une» in front of it, an answer. Once the
+    sentence is negative, there isn't one at all, so the article shrinks to
+    bare «de».
+=   pas | not-2
+=   de | any
+=   à | to
+
+fr  Je pensais que personne n'allait venir.
+en  I thought nobody was going to come.
+?   personne n'allait venir | negation-other-pairs
+    «personne» is the subject again — nobody was going to come — paired
+    with «ne» the same way as before. This time it wraps around «allait»,
+    the conjugated piece of «allait venir», while «venir» itself sits
+    untouched right after it.
+?   que | reported-speech-que
+    «que» has to introduce the thought here too — French never drops it the
+    way English drops that in I thought nobody was going to come.
+=   personne | nobody
+
+fr  Le vendredi suivant, quelqu'un a frappé à ma porte.
+en  The following Friday, someone knocked at my door.
+=   le | the
+=   à | at
+
+fr  J'ai ouvert la porte.
+en  I opened the door.
+=   la | the
+
+fr  C'était la femme de la boulangerie.
+en  It was the woman from the bakery.
+?   C'était | imparfait-vs-passe-compose
+    «j'ai ouvert» just before this is the event, one action, opening the
+    door. «c'était» is imparfait because it isn't something that happened —
+    it's simply who turned out to already be standing there.
+=   était | was
+=   la | the
+=   femme | woman
+=   de | of
+
+fr  Je la voyais presque tous les matins, mais je ne connaissais pas son nom.
+en  I saw her almost every morning, but I didn't know her name.
+?   je la voyais | object-pronoun-before-verb
+    «la» stands for the woman and sits in front of «voyais», the same
+    leftward move «les» made earlier when it stood for the keys.
+?   son nom | possessive-agrees-with-noun
+    «son» agrees with «nom», a masculine word — it says nothing about the
+    woman herself, even though «son» looks like it should mean his. If the
+    word for name were feminine, this same sentence about this same woman
+    would use «sa» instead.
+=   la | her
+=   les | the
+=   pas | not-2
+=   son | his
+
+fr  Elle achetait toujours la même chose, un café et un croissant.
+en  She always bought the same thing, a coffee and a croissant.
+=   la | the
+=   même | same
+
+fr  « Excusez-moi, a-t-elle dit. Je crois que ce sont mes clés. »
+en  "Excuse me," she said. "I think these are my keys."
+?   a-t-elle dit | euphonic-t-inversion
+    Dropping in a dialogue tag with «elle a» would collide two vowel
+    sounds, «a» and «elle». The «t» that slides between them doesn't mean
+    anything on its own — it's only there to make the words sayable
+    together.
+?   que | reported-speech-que
+    «que» is required here too — French can't just say I think these are my
+    keys without it, the way English sometimes drops that.
+
+fr  « J'ai cherché ces clés partout », a-t-elle expliqué.
+en  "I've looked for these keys everywhere," she explained.
+
+fr  Je lui ai donné les clés tout de suite.
+en  I gave her the keys right away.
+?   lui ai donné | object-pronoun-before-verb
+    «lui» stands for the woman, to her, and sits in front of «ai» instead of
+    after «donné» the way English puts it. It works whether the person is
+    male or female; only the sentence tells you which.
+=   lui | her
+=   les | the
+=   de | of
+
+fr  Elle m'a remercié, et puis elle a souri.
+en  She thanked me, and then she smiled.
+
+fr  Elle m'a dit qu'elle s'appelle Camille.
+en  She told me her name was Camille.
+?   qu' | reported-speech-que
+    «que» is doing the same job again, introducing what she said, and
+    shortens to «qu'» because «elle» starts with a vowel.
+?   s'appelle | reflexive-verbs
+    «s'appeler» is how French says to be called — literally to call
+    yourself. It stays in the present here even though everything around it
+    is passé composé, because her name being Camille isn't a one-off event;
+    it's a fact that's still true.
+=   qu' | that
+=   s' | herself
+
+fr  Moi, je lui ai dit mon nom aussi.
+en  I told her my name too.
+?   Moi | stressed-pronouns
+    «Moi» standing alone at the front adds emphasis, as for me — something
+    «je» alone couldn't do. It's the standalone form French uses whenever a
+    pronoun needs to carry weight on its own, not glued to a verb.
+=   lui | her
+
+fr  Nous avons ri, parce que nous habitions dans le même immeuble depuis longtemps.
+en  We laughed, because we had been living in the same building for a long time.
+?   habitions | duration-pendant-depuis
+    «habitions» is imparfait because living in the same building wasn't a
+    single event — paired with «depuis longtemps» at the end of the
+    sentence, it says the living-there had already been true for a while by
+    the time they met, exactly the kind of ongoing fact «depuis» pairs with.
+=   le | the
+=   même | same
+
+fr  Depuis ce jour, Camille et moi, nous prenons un café ensemble le samedi.
+en  Since that day, Camille and I have coffee together on Saturdays.
+?   Depuis ce jour | duration-pendant-depuis
+    This time «depuis» pairs with the present tense, «prenons» at the end of
+    the sentence, because the coffee habit hasn't stopped — it's still
+    going as the narrator tells the story. Compare «depuis longtemps» a
+    moment ago, which used the imparfait for a fact about the past instead.
+?   le samedi | definite-article-days
+    A bare «samedi» would mean one particular Saturday. Adding «le» turns it
+    into a routine, every Saturday, the same trick that turned «vendredi»
+    into a habit here after a whole week of specific, one-off days earlier
+    in the story.
+=   le | the
+
+fr  Sur ma table, il n'y a plus de clés — seulement deux tasses vides.
+en  On my table, there are no more keys — just two empty cups.
+?   il n'y a plus | il-y-a-impersonal
+    «il y a», here negated to «il n'y a plus», is the same fixed block from
+    earlier in the story, now saying there's nothing left instead of
+    announcing what's there.
+?   vides | adjective-agreement
+    «tasses» is feminine and plural, so «vide» picks up an «s» for the
+    plural — it already ends in «e», so no separate feminine ending is
+    needed on top of it.
+=   il | it
+=   y | there
+=   plus | no-more
+=   de | any

@@ -5,8 +5,10 @@ import type { Line, Story, StoryLength } from './types.js';
 export interface RawNote { span: string; ruleId: string; occurrence: number; explicit: boolean; note: string; }
 export interface RawOverride { word: string; gloss: string; }
 export interface RawBlock { fr: string; en: string; notes: RawNote[]; overrides: RawOverride[]; line: number; }
+export interface RawChapter { title: string; titleEn?: string; startBlock: number; }
 
 const LENGTHS: StoryLength[] = ['one-page', 'two-page', 'chapter'];
+const LEVELS = ['A2', 'A2-B1', 'B1'];
 
 function frontmatter(text: string, where: string): [Record<string, string>, string, number] {
   const m = text.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?/);
@@ -24,8 +26,11 @@ function frontmatter(text: string, where: string): [Record<string, string>, stri
 }
 
 /** Split the body into blocks and read the fr / en / ? / = directives. */
-export function parseBlocks(body: string, where: string, offset: number): RawBlock[] {
+export function parseBlocks(body: string, where: string, offset: number): {
+  blocks: RawBlock[]; chapters: RawChapter[];
+} {
   const blocks: RawBlock[] = [];
+  const chapters: RawChapter[] = [];
   let cur: RawBlock | null = null;
   let pending: RawNote | null = null;
 
@@ -37,6 +42,15 @@ export function parseBlocks(body: string, where: string, offset: number): RawBlo
 
     if (!raw.trim()) { push(); return; }
     if (raw.trimStart().startsWith('#')) return;
+
+    // `== Titre | English title` opens a chapter at the next line.
+    if (raw.startsWith('==')) {
+      push();
+      const [fr, en] = raw.slice(2).split('|').map((x) => x.trim());
+      if (!fr) throw new Error(`${where}:${no}  a chapter needs a title:  == Titre`);
+      chapters.push({ title: fr, titleEn: en || undefined, startBlock: blocks.length });
+      return;
+    }
 
     // A continuation line: indented, and we are inside a note.
     if (/^\s{4,}\S/.test(raw) && pending) {
@@ -80,26 +94,35 @@ export function parseBlocks(body: string, where: string, offset: number): RawBlo
   });
 
   push();
-  return blocks;
+  return { blocks, chapters };
 }
 
 export function parseStory(text: string, where: string) {
   const [meta, body, consumed] = frontmatter(text, where);
 
-  for (const k of ['id', 'title', 'titleEn', 'length', 'tone', 'summary']) {
+  for (const k of ['id', 'title', 'titleEn', 'length', 'level', 'tone', 'summary']) {
     if (!meta[k]) throw new Error(`${where}  frontmatter is missing "${k}"`);
   }
   if (!LENGTHS.includes(meta.length as StoryLength)) {
     throw new Error(`${where}  length is "${meta.length}" — must be one of ${LENGTHS.join(', ')}`);
   }
+  if (!LEVELS.includes(meta.level)) {
+    throw new Error(`${where}  level is "${meta.level}" — must be one of ${LEVELS.join(', ')}`);
+  }
 
-  const blocks = parseBlocks(body, where, consumed);
+  const { blocks, chapters } = parseBlocks(body, where, consumed);
   if (!blocks.length) throw new Error(`${where}  has no French lines`);
+  if (meta.length === 'chapter' && chapters.length < 2) {
+    throw new Error(`${where}  length is "chapter" but only ${chapters.length} chapter(s) are marked — use "== Titre" lines`);
+  }
+  if (meta.length !== 'chapter' && chapters.length) {
+    throw new Error(`${where}  has chapter markers but length is "${meta.length}" — set length to "chapter"`);
+  }
   for (const b of blocks) {
     if (!b.en) throw new Error(`${where}:${b.line}  this block has no "en" translation`);
   }
 
-  return { meta, blocks };
+  return { meta, blocks, chapters };
 }
 
 export { tokenize, lexKey };

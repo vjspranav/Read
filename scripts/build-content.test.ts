@@ -15,6 +15,7 @@ id: t
 title: Titre
 titleEn: Title
 length: one-page
+level: A2
 tone: everyday
 summary: A summary.
 ---
@@ -94,5 +95,68 @@ describe('build-content', () => {
     const b = build(HEAD + '\nfr  Dehors, il pleuvait encore.\nen  Outside.\n', 'dehors = outside\n');
     const g = b.stories[0].lines[0].fr.map((t: any) => t.g);
     expect(g).toEqual(['outside', undefined, undefined, undefined]);
+  });
+});
+
+const CHAPTER_HEAD = `---
+id: t
+title: Titre
+titleEn: Title
+length: chapter
+level: A2
+tone: everyday
+summary: A summary.
+---
+`;
+
+describe('chapters', () => {
+  const threeChapters = CHAPTER_HEAD + `
+== Le matin | The morning
+
+fr  Dehors, il pleuvait encore.
+en  Outside, it was still raining.
+
+== Le soir | The evening
+
+fr  Dehors, il pleuvait encore.
+en  Outside, it was still raining.
+
+fr  Dehors, il pleuvait encore.
+en  Outside, it was still raining.
+`;
+
+  it('turns == markers into ranges over the flat line list', () => {
+    const b = build(threeChapters, OK_LEX);
+    const s = b.stories[0];
+    expect(s.lines).toHaveLength(3);           // lines stay flat
+    expect(s.chapters).toEqual([
+      { title: 'Le matin', titleEn: 'The morning', from: 0, to: 0 },
+      { title: 'Le soir', titleEn: 'The evening', from: 1, to: 2 },
+    ]);
+  });
+
+  it('keeps the English chapter title optional', () => {
+    const b = build(threeChapters.replace(' | The morning', ''), OK_LEX);
+    expect(b.stories[0].chapters![0].titleEn).toBeUndefined();
+  });
+
+  it('FAILS when a chapter story has fewer than two chapters', () => {
+    const one = CHAPTER_HEAD + '\n== Seul\n\nfr  Dehors, il pleuvait encore.\nen  Outside.\n';
+    expect(() => build(one, OK_LEX)).toThrow(/only 1 chapter\(s\) are marked/);
+  });
+
+  it('FAILS when a non-chapter story uses chapter markers', () => {
+    const s = HEAD + '\n== Oops\n\nfr  Dehors, il pleuvait encore.\nen  Outside.\n';
+    expect(() => build(s, OK_LEX)).toThrow(/set length to "chapter"/);
+  });
+
+  it('FAILS on a chapter with no title', () => {
+    const s = CHAPTER_HEAD + '\n==\n\nfr  Dehors, il pleuvait encore.\nen  Outside.\n';
+    expect(() => build(s, OK_LEX)).toThrow(/a chapter needs a title/);
+  });
+
+  it('leaves ordinary stories without any chapters', () => {
+    const b = build(OK_STORY, OK_LEX, { imparfait: 'x' });
+    expect(b.stories[0].chapters).toBeUndefined();
   });
 });

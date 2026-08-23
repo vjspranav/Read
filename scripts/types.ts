@@ -26,6 +26,20 @@ export interface Line {
 }
 
 export type StoryLength = 'one-page' | 'two-page' | 'chapter';
+export type Level = 'A2' | 'A2-B1' | 'B1';
+
+/**
+ * A chapter is a range over the story's flat line list, not a nested
+ * structure — so reading progress and rule occurrences keep addressing lines
+ * by one global index and need to know nothing about chapters.
+ */
+export interface Chapter {
+  title: string;
+  titleEn?: string;
+  /** Inclusive line range. */
+  from: number;
+  to: number;
+}
 
 export interface Story {
   id: string;
@@ -34,9 +48,12 @@ export interface Story {
   title: string;
   titleEn: string;
   length: StoryLength;
+  level: Level;
   tone: string;
   summary: string;
   lines: Line[];
+  /** Present only on stories that are divided into chapters. */
+  chapters?: Chapter[];
 }
 
 export interface Rule {

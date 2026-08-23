@@ -9,13 +9,11 @@ escalier    = stairs
 monde       = world
 voisine     = neighbour
 voisin      = neighbour
-rebord      = sill
 fenêtre     = window
 après-midi  = afternoon
 peu         = little
 lait        = milk
 tasse       = cup
-propriétaire = owner
 samedi      = Saturday
 soir        = evening
 lit         = bed
@@ -28,7 +26,6 @@ Nuage       = cloud
 
 # ── verbs ──────────────────────────────────────────────────
 sait        = knows
-appartient  = belongs
 monte       = climbs
 choisit     = picks
 mange       = eats
@@ -51,7 +48,6 @@ toutes      = all
 premier     = first
 troisième   = third
 vieille     = old
-vrai        = real
 ouverte     = open
 meilleure   = best
 
@@ -66,3 +62,4 @@ votre       = your
 moi         = me
 enfin       = finally
 peut-être   = maybe
+rebord    = windowsill

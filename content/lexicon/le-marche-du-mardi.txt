@@ -1,0 +1,131 @@
+# lexicon for "Le marché du mardi"
+# form = gloss. glosses are hyphenated single concepts, never phrases.
+# ambiguous words already declared in core.txt (à, de, en, est, il, la, le,
+# les, même, pas, plus, qu', sa, son, y, ...) still need a per-line "=" in the
+# story itself — that flag can only live in core.txt, so it is not repeated
+# here.
+
+# ── proper nouns ────────────────────────────────────────────
+Mamie     = Mamie
+Blanchard = Blanchard
+Vidal     = Vidal
+Lyon      = Lyon
+
+# ── pronouns ────────────────────────────────────────────────
+me        = me
+-elle     = she
+-moi      = me
+toi       = you
+tu        = you
+mes       = my
+quel      = which
+ces       = these
+
+# ── verbs ──────────────────────────────────────────────────
+demande   = asks
+demander  = to-ask
+répond    = replies
+réponds   = answer
+fait      = makes
+comprends = understand
+comprendre = to-understand
+réveille  = wakes-up
+vient     = comes
+installe  = sets-up
+aide      = help
+sortir    = to-take-out
+commence  = starts
+vend      = sells
+pleure    = cries
+met       = puts
+dois      = owe
+repart    = leaves-again
+coûtent   = cost
+dis       = say
+approche  = approaches
+ajoute    = adds
+sourit    = smiles
+souffle   = blows
+pèse      = weighs
+rends     = gives-back
+tromper   = to-mistake
+arrête    = stops
+connaissez = know
+prend     = takes
+part      = leaves
+hésite    = hesitates
+raconte   = tells
+raconté   = told
+apportait = was-bringing
+vois      = see
+reviens   = come-back
+range     = puts-away
+lever     = to-get-up
+écrire    = to-write
+vivre     = to-live
+faut      = is-needed
+parti     = left
+rien      = nothing
+
+# ── nouns ──────────────────────────────────────────────────
+tomates   = tomatoes
+froid     = cold
+carottes  = carrots
+légumes   = vegetables
+besoin    = need
+marché    = market
+pièces    = coins
+euro      = euro
+mari      = husband
+hiver     = winter
+envie     = desire
+pommes    = apples
+terre     = earth
+ici       = here
+client    = customer
+cliente   = customer
+autres    = others
+prix      = price
+carton    = sign
+suivante  = next
+commande  = order
+bras      = arms
+combien   = how-much
+canne     = cane
+chose     = thing
+fils      = son
+pomme     = apple
+vers      = towards
+midi      = midday
+vent      = wind
+kilo      = kilogram
+monnaie   = change
+cheveux   = hair
+mois      = month
+après     = after
+soupe     = soup
+prochain  = next
+derniers  = last
+
+# ── adjectives and adverbs ──────────────────────────────────
+jeune     = young
+mêmes     = same
+mieux     = better
+très      = very
+pourquoi  = why
+oui       = yes
+ça        = that
+tôt       = early
+petit     = small
+gelées    = frozen
+seulement = only
+assez     = enough
+gênée     = embarrassed
+presque   = almost
+triste    = sad
+calme     = quiet
+blancs    = white
+dernier   = last
+mouillés  = wet
+chaude    = hot
+vrai      = true

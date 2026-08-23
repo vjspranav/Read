@@ -16,6 +16,7 @@ export default function App() {
         <Route path="/" element={<Library />} />
         <Route path="/stories" element={<Navigate to="/" replace />} />
         <Route path="/story/:id" element={<Reader />} />
+        <Route path="/story/:id/:chapter" element={<Reader />} />
         <Route path="/rules" element={<RulesIndex />} />
         <Route path="/rules/:ruleId" element={<RuleDetail />} />
         <Route path="*" element={<Navigate to="/" replace />} />

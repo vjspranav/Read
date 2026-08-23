@@ -3,6 +3,7 @@ id: la-liste-de-ma-mere
 title: La liste de ma mère
 titleEn: My mother's list
 length: one-page
+level: A2
 order: 10
 tone: everyday
 summary: A narrator goes shopping with their mother's illegible list, guesses wrong three times, and comes home to a meal made from the mistakes.
@@ -12,10 +13,11 @@ fr  Chaque samedi, ma mère écrit une liste pour les courses.
 en  Every Saturday, my mother writes a list for the shopping.
 =   les | the
 
-fr  Son écriture est un vrai désastre.
-en  Her handwriting is a real disaster.
+fr  Son écriture est très difficile à lire.
+en  Her handwriting is really hard to read.
 =   son | her
 =   est | is
+=   à | to
 
 fr  Personne ne la comprend bien.
 en  Nobody understands it well.
@@ -57,6 +59,10 @@ en  There's no more milk or bread in the house.
     «lait» would normally take «du» in front of it — some milk. Once the
     sentence is negative, there isn't any, so the article shrinks to bare
     «de». The same thing happens to «pain» a few words later.
+?   de pain | de-after-negation
+    «pain» would also take «du» on its own — some bread. Because the whole
+    sentence stays negative, it drops to bare «de» here too, exactly the
+    same move as «lait» just before it.
 =   il | it
 =   y | there
 =   plus | no-more
@@ -73,8 +79,8 @@ en  I went to the shop on the corner of the street.
 =   de | of
 =   la | the
 
-fr  Il y avait beaucoup de monde devant les rayons.
-en  There were a lot of people in front of the shelves.
+fr  Il y avait beaucoup de monde dans le magasin.
+en  There were a lot of people in the shop.
 ?   Il y avait | il-y-a-impersonal
     Same fixed phrase as a moment ago, just in the imparfait now — «il y
     avait» paints the scene the narrator walked into, the crowd already
@@ -86,7 +92,7 @@ en  There were a lot of people in front of the shelves.
 =   il | it
 =   y | there
 =   de | of
-=   les | the
+=   le | the
 
 fr  Sur la liste, j'ai lu « du pain », « des œufs » et « du beurre ».
 en  On the list, I read "bread", "eggs" and "butter".
@@ -104,9 +110,13 @@ en  On the list, I read "bread", "eggs" and "butter".
 fr  J'ai aussi lu « des poireaux », je crois.
 en  I also read "leeks", I think.
 
-fr  Mais avec cette écriture, « poireaux » ressemble à « poires ».
-en  But with that handwriting, "poireaux" looks like "poires".
-=   à | to
+fr  Mais avec cette écriture, on dirait « poires », pas « poireaux ».
+en  But with that handwriting, it looks like "pears", not "leeks".
+?   on dirait | on-dirait
+    «on dirait» doesn't literally mean "one would say" — together the two
+    words just mean "it looks like". With this handwriting, «poireaux»
+    looks close enough to «poires» to read as the wrong word entirely.
+=   pas | not-2
 
 fr  Alors je n'ai pas acheté de poireaux, mais des poires.
 en  So I didn't buy leeks, but pears.
@@ -131,6 +141,10 @@ en  I took the closest jar: it was honey.
     imparfait because it isn't something that happened; it's what turned
     out to already be true. The jar had been honey the whole time, he
     just hadn't looked yet.
+?   le plus proche | superlative-le-plus
+    «le plus proche» is how French builds "the closest" — there's no
+    "-est" ending to add. «plus» goes right in front of the adjective,
+    with «le» agreeing with «pot», which is masculine.
 =   le | the
 =   plus | most
 =   était | was
@@ -146,36 +160,48 @@ en  Finally, the list said "jam", but I read "mustard".
 =   de | of
 =   la | the
 
-fr  Je suis rentré avec un sac plein de mauvaises surprises.
-en  I came home with a bag full of bad surprises.
+fr  Je suis rentré avec un sac plein de mauvaises erreurs.
+en  I came home with a bag full of bad mistakes.
 ?   suis rentré | passe-compose-etre
     «rentrer» is another of the être verbs, like «aller» earlier — coming
     home counts as the kind of movement that takes «être» instead of
     «avoir».
+?   plein de | quantity-de
+    «plein» already says the bag is full, so «erreurs» gets bare «de» in
+    front of it instead of a partitive article — the same move as «un peu
+    de» and «beaucoup de» earlier in the story.
 ?   mauvaises | adjective-agreement
-    «surprises» is feminine and plural, so the adjective picks up both
+    «erreurs» is feminine and plural, so the adjective picks up both
     endings, «-e» for feminine and «-s» for plural, even though you can't
     hear the difference when you say it.
+?   mauvaises | adjective-position-default
+    «mauvais» is one of a small set of common, short adjectives — about
+    size, age, beauty, or goodness — that jump in front of the noun
+    instead of following it like most French adjectives do. That's why
+    it's «mauvaises erreurs», not «erreurs mauvaises».
 =   de | of
 
-fr  Devant la porte, j'ai eu peur de sa réaction.
-en  In front of the door, I was afraid of her reaction.
-?   sa réaction | possessive-agrees-with-noun
-    «sa» agrees with «réaction», a feminine word — it says nothing about
-    the mother, whose reaction it is. If «réaction» were masculine, this
-    same sentence about the same mother would use «son» instead.
+fr  Devant la porte, j'ai eu peur de ce qu'elle allait dire.
+en  In front of the door, I was afraid of what she was going to say.
+?   allait dire | imparfait-vs-passe-compose
+    «j'ai eu peur» is the event — one moment of fear, right there at the
+    door. «allait dire» is imparfait because it isn't something that
+    happened; it's what the narrator expected was still coming, already
+    hanging over the scene before she said a word.
+?   qu'elle | elision-before-vowel
+    «que» meets «elle», a word starting with a vowel sound, and drops its
+    own vowel the same way «que» does with «il» elsewhere in this story.
 =   la | the
-=   sa | her
 =   de | of
+=   qu' | that
 
-fr  Mais quand elle a vu les poires et le miel, ma mère a éclaté de rire.
-en  But when she saw the pears and the honey, my mother burst out laughing.
+fr  Mais quand elle a vu les poires et le miel, ma mère a ri très fort.
+en  But when she saw the pears and the honey, my mother laughed really hard.
 =   les | the
 =   le | the
-=   de | of
 
-fr  « Ce n'est pas grave, a-t-elle dit. On va improviser. »
-en  "It's not a big deal," she said. "We'll improvise."
+fr  « Ce n'est pas grave, a-t-elle dit. On va faire avec. »
+en  "It's not a big deal," she said. "We'll make do."
 ?   a-t-elle | euphonic-t-inversion
     Interrupting the sentence with «elle a» to add a dialogue tag would
     collide two vowel sounds, «a» and «elle». The «t» that slides between
@@ -200,22 +226,33 @@ fr  Avec le miel, elle a préparé une sauce pour le poulet.
 en  With the honey, she made a sauce for the chicken.
 =   le | the
 
-fr  On a mangé ce dîner bizarre, tous les deux, en riant.
-en  We ate that strange dinner together, laughing.
+fr  On a mangé ce dîner de poires et de miel, tous les deux, en riant.
+en  We ate that dinner of pears and honey together, laughing.
 ?   en riant | preposition-plus-infinitive
     «en» is the one preposition that doesn't take the plain infinitive
     afterward — it takes this «-ant» form instead. «En riant» means "while
     laughing", the thing they were doing at the same time as eating.
 =   les | the
 =   en | while
+=   de | of
 
 fr  Ma mère a gardé la liste dans sa poche, avec un sourire.
 en  My mother kept the list in her pocket, with a smile.
+?   sa poche | possessive-agrees-with-noun
+    «sa» matches «poche», a feminine word — it doesn't tell you anything
+    about the mother's own gender, even though she happens to be a "she"
+    too. If the pocket were a masculine word, this same sentence would use
+    «son» instead, no matter who owned it.
 =   la | the
 =   sa | her
 
 fr  De toute façon, chaque samedi, c'est la même histoire.
 en  Anyway, every Saturday, it's the same story.
+?   la même histoire | adjective-position-meaning
+    «même» sits in front of the noun here, and that position is what gives
+    it the meaning "same" — the story repeats every week. Move it after
+    the noun instead — «l'histoire même» — and it would mean "the story
+    itself", a completely different idea.
 =   de | of
 =   est | is
 =   la | the
