@@ -48,3 +48,11 @@ describe('parseLexicon', () => {
       .toThrow(/lexicon\/core\.txt:2/);
   });
 });
+
+describe('ambiguity is a library-wide decision', () => {
+  it('is explained in the error, not just refused', () => {
+    // parseLexicon itself accepts the flag; loadLexicon is where scope is enforced.
+    const lex = parseLexicon('de = of | ambiguous\n', 'x');
+    expect(lex.get('de')?.ambiguous).toBe(true);
+  });
+});

@@ -1,0 +1,246 @@
+---
+id: le-velo-jaune
+title: Le vélo jaune
+titleEn: The yellow bicycle
+length: one-page
+order: 30
+tone: humour
+summary: A battered yellow bicycle keeps disappearing and reappearing down the street, and the neighbours' confident theories give way to a far more ordinary explanation.
+---
+
+fr  Un vieux vélo jaune apparaît devant l'immeuble, un lundi matin.
+en  An old yellow bicycle appears in front of the building, one Monday morning.
+?   l' | elision-before-vowel
+    «immeuble» starts with a vowel sound, so «le» can't stay whole in front of
+    it — it drops the «e» and becomes «l'». Say "le immeuble" out loud and
+    you'll hear the clash it avoids.
+?   vieux vélo jaune | adjective-position-default
+    «vieux» describes age, one of the short, common adjectives that jump in
+    front of the noun instead of following it. «jaune», a colour, stays in its
+    normal spot after the noun, so the bicycle ends up sandwiched between the
+    two.
+=   l' | the
+
+fr  C'est une vieille bicyclette, attachée à un arbre avec une chaîne, mais personne ne la reconnaît.
+en  It's an old bicycle, chained to a tree with a chain, but nobody recognizes it.
+?   vieille | adjective-agreement
+    The bicycle just got a new name, «bicyclette», and it's feminine, so
+    «vieux» has to switch to its feminine form «vieille» — same word as the
+    bike in the line above, just wearing the ending that matches its new noun.
+?   personne ne | negation-other-pairs
+    «personne» sits before «ne» here because it's the subject of the
+    sentence — nobody is the one not recognizing the bike. The negation still
+    needs both pieces even though «personne» already carries the "no one"
+    idea on its own.
+?   la | object-pronoun-before-verb
+    «la» stands for the bicycle — «bicyclette» is feminine, which is why it's
+    «la» and not «le» — and it sits right in front of «reconnaît» instead of
+    after it, the way English would say "recognizes it."
+=   est | is
+=   à | to
+=   personne | nobody
+=   la | it
+
+fr  Le mardi matin, il n'est plus là.
+en  On Tuesday morning, it's no longer there.
+?   n'est plus | negation-other-pairs
+    Swap «pas» for «plus» and the sentence stops meaning "isn't there" and
+    starts meaning "isn't there anymore." The bike hasn't just vanished for a
+    moment — it's genuinely gone from that spot now.
+=   le | the
+=   il | it
+=   est | is
+=   plus | no-more
+
+fr  Quelqu'un le voit plus loin dans la rue, devant la boulangerie.
+en  Someone sees it further down the street, in front of the bakery.
+?   le | object-pronoun-before-verb
+    «le» stands for the bicycle and sits in front of «voit» — French never
+    says «quelqu'un voit le», it moves the pronoun to the left of the verb
+    every time.
+=   le | it
+=   plus | more
+=   la | the
+
+fr  Les voisins boivent du café et inventent des théories.
+en  The neighbours drink coffee and invent theories.
+?   du | partitive-article
+    The neighbours aren't drinking one specific, whole coffee — «café» is
+    masculine, so «de» plus «le» contracts to «du», meaning some coffee, an
+    amount with no number attached.
+?   des | partitive-article
+    Same idea for the theories: an unspecified number of them, invented on
+    the spot, so the plural partitive «des» carries that sense. English just
+    says theories and leaves the amount implied.
+=   les | the
+
+fr  Madame Dubois est certaine que c'est le vélo d'un voleur.
+en  Madame Dubois is certain it's a thief's bicycle.
+?   certaine | adjective-agreement
+    Madame Dubois is a woman, so the adjective «certain» takes an «e» to
+    match her: «certaine». She's the first of three confident neighbours in a
+    row, and, like the others, she's wrong.
+?   d' | elision-before-vowel
+    «de» meets «un», another vowel sound, and contracts the same way «le» did
+    to «l'» in the first line — French won't let two vowel sounds sit next to
+    each other unglued.
+=   est | is
+=   le | the
+=   d' | of
+
+fr  Monsieur Roux est sûr que le vélo se déplace tout seul, la nuit.
+en  Monsieur Roux is sure the bicycle moves by itself at night.
+?   se déplace | reflexive-passive
+    Nobody is named as the one moving the bicycle — it just «se déplace»,
+    moves itself. That's exactly the theory Monsieur Roux is proposing, and
+    the grammar itself sounds a little spooky because of it.
+?   sûr | adjective-agreement
+    Monsieur Roux is a man, so «sûr» stays in its plain masculine form — no
+    extra letter needed, unlike Madame Dubois's «certaine» just before.
+=   est | is
+=   le | the
+=   se | itself
+=   la | the
+
+fr  Les enfants sont sûrs que c'est un vélo magique.
+en  The kids are sure it's a magic bicycle.
+=   les | the
+=   est | is
+
+fr  Chaque jour, le vélo change de rue, mais toujours avec la même roue cassée.
+en  Every day, the bicycle changes streets, but always with the same broken wheel.
+?   change de rue | verb-plus-de-fixed
+    «changer de rue» doesn't mean "change of the street" — «de» is glued to
+    «changer» as part of the verb itself, with no article ever following it.
+    Word for word it looks odd; as a fixed pair it just means "switch
+    streets."
+?   même roue | adjective-position-meaning
+    «même» in front of the noun means the same wheel, the very thing everyone
+    keeps noticing. Move it after the noun — «la roue même» — and it would
+    mean the wheel itself, a different idea entirely.
+=   le | the
+=   de | of
+=   la | the
+=   même | same
+
+fr  Un jour, Madame Dubois décide d'attacher un mot au guidon.
+en  One day, Madame Dubois decides to attach a note to the handlebar.
+?   d' | elision-before-vowel
+    «de» runs into «attacher», a verb starting with a vowel, and contracts
+    the same way it did before «un» a few lines back. The apostrophe is the
+    only trace left of the missing «e».
+=   d' | of
+
+fr  Sur le vélo, il y a un mot : « Ce vélo est à qui ? »
+en  On the bicycle, there's a note: "Whose bike is this?"
+?   il y a | il-y-a-impersonal
+    None of the three words means anything on its own here — together they
+    just mean "there is." It's how the note gets introduced into the story,
+    tied to the bicycle rather than to any person.
+=   le | the
+=   il | it
+=   y | there
+=   est | is
+=   à | to
+
+fr  Pendant trois jours, il n'y a pas de réponse.
+en  For three days, there's no reply.
+?   il n'y a pas | il-y-a-impersonal
+    The same fixed phrase as before, now negated: «il n'y a pas» means "there
+    isn't." The three days of silence are what makes the eventual reply land
+    as a surprise.
+?   de | de-after-negation
+    A plain sentence would say «il y a une réponse». Once it's negated, the
+    article «une» shrinks down to bare «de» — French stops marking the amount
+    once the thing doesn't exist.
+=   il | it
+=   y | there
+=   pas | not-2
+=   de | any
+
+fr  Puis, un matin, quelqu'un a attaché une réponse au guidon.
+en  Then, one morning, someone attached a reply to the handlebar.
+
+fr  Madame Dubois la lit à voix haute, devant tous les voisins.
+en  Madame Dubois reads it aloud, in front of all the neighbours.
+?   la | object-pronoun-before-verb
+    «la» stands for the reply, «réponse», which is feminine — that's why it
+    isn't «le» — and it moves in front of «lit» rather than sitting after it,
+    the way English does with "reads it."
+=   la | it
+=   à | at
+=   les | the
+
+fr  La réponse est simple : « C'est mon vélo. »
+en  The reply is simple: "It's my bike."
+=   la | the
+=   est | is
+
+fr  « Je le déplace chaque jour pour faire croire à ma femme que je fais du sport. »
+en  "I move it every day to make my wife believe I'm exercising."
+?   le | object-pronoun-before-verb
+    «le» stands for the bicycle again and sits in front of «déplace», the
+    same placement rule as every other object pronoun in this story.
+?   pour faire croire | preposition-plus-infinitive
+    After the preposition «pour», French uses the plain dictionary form of
+    the verb, «faire», not an "-ing" form. English would say "to make her
+    believe," with "to" doing the same job «pour» does here.
+?   fais du sport | faire-expressions
+    «faire du sport» is a fixed block meaning to exercise — literally it
+    reads "make of the sport," which is nonsense assembled word by word.
+    Learn it as one piece, the way you'd learn "faire attention."
+=   le | it
+=   à | to
+=   femme | wife
+
+fr  Les voisins éclatent de rire devant l'immeuble.
+en  The neighbours burst out laughing in front of the building.
+=   les | the
+=   de | of
+=   l' | the
+
+fr  Madame Dubois est allée voir le vieil homme pour dire merci.
+en  Madame Dubois went to see the old man to say thank you.
+?   est allée | passe-compose-etre
+    «aller» is one of the small set of verbs that build their past with
+    «être» instead of «avoir». Because the subject is Madame Dubois, a woman,
+    the participle picks up an «e»: «allée».
+?   vieil | adjective-before-vowel
+    «vieux» would put two vowel sounds back to back in «vieux homme», so
+    French swaps in the special form «vieil» instead — the same move the
+    story's very first line made with «l'immeuble».
+=   est | is
+=   le | the
+
+fr  Depuis ce jour, le vélo jaune reste toujours au même endroit.
+en  Since that day, the yellow bicycle always stays in the same spot.
+?   depuis | duration-pendant-depuis
+    «depuis ce jour» marks the day the habit started, and the habit is still
+    going on now — that's what «depuis» signals, unlike «pendant», which
+    would mean the habit was already over and done.
+=   le | the
+=   même | same
+
+fr  Personne ne connaît son adresse, mais tout le monde connaît son vélo.
+en  Nobody knows his address, but everyone knows his bicycle.
+?   son adresse | possessive-agrees-with-noun
+    «adresse» is feminine, so you'd expect «sa» — but it starts with a vowel,
+    and «sa» becomes «son» there purely for the sound, the same shift the
+    rule describes for words like «amie». It still means his address, not
+    anyone else's.
+=   personne | nobody
+=   son | his
+=   le | the
+
+fr  Chaque matin, il dit bonjour, et son vélo jaune attend à côté de lui.
+en  Every morning, he says hello, and his yellow bicycle waits beside him.
+?   à côté de lui | stressed-pronouns
+    After a preposition like «à côté de», French needs the standalone
+    pronoun «lui», not a form that glues onto a verb. It's the same slot
+    «elle» fills after «au-dessus de».
+=   il | he
+=   dit | says
+=   son | his
+=   à | at
+=   de | of
+=   lui | him

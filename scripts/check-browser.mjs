@@ -26,8 +26,8 @@ for (const [name, viewport] of [['phone', { width: 390, height: 844 }], ['deskto
   books >= 2 ? ok(`library lists ${books} stories`) : note(`library shows ${books} stories`);
   await page.screenshot({ path: `shots/${name}-1-library.png`, fullPage: true });
 
-  // ── the reader ──
-  await page.locator('.book').first().click();
+  // ── the reader ── pinned by id: the shelf order is deliberate and changes
+  await page.goto(`${BASE}/#/story/le-train-de-7h12`, { waitUntil: 'networkidle' });
   await page.waitForTimeout(400);
 
   // does the French read as French?
@@ -42,13 +42,13 @@ for (const [name, viewport] of [['phone', { width: 390, height: 844 }], ['deskto
   // ── translation reveal ──
   const line0 = page.locator('.line').first();
   const dim = await line0.locator('.en').evaluate((e) => getComputedStyle(e).color);
-  await line0.click();
+  await line0.locator('.en').click();          // the faded English is the target
   await page.waitForTimeout(350);
   const lit = await line0.locator('.en').evaluate((e) => getComputedStyle(e).color);
   dim !== lit ? ok('tapping a line reveals its translation') : note('tap-to-reveal did not change the translation colour');
 
   // ── selection + action bar ──
-  await page.locator('.f').nth(1).click();
+  await page.locator('.line').first().locator('.f').nth(1).click();
   await page.waitForTimeout(250);
   const bar = page.locator('.actionbar');
   await bar.count() ? ok('action bar appears on selection') : note('no action bar after selecting a word');
@@ -57,7 +57,7 @@ for (const [name, viewport] of [['phone', { width: 390, height: 844 }], ['deskto
   await page.screenshot({ path: `shots/${name}-3-selection.png` });
 
   // extend the selection
-  await page.locator('.f').nth(3).click();
+  await page.locator('.line').first().locator('.f').nth(3).click();
   await page.waitForTimeout(200);
   const selCount = await page.locator('.f.sel').count();
   selCount === 3 ? ok('selection extends across words') : note(`extending gave ${selCount} selected words, expected 3`);

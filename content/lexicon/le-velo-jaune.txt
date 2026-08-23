@@ -1,0 +1,80 @@
+# lexicon for "Le vélo jaune" — new words only, not in core.txt.
+# glosses are hyphenated single concepts, never phrases.
+
+# ── proper nouns and titles ─────────────────────────────────
+Madame    = Mrs
+Monsieur  = Mr
+Dubois    = Dubois
+Roux      = Roux
+
+# ── articles, determiners, pronouns ─────────────────────────
+c'        = this
+quelqu'un = someone
+que       = that
+qui       = who
+loin      = far
+trois     = three
+tout      = all
+mon       = my
+ma        = my
+
+# ── verbs ────────────────────────────────────────────────────
+apparaît  = appears
+attaché   = attached
+attachée  = attached
+attacher  = to-attach
+reconnaît = recognizes
+voit      = sees
+boivent   = drink
+inventent = invent
+déplace   = moves
+change    = changes
+décide    = decides
+lit       = reads
+éclatent  = burst
+rire      = to-laugh
+allée     = went
+voir      = to-see
+dire      = to-say
+faire     = to-make
+fais      = do
+croire    = to-believe
+reste     = stays
+
+# ── nouns ──────────────────────────────────────────────────
+vélo      = bicycle
+immeuble  = building
+lundi     = Monday
+bicyclette = bicycle
+arbre     = tree
+chaîne    = chain
+voisins   = neighbours
+théories  = theories
+voleur    = thief
+nuit      = night
+enfants   = children
+endroit   = spot
+mot       = note
+guidon    = handlebar
+réponse   = reply
+voix      = voice
+sport     = sport
+adresse   = address
+monde     = world
+bonjour   = hello
+roue      = wheel
+jours     = days
+merci     = thanks
+
+# ── adjectives ───────────────────────────────────────────────
+jaune     = yellow
+vieux     = old
+vieille   = old
+cassée    = broken
+certaine  = certain
+sûr       = sure
+sûrs      = sure
+magique   = magic
+seul      = alone
+haute     = high
+simple    = simple

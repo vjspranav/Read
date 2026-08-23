@@ -1,0 +1,222 @@
+---
+id: la-liste-de-ma-mere
+title: La liste de ma mère
+titleEn: My mother's list
+length: one-page
+order: 10
+tone: everyday
+summary: A narrator goes shopping with their mother's illegible list, guesses wrong three times, and comes home to a meal made from the mistakes.
+---
+
+fr  Chaque samedi, ma mère écrit une liste pour les courses.
+en  Every Saturday, my mother writes a list for the shopping.
+=   les | the
+
+fr  Son écriture est un vrai désastre.
+en  Her handwriting is a real disaster.
+=   son | her
+=   est | is
+
+fr  Personne ne la comprend bien.
+en  Nobody understands it well.
+?   Personne ne | negation-other-pairs
+    «personne» is doing the job of the subject here — nobody — not sitting
+    after the verb the way it does in «il n'y a personne». It still pairs
+    with «ne» the same way «plus» and «jamais» do; the two words just wrap
+    around «la comprend» instead of following it.
+=   personne | nobody
+=   la | it
+
+fr  Ce matin, elle m'a donné la liste et un peu d'argent.
+en  This morning, she gave me the list and a little money.
+?   m'a | object-pronoun-before-verb
+    «m'» stands for "me" and sits right in front of «a», the helper verb.
+    English says "gave me" with "me" after the verb; French moves it left
+    and glues it there instead.
+?   un peu d'argent | quantity-de
+    «un peu» already says how much — a little — so French doesn't reach for
+    a partitive article on top of it. It drops straight to bare «de», and
+    you'll see the same move with «beaucoup de» in a moment.
+?   d' | elision-before-vowel
+    «de» runs into «argent», a word starting with a vowel, so it drops its
+    own vowel and becomes «d'». Saying «de argent» out loud is impossible,
+    which is exactly why the contraction exists.
+=   la | the
+=   d' | of
+
+fr  Il n'y a plus de lait ni de pain à la maison.
+en  There's no more milk or bread in the house.
+?   Il n'y a | il-y-a-impersonal
+    «il», «y», and «a» only mean something together — there is. It's the
+    same fixed block that names what's missing from the house before the
+    narrator even leaves for the shop.
+?   n' ... plus | negation-other-pairs
+    «plus» here doesn't mean "more" — paired with «ne», it means "not any
+    more". The house hasn't got a little milk left, it's completely out.
+?   de lait | de-after-negation
+    «lait» would normally take «du» in front of it — some milk. Once the
+    sentence is negative, there isn't any, so the article shrinks to bare
+    «de». The same thing happens to «pain» a few words later.
+=   il | it
+=   y | there
+=   plus | no-more
+=   de | any
+=   à | at
+=   la | the
+
+fr  Je suis allé au magasin au coin de la rue.
+en  I went to the shop on the corner of the street.
+?   suis allé | passe-compose-etre
+    «aller» is one of the small set of verbs — mostly about movement —
+    that build the passé composé with «être» instead of «avoir». That's
+    why it's «je suis allé», never «j'ai allé».
+=   de | of
+=   la | the
+
+fr  Il y avait beaucoup de monde devant les rayons.
+en  There were a lot of people in front of the shelves.
+?   Il y avait | il-y-a-impersonal
+    Same fixed phrase as a moment ago, just in the imparfait now — «il y
+    avait» paints the scene the narrator walked into, the crowd already
+    there before anything else happened.
+?   beaucoup de | quantity-de
+    Same move as «un peu d'argent» earlier: «beaucoup» already names the
+    amount, so «monde» gets bare «de» in front of it instead of a
+    partitive article.
+=   il | it
+=   y | there
+=   de | of
+=   les | the
+
+fr  Sur la liste, j'ai lu « du pain », « des œufs » et « du beurre ».
+en  On the list, I read "bread", "eggs" and "butter".
+?   du | partitive-article | 1
+    «pain» is masculine, so «de» plus «le» contracts to «du» — some bread,
+    an amount with no number attached, not one whole specific loaf.
+?   des | partitive-article
+    Same idea for the eggs, but plural: an unspecified number of them, so
+    the plural partitive «des» does the job instead.
+?   du | partitive-article | 2
+    Same contraction one more time — «beurre» is masculine too, so it's
+    «du» again, not «un beurre» or bare «beurre».
+=   la | the
+
+fr  J'ai aussi lu « des poireaux », je crois.
+en  I also read "leeks", I think.
+
+fr  Mais avec cette écriture, « poireaux » ressemble à « poires ».
+en  But with that handwriting, "poireaux" looks like "poires".
+=   à | to
+
+fr  Alors je n'ai pas acheté de poireaux, mais des poires.
+en  So I didn't buy leeks, but pears.
+?   n' ... pas | negation-wraps-verb
+    «ai» is the helper carrying the tense, so that's what «ne» and «pas»
+    wrap around, not «acheté». «Je n'ai acheté pas» is never correct.
+?   de poireaux | de-after-negation
+    «poireaux» would normally take «des» — some leeks. Because the verb is
+    negated, the article drops to bare «de». Notice «des poires» right
+    after keeps its full form: nothing is negated there, he really did buy
+    them.
+=   pas | not-2
+=   de | any
+
+fr  Ensuite, j'ai vu « du sel », ou peut-être « du miel ».
+en  Then, I saw "salt", or maybe "honey".
+
+fr  J'ai pris le pot le plus proche : c'était du miel.
+en  I took the closest jar: it was honey.
+?   c'était | imparfait-vs-passe-compose
+    «j'ai pris» is the event — one action, grabbing a jar. «c'était» is
+    imparfait because it isn't something that happened; it's what turned
+    out to already be true. The jar had been honey the whole time, he
+    just hadn't looked yet.
+=   le | the
+=   plus | most
+=   était | was
+
+fr  Enfin, la liste disait « de la confiture », mais j'ai lu « de la moutarde ».
+en  Finally, the list said "jam", but I read "mustard".
+?   de la | partitive-article | 1
+    «confiture» is feminine, so unlike «du pain» earlier, «de» and «la»
+    don't contract — they just sit side by side as two separate words,
+    both needed.
+?   de la | partitive-article | 2
+    Same feminine partitive, same shape, just the wrong jar this time.
+=   de | of
+=   la | the
+
+fr  Je suis rentré avec un sac plein de mauvaises surprises.
+en  I came home with a bag full of bad surprises.
+?   suis rentré | passe-compose-etre
+    «rentrer» is another of the être verbs, like «aller» earlier — coming
+    home counts as the kind of movement that takes «être» instead of
+    «avoir».
+?   mauvaises | adjective-agreement
+    «surprises» is feminine and plural, so the adjective picks up both
+    endings, «-e» for feminine and «-s» for plural, even though you can't
+    hear the difference when you say it.
+=   de | of
+
+fr  Devant la porte, j'ai eu peur de sa réaction.
+en  In front of the door, I was afraid of her reaction.
+?   sa réaction | possessive-agrees-with-noun
+    «sa» agrees with «réaction», a feminine word — it says nothing about
+    the mother, whose reaction it is. If «réaction» were masculine, this
+    same sentence about the same mother would use «son» instead.
+=   la | the
+=   sa | her
+=   de | of
+
+fr  Mais quand elle a vu les poires et le miel, ma mère a éclaté de rire.
+en  But when she saw the pears and the honey, my mother burst out laughing.
+=   les | the
+=   le | the
+=   de | of
+
+fr  « Ce n'est pas grave, a-t-elle dit. On va improviser. »
+en  "It's not a big deal," she said. "We'll improvise."
+?   a-t-elle | euphonic-t-inversion
+    Interrupting the sentence with «elle a» to add a dialogue tag would
+    collide two vowel sounds, «a» and «elle». The «t» that slides between
+    them doesn't mean anything — it's only there to make the words sayable
+    together.
+?   n' ... pas | negation-wraps-verb
+    Only one verb here, «est» — no helper, no participle — so «ne» and
+    «pas» just close around it directly. It's the plain version of the
+    same sandwich seen earlier with compound tenses.
+=   pas | not-2
+=   est | is
+
+fr  Elle a coupé les poires avec un peu de fromage.
+en  She cut the pears with a bit of cheese.
+?   un peu de | quantity-de
+    Third time this pattern shows up: «un peu» already names the amount,
+    so «fromage» gets bare «de» in front of it, not a partitive article.
+=   les | the
+=   de | of
+
+fr  Avec le miel, elle a préparé une sauce pour le poulet.
+en  With the honey, she made a sauce for the chicken.
+=   le | the
+
+fr  On a mangé ce dîner bizarre, tous les deux, en riant.
+en  We ate that strange dinner together, laughing.
+?   en riant | preposition-plus-infinitive
+    «en» is the one preposition that doesn't take the plain infinitive
+    afterward — it takes this «-ant» form instead. «En riant» means "while
+    laughing", the thing they were doing at the same time as eating.
+=   les | the
+=   en | while
+
+fr  Ma mère a gardé la liste dans sa poche, avec un sourire.
+en  My mother kept the list in her pocket, with a smile.
+=   la | the
+=   sa | her
+
+fr  De toute façon, chaque samedi, c'est la même histoire.
+en  Anyway, every Saturday, it's the same story.
+=   de | of
+=   est | is
+=   la | the
+=   même | same

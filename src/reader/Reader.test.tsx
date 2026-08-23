@@ -3,9 +3,11 @@ import userEvent from '@testing-library/user-event';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import { beforeEach, describe, expect, it } from 'vitest';
 import { Reader } from './Reader.js';
-import { stories } from '../content.js';
+import { getStory, stories } from '../content.js';
 
-const story = stories[0];
+// Pinned by id: story order is alphabetical by filename, so an index would
+// silently point at a different story the moment one is added.
+const story = getStory('le-train-de-7h12')!;
 
 function open() {
   return render(
@@ -31,14 +33,25 @@ describe('the reader', () => {
     expect(first.querySelector('.en')).toHaveTextContent('The old man closed the door without a sound');
   });
 
-  it('starts with translations unrevealed, and reveals the line you tap', async () => {
+  it('starts with translations unrevealed, and reveals the one you tap', async () => {
     const u = userEvent.setup();
     const { container } = open();
     const line = container.querySelector('.line')!;
     expect(line).not.toHaveClass('on');
-    await u.click(line);
+    await u.click(line.querySelector('.en')!);
     expect(line).toHaveClass('on');
-    await u.click(line);           // and tapping again puts it back
+    await u.click(line.querySelector('.en')!);   // and tapping again puts it back
+    expect(line).not.toHaveClass('on');
+  });
+
+  it('tapping a WORD selects it and does not reveal the line', async () => {
+    // Most of a line's area is words, so the two gestures must not collide:
+    // a word tap selects, and only the faded English reveals.
+    const u = userEvent.setup();
+    const { container } = open();
+    const line = container.querySelector('.line')!;
+    await u.click(line.querySelectorAll('.f')[1]);
+    expect(container.querySelectorAll('.f.sel')).toHaveLength(1);
     expect(line).not.toHaveClass('on');
   });
 
@@ -95,7 +108,7 @@ describe('the reader', () => {
   it('never dead-ends: a word with no note still explains itself', async () => {
     const u = userEvent.setup();
     const { container } = open();
-    const line = stories[0].lines[0];
+    const line = story.lines[0];
     const annotated = new Set<number>();
     line.notes.forEach((n) => { for (let i = n.from; i <= n.to; i++) annotated.add(i); });
     const plain = line.fr.findIndex((_, i) => !annotated.has(i));

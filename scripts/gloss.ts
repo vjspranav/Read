@@ -58,8 +58,22 @@ export function parseLexicon(text: string, where: string): Lexicon {
 
 export function loadLexicon(dir: string): Lexicon {
   const merged: Lexicon = new Map();
+
   for (const f of readdirSync(dir).filter((f) => f.endsWith('.txt')).sort()) {
-    for (const [k, v] of parseLexicon(readFileSync(join(dir, f), 'utf8'), `lexicon/${f}`)) {
+    const lex = parseLexicon(readFileSync(join(dir, f), 'utf8'), `lexicon/${f}`);
+
+    for (const [k, v] of lex) {
+      // Ambiguity is a decision about the whole library, not one story: marking
+      // a word ambiguous forces an override on every line it appears in,
+      // everywhere. Only the shared lexicon gets to make that call, so a
+      // per-story file cannot quietly impose that cost on the rest.
+      if (v.ambiguous && f !== 'core.txt') {
+        throw new Error(
+          `lexicon/${f}  "${k}" is marked ambiguous, but only core.txt may do that.\n` +
+          `    marking a word ambiguous forces an override wherever it appears in EVERY story.\n` +
+          `    either move the entry to core.txt, or drop the "| ambiguous" flag here`,
+        );
+      }
       merged.set(k, v);
     }
   }

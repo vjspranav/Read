@@ -60,9 +60,14 @@ Glosses are hyphenated single concepts (`to-leave`, `of-the`, `not-1`), never
 phrases. Imparfait forms are glossed `was-...` for verbs that take it, so the
 contrast with other past tenses stays visible.
 
-Ambiguous forms (`il`, `la`, `le`, `les`, `est`, `son`, `sa`, `y`, `en`,
-`même`, `personne`, and others marked in the lexicon) need an `=` override on
-every line where they appear, or the build fails. That is deliberate: a
+**Do not mark anything `| ambiguous` in your own file — the build refuses it.**
+Ambiguity is a decision about the whole library: it forces an override wherever
+that word appears in *every* story, so only `core.txt` may declare it. If you
+believe a word truly needs it, say so in your report and leave it alone.
+
+Words already marked ambiguous (`il`, `la`, `le`, `les`, `est`, `son`, `sa`,
+`y`, `en`, `même`, `personne`, and others) need an `=` override on every line
+where they appear, or the build fails. That is deliberate: a
 confidently wrong gloss teaches the wrong thing.
 
 ## Finish by verifying

@@ -165,7 +165,7 @@ export function Reader() {
 
         {!settings.greeted && settings.reveal === 'tap' && (
           <div className="nudge" onClick={(e) => e.stopPropagation()}>
-            <p>The English sits right below each line, faded. Tap any line to reveal it — or keep it always on.</p>
+            <p>The English sits right below each line, faded. Tap it to read it — or keep it always on.</p>
             <div className="btns">
               <button className="btn btn-acc" onClick={() => { set('reveal', 'always'); set('greeted', true); }}>
                 Always on

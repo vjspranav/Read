@@ -1,0 +1,89 @@
+# le-banc-du-parc.txt — words new to "Le banc du parc".
+# core.txt already covers everything else this story reuses.
+
+# ── names ───────────────────────────────────────────────────
+Claire    = Claire
+
+ses       = his
+
+# ── verbs, present ──────────────────────────────────────────
+assied    = sits
+jette     = throws
+parle     = speaks
+regarde   = looks
+remarque  = notices
+rit       = laughs
+parlent   = talk
+
+# ── verbs, imparfait (glossed was-... for the contrast) ──────
+savait    = was-knowing
+habitait  = was-living
+allait    = was-going
+étais     = was
+
+# ── verbs, past participle ───────────────────────────────────
+assis     = sat
+resté     = stayed
+attendu   = waited
+venu      = came
+rendu     = given-back
+nourri    = fed
+apporté   = brought
+revenu    = came-back
+eu        = had
+souri     = smiled
+donné     = gave
+
+# ── verbs, infinitive ─────────────────────────────────────────
+nourrir   = to-feed
+retrouver = to-find
+
+# ── verbs, gerund ──────────────────────────────────────────────
+lisant    = reading
+
+# ── nouns ───────────────────────────────────────────────────
+bout      = end
+livre     = book
+morceaux  = pieces
+morceau   = piece
+oiseaux   = birds
+jeudi     = Thursday
+vendredi  = Friday
+habitude  = habit
+compte    = account
+semaine   = week
+place     = place
+cas       = case
+hôpital   = hospital
+fille     = daughter
+bébé      = baby
+
+# ── adjectives ─────────────────────────────────────────────────
+autre     = other
+vieilles  = old
+usées     = worn
+propres   = clean
+vide      = empty
+
+# ── pronouns and small words ────────────────────────────────
+j'        = I
+ma        = my
+toute     = all
+chacun    = each-one
+
+# ── adverbs and connectors ──────────────────────────────────
+vraiment  = really
+parfois   = sometimes
+où        = where
+ni        = nor
+comment   = how
+juste     = just
+enfin     = finally
+lentement = slowly
+bien      = well
+doucement = softly
+peu       = little
+merci     = thanks
+
+# ── one-token contractions the tokenizer keeps whole ─────────
+aux       = to-the

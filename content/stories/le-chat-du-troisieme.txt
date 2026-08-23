@@ -1,0 +1,242 @@
+---
+id: le-chat-du-troisieme
+title: Le chat du troisième
+titleEn: The cat from the third floor
+length: one-page
+order: 20
+tone: everyday
+summary: A grey cat has a different name on every floor of the building, and the child who sets out to find its real owner discovers there isn't just one.
+---
+
+fr  Il y a un chat gris dans l'immeuble.
+en  There's a grey cat in the building.
+?   il y a | il-y-a-impersonal
+    «il», «y», and «a» don't mean it, there, and has on their own here —
+    together the three words just mean there is. It's how the cat gets
+    introduced into the story, the same way you'd start telling someone
+    about him.
+=   il | it
+=   y | there
+=   l' | the
+
+fr  Personne ne sait à qui il appartient.
+en  Nobody knows who he belongs to.
+?   Personne ne | negation-other-pairs
+    Here «personne» (nobody) is the one doing the not-knowing, so it comes
+    first and «ne» follows it, right before the verb. It's the same
+    negative word you'll see later in the story, just moved because this
+    time it's the subject.
+=   personne | nobody
+=   à | to
+=   il | he
+
+fr  Le chat connaît toutes les portes de l'immeuble.
+en  The cat knows every door in the building.
+?   toutes | adjective-agreement
+    «toutes» agrees with «portes», which is feminine and plural, so it
+    picks up both endings. Later on you'll see «tout le monde», where
+    «tout» stays masculine and singular because it's describing a
+    different, singular idea — everyone, not the doors.
+=   le | the
+=   les | the
+=   de | of
+=   l' | the
+
+fr  Chaque jour, il monte l'escalier et il choisit une porte.
+en  Every day, he climbs the stairs and picks a door.
+?   l'escalier | elision-before-vowel
+    «le» runs into «escalier», which starts with a vowel sound, so it
+    drops its own vowel and becomes «l'». You'll see the same move happen
+    to «que» a few lines further on.
+=   il | he
+=   l' | the
+
+fr  Au premier étage, il mange chez Monsieur Duval.
+en  On the first floor, he eats at Monsieur Duval's.
+?   chez Monsieur Duval | chez
+    «chez» plus a person's name means at that person's home — there's no
+    separate French word for "someone's place" the way English just says
+    "at Duval's." It always needs «chez» in front.
+=   il | he
+
+fr  Là, tout le monde l'appelle Gris.
+en  There, everyone calls him Gris.
+?   l'appelle | object-pronoun-before-verb
+    «l'» stands for the cat and sits right in front of «appelle», the verb
+    that's actually doing the calling. English puts it after — calls him
+    — but French always moves the pronoun to the left of the verb it
+    belongs to.
+=   le | the
+=   l' | him
+
+fr  Au deuxième étage, il dort sur le rebord de la fenêtre.
+en  On the second floor, he sleeps on the windowsill.
+=   il | he
+=   le | the
+=   de | of
+=   la | the
+
+fr  La voisine du deuxième l'appelle Moustache.
+en  The neighbour on the second floor calls him Moustache.
+=   la | the
+=   l' | him
+
+fr  Léo habite au troisième étage, juste au-dessus.
+en  Léo lives on the third floor, just above.
+
+fr  L'après-midi, le chat dort aussi sur son rebord à lui.
+en  In the afternoon, the cat also sleeps on his own windowsill.
+?   son ... lui | stressed-pronouns
+    «son rebord» already means his windowsill, so adding «à lui»
+    afterwards is pure emphasis — his own, not the neighbours'. That extra
+    «lui» is the standalone pronoun French adds to underline whose
+    something is.
+=   l' | the
+=   le | the
+=   son | his
+=   à | to
+=   lui | him
+
+fr  Léo lui donne un peu de lait dans une vieille tasse.
+en  Léo gives him a little milk in an old cup.
+?   un peu de lait | quantity-de
+    «un peu» already says how much — a little — so no article follows
+    «de». Compare it to «du lait» with no quantity word at all, which
+    would just mean some milk with no sense of how much.
+?   vieille | adjective-agreement
+    «vieille» is the feminine form, matching «tasse», a feminine word. Say
+    «vieux tasse» out loud and it clashes — the ending has to change with
+    the noun it's describing.
+=   lui | to-him
+=   de | of
+
+fr  Il l'appelle Nuage, parce qu'il est gris comme un nuage.
+en  He calls him Cloud, because he's grey like a cloud.
+?   qu'il | elision-before-vowel
+    «que» meets «il», another word starting with a vowel sound, and
+    contracts the same way «le» did with «escalier» earlier. Say «parce
+    que il» out loud and you'll hear why it can't stay whole.
+=   il | he
+=   l' | him
+=   qu' | that
+=   est | is
+
+fr  Un jour, Léo a décidé de trouver le vrai propriétaire du chat.
+en  One day, Léo decided to find the cat's real owner.
+?   de trouver | preposition-plus-infinitive
+    «décider» needs «de» before whatever comes next, and what follows is
+    the plain form of the verb, «trouver», never an "-ing" form. English
+    says decided to find; French just glues «de» and the infinitive
+    straight onto «décidé».
+=   de | of
+=   le | the
+
+fr  Il a frappé à toutes les portes de l'immeuble.
+en  He knocked on every door in the building.
+?   frappé à | a-for-places
+    «frapper» always comes with «à» attached to it — you don't just knock
+    a door in French, you knock at it. English drops the preposition
+    entirely, but French verbs like this one keep theirs no matter what.
+?   toutes | adjective-agreement
+    Same agreement as the first time this phrase showed up. «toutes»
+    matches «portes», feminine and plural, so it stays «toutes», not
+    «tous» — the ending doesn't change no matter how many doors he's
+    already tried.
+=   il | he
+=   à | at
+=   les | the
+=   de | of
+=   l' | the
+
+fr  « C'est votre chat ? » a-t-il demandé à chaque voisin.
+en  "Is this your cat?" he asked each neighbour.
+?   a-t-il | euphonic-t-inversion
+    Flipping «il a» round to ask a question would give «a-il», two vowels
+    crashing into each other. French slides in a meaningless «t» just to
+    make the question sayable, the same fix you'd see with any «il» or
+    «elle» question in this tense.
+=   est | is
+=   à | to
+=   il | he
+
+fr  « Non, a répondu Monsieur Duval, mais je lui donne à manger. »
+en  "No," Monsieur Duval replied, "but I feed him."
+?   lui donne | object-pronoun-before-verb
+    «lui» stands for the cat and again sits before the verb it belongs to,
+    «donne» — the same leftward move as «l'appelle» earlier in the story.
+    Here it means to him rather than replacing the cat directly the way
+    «l'» did, but the rule about where the pronoun goes doesn't change.
+=   lui | to-him
+=   à | to
+
+fr  « Non, a répondu la voisine du deuxième, mais il dort chez moi le samedi. »
+en  "No," the neighbour on the second floor replied, "but he sleeps at my place on Saturdays."
+?   le samedi | definite-article-days
+    A bare «samedi» would mean this coming Saturday. Adding «le» turns it
+    into a routine — every Saturday, as a rule — which is exactly what the
+    neighbour means: a regular thing, not a one-off.
+=   la | the
+=   il | he
+=   le | the
+
+fr  Enfin, Léo a compris : le chat n'appartient à personne.
+en  Finally, Léo understood: the cat doesn't belong to anyone.
+?   n' ... personne | negation-other-pairs
+    This time «personne» comes after the verb instead of before it,
+    because it's the thing being denied — the cat belongs to nobody —
+    rather than the one doing the not-knowing, like back in the second
+    line. «ne» still wraps around the verb either way.
+=   le | the
+=   à | to
+=   personne | nobody
+
+fr  Ou peut-être qu'il appartient à tout l'immeuble.
+en  Or maybe he belongs to the whole building.
+=   qu' | that
+=   il | he
+=   à | to
+=   l' | the
+
+fr  Ce soir-là, Léo a laissé sa fenêtre ouverte.
+en  That evening, Léo left his window open.
+?   sa fenêtre | possessive-agrees-with-noun
+    «sa» agrees with «fenêtre», a feminine word, even though the window
+    belongs to Léo, a boy. French possessives track the gender of the
+    thing owned, not the owner — say «son fenêtre» and it would sound
+    wrong before you could explain why.
+?   ouverte | adjective-agreement
+    «ouverte» adds an «e» to match «fenêtre», feminine. Léo isn't just
+    leaving the window open in some generic sense — the word itself has
+    to agree with what's open.
+=   sa | his
+
+fr  Le chat gris est entré, et il a choisi, comme toujours, la meilleure place.
+en  The grey cat came in, and picked, as always, the best spot.
+?   est entré | passe-compose-etre
+    «entrer» is one of the small set of verbs, like «rester» or
+    «arriver», that build their past with «être» instead of «avoir». The
+    cat is a single «il», so the participle stays plain «entré» with no
+    extra letter.
+=   le | the
+=   est | is
+=   il | he
+=   la | the
+
+fr  Il s'est endormi sur le lit de Léo, et personne n'est venu le chercher.
+en  He fell asleep on Léo's bed, and nobody came to fetch him.
+?   s'est endormi | reflexive-verbs
+    «s'endormir» means to fall asleep, and verbs like this one, where the
+    subject is also the target of the action, always build their past
+    tense with «être», never «avoir». That's why it's «s'est endormi»,
+    not «s'a endormi», even though most verbs in this tense use «avoir».
+?   le chercher | object-pronoun-before-verb
+    «le» stands for the cat and this time sits in front of «chercher»,
+    the infinitive it belongs to, not the conjugated verb «est venu». The
+    pronoun always attaches to the verb it's actually the object of,
+    wherever that verb sits in the sentence.
+=   il | he
+=   s' | himself
+=   est | is
+=   le | the
+=   de | of
+=   personne | nobody

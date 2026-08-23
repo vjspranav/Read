@@ -1,0 +1,68 @@
+# lexicon for "Le chat du troisième" — new words only, core.txt is untouched.
+
+# ── nouns ──────────────────────────────────────────────────
+chat        = cat
+gris        = grey
+immeuble    = building
+escalier    = stairs
+étage       = floor
+monde       = world
+voisine     = neighbour
+voisin      = neighbour
+rebord      = sill
+fenêtre     = window
+après-midi  = afternoon
+peu         = little
+lait        = milk
+tasse       = cup
+propriétaire = owner
+samedi      = Saturday
+soir        = evening
+lit         = bed
+place       = spot
+Monsieur    = Mister
+Duval       = Duval
+Léo         = Léo
+Moustache   = Moustache
+Nuage       = cloud
+
+# ── verbs ──────────────────────────────────────────────────
+sait        = knows
+appartient  = belongs
+monte       = climbs
+choisit     = picks
+mange       = eats
+dort        = sleeps
+donne       = gives
+décidé      = decided
+trouver     = to-find
+frappé      = knocked
+manger      = to-eat
+compris     = understood
+laissé      = left
+entré       = entered
+choisi      = chose
+endormi     = fell-asleep
+venu        = came
+chercher    = to-fetch
+
+# ── adjectives ─────────────────────────────────────────────
+toutes      = all
+premier     = first
+troisième   = third
+vieille     = old
+vrai        = real
+ouverte     = open
+meilleure   = best
+
+# ── determiners, pronouns, connectors ───────────────────────
+tout        = all
+qui         = who
+juste       = just
+aussi       = also
+parce       = because
+c'          = this
+votre       = your
+moi         = me
+enfin       = finally
+peut-être   = maybe

@@ -29,6 +29,8 @@ export type StoryLength = 'one-page' | 'two-page' | 'chapter';
 
 export interface Story {
   id: string;
+  /** Shelf position. Lower comes first; unset sorts to the end. */
+  order: number;
   title: string;
   titleEn: string;
   length: StoryLength;

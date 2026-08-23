@@ -3,6 +3,7 @@ id: le-train-de-7h12
 title: Le train de 7h12
 titleEn: The 7:12 train
 length: one-page
+order: 60
 tone: everyday
 summary: A man misses the same train twice in one week, and the second time is deliberate.
 ---

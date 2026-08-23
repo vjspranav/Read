@@ -10,6 +10,7 @@ id: le-train-de-7h12
 title: Le train de 7h12
 titleEn: The 7:12 train
 length: one-page          # one-page | two-page | chapter
+order: 20                 # shelf position, lowest first; omit to sort last
 tone: everyday            # everyday | literary | humour
 summary: One plain-English sentence.
 ---

@@ -1,12 +1,12 @@
 import { describe, expect, it } from 'vitest';
-import { punctAfter, spaceBefore } from './Line.js';
+import { punctAfter, punctBefore, spaceBefore } from './Line.js';
 import { tokenize } from '../../scripts/tokenize.js';
 
 /** What the reader actually paints on screen, spaces and all. */
 function rendered(french: string): string {
   const toks = tokenize(french);
   return toks
-    .map((t, i) => (spaceBefore(toks, i) ? ' ' : '') + (t.before ?? '') + t.t + (t.after ? punctAfter(t.after) : ''))
+    .map((t, i) => (spaceBefore(toks, i) ? ' ' : '') + (t.before ? punctBefore(t.before) : '') + t.t + (t.after ? punctAfter(t.after) : ''))
     .join('');
 }
 
@@ -33,7 +33,14 @@ describe('the French renders as written French', () => {
   });
 
   it('handles quotation marks', () => {
-    expect(rendered('Il dit « bonjour ».')).toBe('Il dit «bonjour\u202F».');
+    // French keeps the full stop outside the closing guillemet.
+    expect(rendered('Il dit « bonjour ».')).toBe('Il dit «\u202Fbonjour\u202F».');
+  });
+
+  it('sets French quotation marks with their inside spaces', () => {
+    // « C'est votre chat ? »  — a space after «, before ?, and before ».
+    expect(rendered('« C’est votre chat ? » a-t-il demandé.'))
+      .toBe('«\u202FC’est votre chat\u202F?\u202F» a-t-il demandé.');
   });
 
   it('round-trips every line of every story', async () => {
@@ -41,7 +48,7 @@ describe('the French renders as written French', () => {
     for (const story of stories) {
       for (const line of story.lines) {
         const text = line.fr
-          .map((t, i) => (spaceBefore(line.fr, i) ? ' ' : '') + (t.before ?? '') + t.t + (t.after ? punctAfter(t.after) : ''))
+          .map((t, i) => (spaceBefore(line.fr, i) ? ' ' : '') + (t.before ? punctBefore(t.before) : '') + t.t + (t.after ? punctAfter(t.after) : ''))
           .join('');
         // No word may be glued to the next one.
         expect(text).not.toMatch(/[a-zà-ÿ]{25,}/i);

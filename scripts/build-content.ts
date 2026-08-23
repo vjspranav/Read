@@ -114,11 +114,17 @@ export function build(CONTENT = DEFAULT_CONTENT, OUT = DEFAULT_OUT): Bundle {
       lines.push({ fr: tokens, en: b.en, notes });
     });
 
+    const order = meta.order === undefined ? Number.MAX_SAFE_INTEGER : Number(meta.order);
+    if (!Number.isFinite(order)) throw new Error(`${where}  order must be a number, got "${meta.order}"`);
+
     stories.push({
-      id: meta.id, title: meta.title, titleEn: meta.titleEn,
+      id: meta.id, order, title: meta.title, titleEn: meta.titleEn,
       length: meta.length as StoryLength, tone: meta.tone, summary: meta.summary, lines,
     });
   }
+
+  // Shelf order is deliberate — easiest first — not alphabetical by filename.
+  stories.sort((a, b) => a.order - b.order || a.title.localeCompare(b.title, 'fr'));
 
   // ── report ───────────────────────────────────────────────
   const totalTokens = stories.reduce((n, s) => n + s.lines.reduce((m, l) => m + l.fr.length, 0), 0);

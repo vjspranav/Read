@@ -1,0 +1,89 @@
+# lexicon for "La liste de ma mère" — words not already in core.txt.
+# core.txt is never edited here; every new word for this story lives in
+# this file instead.
+
+# ── determiners, pronouns, small function words ────────────
+ma        = my
+m'        = me
+j'        = I
+c'        = this
+on        = we
+ni        = nor
+toute     = whole
+
+# ── verbs ──────────────────────────────────────────────────
+écrit     = writes
+donné     = given
+suis      = am
+allé      = gone
+disait    = was-saying
+lu        = read
+crois     = believe
+ressemble = resembles
+acheté    = bought
+vu        = seen
+va        = goes
+rentré    = came-back
+eu        = had
+éclaté    = burst
+rire      = laugh
+coupé     = cut
+préparé   = prepared
+mangé     = eaten
+riant     = laughing
+gardé     = kept
+improviser = to-improvise
+comprend  = understands
+
+# ── nouns ──────────────────────────────────────────────────
+courses   = shopping
+écriture  = handwriting
+liste     = list
+argent    = money
+lait      = milk
+maison    = house
+magasin   = shop
+monde     = world
+rayons    = shelves
+œufs      = eggs
+beurre    = butter
+poireaux  = leeks
+poires    = pears
+sel       = salt
+miel      = honey
+pot       = jar
+moutarde  = mustard
+confiture = jam
+surprises = surprises
+peur      = fear
+réaction  = reaction
+grave     = serious
+fromage   = cheese
+sauce     = sauce
+poulet    = chicken
+dîner     = dinner
+poche     = pocket
+sourire   = smile
+façon     = way
+histoire  = story
+mère      = mother
+désastre  = disaster
+samedi    = Saturday
+
+# ── adjectives, determiners, quantity words ─────────────────
+cette     = this
+proche    = close
+mauvaises = bad
+plein     = full
+bizarre   = strange
+beaucoup  = a-lot
+peu       = little
+vrai      = real
+
+# ── adverbs and connectors ──────────────────────────────────
+aussi     = also
+alors     = so
+ensuite   = then
+enfin     = finally
+peut-être = maybe
+bien      = well

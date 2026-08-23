@@ -1,0 +1,245 @@
+---
+id: le-banc-du-parc
+title: Le banc du parc
+titleEn: The bench in the park
+length: one-page
+order: 50
+tone: everyday
+summary: Two strangers share opposite ends of a park bench every day without speaking, until an empty bench makes one of them realize how little she knows about the other.
+---
+
+fr  Claire s'assied toujours au même bout du banc, avec un livre.
+en  Claire always sits at the same end of the bench, with a book.
+?   s'assied | reflexive-verbs
+    «asseoir» would mean to sit someone else down. Add «s'» and it turns back
+    on Claire herself — she sits herself down, which is just «to sit» in
+    English.
+=   s' | herself
+=   même | same
+
+fr  Un vieil homme est assis à l'autre bout, avec un sac de pain.
+en  An old man sits at the other end, with a bag of bread.
+?   vieil | adjective-before-vowel
+    «vieux homme» would crash two vowel sounds together, so French swaps in
+    the special form «vieil» right before a word starting with a vowel or a
+    silent «h».
+=   est | is
+=   à | at
+=   l' | the
+=   de | of
+
+fr  Chaque matin, il jette des morceaux de pain aux oiseaux.
+en  Every morning, he throws pieces of bread to the birds.
+?   des morceaux de pain | partitive-article
+    He isn't throwing one whole loaf, just an unspecified number of pieces —
+    «des» marks that vague amount, the same job it does with croissants or
+    bread elsewhere in these stories.
+=   il | he
+=   de | of
+
+fr  Claire ne lui parle jamais, et il ne la regarde jamais vraiment.
+en  Claire never speaks to him, and he never really looks at her.
+?   ne ... jamais | negation-other-pairs | 1
+    Swap «pas» for «jamais» and the sentence goes from "doesn't" to "never" —
+    the same wrapping position around the verb, just a different word for
+    the negative.
+=   lui | him
+=   il | he
+=   la | her
+
+fr  Mais elle remarque toujours ses vieilles chaussures, usées mais propres.
+en  But she always notices his old shoes, worn but clean.
+?   ses | possessive-agrees-with-noun
+    «ses» tells you the shoes are plural and says nothing about whether the
+    owner is a man or a woman. Only the story tells you it's the old man's
+    shoes, not Claire's.
+?   usées | adjective-agreement
+    «chaussures» is feminine and plural, so the adjective picks up both
+    markers at once: «usée» becomes «usées».
+=   ses | his
+
+fr  Lui, il remarque qu'elle rit parfois toute seule, en lisant.
+en  He notices that she sometimes laughs alone, while reading.
+?   Lui | stressed-pronouns
+    «il» alone would already mean he. Putting «Lui» in front adds emphasis —
+    it's his turn to notice something, after the last two lines were about
+    what Claire sees.
+?   qu' | reported-speech-que
+    English could drop "that" here: he notices she laughs. French can't —
+    «que» has to introduce what he notices, and it shortens to «qu'» before
+    the vowel in «elle».
+?   en lisant | preposition-plus-infinitive
+    After most prepositions French uses the plain infinitive, but «en» is
+    the one exception — it takes this «-ant» form instead. «en lisant» means
+    while reading.
+=   Lui | he
+=   il | he
+=   qu' | that
+=   en | while
+
+fr  Un jeudi matin, Claire arrive et s'assied comme toujours.
+en  One Thursday morning, Claire arrives and sits down as always.
+=   s' | herself
+
+fr  D'habitude, l'homme était déjà là avec ses oiseaux.
+en  Usually, the man was already there with his birds.
+?   était | imparfait-vs-passe-compose
+    This sentence sets the scene: how things usually were, morning after
+    morning. The imparfait paints that backdrop. The next line breaks it with
+    a passé composé, for the one morning that didn't match.
+=   d' | of
+=   l' | the
+=   était | was
+=   ses | his
+
+fr  Mais ce jour-là, le banc est resté vide à côté d'elle.
+en  But that day, the bench stayed empty next to her.
+?   est resté | imparfait-vs-passe-compose
+    «était» in the line before described the usual picture. This verb is
+    passé composé because it marks the one day the picture changed — an
+    empty bench is the new fact, not the routine.
+?   est resté | passe-compose-etre
+    «rester» is one of the small set of verbs that build their past with
+    «être» instead of «avoir». The subject, «le banc», is masculine and
+    singular, so the participle stays plain «resté», with no extra ending.
+=   le | the
+=   est | is
+=   à | at
+=   d' | of
+
+fr  Elle a attendu, mais personne n'est venu nourrir les oiseaux.
+en  She waited, but no one came to feed the birds.
+?   personne | negation-other-pairs
+    «personne» is its own negative word, meaning nobody. It doesn't team up
+    with «pas» — the «ne» is enough on its own once «personne» is there.
+=   personne | nobody
+=   est | is
+=   les | the
+
+fr  Claire s'est rendu compte qu'elle ne connaissait même pas son nom.
+en  Claire realized she didn't even know his name.
+?   s'est rendu compte | imparfait-vs-passe-compose
+    Realizing is one sharp moment, so it's passé composé. Not knowing his
+    name was already true before that moment and stays true after — that's
+    why the next verb, «connaissait», switches to imparfait.
+?   même pas | negation-wraps-verb
+    The «ne ... pas» pair still wraps the conjugated verb, «connaissait».
+    «même», meaning even, just slides in between «ne» and the verb without
+    breaking the pair apart.
+=   s' | herself
+=   est | is
+=   qu' | that
+=   même | even
+=   pas | not-2
+=   son | his
+
+fr  Elle ne savait pas où il habitait, ni comment le retrouver.
+en  She didn't know where he lived, or how to find him.
+?   le retrouver | object-pronoun-before-verb
+    «le» stands for the old man and sits right in front of the verb it
+    belongs to, «retrouver». English puts "him" after "find" — French always
+    puts the pronoun first.
+=   pas | not-2
+=   il | he
+=   le | him
+
+fr  Pendant une semaine, personne n'a nourri les oiseaux à sa place.
+en  For a week, no one fed the birds in his place.
+?   pendant | duration-pendant-depuis
+    A week is a finished stretch of time here — it started and it ended —
+    so French uses «pendant». «depuis» would be wrong; that word is for
+    something still going on.
+=   personne | nobody
+=   les | the
+=   à | in
+=   sa | his
+
+fr  Le vendredi suivant, Claire a apporté du pain, juste au cas où.
+en  The following Friday, Claire brought bread, just in case.
+?   du | partitive-article
+    Claire isn't bringing one whole, countable loaf — «pain» is masculine,
+    so «de» plus «le» contracts to «du», marking an unspecified amount of
+    bread.
+=   le | the
+
+fr  Et ce matin-là, l'homme est enfin revenu, plus lentement qu'avant.
+en  And that morning, the man finally came back, more slowly than before.
+?   est enfin revenu | passe-compose-etre
+    «revenir» is built on «venir», one of the movement verbs that take
+    «être» instead of «avoir» in the past. The subject «l'homme» is
+    masculine and singular, so the participle needs no extra ending.
+=   l' | the
+=   est | is
+=   plus | more
+=   qu' | than
+
+fr  Il s'est assis, son sac de pain à la main.
+en  He sat down, his bag of bread in hand.
+?   son sac de pain à la main | bare-descriptive-phrase
+    No verb, no "with" — French just tacks the noun phrase on after a comma
+    to describe how he was sitting. English needs "with his bag in hand";
+    French needs nothing but the comma.
+=   il | he
+=   s' | himself
+=   est | is
+=   son | his
+=   de | of
+=   à | in
+=   la | the
+
+fr  Claire lui a demandé s'il allait bien.
+en  Claire asked him if he was doing okay.
+?   s'il | elision-si-il
+    «si», meaning if, keeps its vowel almost everywhere — except right
+    before «il» and «ils», where it shortens to «s'». It looks exactly like
+    the «s'» of a reflexive verb but here means something completely
+    different.
+=   lui | him
+=   s' | if
+=   il | he
+
+fr  « J'étais à l'hôpital, dit-il. Ma fille a eu un bébé. »
+en  "I was at the hospital," he said. "My daughter had a baby."
+?   J'étais | imparfait-vs-passe-compose
+    Being at the hospital is the state he's explaining, so it's imparfait.
+    The next sentence, «a eu», is passé composé because the birth itself was
+    one event, with a beginning and an end.
+=   à | at
+=   l' | the
+
+fr  Claire a souri et lui a donné un morceau de son pain.
+en  Claire smiled and gave him a piece of her bread.
+?   lui a donné | object-pronoun-before-verb
+    «lui» stands for the old man and moves in front of the helping verb,
+    «a». English says gave him; French never puts the pronoun after
+    «donné».
+?   son pain | possessive-agrees-with-noun
+    Two lines ago «son sac» was the old man's bag. Here «son pain» is
+    Claire's bread — «son» only tells you «pain» is masculine, not who owns
+    it.
+=   lui | him
+=   de | of
+=   son | her
+
+fr  « Merci pour le pain », a-t-il dit doucement.
+en  "Thank you for the bread," he said quietly.
+?   a-t-il | euphonic-t-inversion
+    Flipping «il a» round for this aside would give «a-il», two vowels
+    colliding. French drops in a «t» with no meaning of its own, just to
+    make the inversion sayable.
+=   le | the
+=   il | he
+
+fr  Maintenant, ils se parlent un peu, chaque matin, chacun à son bout du banc.
+en  Now, they talk to each other a little, every morning, each at their own end of the bench.
+?   se parlent | reflexive-verbs
+    With «ils» as the subject, «se parler» doesn't mean each one talking to
+    himself — it means talking to each other. The same «se» that turns a
+    verb back on one person can also point two people at each other.
+?   son | possessive-agrees-with-noun
+    «son» here just agrees with «bout», a masculine word, and points back at
+    «chacun» — each one, whether that's Claire or the man. It doesn't pick a
+    gender the way "his" or "her" would in English.
+=   se | each-other
+=   à | at
+=   son | his

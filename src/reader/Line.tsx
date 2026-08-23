@@ -28,12 +28,23 @@ export function spaceBefore(tokens: Token[], i: number): boolean {
   return true;
 }
 
+const NARROW = '\u202F';   // narrow no-break space
+
 /**
- * French sets a narrow no-break space before ? ! ; : and », where English
- * sets none. The tokenizer drops the original spacing, so put it back here.
+ * French sets a narrow no-break space before ? ! ; : and », where English sets
+ * none — and inside an opening guillemet. The tokenizer drops the original
+ * spacing, so put it back.
+ *
+ * Applies to every mark in a run, not just the first: `?»` has to come out as
+ * ` ? »`, while `.` and `,` take no space at all.
  */
 export function punctAfter(after: string): string {
-  return /^[?!;:\u00BB]/.test(after) ? '\u202F' + after : after;
+  return [...after].map((c) => (/[?!;:\u00BB]/.test(c) ? NARROW + c : c)).join('');
+}
+
+/** An opening guillemet is followed by a narrow space: « comme ceci ». */
+export function punctBefore(before: string): string {
+  return /[\u00AB]$/.test(before) ? before + NARROW : before;
 }
 
 /** One French line, with its gloss and translation underneath. */
@@ -54,7 +65,7 @@ export function Line({ line, index, revealed, annotated, isSelected, onTapWord, 
             {spaceBefore(line.fr, i) && (
               <span className={`sp${isSelected(i) && isSelected(i - 1) ? ' sel' : ''}`}> </span>
             )}
-            {tok.before && <span className="punct">{tok.before}</span>}
+            {tok.before && <span className="punct">{punctBefore(tok.before)}</span>}
             <span
               className={`f${annotated.has(i) ? ' ann' : ''}${isSelected(i) ? ' sel' : ''}`}
               onClick={(e) => { e.stopPropagation(); onTapWord(i); }}
@@ -69,7 +80,17 @@ export function Line({ line, index, revealed, annotated, isSelected, onTapWord, 
           </span>
         ))}
       </div>
-      <div className="en">{line.en}</div>
+      {/* The faded English is itself the reveal target. Tapping "the line"
+          mostly means tapping a word, and a word tap selects instead. */}
+      <div
+        className="en"
+        onClick={(e) => { e.stopPropagation(); onTapLine(); }}
+        role="button"
+        tabIndex={-1}
+        aria-label={revealed ? line.en : `Reveal the translation of line ${index + 1}`}
+      >
+        {line.en}
+      </div>
     </div>
   );
 }
